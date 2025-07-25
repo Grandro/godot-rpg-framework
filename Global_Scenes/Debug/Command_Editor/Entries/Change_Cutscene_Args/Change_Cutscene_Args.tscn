@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm54jywb7vef8"]
+
+[ext_resource type="PackedScene" uid="uid://c0q72mf8j1h42" path="res://Global_Scenes/Debug/Command_Editor/Entries/Change_Args/Change_Args.tscn" id="1_m3hj8"]
+
+[node name="Change_Cutscene_Args" instance=ExtResource("1_m3hj8")]
+_e_loc_id = "DEBUG_CUTSCENES_COMMANDS_CHANGE_CUTSCENE_ARGS"

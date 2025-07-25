@@ -1,0 +1,152 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3ab751j5bk4n"]
+
+[ext_resource type="Script" uid="uid://mn5wg1i55w2c" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Status/Scripts/Status.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://fyofiebgtifb" path="res://Scenes/Item_Drag_Menu_Base/Item_Drag_Menu_Base.tscn" id="1_rffik"]
+[ext_resource type="Script" uid="uid://coeyju36f5do6" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Status/Scripts/Stats.gd" id="3"]
+[ext_resource type="Script" uid="uid://duffeh7r8ddbx" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Status/Scripts/Progress.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://t8kmim7r6rvl" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Portraits/Portraits.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://hkmfdt8ynpce" path="res://Scenes/Item_Select_Base_Menu/Inventory_Status.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://f3cogiqxst42" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Status/Equipable/Equipable.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://cfwtmnoxak0bd" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Status/Stat_Entry.tscn" id="8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8f6ej"]
+font_size = 20
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i56qn"]
+font_size = 28
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Status" instance=ExtResource("1_rffik")]
+script = ExtResource("1")
+
+[node name="Margin" parent="." index="1"]
+theme_override_constants/margin_bottom = 0
+
+[node name="Margin" type="MarginContainer" parent="Margin/VBox/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 72
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox/HBox/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 24
+
+[node name="VBox_1" type="VBoxContainer" parent="Margin/VBox/HBox/Margin/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Stats" type="VBoxContainer" parent="Margin/VBox/HBox/Margin/HBox/VBox_1" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+script = ExtResource("3")
+
+[node name="HP" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Stats" index="0" instance=ExtResource("8")]
+layout_mode = 2
+_e_key = "HP"
+_e_max_key = "Max_HP"
+
+[node name="SP" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Stats" index="1" instance=ExtResource("8")]
+layout_mode = 2
+_e_key = "SP"
+_e_max_key = "Max_SP"
+
+[node name="ATK" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Stats" index="2" instance=ExtResource("8")]
+layout_mode = 2
+_e_key = "ATK"
+
+[node name="MAG" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Stats" index="3" instance=ExtResource("8")]
+layout_mode = 2
+_e_key = "MAG"
+
+[node name="DEF" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Stats" index="4" instance=ExtResource("8")]
+layout_mode = 2
+_e_key = "DEF"
+
+[node name="SPEED" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Stats" index="5" instance=ExtResource("8")]
+layout_mode = 2
+_e_key = "SPEED"
+
+[node name="LUCK" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Stats" index="6" instance=ExtResource("8")]
+layout_mode = 2
+_e_key = "LUCK"
+
+[node name="Progress" type="VBoxContainer" parent="Margin/VBox/HBox/Margin/HBox/VBox_1" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+script = ExtResource("4")
+
+[node name="Exp" type="HBoxContainer" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Progress" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Desc" type="Label" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Progress/Exp" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "EXP"
+label_settings = SubResource("LabelSettings_8f6ej")
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Progress/Exp" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "3"
+label_settings = SubResource("LabelSettings_i56qn")
+vertical_alignment = 1
+
+[node name="Next_Lvl" type="HBoxContainer" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Progress" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Desc" type="Label" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Progress/Next_Lvl" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "NEXT_LVL"
+label_settings = SubResource("LabelSettings_8f6ej")
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Margin/VBox/HBox/Margin/HBox/VBox_1/Progress/Next_Lvl" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "7"
+label_settings = SubResource("LabelSettings_i56qn")
+vertical_alignment = 1
+
+[node name="VBox_2" type="VBoxContainer" parent="Margin/VBox/HBox/Margin/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Equipable" parent="Margin/VBox/HBox/Margin/HBox/VBox_2" index="0" instance=ExtResource("7")]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Portraits" parent="Margin/VBox/HBox/Margin/HBox/VBox_2" index="1" instance=ExtResource("5")]
+layout_mode = 2
+
+[node name="Inventory" parent="Margin/VBox/HBox" index="1" instance=ExtResource("6")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 8

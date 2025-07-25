@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://vhtor60ei5fs"]
+
+[ext_resource type="Script" uid="uid://bob3rbsqf42ol" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Scripts/Command_Circle.gd" id="1"]
+
+[node name="Command_Circle" type="Node3D"]
+script = ExtResource("1")
+
+[node name="Commands" type="Node3D" parent="."]
+
+[node name="Jump_Delay" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
+[node name="Nav" type="AudioStreamPlayer" parent="."]
+pitch_scale = 1.3
+bus = &"SFX"

@@ -1,0 +1,152 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2lf8mjy8lsm8"]
+
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="1"]
+[ext_resource type="Script" uid="uid://nwovd3gddpqf" path="res://Global_Scenes/Debug/Scenes/Audio_Select/Scripts/Audio_Select.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dxvs5j6xpvga8" path="res://Global_Resources/Sprites/UI/Play_Normal.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bxve1w6i0npbw" path="res://Global_Resources/Sprites/UI/Play_Disabled.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://v82tjn3y3qcn" path="res://Global_Resources/Sprites/UI/Stop_Normal.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bxk30dv7wtelt" path="res://Global_Resources/Sprites/UI/Stop_Disabled.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dahqj21e336wb" path="res://Global_Resources/Sprites/UI/Revert.png" id="7"]
+
+[sub_resource type="Animation" id="Animation_xrsbm"]
+length = 0.001
+
+[sub_resource type="Animation" id="1"]
+resource_name = "Spin"
+length = 0.25
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -360, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dfu7h"]
+_data = {
+&"RESET": SubResource("Animation_xrsbm"),
+&"Spin": SubResource("1")
+}
+
+[node name="Audio_Select" type="HBoxContainer" groups=["Translated"]]
+light_mask = 8
+visibility_layer = 8
+offset_right = 488.0
+offset_bottom = 100.0
+theme = ExtResource("1")
+theme_override_constants/separation = 12
+script = ExtResource("2")
+_e_dir_path = "res://"
+_e_filters = PackedStringArray("*.wav", "*.ogg")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Play" type="TextureButton" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("3")
+texture_disabled = ExtResource("4")
+stretch_mode = 5
+
+[node name="Stop" type="TextureButton" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("5")
+texture_disabled = ExtResource("6")
+stretch_mode = 5
+
+[node name="Main" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="Main"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Revert" type="TextureButton" parent="Main/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture_normal = ExtResource("7")
+stretch_mode = 5
+
+[node name="Anims" type="AnimationPlayer" parent="Main/HBox/Revert"]
+libraries = {
+&"": SubResource("AnimationLibrary_dfu7h")
+}
+
+[node name="Path" type="ScrollContainer" parent="Main/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+vertical_scroll_mode = 0
+
+[node name="Value" type="Label" parent="Main/HBox/Path"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "NONE"
+vertical_alignment = 1
+
+[node name="Progress" type="ProgressBar" parent="Main"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+show_percentage = false
+
+[node name="Options" type="HBoxContainer" parent="Main"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+alignment = 1
+
+[node name="Time" type="Label" parent="Main/Options"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+text = "00:00 - 00:00"
+vertical_alignment = 1
+
+[node name="Select" type="Button" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 4
+text = "SELECT"
+
+[node name="File" type="FileDialog" parent="."]
+title = "Open a File"
+ok_button_text = "Open"
+file_mode = 0
+access = 1
+show_hidden_files = true
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"

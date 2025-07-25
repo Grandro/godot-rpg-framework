@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://dabeoloqhc72h"]
+
+[ext_resource type="PackedScene" uid="uid://bjaemay65pyhl" path="res://Scenes/Item_Select_Base_Menu/Info.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://b2hso273s8kxl" path="res://Scenes/Sort_By/Sort_By.tscn" id="3_gbfai"]
+[ext_resource type="PackedScene" uid="uid://brwnr7v5wrvx" path="res://Scenes/Search/Search.tscn" id="3_vwy3s"]
+[ext_resource type="Script" uid="uid://bjwgqpo7mekd1" path="res://Scenes/Item_Select_Base_Menu/Scripts/Item_Select_Base.gd" id="4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68501"]
+content_margin_left = 36.0
+bg_color = Color(0.105882, 0.0431373, 0.2, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="Item_Select_Base" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("4")
+
+[node name="Grid" type="GridContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 11
+theme_override_constants/h_separation = 8
+columns = 2
+
+[node name="List" type="VBoxContainer" parent="Grid"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+
+[node name="Options" type="HBoxContainer" parent="Grid/List"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Sort_By" parent="Grid/List/Options" instance=ExtResource("3_gbfai")]
+layout_mode = 2
+_e_sort_args = {
+"Name": "get_name_"
+}
+
+[node name="Search" parent="Grid/List/Options" instance=ExtResource("3_vwy3s")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="Input" parent="Grid/List/Options/Search" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_68501")
+
+[node name="Items" type="TabContainer" parent="Grid/List"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tab_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="Grid"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Info" parent="Grid/HBox" instance=ExtResource("1")]
+layout_mode = 2
+
+[editable path="Grid/List/Options/Search"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsp0njc065uev"]
+
+[ext_resource type="Script" uid="uid://h0r3njd28k4n" path="res://Scenes/Object/Comps/3D/Scripts/Collision_Shape.gd" id="1_yk3sb"]
+
+[node name="Collision" type="CollisionShape3D" groups=["Comp"]]
+script = ExtResource("1_yk3sb")

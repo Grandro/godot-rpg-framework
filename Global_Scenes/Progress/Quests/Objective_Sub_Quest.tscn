@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://r41nl45w54n2"]
+
+[ext_resource type="PackedScene" uid="uid://4g75hu8xnu3b" path="res://Global_Scenes/Progress/Quests/Objective_Base.tscn" id="1_wauqe"]
+[ext_resource type="Script" uid="uid://cdk63w6cobx22" path="res://Global_Scenes/Progress/Quests/Scripts/Objective_Sub_Quest.gd" id="2_fhtfx"]
+
+[node name="Objective_Sub_Quest" instance=ExtResource("1_wauqe")]
+script = ExtResource("2_fhtfx")

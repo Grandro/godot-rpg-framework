@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dury61bqkndq4"]
+
+[ext_resource type="PackedScene" uid="uid://dicb7n1ya10ha" path="res://Scenes/Maps/Map_Base/3D/Terrain_Area/Base.tscn" id="1"]
+
+[node name="Polygon" instance=ExtResource("1")]
+
+[node name="Collision" type="CollisionPolygon3D" parent="." index="0"]

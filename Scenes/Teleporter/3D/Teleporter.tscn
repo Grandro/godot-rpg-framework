@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://btod37435u253"]
+
+[ext_resource type="Script" uid="uid://dipjb64ya7ros" path="res://Scenes/Teleporter/3D/Scripts/Teleporter.gd" id="1_fugri"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="2_frlaq"]
+[ext_resource type="Script" uid="uid://b0tykr8jm11bq" path="res://Scenes/Teleporter/Comps/Interactions/Scripts/Shared.gd" id="3_e6lem"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="4_sfhjj"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="5_hl1la"]
+
+[node name="Teleporter" type="Node3D" groups=["Object"]]
+script = ExtResource("1_fugri")
+
+[node name="Interactions" parent="." instance=ExtResource("2_frlaq")]
+_e_shared = ExtResource("3_e6lem")
+
+[node name="Save" parent="." instance=ExtResource("4_sfhjj")]
+
+[node name="Reference" parent="." instance=ExtResource("5_hl1la")]

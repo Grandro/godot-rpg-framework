@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq7x4410fjnnc"]
+
+[ext_resource type="PackedScene" uid="uid://dabeoloqhc72h" path="res://Scenes/Item_Select_Base_Menu/Item_Select_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://d037med6trw1y" path="res://Scenes/Item_Select_Base_Menu/Scripts/Inventory.gd" id="2"]
+
+[node name="Inventory" instance=ExtResource("1")]
+script = ExtResource("2")
+
+[editable path="Grid/List/Options/Search"]

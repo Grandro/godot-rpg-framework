@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdae04yxjikmr"]
+
+[ext_resource type="PackedScene" uid="uid://d0lwbs7kk4qor" path="res://Global_Scenes/Main_Menu/Sub_Menus/Quests/Info/Objective_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dvcwbyfa2ehj0" path="res://Global_Scenes/Main_Menu/Sub_Menus/Quests/Info/Scripts/Objective_Bool.gd" id="2"]
+
+[node name="Objective_Bool" instance=ExtResource("1")]
+script = ExtResource("2")
+
+[node name="Curr" type="CheckBox" parent="Progress" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+disabled = true

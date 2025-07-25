@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7i7dcpmp0mn0"]
+
+[ext_resource type="Script" uid="uid://dkohgqtfft2bw" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Types/Scripts/Bool.gd" id="2_n68ma"]
+
+[node name="Bool" type="PanelContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(300, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_n68ma")
+
+[node name="Value" type="CheckBox" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 4

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfnft257xxdp2"]
+
+[ext_resource type="PackedScene" uid="uid://cb1ikaj310yps" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Command.tscn" id="1_ffk1w"]
+[ext_resource type="Script" uid="uid://b2ry0da1ngb8a" path="res://Global_Scenes/Debug/Command_Editor/Entries/Show_Dialogue/Scripts/Show_Dialogue.gd" id="2"]
+
+[node name="Show_Dialogue" instance=ExtResource("1_ffk1w")]
+script = ExtResource("2")
+_e_color = Color(0.07, 0.7, 0.553, 1)

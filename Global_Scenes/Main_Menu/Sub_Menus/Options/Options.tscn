@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6g6rit20vsua"]
+
+[ext_resource type="Script" uid="uid://duj1vptk4gy0b" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Scripts/Options.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://b336a3my66r7w" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Audio/Audio.tscn" id="6_1dh35"]
+[ext_resource type="PackedScene" uid="uid://du8ubfp3v764j" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Video/Video.tscn" id="7_x6opa"]
+[ext_resource type="PackedScene" uid="uid://br3bjwwah3g7r" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Controls/Controls.tscn" id="8_3n8rb"]
+[ext_resource type="PackedScene" uid="uid://bduqpjkr3fi" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Gameplay/Gameplay.tscn" id="8_npowy"]
+
+[node name="Options" type="Control" groups=["Translated"]]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="TextureRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+stretch_mode = 1
+
+[node name="Back" parent="." instance=ExtResource("5")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 112.0
+offset_bottom = 64.0
+size_flags_horizontal = 8
+
+[node name="Margin" type="MarginContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 32
+
+[node name="Heading" type="Label" parent="Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "MAIN_MENU_OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tabs" type="TabContainer" parent="Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tab_alignment = 1
+current_tab = 0
+
+[node name="Audio" parent="Margin/VBox/Tabs" instance=ExtResource("6_1dh35")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Video" parent="Margin/VBox/Tabs" instance=ExtResource("7_x6opa")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Gameplay" parent="Margin/VBox/Tabs" instance=ExtResource("8_npowy")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Controls" parent="Margin/VBox/Tabs" instance=ExtResource("8_3n8rb")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3

@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://beoei6o2vrvx"]
+
+[ext_resource type="PackedScene" uid="uid://bo2mux0ndygh1" path="res://Scenes/Indicator/Indicator_Button.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://dtibx7edryw0s" path="res://Global_Resources/Sprites/Keys/27.png" id="3_tpx8w"]
+[ext_resource type="Texture2D" uid="uid://bauey0sg20w5m" path="res://Global_Resources/Sprites/Joy/Letters_Color/Button_B.png" id="4_ms813"]
+[ext_resource type="Texture2D" uid="uid://dfl4bd2splv71" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Button_A.png" id="4_r5rjb"]
+[ext_resource type="Texture2D" uid="uid://bam14gnqram3h" path="res://Global_Resources/Sprites/Joy/Shapes_Color/Button_Circle.png" id="5_dicya"]
+[ext_resource type="Texture2D" uid="uid://dfuhlj2mlxms5" path="res://Global_Resources/Sprites/UI/Arrow_Left_Normal.png" id="6_x2ntw"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_0q451"]
+action = &"Cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_2x4j8"]
+events = [SubResource("InputEventAction_0q451")]
+
+[node name="Back_Button" instance=ExtResource("1")]
+_e_keyboard_texture = ExtResource("3_tpx8w")
+_e_joy_letters_color_texture = ExtResource("4_ms813")
+_e_joy_letters_neutral_texture = ExtResource("4_r5rjb")
+_e_joy_shapes_color_texture = ExtResource("5_dicya")
+
+[node name="Select" parent="." index="0"]
+shortcut = SubResource("Shortcut_2x4j8")
+
+[node name="Arrow" type="TextureRect" parent="Margin/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("6_x2ntw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Input" parent="Margin/HBox" index="1"]
+size_flags_horizontal = 10
+texture = ExtResource("4_ms813")

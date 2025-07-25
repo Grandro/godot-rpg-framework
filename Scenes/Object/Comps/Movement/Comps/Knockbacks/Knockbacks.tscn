@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d07xolpcrrwob"]
+
+[ext_resource type="Script" uid="uid://22j3en2j1rfa" path="res://Scenes/Object/Comps/Movement/Comps/Knockbacks/Scripts/Knockbacks.gd" id="1_mta3k"]
+
+[node name="Knockbacks" type="Node" groups=["Comp"]]
+script = ExtResource("1_mta3k")

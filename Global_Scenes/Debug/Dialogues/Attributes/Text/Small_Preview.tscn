@@ -1,0 +1,196 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcmeit6hbj55l"]
+
+[ext_resource type="Texture2D" uid="uid://cc5yoyg4s0ec4" path="res://Global_Scenes/Dialogue_System/Sprites/Text_Box.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://vodl3m6qp16b" path="res://Global_Scenes/Dialogue_System/Sprites/Choices_Box.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://c0d6my4fuig56" path="res://Global_Scenes/Dialogue_System/Sprites/Proceed_Dot/Spritesheet.png" id="6"]
+[ext_resource type="Script" uid="uid://cmxvowaxnf2ov" path="res://Global_Scenes/Debug/Dialogues/Attributes/Text/Scripts/Small_Preview.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://bvxryxg2rgtiq" path="res://Global_Scenes/Dialogue_System/Sprites/Arrow.png" id="7_yyy3y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhyd8"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("6")
+region = Rect2(0, 0, 24, 24)
+
+[node name="Small_Preview" type="Control"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(128, 72)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 72.0
+size_flags_horizontal = 0
+mouse_filter = 2
+script = ExtResource("7")
+
+[node name="Background" type="ColorRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.210236
+offset_right = 0.210236
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.298039, 0.298039, 0.298039, 1)
+
+[node name="VBox" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 24.0
+theme_override_constants/separation = -1
+
+[node name="Text_Box" type="VBoxContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="Name" type="NinePatchRect" parent="VBox/Text_Box"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3")
+patch_margin_left = 8
+patch_margin_top = 4
+patch_margin_right = 8
+patch_margin_bottom = 3
+
+[node name="Margin" type="MarginContainer" parent="VBox/Text_Box/Name"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Text" type="RichTextLabel" parent="VBox/Text_Box/Name/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_xhyd8")
+bbcode_enabled = true
+text = "[center]Test"
+fit_content = true
+scroll_active = false
+
+[node name="Dialogue" type="MarginContainer" parent="VBox/Text_Box"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Rect" type="NinePatchRect" parent="VBox/Text_Box/Dialogue"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(36, 10)
+layout_mode = 2
+texture = ExtResource("3")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Margin" type="MarginContainer" parent="VBox/Text_Box/Dialogue"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="HBox" type="HBoxContainer" parent="VBox/Text_Box/Dialogue/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Mini_Bust" type="TextureRect" parent="VBox/Text_Box/Dialogue/Margin/HBox"]
+visible = false
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(11, 7)
+layout_mode = 2
+size_flags_vertical = 10
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Margin" type="MarginContainer" parent="VBox/Text_Box/Dialogue/Margin/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_top = -1
+
+[node name="Text" type="RichTextLabel" parent="VBox/Text_Box/Dialogue/Margin/HBox/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 6
+bbcode_enabled = true
+text = "[center]Test"
+fit_content = true
+scroll_active = false
+
+[node name="Proceed_Dot" type="TextureRect" parent="VBox/Text_Box/Dialogue"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+texture = SubResource("4")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Margin" type="MarginContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Arrow" type="TextureRect" parent="VBox/Margin"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(6, 6)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+mouse_filter = 2
+texture = ExtResource("7_yyy3y")
+expand_mode = 1
+
+[node name="Choices_Box" type="NinePatchRect" parent="VBox/Margin"]
+visible = false
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("5")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4

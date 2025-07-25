@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkxeoahqc7tdy"]
+
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="1_ci6lu"]
+[ext_resource type="Script" uid="uid://7cgxq6drb2jr" path="res://Global_Scenes/Debug/Command_Edit/Set_Move_Route/Scripts/State.gd" id="2_qn3tc"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_co8fj"]
+
+[node name="State" instance=ExtResource("1_ci6lu")]
+script = ExtResource("2_qn3tc")
+_e_init_value = ""
+_e_options_loc_id = "DEBUG_CUTSCENES_STATE_%s"
+_e_heading_loc_id = "DEBUG_CUTSCENES_STATE"
+_e_var_select_scene = ExtResource("3_co8fj")
+
+[node name="Heading" parent="HBox" index="0"]
+text = "DEBUG_CUTSCENES_STATE"

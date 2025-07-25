@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0vdl1j63jtip"]
+
+[ext_resource type="PackedScene" uid="uid://50pueljyh651" path="res://Scenes/Item_Entry/Item_Entry_Base.tscn" id="1_eqv0x"]
+[ext_resource type="Script" uid="uid://dba7j5dwewlwa" path="res://Scenes/Item_Entry/Scripts/Item_Entry_Inventory.gd" id="2_vml2a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lsam1"]
+font_size = 30
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_heyon"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tgfyx"]
+
+[node name="Item_Entry_Inventory" instance=ExtResource("1_eqv0x")]
+script = ExtResource("2_vml2a")
+
+[node name="Amount" type="Label" parent="VBox/Margin" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+size_flags_vertical = 8
+text = "1"
+label_settings = SubResource("LabelSettings_lsam1")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Select" type="Button" parent="." index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxFlat_heyon")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_heyon")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tgfyx")
+action_mode = 0
+flat = true

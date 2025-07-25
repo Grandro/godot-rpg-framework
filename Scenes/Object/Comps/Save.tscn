@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://de2jy2ixhp2mw"]
+
+[ext_resource type="Script" uid="uid://dn6kq0p5cda6e" path="res://Scenes/Object/Comps/Scripts/Save.gd" id="1_f3gu0"]
+
+[node name="Save" type="Node" groups=["Comp"]]
+script = ExtResource("1_f3gu0")

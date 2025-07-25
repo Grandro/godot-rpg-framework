@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjkkhl8b8b204"]
+
+[ext_resource type="Script" uid="uid://q3wb6yeccsd5" path="res://Scenes/Player/Comps/Interaction_System/Scripts/Interaction_System.gd" id="1_3r5er"]
+
+[node name="Interaction_System" type="Node" groups=["Comp"]]
+script = ExtResource("1_3r5er")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://i2w4kpodt4mg"]
+
+[ext_resource type="PackedScene" uid="uid://5213guffkn3m" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object.tscn" id="1_lotcp"]
+[ext_resource type="Script" uid="uid://difdvie136obx" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Change_Args_Base.gd" id="2_vlrig"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="3_kpki7"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_1d5qn"]
+[ext_resource type="PackedScene" uid="uid://dg8j6230i0er8" path="res://Global_Scenes/Debug/Command_Edit/Scenes/Idx/Idx.tscn" id="5_4xvwm"]
+
+[node name="Change_Args_Base" instance=ExtResource("1_lotcp")]
+script = ExtResource("2_vlrig")
+_e_draw_grid = false
+_e_draw_grid_scene = null
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
+_e_needed_comps = Array[String](["Reference", "Interactions"])
+
+[node name="Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("3_kpki7")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_TYPE_%s"
+_e_options = Array[String](["Set"])
+_e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
+_e_var_select_scene = ExtResource("4_1d5qn")
+
+[node name="Idx" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="2" instance=ExtResource("5_4xvwm")]
+layout_mode = 2
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]

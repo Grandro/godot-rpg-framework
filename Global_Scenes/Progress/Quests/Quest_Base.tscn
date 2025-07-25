@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw83gpfjqfylp"]
+
+[ext_resource type="Script" uid="uid://dp7ijcg1wuvj5" path="res://Global_Scenes/Progress/Quests/Scripts/Quest_Base.gd" id="1_b3luq"]
+
+[node name="Quest_Base" type="Node"]
+script = ExtResource("1_b3luq")
+
+[node name="Objectives" type="Node" parent="."]

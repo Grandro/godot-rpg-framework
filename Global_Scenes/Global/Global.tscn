@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://dv0rcbf00aavw"]
+
+[ext_resource type="Script" uid="uid://bacai0uxn6t8x" path="res://Global_Scenes/Global/Scripts/Global.gd" id="1"]
+[ext_resource type="Material" uid="uid://p1br5wo0d1l3" path="res://Global_Resources/Materials/2D/Trans.tres" id="2"]
+[ext_resource type="Animation" uid="uid://don0ss2xswwcf" path="res://Global_Scenes/Global/Anims/Trans/Faded_In.tres" id="4"]
+[ext_resource type="Animation" uid="uid://b31x8cyd437pm" path="res://Global_Scenes/Global/Anims/Trans/Faded_Out.tres" id="5"]
+[ext_resource type="Animation" uid="uid://0xxa4f248q64" path="res://Global_Scenes/Global/Anims/Trans/Fade_Out_In.tres" id="6"]
+[ext_resource type="Animation" uid="uid://dt7hek27knp8y" path="res://Global_Scenes/Global/Anims/Trans/Fade_In.tres" id="7"]
+[ext_resource type="Animation" uid="uid://dnajvqs54okh1" path="res://Global_Scenes/Global/Anims/Trans/Fade_Out.tres" id="8"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00c6p"]
+_data = {
+&"Fade_In": ExtResource("7"),
+&"Fade_Out": ExtResource("8"),
+&"Fade_Out_In": ExtResource("6"),
+&"Faded_In": ExtResource("4"),
+&"Faded_Out": ExtResource("5")
+}
+
+[node name="Global" type="Node"]
+process_mode = 3
+script = ExtResource("1")
+_e_version = "1.0.0"
+
+[node name="Play_Time" type="Timer" parent="."]
+
+[node name="Overlays" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Trans" type="ColorRect" parent="Overlays"]
+light_mask = 8
+visibility_layer = 8
+material = ExtResource("2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Anims" type="AnimationPlayer" parent="Overlays/Trans"]
+libraries = {
+&"": SubResource("AnimationLibrary_00c6p")
+}

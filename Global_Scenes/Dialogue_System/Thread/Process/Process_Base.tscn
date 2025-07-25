@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://duj1q7mhu6mlg"]
+
+[ext_resource type="Script" uid="uid://b76lf3rjxeukv" path="res://Global_Scenes/Dialogue_System/Thread/Process/Scripts/Process_Base.gd" id="1"]
+
+[node name="Process_Base" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1")
+
+[node name="Character_Timer" type="Timer" parent="."]
+
+[node name="Auto_Proceed" type="Timer" parent="."]
+
+[node name="Wait_Timer" type="Timer" parent="."]
+
+[node name="Vox" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"

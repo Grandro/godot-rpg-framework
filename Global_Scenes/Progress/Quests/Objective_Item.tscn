@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3al4v74v66vv"]
+
+[ext_resource type="PackedScene" uid="uid://cnwen4duxwc58" path="res://Global_Scenes/Progress/Quests/Objective_Int.tscn" id="1_1lbux"]
+[ext_resource type="Script" uid="uid://dk8tob27jpdxa" path="res://Global_Scenes/Progress/Quests/Scripts/Objective_Item.gd" id="2_nmj8b"]
+
+[node name="Objective_Item" instance=ExtResource("1_1lbux")]
+script = ExtResource("2_nmj8b")

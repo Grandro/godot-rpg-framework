@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://50pueljyh651"]
+
+[ext_resource type="Script" uid="uid://8r4vqtmem7r1" path="res://Scenes/Item_Entry/Scripts/Item_Entry_Base.gd" id="2_qvym4"]
+
+[node name="Item_Entry_Base" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(48, 48)
+offset_right = 48.0
+offset_bottom = 48.0
+mouse_filter = 2
+script = ExtResource("2_qvym4")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="Margin" type="MarginContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="VBox/Margin"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5

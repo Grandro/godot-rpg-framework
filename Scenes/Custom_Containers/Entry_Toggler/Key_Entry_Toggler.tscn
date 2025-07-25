@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://de0xrbigi3qvr"]
+
+[ext_resource type="PackedScene" uid="uid://6f6pfaiy11ck" path="res://Scenes/Custom_Containers/Entry_Toggler/Entry_Toggler.tscn" id="1_egcio"]
+[ext_resource type="Script" uid="uid://b3i2p6jpg1s55" path="res://Scenes/Custom_Containers/Entry_Toggler/Scripts/Key_Entry_Toggler.gd" id="2_xqkoj"]
+[ext_resource type="PackedScene" uid="uid://cmpoefofcrhwt" path="res://Scenes/Custom_Containers/Entry_Toggler/Entries/Key_Entry.tscn" id="3_4vrte"]
+
+[node name="Key_Entry_Toggler" instance=ExtResource("1_egcio")]
+script = ExtResource("2_xqkoj")
+_e_entry_scene = ExtResource("3_4vrte")

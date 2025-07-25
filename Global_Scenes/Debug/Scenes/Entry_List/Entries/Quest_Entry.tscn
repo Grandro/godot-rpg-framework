@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy7u1ocv26url"]
+
+[ext_resource type="PackedScene" uid="uid://ek1x7if6akb8" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Entry.tscn" id="1_g7k0u"]
+[ext_resource type="Script" uid="uid://cfu2huauych7v" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Scripts/Quest_Entry.gd" id="2_q4jxx"]
+[ext_resource type="Texture2D" uid="uid://bmqhddrlwm888" path="res://Global_Resources/Sprites/UI/Check.png" id="4_50icu"]
+[ext_resource type="PackedScene" uid="uid://clbcurkhls2yb" path="res://Global_Scenes/Debug/Scenes/Entry_List/Quest_Entry_List.tscn" id="5_c7xrq"]
+
+[node name="Quest_Entry" instance=ExtResource("1_g7k0u")]
+offset_right = 190.0
+offset_bottom = 148.0
+script = ExtResource("2_q4jxx")
+
+[node name="VBox" parent="HBox" index="1"]
+theme = null
+
+[node name="Name" parent="HBox/VBox/Margin/Margin/HBox" index="1"]
+horizontal_alignment = 0
+
+[node name="Completed" type="TextureRect" parent="HBox/VBox/Margin/Margin/HBox" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+texture = ExtResource("4_50icu")
+stretch_mode = 5
+
+[node name="Options" parent="HBox/VBox" index="1"]
+visible = true
+
+[node name="Sub_Quests" type="HBoxContainer" parent="HBox/VBox/Options" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Margin" type="Control" parent="HBox/VBox/Options/Sub_Quests" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+
+[node name="Entry_List" parent="HBox/VBox/Options/Sub_Quests" index="1" instance=ExtResource("5_c7xrq")]
+layout_mode = 2
+size_flags_horizontal = 3
+_e_show_search = false
+
+[node name="Scroll" parent="HBox/VBox/Options/Sub_Quests/Entry_List" index="1"]
+clip_contents = false
+vertical_scroll_mode = 0
+
+[editable path="HBox/VBox/Options/Sub_Quests/Entry_List"]
+[editable path="HBox/VBox/Options/Sub_Quests/Entry_List/Search"]

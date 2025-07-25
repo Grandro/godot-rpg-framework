@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://lq5yp1lm6rri"]
+
+[ext_resource type="PackedScene" uid="uid://c8lns07r4xyu8" path="res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Base.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://r6vb6j06pcdg" path="res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Sprites/Mark_Default.png" id="2"]
+[ext_resource type="Script" uid="uid://bc38f7lkxp3hj" path="res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Scripts/Main.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://xion13fov5c7" path="res://Global_Resources/Sprites/Debug/Warning.png" id="4"]
+
+[sub_resource type="FontVariation" id="FontVariation_7hyox"]
+spacing_top = -4
+spacing_bottom = -5
+
+[node name="Main" instance=ExtResource("1")]
+script = ExtResource("3")
+
+[node name="Mark" type="TextureRect" parent="Base/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2")
+stretch_mode = 3
+
+[node name="Args" type="Label" parent="Base/HBox" index="4"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_7hyox")
+theme_override_font_sizes/font_size = 18
+vertical_alignment = 1
+
+[node name="Warning" type="TextureButton" parent="Base/HBox" index="5"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 2
+texture_normal = ExtResource("4")
+stretch_mode = 3
+
+[node name="Args" type="VBoxContainer" parent="." index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0

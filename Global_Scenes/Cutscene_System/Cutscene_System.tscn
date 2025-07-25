@@ -1,0 +1,130 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5caydwpdijlx"]
+
+[ext_resource type="Script" uid="uid://cobyvegukv5np" path="res://Global_Scenes/Cutscene_System/Scripts/Cutscene_System.gd" id="1"]
+
+[node name="Cutscene_System" type="Node"]
+script = ExtResource("1")
+_e_thread_paths = Dictionary[String, Dictionary]({
+"Change_Camera": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Change_Camera.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Change_Camera.tscn"
+},
+"Change_Coins_Amount": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Change_Coins_Amount.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Change_Coins_Amount.tscn"
+},
+"Change_Cutscene_Args": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Change_Cutscene_Args.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Change_Cutscene_Args.tscn"
+},
+"Change_Cutscene_Args_Idx": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Change_Cutscene_Args_Idx.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Change_Cutscene_Args_Idx.tscn"
+},
+"Change_Dialogue_Args": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Change_Dialogue_Args.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Change_Dialogue_Args.tscn"
+},
+"Change_Dialogue_Args_Idx": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Change_Dialogue_Args_Idx.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Change_Dialogue_Args_Idx.tscn"
+},
+"Change_Dir": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Change_Dir.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Change_Dir.tscn"
+},
+"Change_Equipable": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Change_Equipable.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Change_Equipable.tscn"
+},
+"Change_Item_Amount": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Change_Item_Amount.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Change_Item_Amount.tscn"
+},
+"Change_State": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Change_State.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Change_State.tscn"
+},
+"Change_Visibility": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Change_Visibility.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Change_Visibility.tscn"
+},
+"Comment": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Comment.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Comment.tscn"
+},
+"Default_Object_Key": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Default_Object_Key.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Default_Object_Key.tscn"
+},
+"Disable_Object": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Disable_Object.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Disable_Object.tscn"
+},
+"Exit_Cutscene": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Exit_Cutscene.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Exit_Cutscene.tscn"
+},
+"Jump": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/2D/Jump/Jump.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/3D/Jump/Jump.tscn"
+},
+"Move_Free_Camera": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/2D/Move_Free_Camera.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/3D/Move_Free_Camera.tscn"
+},
+"Play_Anim": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Play_Anim.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Play_Anim.tscn"
+},
+"Play_Audio": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/2D/Play_Audio.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/3D/Play_Audio.tscn"
+},
+"Script": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Script.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Script.tscn"
+},
+"Set_Move_Route": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/2D/Set_Move_Route.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/3D/Set_Move_Route.tscn"
+},
+"Show_Dialogue": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Show_Dialogue.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Show_Dialogue.tscn"
+},
+"Show_Overlay": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Show_Overlay.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Show_Overlay.tscn"
+},
+"Show_Popup": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Show_Popup.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Show_Popup.tscn"
+},
+"Teleport": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Teleport.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Teleport.tscn"
+},
+"Teleport_Object": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/2D/Teleport_Object.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/3D/Teleport_Object.tscn"
+},
+"Tween": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Tween.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Tween.tscn"
+},
+"Wait": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Wait.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Wait.tscn"
+},
+"Wait_For_Sub_Process": {
+"2D": "res://Global_Scenes/Cutscene_System/Threads/Wait_For_Sub_Process.tscn",
+"3D": "res://Global_Scenes/Cutscene_System/Threads/Wait_For_Sub_Process.tscn"
+}
+})
+
+[node name="Branches" type="Node" parent="."]
+
+[node name="Skip_CD" type="Timer" parent="."]
+wait_time = 0.01
+one_shot = true

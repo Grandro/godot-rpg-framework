@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://tnphnasgxf20"]
+
+[ext_resource type="PackedScene" uid="uid://cl2vhhqvmf6i2" path="res://Scenes/Maps/Map_Base/3D/Map_Base.tscn" id="1_alevk"]
+[ext_resource type="Script" uid="uid://dok0arl2xsuss" path="res://Scenes/Maps/3D/Game_Over/Scripts/Game_Over.gd" id="2_t2cey"]
+[ext_resource type="PackedScene" uid="uid://d3rnjkhvcxxr0" path="res://Scenes/Player/3D/Player.tscn" id="3_6pleh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ldx6g"]
+
+[sub_resource type="Sky" id="Sky_1fsf3"]
+sky_material = SubResource("ProceduralSkyMaterial_ldx6g")
+
+[sub_resource type="Environment" id="Environment_eccmf"]
+background_mode = 1
+sky = SubResource("Sky_1fsf3")
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 0.6
+tonemap_white = 1.4
+ssao_radius = 16.0
+ssil_radius = 0.01
+glow_enabled = true
+glow_normalized = true
+glow_bloom = 0.3
+glow_blend_mode = 0
+glow_hdr_luminance_cap = 2.0
+volumetric_fog_density = 0.1284
+volumetric_fog_length = 52.2
+adjustment_enabled = true
+adjustment_saturation = 0.6
+
+[node name="Game_Over" instance=ExtResource("1_alevk")]
+script = ExtResource("2_t2cey")
+
+[node name="Player" parent="Objects" index="2" instance=ExtResource("3_6pleh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3.34, 9.25)
+
+[node name="Env" parent="." index="4"]
+environment = SubResource("Environment_eccmf")
+
+[node name="Canvas" type="CanvasLayer" parent="." index="5"]
+
+[node name="Heading" type="Label" parent="Canvas" index="0"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 72
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1

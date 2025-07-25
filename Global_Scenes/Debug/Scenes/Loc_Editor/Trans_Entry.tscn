@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://b201uw08dpcly"]
+
+[ext_resource type="Script" uid="uid://cgfjk6v5averl" path="res://Global_Scenes/Debug/Scenes/Loc_Editor/Scripts/Trans_Entry.gd" id="2"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="3"]
+
+[node name="Trans_Entry" type="VBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("3")
+script = ExtResource("2")
+
+[node name="Heading" type="RichTextLabel" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Text" type="TextEdit" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+wrap_mode = 1

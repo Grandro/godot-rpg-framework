@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq841sthxrgcs"]
+
+[ext_resource type="Script" uid="uid://d84sycd0p04w" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Types/Scripts/Array.gd" id="1_s6n1h"]
+
+[node name="Array" type="VBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(300, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_s6n1h")
+
+[node name="Select" type="Button" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Value" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Size" type="PanelContainer" parent="Value"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Value/Size"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="HBox" type="HBoxContainer" parent="Value/Size/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 52
+
+[node name="Desc" type="Label" parent="Value/Size/Margin/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Size:"
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="Value/Size/Margin/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Entries" type="VBoxContainer" parent="Value"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0

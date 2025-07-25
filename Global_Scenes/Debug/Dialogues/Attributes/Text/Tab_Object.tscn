@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc3gt430rdx13"]
+
+[ext_resource type="PackedScene" uid="uid://p8udo2171tc7" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/Base/Tab_Base.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://co04pnio1htpq" path="res://Global_Scenes/Debug/Scenes/Object_Select/Object_Select.tscn" id="2"]
+[ext_resource type="Script" uid="uid://uclnxy7lfrb4" path="res://Global_Scenes/Debug/Dialogues/Attributes/Text/Scripts/Tab_Object.gd" id="3"]
+
+[node name="Tab_Object" groups=["Translated"] instance=ExtResource("1")]
+script = ExtResource("3")
+_e_key = "Object"
+
+[node name="Object" parent="Margin/HSplit/Left" index="0" instance=ExtResource("2")]
+layout_mode = 2
+
+[node name="Ensure_Visibility" type="VBoxContainer" parent="Margin/HSplit/Left" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Ensure_Visibility" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_ENSURE_VISIBILITY"
+vertical_alignment = 1
+
+[node name="Value" type="CheckBox" parent="Margin/HSplit/Left/Ensure_Visibility" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2

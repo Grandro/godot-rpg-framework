@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://biq4rxen0mdkv"]
+
+[ext_resource type="PackedScene" uid="uid://c7rf1kiek0pcb" path="res://Scenes/Object/Comps/Speech_Bubble/Speech_Bubble_UI.tscn" id="1_hreot"]
+[ext_resource type="Script" uid="uid://d346d6ykne0w4" path="res://Scenes/Object/Comps/2D/Scripts/Speech_Bubble.gd" id="1_lx78s"]
+
+[node name="Speech_Bubble" type="Node2D" groups=["Comp"]]
+script = ExtResource("1_lx78s")
+
+[node name="Speech_Bubble_UI" parent="." instance=ExtResource("1_hreot")]
+offset_top = -116.0
+offset_bottom = -20.0
+
+[node name="Choices_Box" parent="Speech_Bubble_UI/VBox" index="1"]
+theme = null
+
+[editable path="Speech_Bubble_UI"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddv5m0gujpmte"]
+
+[ext_resource type="PackedScene" uid="uid://bnv7mi5jlnul0" path="res://Global_Resources/Mapping/3D/Mesh_Tile_Group.tscn" id="1_kn8vw"]
+[ext_resource type="Script" uid="uid://8whsnbk2fgeg" path="res://Global_Resources/Mapping/3D/Scripts/Mesh_Tile_Group_Collision_Base.gd" id="2_ymc1s"]
+
+[node name="Mesh_Tile_Group_Collision_Base" instance=ExtResource("1_kn8vw")]
+script = ExtResource("2_ymc1s")
+_e_coll_base_size = Vector3(1, 1, 1)
+
+[node name="Static" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="Static" index="0"]

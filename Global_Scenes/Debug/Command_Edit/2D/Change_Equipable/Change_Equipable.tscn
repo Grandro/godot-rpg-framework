@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6eonecpp4pyg"]
+
+[ext_resource type="PackedScene" uid="uid://clcnrrgit18fj" path="res://Global_Scenes/Debug/Command_Edit/2D/Command_Preview_Object.tscn" id="1_rl743"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="2_jk4wt"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_i71py"]
+[ext_resource type="PackedScene" uid="uid://cy6l2i5yo5eci" path="res://Global_Scenes/Debug/Command_Edit/Change_Equipable/Equipable_Group.tscn" id="4_wnkwq"]
+
+[node name="Change_Equipable" instance=ExtResource("1_rl743")]
+_e_draw_grid_scene = null
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
+_e_needed_comps = Array[String](["Reference", "Equipment"])
+
+[node name="Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("2_jk4wt")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_TYPE_%s"
+_e_options = ["Equip", "Unequip"]
+_e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
+_e_var_select_scene = ExtResource("3_i71py")
+
+[node name="Equipable_Group" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="2" instance=ExtResource("4_wnkwq")]
+layout_mode = 2
+
+[node name="Equipable" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="3" instance=ExtResource("2_jk4wt")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_EQUIPABLE"
+_e_var_select_scene = ExtResource("3_i71py")
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]

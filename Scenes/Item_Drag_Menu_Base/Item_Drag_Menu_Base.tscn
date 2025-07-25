@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://fyofiebgtifb"]
+
+[ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="1_56sds"]
+[ext_resource type="Script" uid="uid://c2uoe47d3kyxi" path="res://Scenes/Item_Drag_Menu_Base/Scripts/Item_Drag_Menu_Base.gd" id="2_23tvb"]
+
+[node name="Item_Drag_Menu_Base" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_23tvb")
+
+[node name="Back" parent="." instance=ExtResource("1_56sds")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 116.0
+offset_bottom = 76.0
+
+[node name="Margin" type="MarginContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 24
+alignment = 1

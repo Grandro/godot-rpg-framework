@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://du0jobeb0veao"]
+
+[ext_resource type="Script" uid="uid://sgvi12h6qe68" path="res://Scenes/Object/Comps/Scripts/Stater.gd" id="1_ak63r"]
+
+[node name="Stater" type="Node" groups=["Comp"]]
+script = ExtResource("1_ak63r")

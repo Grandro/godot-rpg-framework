@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://xmfga7dl3slw"]
+
+[ext_resource type="PackedScene" uid="uid://c5bj8iy5uuq2c" path="res://Scenes/Loot/Rewards/Rewards_Loot.tscn" id="1_0mdu2"]
+[ext_resource type="Script" uid="uid://bpqq8x11wkv62" path="res://Scenes/Loot/Rewards/Scripts/Rewards_Result.gd" id="2_24l76"]
+[ext_resource type="PackedScene" uid="uid://qcqqgrh1pdjg" path="res://Scenes/Item_Entry/Item_Entry_Result.tscn" id="3_enpy8"]
+
+[node name="Rewards_Result" instance=ExtResource("1_0mdu2")]
+script = ExtResource("2_24l76")
+_e_item_entry_scene = ExtResource("3_enpy8")

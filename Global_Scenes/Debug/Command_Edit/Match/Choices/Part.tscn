@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bglcnyk4hrubp"]
+
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="1_58gfx"]
+[ext_resource type="Script" uid="uid://bjcgo8a6gxajn" path="res://Global_Scenes/Debug/Command_Edit/Match/Choices/Scripts/Part.gd" id="2_6enyn"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_few6b"]
+
+[node name="Part" instance=ExtResource("1_58gfx")]
+script = ExtResource("2_6enyn")
+_e_heading_loc_id = "DEBUG_PART"
+_e_var_select_scene = ExtResource("3_few6b")
+
+[node name="Heading" parent="HBox" index="0"]
+text = "DEBUG_PART"

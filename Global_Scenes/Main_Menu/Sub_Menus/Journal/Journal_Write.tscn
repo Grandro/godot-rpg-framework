@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c10fivgn3ropo"]
+
+[ext_resource type="PackedScene" uid="uid://b4fnx40pilc8i" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/Journal.tscn" id="1"]
+
+[node name="Journal_Write" instance=ExtResource("1")]
+_e_state = "Write"
+
+[node name="Heading" parent="VBox" index="0"]
+text = "WRITE"

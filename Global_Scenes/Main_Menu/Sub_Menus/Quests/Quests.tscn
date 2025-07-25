@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5e4cxmg5en5w"]
+
+[ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="2"]
+[ext_resource type="Script" uid="uid://d1ps1ajx6ul57" path="res://Global_Scenes/Main_Menu/Sub_Menus/Quests/Scripts/Quests.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://clbcurkhls2yb" path="res://Global_Scenes/Debug/Scenes/Entry_List/Quest_Entry_List.tscn" id="5_c04vh"]
+[ext_resource type="PackedScene" uid="uid://bnnp5e33pssq4" path="res://Global_Scenes/Main_Menu/Sub_Menus/Quests/Info/Info_Pin.tscn" id="6"]
+
+[node name="Quests" type="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4")
+
+[node name="Background" type="TextureRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch_mode = 1
+
+[node name="Back" parent="." instance=ExtResource("2")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 112.0
+offset_bottom = 64.0
+size_flags_horizontal = 0
+
+[node name="Heading" type="Label" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 48
+text = "Quests"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Margin" type="MarginContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 88.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="HBox" type="HBoxContainer" parent="Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Quest_List" parent="Margin/HBox" instance=ExtResource("5_c04vh")]
+layout_mode = 2
+
+[node name="Info" parent="Margin/HBox" instance=ExtResource("6")]
+layout_mode = 2

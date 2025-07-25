@@ -1,0 +1,235 @@
+[gd_scene load_steps=14 format=3 uid="uid://cnaph10yo5bij"]
+
+[ext_resource type="PackedScene" uid="uid://duj1q7mhu6mlg" path="res://Global_Scenes/Dialogue_System/Thread/Process/Process_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://qeeeqw0gojl8" path="res://Global_Scenes/Dialogue_System/Thread/Process/Scripts/Process_Info.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cc5yoyg4s0ec4" path="res://Global_Scenes/Dialogue_System/Sprites/Text_Box.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://c0d6my4fuig56" path="res://Global_Scenes/Dialogue_System/Sprites/Proceed_Dot/Spritesheet.png" id="6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqodl"]
+atlas = ExtResource("6")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pew27"]
+atlas = ExtResource("6")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="Animation" id="6"]
+resource_name = "Blink"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_cqodl"), SubResource("AtlasTexture_pew27")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7k16w"]
+_data = {
+&"Blink": SubResource("6")
+}
+
+[sub_resource type="Animation" id="7"]
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="8"]
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="9"]
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_i7let"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8d5lt"]
+_data = {
+&"Fade_In": SubResource("7"),
+&"Fade_Out": SubResource("8"),
+&"Faded_In": SubResource("9"),
+&"RESET": SubResource("Animation_i7let")
+}
+
+[node name="Process_Info" instance=ExtResource("1")]
+script = ExtResource("2")
+
+[node name="Background" type="Panel" parent="." index="0"]
+self_modulate = Color(1, 1, 1, 0.196078)
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="." index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(640, 360)
+mouse_filter = 2
+
+[node name="Left_Sprite" type="TextureRect" parent="Control" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -618.0
+offset_right = 504.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Right_Sprite" type="TextureRect" parent="Control" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -504.0
+offset_top = -618.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="Info" type="NinePatchRect" parent="Control" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -432.0
+offset_top = -50.0
+offset_right = 432.0
+offset_bottom = 50.0
+texture = ExtResource("4")
+patch_margin_left = 48
+patch_margin_top = 48
+patch_margin_right = 48
+patch_margin_bottom = 48
+
+[node name="Margin" type="MarginContainer" parent="Control/Info" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 34
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 34
+theme_override_constants/margin_bottom = 24
+
+[node name="Text" type="RichTextLabel" parent="Control/Info/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "1 [img]res://Global_Resources/Sprites/Coin/36_Single.png[/img] verloren. Und auch noch einen Käse. Und eine Melone. Und eine Laugenstange. Ein wahrlicher Verlust"
+fit_content = true
+scroll_active = false
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.0
+
+[node name="Proceed_Dot" type="TextureRect" parent="Control/Info" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -24.0
+size_flags_vertical = 8
+texture = SubResource("AtlasTexture_cqodl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Anims" type="AnimationPlayer" parent="Control/Info/Proceed_Dot" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_7k16w")
+}
+autoplay = "Blink"
+
+[node name="Anims" type="AnimationPlayer" parent="Control" index="3"]
+callback_mode_method = 1
+libraries = {
+&"": SubResource("AnimationLibrary_8d5lt")
+}

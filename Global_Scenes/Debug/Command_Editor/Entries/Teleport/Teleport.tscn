@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cutmq5jo84adl"]
+
+[ext_resource type="PackedScene" uid="uid://c8lns07r4xyu8" path="res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Base.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bencex1ddgld3" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Branch.tscn" id="1_41487"]
+[ext_resource type="Script" uid="uid://dakib7m1dfnqg" path="res://Global_Scenes/Debug/Command_Editor/Entries/Teleport/Scripts/Teleport.gd" id="3"]
+
+[node name="Teleport" instance=ExtResource("1_41487")]
+script = ExtResource("3")
+_e_start_branch_idx = 1
+_e_color = Color(0.07, 0.7, 0.553, 1)
+
+[node name="Battle_Won" parent="HBox/VBox/Branches" index="1" instance=ExtResource("1")]
+layout_mode = 2
+
+[node name="Battle_Lost" parent="HBox/VBox/Branches" index="2" instance=ExtResource("1")]
+layout_mode = 2

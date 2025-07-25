@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfcne2xq1hclh"]
+
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="1"]
+[ext_resource type="Script" uid="uid://2fih8sdaha7c" path="res://Global_Scenes/Debug/Fix_Warnings/Entries/Scripts/Fix_Warning_Base.gd" id="2"]
+
+[node name="Fix_Warning_Base" type="HBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 505.0
+offset_bottom = 50.0
+theme = ExtResource("1")
+theme_override_constants/separation = 16
+script = ExtResource("2")
+
+[node name="Value_Keys" type="Label" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Old" type="HBoxContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="VBox/Old"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_OLD_VALUE"
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="VBox/Old"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="New" type="HBoxContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="VBox/New"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_NEW_VALUE"
+vertical_alignment = 1

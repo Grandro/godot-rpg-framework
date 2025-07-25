@@ -1,0 +1,65 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl2vhhqvmf6i2"]
+
+[ext_resource type="Script" uid="uid://bdu4qahry0bqi" path="res://Scenes/Maps/Map_Base/3D/Scripts/Map_Base.gd" id="1_bwxys"]
+[ext_resource type="PackedScene" uid="uid://cngj2ughe8rfn" path="res://Scenes/Maps/Map_Base/3D/Free_Camera/Free_Camera.tscn" id="1_hg2cn"]
+[ext_resource type="PackedScene" uid="uid://c67cxkpsuanog" path="res://Scenes/Maps/Map_Base/3D/Free_Audio/Free_Audio.tscn" id="3_jakg5"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_pbba3"]
+geometry_source_geometry_mode = 2
+geometry_source_group_name = &"NavMesh_Main"
+cell_size = 0.2
+cell_height = 0.2
+agent_height = 1.8
+agent_radius = 0.4
+agent_max_climb = 0.2
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ldx6g"]
+
+[sub_resource type="Sky" id="Sky_1fsf3"]
+sky_material = SubResource("ProceduralSkyMaterial_ldx6g")
+
+[sub_resource type="Environment" id="Environment_r3ed4"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_1fsf3")
+ambient_light_color = Color(0.5, 0.5, 0.5, 1)
+ambient_light_sky_contribution = 0.3
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 0.6
+tonemap_white = 1.4
+glow_strength = 1.9
+volumetric_fog_albedo = Color(0.4, 0.4, 0.4, 1)
+volumetric_fog_emission = Color(0.2215, 0.25, 0.22, 1)
+volumetric_fog_emission_energy = 0.5
+
+[node name="Map_Base" type="Node3D"]
+script = ExtResource("1_bwxys")
+
+[node name="Terrain" type="Node3D" parent="."]
+
+[node name="Below" type="Node3D" parent="Terrain"]
+
+[node name="Same_As" type="Node3D" parent="Terrain"]
+
+[node name="Areas" type="Node3D" parent="Terrain"]
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="$Free_Camera" parent="Objects" instance=ExtResource("1_hg2cn")]
+
+[node name="$Free_Audio" parent="Objects" instance=ExtResource("3_jakg5")]
+
+[node name="Teleporters" type="Node3D" parent="Objects"]
+
+[node name="Nav_Regions" type="Node3D" parent="."]
+
+[node name="Main" type="NavigationRegion3D" parent="Nav_Regions"]
+navigation_mesh = SubResource("NavigationMesh_pbba3")
+
+[node name="Bounds" type="Node3D" parent="."]
+
+[node name="Env" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_r3ed4")
+
+[node name="Cutscenes" type="Node3D" parent="."]

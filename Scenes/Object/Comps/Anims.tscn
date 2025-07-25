@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1q143fixhaj5"]
+
+[ext_resource type="Script" uid="uid://cekevnb6xtwoh" path="res://Scenes/Object/Comps/Scripts/Anims.gd" id="1_rblvu"]
+
+[node name="Anims" type="AnimationPlayer" groups=["Comp"]]
+script = ExtResource("1_rblvu")

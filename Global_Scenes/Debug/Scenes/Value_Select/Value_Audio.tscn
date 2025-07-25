@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://6eepsaof6sfg"]
+
+[ext_resource type="PackedScene" uid="uid://be6yntrlk06ra" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Select.tscn" id="1_3315q"]
+[ext_resource type="PackedScene" uid="uid://d2lf8mjy8lsm8" path="res://Global_Scenes/Debug/Scenes/Audio_Select/Audio_Select.tscn" id="2_3c3ee"]
+[ext_resource type="Script" uid="uid://c2du7v6rf7bpo" path="res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Audio.gd" id="2_mirs6"]
+
+[node name="Value_Audio" instance=ExtResource("1_3315q")]
+script = ExtResource("2_mirs6")
+_e_heading_loc_id = "DEBUG_CUTSCENES_AUDIO"
+
+[node name="Heading" parent="HBox" index="0"]
+text = "DEBUG_CUTSCENES_AUDIO"
+
+[node name="Value" parent="." index="1" instance=ExtResource("2_3c3ee")]
+layout_mode = 2

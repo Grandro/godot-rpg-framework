@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://mddl8g7ub2qx"]
+
+[ext_resource type="Script" uid="uid://dp8n6t6vip36o" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Scripts/Shield_Bar.gd" id="1_jv3st"]
+
+[node name="Shield_Bar" type="Node3D" groups=["Comp"]]
+script = ExtResource("1_jv3st")

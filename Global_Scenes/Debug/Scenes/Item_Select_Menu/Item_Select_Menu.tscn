@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqey1oytewlc7"]
+
+[ext_resource type="PackedScene" uid="uid://tw8jq5isd0qp" path="res://Scenes/Item_Select_Base_Menu/Item_Select_Base_Menu.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://g2t50t4punf3" path="res://Scenes/Item_Select_Base_Menu/Item_Select.tscn" id="2"]
+[ext_resource type="Script" uid="uid://cr2ph3a4vvoxa" path="res://Global_Scenes/Debug/Scenes/Item_Select_Menu/Scripts/Item_Select_Menu.gd" id="3"]
+
+[node name="Item_Select_Menu" instance=ExtResource("1")]
+script = ExtResource("3")
+
+[node name="Item_Select" parent="." index="2" instance=ExtResource("2")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 64.0
+offset_right = 1280.0
+offset_bottom = 720.0

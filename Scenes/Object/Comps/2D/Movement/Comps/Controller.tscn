@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckn88q3371r8o"]
+
+[ext_resource type="PackedScene" uid="uid://bx4rh5qdrkc85" path="res://Scenes/Object/Comps/Movement/Comps/Controller_Base.tscn" id="1_552s0"]
+[ext_resource type="Script" uid="uid://ctdqfnhon0r10" path="res://Scenes/Object/Comps/2D/Movement/Comps/Scripts/Controller.gd" id="2_aybei"]
+
+[node name="Controller" instance=ExtResource("1_552s0")]
+script = ExtResource("2_aybei")

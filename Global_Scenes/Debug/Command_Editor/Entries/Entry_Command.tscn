@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb1ikaj310yps"]
+
+[ext_resource type="PackedScene" uid="uid://bc28ss3fdbnss" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Base.tscn" id="1_vo88y"]
+[ext_resource type="Script" uid="uid://dsaexjlwdrp2m" path="res://Global_Scenes/Debug/Command_Editor/Entries/Scripts/Entry_Command.gd" id="2_763i6"]
+
+[node name="Entry_Command" instance=ExtResource("1_vo88y")]
+script = ExtResource("2_763i6")
+_e_color = Color(1, 1, 1, 1)

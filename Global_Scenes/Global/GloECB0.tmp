@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=3 uid="uid://dv0rcbf00aavw"]
+
+[ext_resource type="Script" path="res://Global_Scenes/Global/Scripts/Global.gd" id="1"]
+[ext_resource type="Material" uid="uid://p1br5wo0d1l3" path="res://Global_Resources/Materials/Trans.tres" id="2"]
+[ext_resource type="Script" path="res://Global_Scripts/Global_Data.gd" id="2_3lg33"]
+[ext_resource type="Material" uid="uid://dijbsalawfika" path="res://Global_Resources/Materials/Glitch_1.tres" id="3"]
+[ext_resource type="Animation" uid="uid://don0ss2xswwcf" path="res://Global_Resources/Anims/Transition/Faded_In.tres" id="4"]
+[ext_resource type="Animation" uid="uid://b31x8cyd437pm" path="res://Global_Resources/Anims/Transition/Faded_Out.tres" id="5"]
+[ext_resource type="Animation" uid="uid://0xxa4f248q64" path="res://Global_Resources/Anims/Transition/Fade_Out_In.tres" id="6"]
+[ext_resource type="Animation" uid="uid://dt7hek27knp8y" path="res://Global_Resources/Anims/Transition/Fade_In.tres" id="7"]
+[ext_resource type="Animation" uid="uid://dnajvqs54okh1" path="res://Global_Resources/Anims/Transition/Fade_Out.tres" id="8"]
+[ext_resource type="Material" uid="uid://dp1yaue4vyhr0" path="res://Global_Resources/Materials/Glitch_2.tres" id="9"]
+[ext_resource type="Material" uid="uid://c4k85woclsjry" path="res://Global_Resources/Materials/Glitch_3_1.tres" id="10"]
+[ext_resource type="Material" uid="uid://dm4wfotlouw5y" path="res://Global_Resources/Materials/Glitch_3_2.tres" id="11"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00c6p"]
+_data = {
+"Fade_In": ExtResource("7"),
+"Fade_Out": ExtResource("8"),
+"Fade_Out_In": ExtResource("6"),
+"Faded_In": ExtResource("4"),
+"Faded_Out": ExtResource("5")
+}
+
+[node name="Global" type="Node"]
+process_mode = 3
+script = ExtResource("1")
+_e_global_data_handler = ExtResource("2_3lg33")
+
+[node name="Play_Time" type="Timer" parent="."]
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+layer = 125
+
+[node name="Trans" type="ColorRect" parent="Canvas"]
+material = ExtResource("2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Anims" type="AnimationPlayer" parent="Canvas/Trans"]
+libraries = {
+"": SubResource("AnimationLibrary_00c6p")
+}
+
+[node name="Glitch_Shader_1" type="ColorRect" parent="Canvas"]
+visible = false
+material = ExtResource("3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Glitch_Shader_2" type="ColorRect" parent="Canvas"]
+visible = false
+material = ExtResource("9")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Glitch_Shader_3" type="Control" parent="Canvas"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BackBuffer_1" type="BackBufferCopy" parent="Canvas/Glitch_Shader_3"]
+position = Vector2(640, 360)
+scale = Vector2(6.4, 3.6)
+copy_mode = 2
+
+[node name="1" type="ColorRect" parent="Canvas/Glitch_Shader_3/BackBuffer_1"]
+material = ExtResource("10")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+mouse_filter = 2
+
+[node name="BackBuffer_2" type="BackBufferCopy" parent="Canvas/Glitch_Shader_3"]
+position = Vector2(640, 360)
+scale = Vector2(6.4, 3.6)
+copy_mode = 2
+
+[node name="2" type="ColorRect" parent="Canvas/Glitch_Shader_3/BackBuffer_2"]
+material = ExtResource("11")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+mouse_filter = 2

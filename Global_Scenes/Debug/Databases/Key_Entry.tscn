@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://h8lpqcltg66w"]
+
+[ext_resource type="Script" uid="uid://cq4bppu0nqalq" path="res://Global_Scenes/Debug/Databases/Scripts/Key_Entry.gd" id="1"]
+
+[node name="Key_Entry" type="Button"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 287.0
+offset_bottom = 23.0
+text = "DEBUG_DATABASES_CUTSCENES"
+script = ExtResource("1")

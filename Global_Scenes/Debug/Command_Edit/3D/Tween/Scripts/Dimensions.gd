@@ -1,0 +1,36 @@
+extends "res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview/Scripts/Dimensions.gd"
+
+var _a_Start_Sprite = preload("res://Global_Scenes/Debug/Sprites/Path/Start.png")
+var _a_End_Sprite = preload("res://Global_Scenes/Debug/Sprites/Path/End.png")
+
+var _a_start_point_vec = Vector3.ZERO
+var _a_end_point_vec = Vector3.ZERO
+
+func update_start_point(p_pos):
+	var start_point = _a_entity.get_start_point_instance()
+	var grid_offset = _a_grid_offset.get_value()
+	var scale_ = _a_grid_step.get_value()
+	start_point.set_position(p_pos + grid_offset + Vector3(0.0, 0.01, 0.0))
+	start_point.set_scale(scale_)
+	start_point.set_texture(_a_Start_Sprite)
+	
+	_a_start_point_vec = p_pos
+
+func update_end_point(p_pos):
+	var end_point = _a_entity.get_end_point_instance()
+	var grid_offset = _a_grid_offset.get_value()
+	var scale_ = _a_grid_step.get_value()
+	end_point.set_position(p_pos + grid_offset + Vector3(0.0, 0.01, 0.0))
+	end_point.set_scale(scale_)
+	end_point.set_texture(_a_End_Sprite)
+	
+	_a_end_point_vec = p_pos
+
+func get_start_point_vec():
+	return _a_start_point_vec
+
+func get_end_point_vec():
+	return _a_end_point_vec
+
+func is_value_vector(p_value):
+	return typeof(p_value) == TYPE_VECTOR3

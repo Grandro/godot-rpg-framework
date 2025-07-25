@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ooodqj0cscur"]
+
+[ext_resource type="Script" uid="uid://cmtkgpcheipen" path="res://Global_Scenes/Debug/Scenes/Num_Edit/Scripts/Num_Edit.gd" id="1"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="1_r788k"]
+
+[node name="Num_Edit" type="SpinBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(50, 0)
+offset_right = 50.0
+offset_bottom = 24.0
+theme = ExtResource("1_r788k")
+script = ExtResource("1")

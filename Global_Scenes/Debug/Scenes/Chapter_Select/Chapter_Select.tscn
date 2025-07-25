@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://wmiiwjjs18ei"]
+
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="1_cyxrt"]
+[ext_resource type="Script" uid="uid://tcon4rsi0wk5" path="res://Global_Scenes/Debug/Scenes/Chapter_Select/Scripts/Chapter_Select.gd" id="2_x31k1"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_i677p"]
+
+[node name="Chapter_Select" instance=ExtResource("1_cyxrt")]
+script = ExtResource("2_x31k1")
+_e_heading_loc_id = "DEBUG_CUTSCENES_CHAPTER"
+_e_var_select_scene = ExtResource("3_i677p")
+
+[node name="Heading" parent="HBox" index="0"]
+text = "DEBUG_CUTSCENES_CHAPTER"

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://csxl7e1wrfvnx"]
+
+[ext_resource type="Script" uid="uid://s60ksj25k6l3" path="res://Global_Scenes/Debug/Preview/Scripts/Preview.gd" id="3"]
+
+[node name="Preview" type="SubViewportContainer"]
+light_mask = 8
+visibility_layer = 8
+stretch = true
+script = ExtResource("3")

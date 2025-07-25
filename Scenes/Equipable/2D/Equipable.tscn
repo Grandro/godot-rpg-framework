@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bso2guo5mw3sl"]
+
+[ext_resource type="Script" uid="uid://fd0pxgtteut4" path="res://Scenes/Equipable/2D/Scripts/Equipable.gd" id="1_genel"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_608ht"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1acn7"]
+
+[node name="Equipable" type="Sprite2D"]
+light_mask = 4
+visibility_layer = 4
+script = ExtResource("1_genel")
+
+[node name="Anims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_608ht"),
+&"SV": SubResource("AnimationLibrary_1acn7")
+}

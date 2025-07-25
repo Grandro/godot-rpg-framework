@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc15wpmb3jn3l"]
+
+[ext_resource type="Script" uid="uid://bi8srw2efwwp1" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Specials_Menu/Scripts/Specials_Menu.gd" id="2_vf8o6"]
+
+[node name="Specials_Menu" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -360.0
+offset_bottom = 360.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("2_vf8o6")
+
+[node name="Panel" type="PanelContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Desc" type="RichTextLabel" parent="Panel/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center]"
+fit_content = true
+
+[node name="HSep" type="HSeparator" parent="Panel/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Entries" type="VBoxContainer" parent="Panel/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="OK" type="AudioStreamPlayer" parent="Audio"]
+bus = &"SFX"
+
+[node name="Cancel" type="AudioStreamPlayer" parent="Audio"]
+bus = &"SFX"

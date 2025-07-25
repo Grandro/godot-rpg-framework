@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://jnvl7qryciia"]
+
+[ext_resource type="PackedScene" uid="uid://bw5vq5wr6c4vv" path="res://Global_Scenes/Debug/Command_Edit/3D/Change_Args/Change_Args.tscn" id="1_aasdh"]
+[ext_resource type="Script" uid="uid://celkj3pxfgblx" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Change_Dialogue_Args.gd" id="2_xyguv"]
+
+[node name="Change_Dialogue_Args" instance=ExtResource("1_aasdh")]
+script = ExtResource("2_xyguv")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Value" index="1"]
+_e_children_type = "String"
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Value"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://feuegl0w0af3"]
+
+[ext_resource type="Resource" uid="uid://b13jp3tte11bl" path="res://Global_Resources/Databases/Maps/3D/Debug_3D/Destinations/Start.tres" id="1_5s73t"]
+[ext_resource type="Script" uid="uid://cgx4qljo5ouln" path="res://Global_Resources/Databases/Maps/Map_Data.gd" id="2_x0m12"]
+
+[resource]
+script = ExtResource("2_x0m12")
+_e_path = "res://Scenes/Maps/3D/Debug/Debug_3D.tscn"
+_e_destinations = {
+"Start": ExtResource("1_5s73t")
+}

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://rjec7v7j244o"]
+
+[ext_resource type="Script" uid="uid://cnnahinyneu4r" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Enemy_Select/Scripts/Enemy_Select.gd" id="1_5jnh5"]
+
+[node name="Enemy_Select" type="Node"]
+script = ExtResource("1_5jnh5")
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="OK" type="AudioStreamPlayer" parent="Audio"]
+bus = &"SFX"
+
+[node name="Cancel" type="AudioStreamPlayer" parent="Audio"]
+bus = &"SFX"

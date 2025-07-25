@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://b028hrfen5mpa"]
+
+[ext_resource type="Script" uid="uid://bnff4gtumd1wo" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Scripts/Area.gd" id="1_wotx5"]
+
+[node name="Area" type="Area3D"]
+collision_layer = 16
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_wotx5")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+volume_db = -20.0
+max_distance = 10.0
+max_polyphony = 4
+bus = &"SFX"
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+
+[node name="Veil" type="Sprite3D" parent="."]
+layers = 4
+pixel_size = 0.02
+shaded = true
+alpha_cut = 2
+texture_filter = 0

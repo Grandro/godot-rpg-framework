@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://5tyevpbxojid"]
+
+[ext_resource type="PackedScene" uid="uid://clcnrrgit18fj" path="res://Global_Scenes/Debug/Command_Edit/2D/Command_Preview_Object.tscn" id="1_fgdlu"]
+[ext_resource type="Script" uid="uid://disusjpt4vt12" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Default_Object_Key.gd" id="2_0b21k"]
+
+[node name="Default_Object_Key" instance=ExtResource("1_fgdlu")]
+script = ExtResource("2_0b21k")
+_e_draw_grid = false
+_e_draw_grid_scene = null
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]

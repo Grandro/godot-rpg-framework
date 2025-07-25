@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://d02kbbqaldtti"]
+
+[ext_resource type="PackedScene" uid="uid://dwimv7b4jcly5" path="res://Scenes/Stats_Display/Stats_Display_Base.tscn" id="1_i1cdb"]
+[ext_resource type="Script" uid="uid://3ha1onhknmf0" path="res://Scenes/Stats_Display/Scripts/Stats_Display_Global.gd" id="2_p1oe7"]
+
+[node name="Stats_Display_Global" instance=ExtResource("1_i1cdb")]
+script = ExtResource("2_p1oe7")

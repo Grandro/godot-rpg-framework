@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://q1xhc02sd4r5"]
+
+[ext_resource type="PackedScene" uid="uid://b0t5u8s6p2dc" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entry_List.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bmfse2x8lynva" path="res://Global_Scenes/Debug/Scenes/Entry_List/Scripts/Key_Entry_List.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://dpy7gbnx3mdhd" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Key_Entry.tscn" id="3_a6k0j"]
+
+[node name="Key_Entry_List" instance=ExtResource("1")]
+script = ExtResource("3")
+_e_entry_scene = ExtResource("3_a6k0j")

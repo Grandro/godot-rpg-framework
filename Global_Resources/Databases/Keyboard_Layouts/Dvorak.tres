@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cdsogy3mi43o"]
+
+[ext_resource type="Script" uid="uid://bukb4w15nebn0" path="res://Global_Resources/Databases/Keyboard_Layouts/Keyboard_Layout_Data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+_e_layout = [[49, 50, 51, 52, 53, 54, 55, 56, 57, 48], [80, 89, 70, 71, 67, 82, 76], [65, 79, 69, 85, 73, 68, 72, 84, 78, 83, 39], [81, 74, 75, 88, 66, 77, 87, 86, 90, 45], [32]]

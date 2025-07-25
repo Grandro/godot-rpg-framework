@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://df13oq8biqf14"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1_6l705"]
+[ext_resource type="Script" uid="uid://dx7sfov1jngyw" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Jump.gd" id="2_m72he"]
+[ext_resource type="Script" uid="uid://db3sax7sbtgkw" path="res://Global_Scenes/Cutscene_System/Threads/2D/Jump/Scripts/Dimensions.gd" id="3_ynnns"]
+
+[node name="Jump" instance=ExtResource("1_6l705")]
+script = ExtResource("2_m72he")
+_e_dimensions = ExtResource("3_ynnns")

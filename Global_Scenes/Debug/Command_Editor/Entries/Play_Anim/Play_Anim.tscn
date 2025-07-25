@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://doxbtwdvb4hkn"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_67mo4"]
+[ext_resource type="Script" uid="uid://dvgl3spegetqi" path="res://Global_Scenes/Debug/Command_Editor/Entries/Play_Anim/Scripts/Play_Anim.gd" id="2_fwimf"]
+
+[node name="Play_Anim" instance=ExtResource("1_67mo4")]
+script = ExtResource("2_fwimf")
+_e_color = Color(0.901961, 0.160784, 0.223529, 1)

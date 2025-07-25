@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmysqox083lhl"]
+
+[ext_resource type="PackedScene" uid="uid://be6yntrlk06ra" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Select.tscn" id="1_iorq1"]
+[ext_resource type="Script" uid="uid://bn72swnj65bur" path="res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Bool.gd" id="2_2hpg1"]
+
+[node name="Value_Bool" instance=ExtResource("1_iorq1")]
+script = ExtResource("2_2hpg1")
+
+[node name="Value" type="CheckBox" parent="." index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2

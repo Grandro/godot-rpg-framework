@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsy6fkv2on18"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1_e6qlt"]
+[ext_resource type="Script" uid="uid://c4olf3hxy1kf" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Move_Free_Camera.gd" id="2_1jp3e"]
+
+[node name="Move_Free_Camera" instance=ExtResource("1_e6qlt")]
+script = ExtResource("2_1jp3e")
+_e_dim = "3D"

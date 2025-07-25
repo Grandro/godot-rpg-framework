@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://vjwyhyhchklw"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_wdkei"]
+[ext_resource type="Script" uid="uid://b6b2hnowj0m44" path="res://Global_Scenes/Debug/Command_Editor/Entries/Show_Popup/Scripts/Show_Popup.gd" id="2_ooabg"]
+
+[node name="Show_Popup" instance=ExtResource("1_wdkei")]
+script = ExtResource("2_ooabg")
+_e_color = Color(0.07, 0.7, 0.553, 1)

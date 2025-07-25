@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://blnlehoktdefn"]
+
+[ext_resource type="Script" uid="uid://drr58hijr5vbu" path="res://Global_Scenes/Main_Menu/Menus/Scripts/Menu_Base.gd" id="1"]
+
+[node name="Menu_Base" type="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")

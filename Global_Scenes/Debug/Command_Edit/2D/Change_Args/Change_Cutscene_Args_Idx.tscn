@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://da0qscdsngtht"]
+
+[ext_resource type="PackedScene" uid="uid://ccehavcqie1xx" path="res://Global_Scenes/Debug/Command_Edit/2D/Change_Args/Change_Args_Idx.tscn" id="1_ho0f2"]
+
+[node name="Change_Cutscene_Args_Idx" instance=ExtResource("1_ho0f2")]
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Value"]

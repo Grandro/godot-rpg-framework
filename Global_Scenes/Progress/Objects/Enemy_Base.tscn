@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1rufa43a5m0l"]
+
+[ext_resource type="PackedScene" uid="uid://y0ims6itmqkn" path="res://Global_Scenes/Progress/Objects/Object_Base.tscn" id="1_pkpkg"]
+[ext_resource type="Script" uid="uid://0yuyxuao3wiv" path="res://Global_Scenes/Progress/Objects/Scripts/Enemy_Base.gd" id="2_r7t38"]
+
+[node name="Enemy_Base" instance=ExtResource("1_pkpkg")]
+script = ExtResource("2_r7t38")
+
+[node name="Respawn_CD" type="Timer" parent="." index="0"]
+wait_time = 60.0
+one_shot = true

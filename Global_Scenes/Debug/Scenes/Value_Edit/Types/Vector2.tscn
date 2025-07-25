@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3graoo4nc0cd"]
+
+[ext_resource type="Script" uid="uid://bh5lpev6ds560" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Types/Scripts/Vector2.gd" id="1_c0sr5"]
+[ext_resource type="PackedScene" uid="uid://caj33yuoli0g" path="res://Global_Scenes/Debug/Scenes/Float_Edit/Float_Edit.tscn" id="3_h4j7m"]
+
+[node name="Vector2" type="VBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(300, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_c0sr5")
+
+[node name="Select" type="Button" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="X" type="PanelContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="VBox/X"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="VBox/X/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "X"
+vertical_alignment = 1
+
+[node name="Value" parent="VBox/X/HBox" instance=ExtResource("3_h4j7m")]
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+_e_allow_lesser = true
+_e_allow_greater = true
+
+[node name="Y" type="PanelContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="VBox/Y"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="VBox/Y/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Y"
+vertical_alignment = 1
+
+[node name="Value" parent="VBox/Y/HBox" instance=ExtResource("3_h4j7m")]
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+_e_allow_lesser = true
+_e_allow_greater = true

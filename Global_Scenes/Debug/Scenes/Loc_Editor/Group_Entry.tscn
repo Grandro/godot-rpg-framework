@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://celfgly0nsc5h"]
+
+[ext_resource type="PackedScene" uid="uid://b0t5u8s6p2dc" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entry_List.tscn" id="1_ok785"]
+[ext_resource type="Script" uid="uid://drmwghunavs55" path="res://Global_Scenes/Debug/Scenes/Loc_Editor/Scripts/Group_Entry.gd" id="3"]
+[ext_resource type="StyleBox" path="res://Global_Scenes/Debug/Scenes/Value_Edit/StyleBoxes/HSep.tres" id="3_1we1w"]
+[ext_resource type="PackedScene" uid="uid://bt67v8thsau1m" path="res://Global_Scenes/Debug/Scenes/Loc_Editor/Loc_ID_Entry.tscn" id="3_toowc"]
+
+[node name="Group_Entry" instance=ExtResource("1_ok785")]
+size_flags_vertical = 3
+script = ExtResource("3")
+_e_entry_scene = ExtResource("3_toowc")
+_e_delete_loc_id = "CONFIRM_DELETE_LOC_ID"
+_e_show_add = false
+_e_ensure_unique_names = false
+
+[node name="Expand" type="Button" parent="." index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="HSep_1" type="HSeparator" parent="." index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/separator = ExtResource("3_1we1w")
+
+[node name="Scroll" parent="." index="3"]
+vertical_scroll_mode = 0
+
+[node name="HSep_2" type="HSeparator" parent="." index="5"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/separator = ExtResource("3_1we1w")
+
+[editable path="Search"]

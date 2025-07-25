@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://nt5gfdybdx7v"]
+
+[ext_resource type="Script" uid="uid://bhey2li4cdn6e" path="res://Scenes/VP_Container/Scripts/VP.gd" id="1_redwg"]
+
+[node name="VP" type="SubViewport"]
+own_world_3d = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(2, 2)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+script = ExtResource("1_redwg")
+_e_resize = false

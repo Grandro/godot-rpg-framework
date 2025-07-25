@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw6thulft530a"]
+
+[ext_resource type="Script" uid="uid://oiqmp1dyg5ic" path="res://Scenes/Object/Comps/2D/Scripts/Equipment.gd" id="1_gwond"]
+
+[node name="Equipment" type="Node2D" groups=["Comp"]]
+script = ExtResource("1_gwond")
+
+[node name="Head" type="Node2D" parent="."]
+
+[node name="Torso" type="Node2D" parent="."]
+
+[node name="Legs" type="Node2D" parent="."]
+
+[node name="Feet" type="Node2D" parent="."]

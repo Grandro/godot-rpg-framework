@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7nkixvofohdj"]
+
+[ext_resource type="Script" uid="uid://bmsymtswqoghh" path="res://Global_Scenes/Debug/Command_Edit/2D/Scripts/Draw_Grid.gd" id="1_su0ey"]
+
+[node name="Draw_Grid" type="Node2D"]
+script = ExtResource("1_su0ey")

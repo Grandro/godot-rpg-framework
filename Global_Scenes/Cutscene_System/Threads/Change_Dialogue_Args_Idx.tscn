@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccsmpxgwqsppr"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1_c3qlh"]
+[ext_resource type="Script" uid="uid://bf55djrfbgsdn" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Change_Dialogue_Args_Idx.gd" id="2_rnvx2"]
+
+[node name="Change_Dialogue_Args_Idx" instance=ExtResource("1_c3qlh")]
+script = ExtResource("2_rnvx2")

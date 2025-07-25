@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctmdtgtdjkp8y"]
+
+[ext_resource type="Script" uid="uid://brakeu1knagq1" path="res://Global_Scenes/Battle_System/Battle_SV/Result/Party_Members/Scripts/Party_Members.gd" id="1_5nup0"]
+
+[node name="Party_Members" type="HBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+alignment = 1
+script = ExtResource("1_5nup0")

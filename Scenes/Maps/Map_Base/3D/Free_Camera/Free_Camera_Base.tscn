@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbgxn713m38uw"]
+
+[ext_resource type="Script" uid="uid://ckbk2i4wb1yhq" path="res://Scenes/Object/Scripts/Node3D_Object.gd" id="1_tqire"]
+[ext_resource type="PackedScene" uid="uid://blot4hpw1al18" path="res://Scenes/Object/Comps/3D/Camera.tscn" id="2_hlw6i"]
+[ext_resource type="PackedScene" uid="uid://catcx04rfio11" path="res://Scenes/Object/Comps/3D/Listener.tscn" id="3_5b5vw"]
+
+[node name="Free_Camera_Base" type="Node3D" groups=["Object"]]
+script = ExtResource("1_tqire")
+
+[node name="Camera" parent="." instance=ExtResource("2_hlw6i")]
+
+[node name="Listener" parent="." instance=ExtResource("3_5b5vw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

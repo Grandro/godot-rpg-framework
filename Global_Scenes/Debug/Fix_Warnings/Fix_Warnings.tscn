@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://drv0erjym1e5s"]
+
+[ext_resource type="Script" uid="uid://i7etscfasldi" path="res://Global_Scenes/Debug/Fix_Warnings/Scripts/Fix_Warnings.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://djhpux4n30xgb" path="res://Scenes/Window/Window_Control_Base.tscn" id="2"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="5"]
+
+[node name="Fix_Warnings" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1")
+
+[node name="Control" type="Control" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5")
+
+[node name="Background" type="Panel" parent="Control"]
+modulate = Color(1, 1, 1, 0.196078)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Window" parent="Control" instance=ExtResource("2")]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+theme = null
+
+[node name="Margin" type="MarginContainer" parent="Control/Window/Contents" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Control/Window/Contents/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="Control/Window/Contents/Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Entries" type="VBoxContainer" parent="Control/Window/Contents/Margin/VBox/Scroll"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="HBox" type="HBoxContainer" parent="Control/Window/Contents/Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="OK" type="Button" parent="Control/Window/Contents/Margin/VBox/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "OK"
+
+[node name="Cancel" type="Button" parent="Control/Window/Contents/Margin/VBox/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "CANCEL"
+
+[editable path="Control/Window"]

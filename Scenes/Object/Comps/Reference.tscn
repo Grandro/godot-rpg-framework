@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drpp26gth4snn"]
+
+[ext_resource type="Script" uid="uid://b1jw5fs72rppe" path="res://Scenes/Object/Comps/Scripts/Reference.gd" id="1_rgvpt"]
+
+[node name="Reference" type="Node" groups=["Comp"]]
+script = ExtResource("1_rgvpt")

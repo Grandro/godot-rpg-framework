@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://6i7bcxgislsv"]
+
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="1"]
+[ext_resource type="Script" uid="uid://dc3tv1ihqh21u" path="res://Global_Scenes/Debug/Commands_List/Scripts/Commands_List_Entry.gd" id="2"]
+
+[node name="Commands_List_Entry" type="Button" groups=["Cutscene_Command"]]
+light_mask = 8
+visibility_layer = 8
+offset_right = 203.0
+offset_bottom = 14.0
+theme = ExtResource("1")
+theme_override_font_sizes/font_size = 18
+clip_text = true
+script = ExtResource("2")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://iqhxv0203ncy"]
+
+[ext_resource type="PackedScene" uid="uid://b0vdl1j63jtip" path="res://Scenes/Item_Entry/Item_Entry_Inventory.tscn" id="1_o40f2"]
+[ext_resource type="Script" uid="uid://7esa18ajvmyl" path="res://Scenes/Item_Entry/Scripts/Item_Entry_Loot.gd" id="2_tt4h5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5307t"]
+font_size = 30
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Item_Entry_Loot" instance=ExtResource("1_o40f2")]
+script = ExtResource("2_tt4h5")
+
+[node name="VBox" parent="." index="0"]
+mouse_filter = 1
+
+[node name="Name" type="Label" parent="VBox" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Name"
+label_settings = SubResource("LabelSettings_5307t")

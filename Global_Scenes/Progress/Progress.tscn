@@ -1,0 +1,156 @@
+[gd_scene load_steps=13 format=3 uid="uid://csqw80op6ionn"]
+
+[ext_resource type="Script" uid="uid://brcr1030rh7xv" path="res://Global_Scenes/Progress/Scripts/Progress.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dnmrmy7cxdpwc" path="res://Global_Scenes/Progress/Pins/Sprites/Arrow.png" id="3"]
+[ext_resource type="Script" uid="uid://cbetjhaq5gpjq" path="res://Global_Scenes/Progress/Pins/Scripts/Pins.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://clbcurkhls2yb" path="res://Global_Scenes/Debug/Scenes/Entry_List/Quest_Entry_List.tscn" id="4_rk8fc"]
+[ext_resource type="PackedScene" uid="uid://il8km0isrp4x" path="res://Global_Scenes/Main_Menu/Sub_Menus/Quests/Info/Info_Base.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://cfd2kpwklkyqf" path="res://Global_Scenes/Progress/Loot_Info/Loot_Info.tscn" id="8_j1box"]
+[ext_resource type="PackedScene" uid="uid://budfrkav30oj6" path="res://Global_Scenes/Progress/Quest_Info/Quest_Info.tscn" id="8_mgd0g"]
+
+[sub_resource type="Animation" id="4"]
+resource_name = "Slid_In"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="5"]
+resource_name = "Slid_Out"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-460.0]
+}
+
+[sub_resource type="Animation" id="1"]
+resource_name = "Slide_In"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-460.0, 0.0]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "Slide_Out"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -460.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s55hn"]
+_data = {
+&"Slid_In": SubResource("4"),
+&"Slid_Out": SubResource("5"),
+&"Slide_In": SubResource("1"),
+&"Slide_Out": SubResource("2")
+}
+
+[node name="Progress" type="CanvasLayer"]
+process_mode = 3
+layer = 30
+script = ExtResource("1")
+
+[node name="Quests" type="Node" parent="."]
+
+[node name="Objects" type="Node" parent="."]
+
+[node name="Pins" type="HBoxContainer" parent="."]
+visible = false
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 491.0
+grow_vertical = 2
+theme_override_constants/separation = -16
+script = ExtResource("4")
+
+[node name="Menu" type="TabContainer" parent="Pins"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(474, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+tab_alignment = 1
+current_tab = 0
+
+[node name="Quests" type="MarginContainer" parent="Pins/Menu"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 0
+
+[node name="No_Pins" type="Label" parent="Pins/Menu/Quests"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 1
+text = "PROGRESS_PIN_NO_PINS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quest_List" parent="Pins/Menu/Quests" instance=ExtResource("4_rk8fc")]
+layout_mode = 2
+
+[node name="Info" parent="Pins/Menu/Quests" instance=ExtResource("6")]
+layout_mode = 2
+_e_show_back = true
+
+[node name="Arrow" type="TextureButton" parent="Pins"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("3")
+stretch_mode = 0
+
+[node name="Anims" type="AnimationPlayer" parent="Pins"]
+libraries = {
+&"": SubResource("AnimationLibrary_s55hn")
+}
+
+[node name="Quest_Info" parent="." instance=ExtResource("8_mgd0g")]
+visible = false
+
+[node name="Loot_Info" parent="." instance=ExtResource("8_j1box")]
+visible = false

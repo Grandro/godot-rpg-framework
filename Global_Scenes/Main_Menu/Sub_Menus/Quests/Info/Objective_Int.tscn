@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj6bu581xc865"]
+
+[ext_resource type="PackedScene" uid="uid://d0lwbs7kk4qor" path="res://Global_Scenes/Main_Menu/Sub_Menus/Quests/Info/Objective_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://doweqwyewrp4f" path="res://Global_Scenes/Main_Menu/Sub_Menus/Quests/Info/Scripts/Objective_Int.gd" id="2"]
+
+[node name="Objective_Int" instance=ExtResource("1")]
+script = ExtResource("2")
+
+[node name="Curr" type="Label" parent="Progress" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "-1"
+vertical_alignment = 1
+
+[node name="Slash" type="Label" parent="Progress" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "/"
+vertical_alignment = 1
+
+[node name="Target" type="Label" parent="Progress" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "-1"
+vertical_alignment = 1

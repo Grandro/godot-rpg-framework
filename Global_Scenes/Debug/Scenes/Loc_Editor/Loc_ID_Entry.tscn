@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt67v8thsau1m"]
+
+[ext_resource type="PackedScene" uid="uid://ek1x7if6akb8" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Entry.tscn" id="1_rvuca"]
+[ext_resource type="Script" uid="uid://ct2shvethkk6k" path="res://Global_Scenes/Debug/Scenes/Loc_Editor/Scripts/Loc_ID_Entry.gd" id="2_imt4d"]
+
+[node name="ID_Entry" instance=ExtResource("1_rvuca")]
+script = ExtResource("2_imt4d")
+
+[node name="Options" parent="HBox/VBox" index="1"]
+visible = true

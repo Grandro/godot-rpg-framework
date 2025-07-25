@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://drocnnom52ph2"]
+
+[ext_resource type="PackedScene" uid="uid://gi3fh4x5672i" path="res://Global_Scenes/Debug/Command_Edit/Command_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dwgteryf1kmam" path="res://Global_Scenes/Debug/Command_Edit/Wait/Scripts/Wait.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://cci0bq6durrvf" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Float.tscn" id="3_xadf0"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_sudi0"]
+
+[node name="Wait" instance=ExtResource("1")]
+script = ExtResource("2")
+_e_command = "Wait"
+
+[node name="Background" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Window" parent="." index="1"]
+offset_left = -150.0
+offset_top = -52.5
+offset_right = 150.0
+offset_bottom = 52.5
+
+[node name="Margin" type="MarginContainer" parent="Window/Contents" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Time" parent="Window/Contents/Margin/VBox" index="0" instance=ExtResource("3_xadf0")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_TIME"
+_e_var_select_scene = ExtResource("4_sudi0")
+
+[node name="Value" parent="Window/Contents/Margin/VBox/Time" index="1"]
+_e_value = 1.0
+_e_allow_lesser = true
+_e_allow_greater = true
+
+[node name="HBox" type="HBoxContainer" parent="Window/Contents/Margin/VBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="OK" type="Button" parent="Window/Contents/Margin/VBox/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "OK"
+
+[node name="Cancel" type="Button" parent="Window/Contents/Margin/VBox/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "CANCEL"
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/VBox/Time"]

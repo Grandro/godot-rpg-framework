@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccsjhnqv5qav6"]
+
+[ext_resource type="PackedScene" uid="uid://ek1x7if6akb8" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Entry.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dqrcelykxg2gc" path="res://Global_Scenes/Debug/Command_Editor/Command_Editor.tscn" id="2"]
+[ext_resource type="Script" uid="uid://df8osq4gbrj1l" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Scripts/Action_Entry.gd" id="3"]
+
+[node name="Action_Entry" instance=ExtResource("1")]
+offset_right = 215.0
+offset_bottom = 76.0
+script = ExtResource("3")
+
+[node name="Preview" type="Button" parent="HBox/VBox/Margin/Margin/HBox" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+text = "PREVIEW"
+
+[node name="Editor" parent="HBox/VBox/Options" index="0" instance=ExtResource("2")]
+custom_minimum_size = Vector2(0, 638)
+layout_mode = 2
+size_flags_vertical = 3

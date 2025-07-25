@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://g11o4ut16cvo"]
+
+[ext_resource type="PackedScene" uid="uid://br3fs6efh03rn" path="res://Scenes/Object/Comps/3D/Movement/Movement_Character.tscn" id="1_ggghq"]
+[ext_resource type="Script" uid="uid://dftmn7irfdf1x" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Movement/Scripts/Movement_Character.gd" id="2_j7cyf"]
+
+[node name="Movement" instance=ExtResource("1_ggghq")]
+script = ExtResource("2_j7cyf")

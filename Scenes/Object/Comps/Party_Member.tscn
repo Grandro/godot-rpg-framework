@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsxxput7t3drq"]
+
+[ext_resource type="Script" uid="uid://bnhoc8rlvqbnf" path="res://Scenes/Object/Comps/Scripts/Party_Member.gd" id="1_sdylc"]
+
+[node name="Party_Member" type="Node" groups=["Comp"]]
+script = ExtResource("1_sdylc")

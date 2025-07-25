@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://h4kuv52fetbs"]
+
+[ext_resource type="Script" uid="uid://dc02wnvg6wkbr" path="res://Global_Scenes/Debug/Command_Editor/Scripts/Warning_Entry.gd" id="1"]
+
+[node name="Warning_Entry" type="ScrollContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(300, 0)
+offset_right = 12.0
+offset_bottom = 12.0
+vertical_scroll_mode = 0
+script = ExtResource("1")
+
+[node name="Text" type="Label" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+vertical_alignment = 1

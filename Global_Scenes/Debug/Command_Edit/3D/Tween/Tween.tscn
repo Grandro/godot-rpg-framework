@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://ceqb2omopxfjl"]
+
+[ext_resource type="PackedScene" uid="uid://5213guffkn3m" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object.tscn" id="1_p6o20"]
+[ext_resource type="Script" uid="uid://b1ale26f25tjr" path="res://Global_Scenes/Debug/Command_Edit/Tween/Scripts/Tween.gd" id="2_6a3p1"]
+[ext_resource type="PackedScene" uid="uid://xs4d5mud5si8" path="res://Global_Scenes/Debug/Scenes/Comp_Select/Comp_Select.tscn" id="2_8ukem"]
+[ext_resource type="PackedScene" uid="uid://cr5425ybwap1q" path="res://Global_Scenes/Debug/Command_Edit/Tween/Property_Select.tscn" id="3_0kvwa"]
+[ext_resource type="PackedScene" uid="uid://0dlg5a5q13g6" path="res://Global_Scenes/Debug/Command_Edit/3D/Point.tscn" id="3_he23j"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="4_0eomd"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="5_68ymw"]
+[ext_resource type="PackedScene" uid="uid://cci0bq6durrvf" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Float.tscn" id="6_rbqpl"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="7_275m1"]
+[ext_resource type="PackedScene" uid="uid://qs71x71lxlxi" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Edit.tscn" id="8_7mrb8"]
+[ext_resource type="Script" uid="uid://b4ucilaat7ihi" path="res://Global_Scenes/Debug/Command_Edit/3D/Tween/Scripts/Dimensions.gd" id="9_bcydn"]
+
+[node name="Tween" instance=ExtResource("1_p6o20")]
+script = ExtResource("2_6a3p1")
+_e_dimensions = ExtResource("9_bcydn")
+_e_point_scene = ExtResource("3_he23j")
+
+[node name="Comp" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("2_8ukem")]
+layout_mode = 2
+
+[node name="Property" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="2" instance=ExtResource("3_0kvwa")]
+layout_mode = 2
+
+[node name="Interpolate" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="3" instance=ExtResource("4_0eomd")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_INTERPOLATE"
+_e_var_select_scene = ExtResource("5_68ymw")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Interpolate" index="1"]
+button_pressed = true
+
+[node name="Duration" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="4" instance=ExtResource("6_rbqpl")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_DURATION"
+_e_var_select_scene = ExtResource("5_68ymw")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Duration" index="1"]
+_e_value = 1.0
+
+[node name="Trans_Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="5" instance=ExtResource("7_275m1")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_TRANS_TYPE_%s"
+_e_options = ["Linear", "Sine", "Quint", "Quart", "Quad", "Expo", "Elastic", "Cubic", "Circ", "Bounce", "Back"]
+_e_heading_loc_id = "DEBUG_CUTSCENES_TRANS_TYPE"
+_e_var_select_scene = ExtResource("5_68ymw")
+
+[node name="Ease_Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="6" instance=ExtResource("7_275m1")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_EASE_TYPE_%s"
+_e_options = ["In", "Out", "In_Out", "Out_In"]
+_e_heading_loc_id = "DEBUG_CUTSCENES_EASE_TYPE"
+_e_var_select_scene = ExtResource("5_68ymw")
+
+[node name="Start_Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="7" instance=ExtResource("8_7mrb8")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_START_VALUE"
+_e_var_select_scene = ExtResource("5_68ymw")
+
+[node name="End_Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="8" instance=ExtResource("8_7mrb8")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_END_VALUE"
+_e_var_select_scene = ExtResource("5_68ymw")
+
+[node name="Wait_Finish" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="9" instance=ExtResource("4_0eomd")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_WAIT_FINISH"
+_e_var_select_scene = ExtResource("5_68ymw")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish" index="1"]
+button_pressed = true
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Interpolate"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Duration"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish"]

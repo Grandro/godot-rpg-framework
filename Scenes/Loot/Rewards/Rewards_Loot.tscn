@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5bj8iy5uuq2c"]
+
+[ext_resource type="Script" uid="uid://j84ugo4efpdx" path="res://Scenes/Loot/Rewards/Scripts/Rewards_Loot.gd" id="1_jh3ka"]
+[ext_resource type="PackedScene" uid="uid://iqhxv0203ncy" path="res://Scenes/Item_Entry/Item_Entry_Loot.tscn" id="2_oed50"]
+
+[node name="Rewards_Loot" type="HFlowContainer"]
+light_mask = 8
+visibility_layer = 8
+size_flags_horizontal = 4
+size_flags_vertical = 3
+script = ExtResource("1_jh3ka")
+_e_item_entry_scene = ExtResource("2_oed50")

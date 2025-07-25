@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlhj04ik0tiu3"]
+
+[ext_resource type="PackedScene" uid="uid://b257myw2w1drs" path="res://Global_Scenes/Debug/Keys_Editor/Keys_Editor_Parts.tscn" id="1_ndmaw"]
+[ext_resource type="Script" uid="uid://bl4k2lsq8wro8" path="res://Global_Scenes/Debug/Stater/Scripts/Stater.gd" id="2_epf0f"]
+[ext_resource type="Script" uid="uid://q5pya8ia7707" path="res://Global_Scenes/Debug/Stater/Scripts/Attributes.gd" id="3_ywhgu"]
+[ext_resource type="PackedScene" uid="uid://bqd7n7g3d2q30" path="res://Global_Scenes/Debug/Scenes/Entry_List/Expression_Entry_List.tscn" id="5_hng0v"]
+[ext_resource type="PackedScene" uid="uid://de0xrbigi3qvr" path="res://Scenes/Custom_Containers/Entry_Toggler/Key_Entry_Toggler.tscn" id="6_al32a"]
+[ext_resource type="PackedScene" uid="uid://jlymqq0aiffx" path="res://Global_Scenes/Debug/Scenes/Entry_List/Action_Entry_List.tscn" id="6_dum4f"]
+[ext_resource type="PackedScene" uid="uid://6m8iwc1igshk" path="res://Global_Scenes/Debug/Preview/Commands_Preview.tscn" id="8_xwm8e"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_wvws2"]
+content_margin_left = 0.0
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 2
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0tqs"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.145098, 0.172549, 0.231373, 1)
+
+[node name="Stater" instance=ExtResource("1_ndmaw")]
+script = ExtResource("2_epf0f")
+_e_key = "Stater"
+
+[node name="Parts" parent="VBox/HBox" index="0"]
+custom_minimum_size = Vector2(200, 0)
+_e_types = Array[String](["General", "One_Time"])
+
+[node name="VSep" type="VSeparator" parent="VBox/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_wvws2")
+
+[node name="Preview" parent="VBox/HBox/VBox/Options" index="1"]
+visible = false
+
+[node name="Panel" type="PanelContainer" parent="VBox/HBox/VBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_y0tqs")
+
+[node name="Scroll" type="ScrollContainer" parent="VBox/HBox/VBox/Panel" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Attributes" type="VBoxContainer" parent="VBox/HBox/VBox/Panel/Scroll" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+script = ExtResource("3_ywhgu")
+
+[node name="Types" parent="VBox/HBox/VBox/Panel/Scroll/Attributes" index="0" instance=ExtResource("6_al32a")]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Conditions" parent="VBox/HBox/VBox/Panel/Scroll/Attributes" index="1" instance=ExtResource("5_hng0v")]
+layout_mode = 2
+size_flags_horizontal = 3
+_e_delete_loc_id = "CONFIRM_DELETE_CONDITION"
+
+[node name="Actions" parent="VBox/HBox/VBox/Panel/Scroll/Attributes" index="2" instance=ExtResource("6_dum4f")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_e_delete_loc_id = "CONFIRM_DELETE_ACTION"
+
+[node name="Preview" parent="VBox/HBox/VBox/Panel/Scroll/Attributes" index="3" instance=ExtResource("8_xwm8e")]
+
+[editable path="HBox/VBox/Options/Search"]

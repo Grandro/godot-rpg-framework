@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c2xwupb7tp3xn"]
+
+[node name="Chapter_Entry" type="Button"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 8.0
+offset_bottom = 8.0

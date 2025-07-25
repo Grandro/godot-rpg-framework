@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://djhpux4n30xgb"]
+
+[ext_resource type="Script" uid="uid://du4fgrsxovi58" path="res://Scenes/Window/Scripts/Window_Control_Base.gd" id="2_qncgu"]
+[ext_resource type="Texture2D" uid="uid://dfuhlj2mlxms5" path="res://Global_Resources/Sprites/UI/Arrow_Left_Normal.png" id="3_w1hrs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_om2em"]
+bg_color = Color(0.87451, 0.866667, 0.898039, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.67451, 0.67451, 0.67451, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omp3b"]
+bg_color = Color(0.184314, 0.211765, 0.278431, 1)
+
+[node name="Window_Base" type="VBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 221.0
+offset_bottom = 156.0
+theme_override_constants/separation = 0
+script = ExtResource("2_qncgu")
+_e_resizable = true
+
+[node name="Bar" type="PanelContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_om2em")
+
+[node name="HBox" type="HBoxContainer" parent="Bar"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Return" type="TextureButton" parent="Bar/HBox"]
+self_modulate = Color(0, 0, 0, 1)
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_w1hrs")
+stretch_mode = 3
+
+[node name="Heading" type="Label" parent="Bar/HBox"]
+modulate = Color(0, 0, 0, 1)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Close" type="TextureButton" parent="Bar/HBox"]
+modulate = Color(0, 0, 0, 1)
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(26, 16)
+layout_mode = 2
+size_flags_horizontal = 8
+stretch_mode = 3
+
+[node name="Contents" type="PanelContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_omp3b")

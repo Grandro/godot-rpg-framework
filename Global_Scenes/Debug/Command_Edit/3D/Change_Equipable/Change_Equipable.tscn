@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dafsp3uyrc1q5"]
+
+[ext_resource type="PackedScene" uid="uid://5213guffkn3m" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object.tscn" id="1_g77xp"]
+[ext_resource type="Script" uid="uid://dmh7006dvddph" path="res://Global_Scenes/Debug/Command_Edit/Change_Equipable/Scripts/Change_Equipable.gd" id="2_01r72"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="2_4xsd4"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_077uf"]
+[ext_resource type="PackedScene" uid="uid://cy6l2i5yo5eci" path="res://Global_Scenes/Debug/Command_Edit/Change_Equipable/Equipable_Group.tscn" id="4_7h64c"]
+
+[node name="Change_Equipable" instance=ExtResource("1_g77xp")]
+script = ExtResource("2_01r72")
+_e_draw_grid_scene = null
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
+_e_needed_comps = Array[String](["Reference", "Equipment"])
+
+[node name="Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("2_4xsd4")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_TYPE_%s"
+_e_options = ["Equip", "Unequip"]
+_e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
+_e_var_select_scene = ExtResource("3_077uf")
+
+[node name="Equipable_Group" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="2" instance=ExtResource("4_7h64c")]
+layout_mode = 2
+
+[node name="Equipable" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="3" instance=ExtResource("2_4xsd4")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_EQUIPABLE"
+_e_var_select_scene = ExtResource("3_077uf")
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]

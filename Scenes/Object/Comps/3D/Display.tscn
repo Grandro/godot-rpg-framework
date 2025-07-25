@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bblmb8yfchyxr"]
+
+[ext_resource type="Script" uid="uid://b5mqwofksvet8" path="res://Scenes/Object/Comps/3D/Scripts/Display.gd" id="1_rwmt5"]
+
+[node name="Display" type="Sprite3D" groups=["Comp"]]
+layers = 4
+cast_shadow = 2
+pixel_size = 0.02
+shaded = true
+double_sided = false
+alpha_cut = 2
+texture_filter = 0
+script = ExtResource("1_rwmt5")

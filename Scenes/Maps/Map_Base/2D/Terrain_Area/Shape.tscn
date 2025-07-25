@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cww6dc4htu3yf"]
+
+[ext_resource type="PackedScene" uid="uid://dpo21a5sblgfa" path="res://Scenes/Maps/Map_Base/2D/Terrain_Area/Base.tscn" id="1_o8g8h"]
+
+[node name="Shape" instance=ExtResource("1_o8g8h")]
+
+[node name="Collision" type="CollisionShape2D" parent="." index="0"]

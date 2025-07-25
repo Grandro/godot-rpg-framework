@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://b257myw2w1drs"]
+
+[ext_resource type="Script" uid="uid://xovtfmcm8fst" path="res://Global_Scenes/Debug/Keys_Editor/Scripts/Keys_Editor_Parts.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cs3xa8okkjed4" path="res://Global_Scenes/Debug/Keys_Editor/Keys_Editor.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cwtttlnee0lcm" path="res://Global_Scenes/Debug/Scenes/Entry_List/Type_Entry_List.tscn" id="3_p126d"]
+[ext_resource type="Texture2D" uid="uid://ds3xrue2a8h8y" path="res://Global_Resources/Sprites/UI/Save.png" id="5_0qjdg"]
+[ext_resource type="Texture2D" uid="uid://dfuhlj2mlxms5" path="res://Global_Resources/Sprites/UI/Arrow_Left_Normal.png" id="5_msr1y"]
+
+[node name="Keys_Editor_Parts" instance=ExtResource("2")]
+script = ExtResource("1")
+
+[node name="HBox" parent="." index="0"]
+visible = false
+
+[node name="VBox" type="VBoxContainer" parent="." index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HBox" type="HBoxContainer" parent="VBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Parts" parent="VBox/HBox" index="0" instance=ExtResource("3_p126d")]
+layout_mode = 2
+_e_delete_loc_id = "CONFIRM_DELETE_PART"
+
+[node name="VBox" type="VBoxContainer" parent="VBox/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Options" type="HBoxContainer" parent="VBox/HBox/VBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Key_Heading" type="Label" parent="VBox/HBox/VBox/Options" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+vertical_alignment = 1
+
+[node name="Preview" type="Button" parent="VBox/HBox/VBox/Options" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+text = "PREVIEW"
+
+[node name="Save" type="Button" parent="VBox/HBox/VBox/Options" index="2"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+icon = ExtResource("5_0qjdg")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Back" type="Button" parent="VBox/HBox/VBox/Options" index="3"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(48, 24)
+layout_mode = 2
+size_flags_horizontal = 8
+icon = ExtResource("5_msr1y")
+icon_alignment = 1
+expand_icon = true
+
+[editable path="HBox/VBox/Options/Search"]

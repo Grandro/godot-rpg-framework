@@ -1,0 +1,100 @@
+[gd_scene load_steps=28 format=3 uid="uid://umbuqkjbnwrj"]
+
+[ext_resource type="Script" uid="uid://c8jv385n0t2vl" path="res://Scenes/Player/2D/Scripts/Player.gd" id="1_82kdr"]
+[ext_resource type="PackedScene" uid="uid://bkih1khneqk6f" path="res://Scenes/Object/Comps/2D/Display.tscn" id="2_u5ei8"]
+[ext_resource type="PackedScene" uid="uid://bw6thulft530a" path="res://Scenes/Object/Comps/2D/Equipment.tscn" id="4_3n0ld"]
+[ext_resource type="PackedScene" uid="uid://o8v7aht15tvx" path="res://Scenes/Object/Comps/2D/Collision.tscn" id="5_u5ttv"]
+[ext_resource type="PackedScene" uid="uid://befgw1wn2vgt7" path="res://Scenes/Object/Comps/2D/Movement/Comps/Terrain/Terrain_Base.tscn" id="6_0w38r"]
+[ext_resource type="PackedScene" uid="uid://dqya2hf2pn02d" path="res://Scenes/Object/Comps/2D/Interactions/Interactions.tscn" id="7_clb2k"]
+[ext_resource type="PackedScene" uid="uid://bs8m1n5rmnwfd" path="res://Scenes/Object/Comps/2D/Camera.tscn" id="8_wl6vt"]
+[ext_resource type="PackedScene" uid="uid://dsj1lc5ddb7yj" path="res://Scenes/Object/Comps/2D/Listener.tscn" id="9_je1j5"]
+[ext_resource type="PackedScene" uid="uid://wbkryt3s27m2" path="res://Scenes/Object/Comps/2D/Audio.tscn" id="10_su0bj"]
+[ext_resource type="PackedScene" uid="uid://biq4rxen0mdkv" path="res://Scenes/Object/Comps/2D/Speech_Bubble.tscn" id="11_u5duv"]
+[ext_resource type="PackedScene" uid="uid://sxlsvex1027f" path="res://Scenes/Object/Comps/2D/Popup.tscn" id="12_y7up6"]
+[ext_resource type="PackedScene" uid="uid://ckn88q3371r8o" path="res://Scenes/Object/Comps/2D/Movement/Comps/Controller.tscn" id="14_4ushh"]
+[ext_resource type="PackedScene" uid="uid://cy0wo3ybbwqo8" path="res://Scenes/Object/Comps/2D/Movement/Comps/Jump.tscn" id="15_5c6bo"]
+[ext_resource type="PackedScene" uid="uid://5rytcm7ifelj" path="res://Scenes/Object/Comps/2D/Movement/Comps/Rigid_Collision.tscn" id="16_djwdr"]
+[ext_resource type="PackedScene" uid="uid://dvw3wf4ce4o3s" path="res://Scenes/Object/Comps/2D/Nav_Obstacle.tscn" id="17_4ushh"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="18_5c6bo"]
+[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Scenes/Object/Comps/Cutscene.tscn" id="19_djwdr"]
+[ext_resource type="PackedScene" uid="uid://367hnnm3kfjw" path="res://Scenes/Object/Comps/Operate.tscn" id="20_7c324"]
+[ext_resource type="PackedScene" uid="uid://dsxxput7t3drq" path="res://Scenes/Object/Comps/Party_Member.tscn" id="21_5wu23"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="22_hebgk"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="23_y2ers"]
+[ext_resource type="PackedScene" uid="uid://du0jobeb0veao" path="res://Scenes/Object/Comps/Stater.tscn" id="24_vw7d3"]
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="25_efqee"]
+[ext_resource type="PackedScene" uid="uid://bjkkhl8b8b204" path="res://Scenes/Player/Comps/Interaction_System/Interaction_System.tscn" id="26_282dh"]
+[ext_resource type="PackedScene" uid="uid://cikd6yq8gyv4w" path="res://Scenes/Object/Comps/2D/Movement/Movement_Character.tscn" id="48_ufamu"]
+[ext_resource type="PackedScene" uid="uid://dbrpw1m2haq0b" path="res://Scenes/Object/Comps/2D/Movement/Comps/States.tscn" id="50_ufamu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0w38r"]
+radius = 16.0
+height = 64.0
+
+[node name="Player" type="CharacterBody2D" groups=["Object"]]
+script = ExtResource("1_82kdr")
+metadata/_custom_type_script = "uid://35jc5ioupr4v"
+
+[node name="Display" parent="." instance=ExtResource("2_u5ei8")]
+position = Vector2(0, -56)
+hframes = 8
+vframes = 19
+frame = 84
+
+[node name="Equipment" parent="." instance=ExtResource("4_3n0ld")]
+
+[node name="Collision" parent="." instance=ExtResource("5_u5ttv")]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0w38r")
+
+[node name="Interactions" parent="." instance=ExtResource("7_clb2k")]
+
+[node name="Camera" parent="." instance=ExtResource("8_wl6vt")]
+position = Vector2(0, -24)
+
+[node name="Listener" parent="." instance=ExtResource("9_je1j5")]
+
+[node name="Audio" parent="." instance=ExtResource("10_su0bj")]
+
+[node name="Speech_Bubble" parent="." instance=ExtResource("11_u5duv")]
+visible = false
+position = Vector2(0, -98)
+
+[node name="Popup" parent="." instance=ExtResource("12_y7up6")]
+position = Vector2(0, -120)
+
+[node name="Movement" parent="." instance=ExtResource("48_ufamu")]
+
+[node name="Terrain" parent="Movement" instance=ExtResource("6_0w38r")]
+
+[node name="Controller" parent="Movement" instance=ExtResource("14_4ushh")]
+
+[node name="States" parent="Movement" instance=ExtResource("50_ufamu")]
+
+[node name="Jump" parent="Movement" instance=ExtResource("15_5c6bo")]
+
+[node name="Rigid_Collision" parent="Movement" instance=ExtResource("16_djwdr")]
+
+[node name="Nav_Obstacle" parent="." instance=ExtResource("17_4ushh")]
+
+[node name="Anims" parent="." instance=ExtResource("18_5c6bo")]
+
+[node name="Cutscene" parent="." instance=ExtResource("19_djwdr")]
+
+[node name="Operate" parent="." instance=ExtResource("20_7c324")]
+
+[node name="Party_Member" parent="." instance=ExtResource("21_5wu23")]
+
+[node name="Reference" parent="." instance=ExtResource("22_hebgk")]
+
+[node name="Save" parent="." instance=ExtResource("23_y2ers")]
+
+[node name="Stater" parent="." instance=ExtResource("24_vw7d3")]
+
+[node name="States" parent="." instance=ExtResource("25_efqee")]
+_e_states = Array[String](["Stop", "Idle", "Walk", "Run"])
+_e_state = "Stop"
+
+[node name="Interaction_System" parent="." instance=ExtResource("26_282dh")]
+
+[editable path="Popup"]

@@ -1,0 +1,285 @@
+[gd_scene load_steps=16 format=3 uid="uid://b8qb1y4piwgod"]
+
+[ext_resource type="PackedScene" uid="uid://gi3fh4x5672i" path="res://Global_Scenes/Debug/Command_Edit/Command_Base.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://bmyhul45oyok3" path="res://Global_Resources/Sprites/UI/Pipette_Hover.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c6tptd7ahabsm" path="res://Global_Resources/Sprites/UI/Pipette_Normal.png" id="4"]
+[ext_resource type="Material" uid="uid://p1br5wo0d1l3" path="res://Global_Resources/Materials/2D/Trans.tres" id="5"]
+[ext_resource type="Script" uid="uid://dpy1qhospf44s" path="res://Global_Scenes/Debug/Command_Edit/Show_Overlay/Scripts/Show_Overlay.gd" id="6"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="6_4voot"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="7_h8r1m"]
+[ext_resource type="PackedScene" uid="uid://v03em0dn8b3s" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Image.tscn" id="8_pwct3"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="9_llacd"]
+
+[sub_resource type="Animation" id="1"]
+resource_local_to_scene = true
+resource_name = "Fade_In"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_local_to_scene = true
+resource_name = "Fade_Out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_local_to_scene = true
+resource_name = "Fade_Out_In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "Faded_In"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="5"]
+resource_name = "Faded_Out"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lmnih"]
+_data = {
+&"Fade_In": SubResource("1"),
+&"Fade_Out": SubResource("2"),
+&"Fade_Out_In": SubResource("3"),
+&"Faded_In": SubResource("4"),
+&"Faded_Out": SubResource("5")
+}
+
+[node name="Show_Overlay" instance=ExtResource("1")]
+script = ExtResource("6")
+
+[node name="Background" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Window" parent="." index="1"]
+offset_left = -480.0
+offset_top = -320.0
+offset_right = 480.0
+offset_bottom = 320.0
+
+[node name="Margin" type="MarginContainer" parent="Window/Contents" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="Window/Contents/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Preview" type="VBoxContainer" parent="Window/Contents/Margin/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(565, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Margin" type="MarginContainer" parent="Window/Contents/Margin/HBox/Preview" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Background" type="ColorRect" parent="Window/Contents/Margin/HBox/Preview/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.266667, 0.266667, 0.270588, 1)
+
+[node name="Overlays" type="MarginContainer" parent="Window/Contents/Margin/HBox/Preview/Margin" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Trans" type="ColorRect" parent="Window/Contents/Margin/HBox/Preview/Margin/Overlays" index="0"]
+light_mask = 8
+visibility_layer = 8
+material = ExtResource("5")
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Anims" type="AnimationPlayer" parent="Window/Contents/Margin/HBox/Preview/Margin/Overlays/Trans" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_lmnih")
+}
+
+[node name="Color" type="HBoxContainer" parent="Window/Contents/Margin/HBox/Preview" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Desc" type="Label" parent="Window/Contents/Margin/HBox/Preview/Color" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+text = "DEBUG_CUTSCENES_BACKGROUND_COLOR"
+vertical_alignment = 1
+clip_text = true
+
+[node name="Preview" type="ColorRect" parent="Window/Contents/Margin/HBox/Preview/Color" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0.298039, 0.298039, 0.298039, 1)
+
+[node name="Pipette" type="TextureButton" parent="Window/Contents/Margin/HBox/Preview/Color" index="2"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("4")
+texture_hover = ExtResource("3")
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Options" type="VBoxContainer" parent="Window/Contents/Margin/HBox/VBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Type" parent="Window/Contents/Margin/HBox/VBox/Options" index="0" instance=ExtResource("6_4voot")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_%s"
+_e_options = ["Trans"]
+_e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
+_e_var_select_scene = ExtResource("7_h8r1m")
+
+[node name="Mask" parent="Window/Contents/Margin/HBox/VBox/Options" index="1" instance=ExtResource("8_pwct3")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_MASK"
+_e_var_select_scene = ExtResource("7_h8r1m")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/VBox/Options/Mask" index="1"]
+_e_curr_dir = "res://Global_Resources/Sprites/Overlays/Trans"
+
+[node name="Anim" parent="Window/Contents/Margin/HBox/VBox/Options" index="2" instance=ExtResource("6_4voot")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_ANIM"
+_e_var_select_scene = ExtResource("7_h8r1m")
+
+[node name="Wait_Finish" parent="Window/Contents/Margin/HBox/VBox/Options" index="3" instance=ExtResource("9_llacd")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_WAIT_FINISH"
+_e_var_select_scene = ExtResource("7_h8r1m")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/VBox/Options/Wait_Finish" index="1"]
+button_pressed = true
+
+[node name="Pick_Color" type="ColorPicker" parent="Window/Contents/Margin/HBox/VBox" index="1"]
+visible = false
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+edit_alpha = false
+presets_visible = false
+
+[node name="HBox" type="HBoxContainer" parent="Window/Contents/Margin/HBox/VBox" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 8
+
+[node name="OK" type="Button" parent="Window/Contents/Margin/HBox/VBox/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "OK"
+
+[node name="Cancel" type="Button" parent="Window/Contents/Margin/HBox/VBox/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "CANCEL"
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/VBox/Options/Mask"]
+[editable path="Window/Contents/Margin/HBox/VBox/Options/Wait_Finish"]

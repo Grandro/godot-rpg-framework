@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://qs71x71lxlxi"]
+
+[ext_resource type="PackedScene" uid="uid://be6yntrlk06ra" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Select.tscn" id="1_7crnh"]
+[ext_resource type="Script" uid="uid://cmpcm3bc3u7mo" path="res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Edit.gd" id="2_3twau"]
+[ext_resource type="PackedScene" uid="uid://bc12fh7xhsyy6" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Value_Edit.tscn" id="2_pkhil"]
+
+[node name="Value_Edit" instance=ExtResource("1_7crnh")]
+script = ExtResource("2_3twau")
+_e_heading_loc_id = "DEBUG_CUTSCENES_VALUE"
+
+[node name="Value" parent="." index="1" instance=ExtResource("2_pkhil")]
+layout_mode = 2

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba34eyav3ir6j"]
+
+[ext_resource type="Script" uid="uid://kmrume86ggqu" path="res://Scenes/VP_Container/Scripts/VP_Container.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://nt5gfdybdx7v" path="res://Scenes/VP_Container/VP.tscn" id="2_vohr4"]
+
+[node name="VP_Container" type="SubViewportContainer"]
+light_mask = 8
+visibility_layer = 8
+stretch = true
+script = ExtResource("2")
+
+[node name="VP" parent="." instance=ExtResource("2_vohr4")]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://jlymqq0aiffx"]
+
+[ext_resource type="PackedScene" uid="uid://b0t5u8s6p2dc" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entry_List.tscn" id="1"]
+[ext_resource type="Script" uid="uid://d12cyfjbklfqb" path="res://Global_Scenes/Debug/Scenes/Entry_List/Scripts/Action_Entry_List.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://ccsjhnqv5qav6" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Action_Entry.tscn" id="3"]
+
+[node name="Action_Entry_List" instance=ExtResource("1")]
+script = ExtResource("2")
+_e_entry_scene = ExtResource("3")
+
+[node name="Add" parent="." index="2"]
+visible = false
+
+[editable path="Search"]

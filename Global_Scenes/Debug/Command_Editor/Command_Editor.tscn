@@ -1,0 +1,269 @@
+[gd_scene load_steps=19 format=3 uid="uid://dqrcelykxg2gc"]
+
+[ext_resource type="PackedScene" uid="uid://bdm8bdyt8jrh" path="res://Scenes/Context_Menu/Context_Menu.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://d2o1fmlrae4qu" path="res://Global_Scenes/Debug/Command_Editor/Sprites/Contents_BG.png" id="2"]
+[ext_resource type="Script" uid="uid://b3upn0eay11yg" path="res://Global_Scenes/Debug/Command_Editor/Scripts/Options.gd" id="5"]
+[ext_resource type="Script" uid="uid://vi0vpusmi5uu" path="res://Global_Scenes/Debug/Command_Editor/Scripts/Command_Editor.gd" id="6"]
+[ext_resource type="Resource" uid="uid://duicl4g8h75yq" path="res://Global_Scenes/Debug/Command_Editor/Options/Change_Mark.tres" id="6_ll326"]
+[ext_resource type="Resource" uid="uid://diyr8gn3ai802" path="res://Global_Scenes/Debug/Command_Editor/Options/Copy.tres" id="7_4keym"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="8"]
+[ext_resource type="Resource" uid="uid://dwuy4c07l06kc" path="res://Global_Scenes/Debug/Command_Editor/Options/Cut.tres" id="8_dgtli"]
+[ext_resource type="Script" uid="uid://dno4u2qhj8qfi" path="res://Global_Scenes/Debug/Command_Editor/Scripts/Warnings.gd" id="9"]
+[ext_resource type="Resource" uid="uid://op81dkx8jk7w" path="res://Global_Scenes/Debug/Command_Editor/Options/Delete.tres" id="9_ud1o6"]
+[ext_resource type="Resource" uid="uid://nyws4po5lwwo" path="res://Global_Scenes/Debug/Command_Editor/Options/Edit.tres" id="10_rupqi"]
+[ext_resource type="Resource" uid="uid://cme23a5k67kff" path="res://Global_Scenes/Debug/Command_Editor/Options/HSep_1.tres" id="11_t5gcx"]
+[ext_resource type="Resource" uid="uid://b6kstnnakekjf" path="res://Global_Scenes/Debug/Command_Editor/Options/HSep_2.tres" id="12_g4tgp"]
+[ext_resource type="Resource" uid="uid://c7ca4bf88645e" path="res://Global_Scenes/Debug/Command_Editor/Options/New.tres" id="13_rscwg"]
+[ext_resource type="Resource" uid="uid://boam02r4a3d8f" path="res://Global_Scenes/Debug/Command_Editor/Options/Paste.tres" id="14_w338d"]
+[ext_resource type="Resource" uid="uid://00wdt534fk8o" path="res://Global_Scenes/Debug/Command_Editor/Options/Select_All.tres" id="15_l8edf"]
+[ext_resource type="Resource" uid="uid://cpty52ewdxhui" path="res://Global_Scenes/Debug/Command_Editor/Options/Swap_Process.tres" id="16_j86y4"]
+[ext_resource type="Resource" uid="uid://b5rjlaisi1ojc" path="res://Global_Scenes/Debug/Command_Editor/Options/Test.tres" id="17_20kki"]
+
+[node name="Command_Editor" type="HBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+theme = ExtResource("8")
+script = ExtResource("6")
+_e_edit_scene_paths = {
+"Change_Camera": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Camera/Change_Camera.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Camera/Change_Camera.tscn"
+},
+"Change_Coins_Amount": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Change_Coins_Amount/Change_Coins_Amount.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Change_Coins_Amount/Change_Coins_Amount.tscn"
+},
+"Change_Cutscene_Args": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Args/Change_Cutscene_Args.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Args/Change_Cutscene_Args.tscn"
+},
+"Change_Cutscene_Args_Idx": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Args/Change_Cutscene_Args_Idx.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Args/Change_Cutscene_Args_Idx.tscn"
+},
+"Change_Dialogue_Args": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Args/Change_Dialogue_Args.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Args/Change_Dialogue_Args.tscn"
+},
+"Change_Dialogue_Args_Idx": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Args/Change_Dialogue_Args_Idx.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Args/Change_Dialogue_Args_Idx.tscn"
+},
+"Change_Dir": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Dir/Change_Dir.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Dir/Change_Dir.tscn"
+},
+"Change_Equipable": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Equipable/Change_Equipable.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Equipable/Change_Equipable.tscn"
+},
+"Change_Item_Amount": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Change_Item_Amount/Change_Item_Amount.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Change_Item_Amount/Change_Item_Amount.tscn"
+},
+"Change_State": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_State/Change_State.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_State/Change_State.tscn"
+},
+"Change_Visibility": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Visibility/Change_Visibility.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Visibility/Change_Visibility.tscn"
+},
+"Comment": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Comment/Comment.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Comment/Comment.tscn"
+},
+"Cond_Branch": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Cond_Branch/Cond_Branch.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Cond_Branch/Cond_Branch.tscn"
+},
+"Default_Object_Key": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Default_Object_Key/Default_Object_Key.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Default_Object_Key/Default_Object_Key.tscn"
+},
+"Disable_Object": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Disable_Object/Disable_Object.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Disable_Object/Disable_Object.tscn"
+},
+"Exit_Cutscene": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Exit_Cutscene/Exit_Cutscene.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Exit_Cutscene/Exit_Cutscene.tscn"
+},
+"Jump": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Jump/Jump.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Jump/Jump.tscn"
+},
+"Loop": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Loop/Loop.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Loop/Loop.tscn"
+},
+"Match": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Match/Match.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Match/Match.tscn"
+},
+"Move_Free_Camera": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Move_Free_Camera/Move_Free_Camera.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Move_Free_Camera/Move_Free_Camera.tscn"
+},
+"Play_Anim": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Play_Anim/Play_Anim.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Play_Anim/Play_Anim.tscn"
+},
+"Play_Audio": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Play_Audio/Play_Audio.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Play_Audio/Play_Audio.tscn"
+},
+"Script": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Script/Script.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Script/Script.tscn"
+},
+"Set_Move_Route": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Set_Move_Route/Set_Move_Route.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Set_Move_Route/Set_Move_Route.tscn"
+},
+"Show_Dialogue": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Show_Dialogue/Show_Dialogue.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Show_Dialogue/Show_Dialogue.tscn"
+},
+"Show_Overlay": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Show_Overlay/Show_Overlay.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Show_Overlay/Show_Overlay.tscn"
+},
+"Show_Popup": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Show_Popup/Show_Popup.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Show_Popup/Show_Popup.tscn"
+},
+"Sub_Process": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Sub_Process/Sub_Process.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Sub_Process/Sub_Process.tscn"
+},
+"Teleport": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Teleport/Teleport.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Teleport/Teleport.tscn"
+},
+"Teleport_Object": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Teleport_Object/Teleport_Object.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Teleport_Object/Teleport_Object.tscn"
+},
+"Tween": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Tween/Tween.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Tween/Tween.tscn"
+},
+"Wait": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Wait/Wait.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Wait/Wait.tscn"
+},
+"Wait_For_Sub_Process": {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Wait_For_Sub_Process/Wait_For_Sub_Process.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Wait_For_Sub_Process/Wait_For_Sub_Process.tscn"
+}
+}
+
+[node name="Contents" type="ScrollContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+follow_focus = true
+
+[node name="Panel" type="PanelContainer" parent="Contents"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BG" type="TextureRect" parent="Contents/Panel"]
+self_modulate = Color(0.2, 0.2, 0.2, 1)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2")
+stretch_mode = 1
+
+[node name="Entries" type="VBoxContainer" parent="Contents/Panel"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Options" parent="Contents/Panel" instance=ExtResource("1")]
+layer = 2
+script = ExtResource("5")
+_e_options = {
+"Change_Mark": ExtResource("6_ll326"),
+"Copy": ExtResource("7_4keym"),
+"Cut": ExtResource("8_dgtli"),
+"Delete": ExtResource("9_ud1o6"),
+"Edit": ExtResource("10_rupqi"),
+"HSep_1": ExtResource("11_t5gcx"),
+"HSep_2": ExtResource("12_g4tgp"),
+"New": ExtResource("13_rscwg"),
+"Paste": ExtResource("14_w338d"),
+"Select_All": ExtResource("15_l8edf"),
+"Swap_Process": ExtResource("16_j86y4"),
+"Test": ExtResource("17_20kki")
+}
+_e_options_order = Array[String](["New", "Edit", "HSep_1", "Cut", "Copy", "Paste", "Delete", "Select_All", "HSep_2", "Test", "Swap_Process", "Change_Mark"])
+
+[node name="Warnings" type="Control" parent="Contents/Panel"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("9")
+
+[node name="Popup" type="Popup" parent="Contents/Panel/Warnings"]
+canvas_cull_mask = 4293918728
+
+[node name="BG" type="Panel" parent="Contents/Panel/Warnings/Popup"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="Contents/Panel/Warnings/Popup"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Contents/Panel/Warnings/Popup/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Entries" type="VBoxContainer" parent="Contents/Panel/Warnings/Popup/Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="Fix" type="Button" parent="Contents/Panel/Warnings/Popup/Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Fix"

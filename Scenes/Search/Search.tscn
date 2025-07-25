@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://brwnr7v5wrvx"]
+
+[ext_resource type="PackedScene" uid="uid://w1x5trmv6er6" path="res://Scenes/Joy/LineEdit.tscn" id="1_14agv"]
+[ext_resource type="Script" uid="uid://carbqc1hs7udi" path="res://Scenes/Search/Scripts/Search.gd" id="1_vlcrj"]
+[ext_resource type="Texture2D" uid="uid://nwu70oej3nbc" path="res://Global_Resources/Sprites/UI/Search.png" id="2_18j7o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyj6q"]
+content_margin_left = 36.0
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[node name="Search" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+script = ExtResource("1_vlcrj")
+
+[node name="Input" parent="." instance=ExtResource("1_14agv")]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_yyj6q")
+placeholder_text = "SEARCH"
+context_menu_enabled = false
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="Lens" type="TextureRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(32, 24)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("2_18j7o")
+stretch_mode = 3
+flip_h = true

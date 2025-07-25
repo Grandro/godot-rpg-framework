@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqaejxhbpyk1b"]
+
+[ext_resource type="Script" uid="uid://uxmbik5bhd5w" path="res://Scenes/Object/Scripts/Node2D_Object.gd" id="1_cs0xk"]
+[ext_resource type="PackedScene" uid="uid://bs8m1n5rmnwfd" path="res://Scenes/Object/Comps/2D/Camera.tscn" id="2_hycjw"]
+[ext_resource type="PackedScene" uid="uid://dsj1lc5ddb7yj" path="res://Scenes/Object/Comps/2D/Listener.tscn" id="3_y4xht"]
+
+[node name="Free_Camera_Base" type="Node2D" groups=["Object"]]
+script = ExtResource("1_cs0xk")
+
+[node name="Camera" parent="." instance=ExtResource("2_hycjw")]
+zoom = Vector2(2, 2)
+
+[node name="Listener" parent="." instance=ExtResource("3_y4xht")]

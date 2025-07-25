@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://cltmq5he8wqnd"]
+
+[ext_resource type="PackedScene" uid="uid://clcnrrgit18fj" path="res://Global_Scenes/Debug/Command_Edit/2D/Command_Preview_Object.tscn" id="1_irdjo"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="2_r7lq6"]
+[ext_resource type="Script" uid="uid://dbgtrftucd2py" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Change_Dir.gd" id="2_vmnnu"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_gdi4u"]
+[ext_resource type="PackedScene" uid="uid://co04pnio1htpq" path="res://Global_Scenes/Debug/Scenes/Object_Select/Object_Select.tscn" id="4_pshul"]
+[ext_resource type="PackedScene" uid="uid://cuohstyayaobg" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Point2D.tscn" id="6_e70ne"]
+
+[node name="Change_Dir" instance=ExtResource("1_irdjo")]
+script = ExtResource("2_vmnnu")
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
+_e_needed_comps = Array[String](["Reference", "Movement"])
+
+[node name="Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("2_r7lq6")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_TYPE_%s"
+_e_options = ["Fixed_Dir", "Look_At", "Look_Away", "Look_Degrees"]
+_e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
+_e_var_select_scene = ExtResource("3_gdi4u")
+
+[node name="Dir" type="VBoxContainer" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Fixed" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Dir" index="0" instance=ExtResource("2_r7lq6")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_DIR_%s"
+_e_options = ["Down", "Left", "Right", "Up"]
+_e_heading_loc_id = "DEBUG_CUTSCENES_DIR"
+_e_var_select_scene = ExtResource("3_gdi4u")
+
+[node name="Look" type="HBoxContainer" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Dir" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Dir/Look" index="0" instance=ExtResource("2_r7lq6")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_%s"
+_e_options = ["Object", "Point"]
+_e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
+_e_var_select_scene = ExtResource("3_gdi4u")
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Dir/Look" index="1" instance=ExtResource("4_pshul")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Point" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Dir/Look" index="2" instance=ExtResource("6_e70ne")]
+layout_mode = 2
+size_flags_horizontal = 3
+_e_var_select_scene = ExtResource("3_gdi4u")
+
+[node name="Look_Degrees" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Dir" index="2" instance=ExtResource("2_r7lq6")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_DEGREES_%s"
+_e_options = [90, 180, 270]
+_e_heading_loc_id = "DEBUG_CUTSCENES_DEGREES"
+_e_var_select_scene = ExtResource("3_gdi4u")
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]

@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6ug0m0m4daq4"]
+
+[ext_resource type="Script" uid="uid://da0b61o38kcww" path="res://Scenes/Loot/Coins/Scripts/Coins.gd" id="1_qecc7"]
+[ext_resource type="Texture2D" uid="uid://bbmdj7ndyjm66" path="res://Global_Resources/Sprites/Coin/36_Single.png" id="3_6chve"]
+
+[node name="Coins" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -56.0
+offset_right = 420.0
+grow_vertical = 0
+script = ExtResource("1_qecc7")
+
+[node name="Border" type="TextureRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+expand_mode = 2
+flip_v = true
+
+[node name="Margin" type="MarginContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 32
+
+[node name="Curr" type="HBoxContainer" parent="Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 8
+
+[node name="Coin" type="TextureRect" parent="Margin/Curr"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_6chve")
+stretch_mode = 5
+
+[node name="Text" type="Label" parent="Margin/Curr"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
+text = "74"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gain" type="HBoxContainer" parent="Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 0
+
+[node name="Plus" type="Label" parent="Margin/Gain"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="Label" parent="Margin/Gain"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Gain" type="AudioStreamPlayer" parent="Audio"]
+bus = &"SFX"

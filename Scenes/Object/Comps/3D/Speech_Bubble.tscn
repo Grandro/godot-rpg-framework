@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjr0l2h3yj5lh"]
+
+[ext_resource type="Script" uid="uid://d17kvqvyhvi0r" path="res://Scenes/Object/Comps/3D/Scripts/Speech_Bubble.gd" id="1_u6fvb"]
+[ext_resource type="PackedScene" uid="uid://qeicd1w7hese" path="res://Scenes/GUI_3D_Panel/GUI_3D_Panel.tscn" id="2_r6tug"]
+[ext_resource type="PackedScene" uid="uid://c7rf1kiek0pcb" path="res://Scenes/Object/Comps/Speech_Bubble/Speech_Bubble_UI.tscn" id="3_xibv1"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_evf0i"]
+viewport_path = NodePath("Panel/VP")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yu5qf"]
+resource_local_to_scene = true
+render_priority = 1
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_evf0i")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8frf1"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_yu5qf")
+size = Vector2(5, 5)
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s8uro"]
+size = Vector3(10, 10, 1)
+
+[node name="Speech_Bubble" type="Node3D" groups=["Comp"]]
+script = ExtResource("1_u6fvb")
+
+[node name="Panel" parent="." instance=ExtResource("2_r6tug")]
+
+[node name="Plane" parent="Panel" index="0"]
+mesh = SubResource("PlaneMesh_8frf1")
+
+[node name="Area" parent="Panel/Plane" index="0"]
+monitorable = true
+
+[node name="Collision" parent="Panel/Plane/Area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+shape = SubResource("BoxShape3D_s8uro")
+
+[node name="VP" parent="Panel" index="1"]
+disable_3d = true
+size = Vector2i(1280, 720)
+size_2d_override = Vector2i(300, 300)
+_e_activate_physics = false
+
+[node name="Speech_Bubble_UI" parent="Panel/VP" index="0" instance=ExtResource("3_xibv1")]
+
+[node name="Choices_Box" parent="Panel/VP/Speech_Bubble_UI/VBox" index="1"]
+theme = null
+
+[editable path="Panel"]
+[editable path="Panel/VP/Speech_Bubble_UI"]

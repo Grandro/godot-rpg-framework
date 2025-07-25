@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv8210pw7u7mb"]
+
+[ext_resource type="PackedScene" uid="uid://bc12fh7xhsyy6" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Value_Edit.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://h8lpqcltg66w" path="res://Global_Scenes/Debug/Databases/Key_Entry.tscn" id="4"]
+[ext_resource type="Script" uid="uid://dgfmovwgegiuy" path="res://Global_Scenes/Debug/Databases/Scripts/Databases.gd" id="5"]
+
+[node name="Databases" type="MarginContainer" groups=["Translated"]]
+light_mask = 8
+visibility_layer = 8
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("5")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Keys" type="VBoxContainer" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Cutscenes" parent="HBox/Keys" instance=ExtResource("4")]
+layout_mode = 2
+text = "Cutscenes"
+_e_key = "Cutscenes"
+
+[node name="Dialogues" parent="HBox/Keys" instance=ExtResource("4")]
+layout_mode = 2
+text = "Dialogues"
+_e_key = "Dialogues"
+
+[node name="Stater" parent="HBox/Keys" instance=ExtResource("4")]
+layout_mode = 2
+text = "Stater"
+_e_key = "Stater"
+
+[node name="Scroll" type="ScrollContainer" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="Value" parent="HBox/Scroll" instance=ExtResource("2")]
+layout_mode = 2
+size_flags_vertical = 0

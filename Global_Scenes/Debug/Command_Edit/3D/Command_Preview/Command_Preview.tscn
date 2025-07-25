@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnr7w3fmgjbty"]
+
+[ext_resource type="PackedScene" uid="uid://scudq4m3joes" path="res://Global_Scenes/Debug/Command_Edit/Command_Preview_Base/Command_Preview_Base.tscn" id="1_r2uk0"]
+[ext_resource type="PackedScene" uid="uid://cbgxn713m38uw" path="res://Scenes/Maps/Map_Base/3D/Free_Camera/Free_Camera_Base.tscn" id="2_wj3gl"]
+[ext_resource type="Script" uid="uid://cfp0par4p8vp7" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview/Scripts/Dimensions.gd" id="3_04jnv"]
+[ext_resource type="PackedScene" uid="uid://3y8bt0acbj0d" path="res://Global_Scenes/Debug/Command_Edit/3D/Draw_Grid.tscn" id="3_5k2g2"]
+[ext_resource type="PackedScene" uid="uid://deh11u32lcoj" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview/Vector3.tscn" id="3_iji14"]
+
+[node name="Command_Preview" instance=ExtResource("1_r2uk0")]
+_e_free_camera_scene = ExtResource("2_wj3gl")
+_e_draw_grid_scene = ExtResource("3_5k2g2")
+_e_dimensions = ExtResource("3_04jnv")
+
+[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
+size = Vector2i(544, 556)
+
+[node name="Step" parent="Window/Contents/Margin/HBox/Left/Grid" index="0" instance=ExtResource("3_iji14")]
+layout_mode = 2
+_e_desc_loc_id = "DEBUG_CUTSCENES_GRID_STEP"
+
+[node name="Offset" parent="Window/Contents/Margin/HBox/Left/Grid" index="1" instance=ExtResource("3_iji14")]
+layout_mode = 2
+_e_desc_loc_id = "DEBUG_CUTSCENES_GRID_OFFSET"
+
+[node name="X" parent="Window/Contents/Margin/HBox/Left/Grid/Offset" index="1"]
+_e_min = 0.0
+_e_value = 0.0
+
+[node name="Y" parent="Window/Contents/Margin/HBox/Left/Grid/Offset" index="2"]
+_e_min = 0.0
+_e_value = 0.0
+
+[node name="Z" parent="Window/Contents/Margin/HBox/Left/Grid/Offset" index="3"]
+_e_min = 0.0
+_e_value = 0.0
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]

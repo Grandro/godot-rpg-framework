@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://be6yntrlk06ra"]
+
+[ext_resource type="Script" uid="uid://6x83ytldyyym" path="res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Select.gd" id="2_v01bg"]
+
+[node name="Value_Select" type="VBoxContainer" groups=["Translated"]]
+light_mask = 8
+visibility_layer = 8
+offset_right = 332.0
+offset_bottom = 40.0
+script = ExtResource("2_v01bg")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+text = "HEADING"
+vertical_alignment = 1
+clip_text = true

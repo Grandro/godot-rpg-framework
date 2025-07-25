@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw5v6ylf3w3bh"]
+
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="1_c753f"]
+[ext_resource type="Script" uid="uid://bdjcmq2v4yaet" path="res://Global_Scenes/Debug/Command_Edit/Show_Dialogue/Scripts/Key.gd" id="2_0mng3"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_7lad7"]
+
+[node name="Key" instance=ExtResource("1_c753f")]
+script = ExtResource("2_0mng3")
+_e_heading_loc_id = "DEBUG_DIALOGUES_KEY"
+_e_var_select_scene = ExtResource("3_7lad7")
+
+[node name="Heading" parent="HBox" index="0"]
+text = "DEBUG_DIALOGUES_KEY"

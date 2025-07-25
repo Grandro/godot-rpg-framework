@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmv4424o6dqoo"]
+
+[ext_resource type="PackedScene" uid="uid://cvvtbog5w6a0b" path="res://Global_Scenes/Main_Menu/Menus/Icons/Menu_Icon.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://cp8555ogk14pn" path="res://Global_Scenes/Main_Menu/Sprites/Icons/Party/Spritesheet.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://ct2na3d5v3o3y" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Party.tscn" id="3"]
+
+[node name="Party" instance=ExtResource("1")]
+_e_key = "Party"
+_e_menu_scene = ExtResource("3")
+_e_type = "Sub_Menu"
+
+[node name="Image" parent="." index="0"]
+texture_normal = ExtResource("2")
+
+[node name="Desc" parent="." index="1"]
+text = "PARTY"

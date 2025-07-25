@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpycs7bh6ot4p"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cnuud8e8h2o30" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Default_Object_Key.gd" id="2"]
+
+[node name="Default_Object_Key" instance=ExtResource("1")]
+script = ExtResource("2")

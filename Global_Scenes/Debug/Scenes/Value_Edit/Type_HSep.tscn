@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c77u5wi0oy17g"]
+
+[ext_resource type="StyleBox" path="res://Global_Scenes/Debug/Scenes/Value_Edit/StyleBoxes/HSep.tres" id="1_67mgm"]
+
+[node name="Type_HSep" type="HSeparator"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 40.0
+offset_bottom = 4.0
+theme_override_styles/separator = ExtResource("1_67mgm")

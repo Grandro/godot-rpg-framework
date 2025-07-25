@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtsovamjoipgb"]
+
+[ext_resource type="PackedScene" uid="uid://qeicd1w7hese" path="res://Scenes/GUI_3D_Panel/GUI_3D_Panel.tscn" id="1_gbtu5"]
+[ext_resource type="Script" uid="uid://8v4sxo2tksbm" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Status/Scripts/Status.gd" id="1_xmc6k"]
+[ext_resource type="PackedScene" uid="uid://bkqva37fii005" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Status/Status_UI.tscn" id="2_7ui0k"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_m0q5b"]
+viewport_path = NodePath("Panel/VP")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prwn2"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_m0q5b")
+texture_filter = 0
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0kmkl"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_prwn2")
+size = Vector2(2.04, 1)
+orientation = 2
+
+[node name="Status" type="Node3D" groups=["Comp"]]
+script = ExtResource("1_xmc6k")
+
+[node name="Panel" parent="." instance=ExtResource("1_gbtu5")]
+
+[node name="Plane" parent="Panel" index="0"]
+mesh = SubResource("PlaneMesh_0kmkl")
+
+[node name="VP" parent="Panel" index="1"]
+size = Vector2i(204, 100)
+
+[node name="Status" parent="Panel/VP" index="0" instance=ExtResource("2_7ui0k")]
+
+[editable path="Panel"]

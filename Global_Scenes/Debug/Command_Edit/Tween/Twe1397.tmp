@@ -1,0 +1,123 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk7l686okaqki"]
+
+[ext_resource type="PackedScene" uid="uid://cy5yxg0mx6a77" path="res://Global_Scenes/Debug/Command_Edit/Command_Preview_Object.tscn" id="1"]
+[ext_resource type="Script" path="res://Global_Scenes/Debug/Command_Edit/Tween/Scripts/Tween.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://xs4d5mud5si8" path="res://Global_Scenes/Debug/Scenes/Comp_Select/Comp_Select.tscn" id="3_gii8p"]
+[ext_resource type="PackedScene" uid="uid://cr5425ybwap1q" path="res://Global_Scenes/Debug/Command_Edit/Tween/Property_Select.tscn" id="4_wws2x"]
+[ext_resource type="PackedScene" uid="uid://bc12fh7xhsyy6" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Value_Edit.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://Global_Scenes/Debug/Scenes/Float_Edit/Float_Edit.tscn" id="7"]
+
+[node name="Tween" instance=ExtResource("1")]
+script = ExtResource("2")
+_e_command = "Tween"
+
+[node name="Window" parent="." index="1"]
+offset_left = -576.0
+offset_top = -350.0
+offset_right = 576.0
+offset_bottom = 350.0
+
+[node name="Left" parent="Window/Contents/Margin/HBox" index="0"]
+size_flags_horizontal = 1
+
+[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
+size = Vector2i(530, 626)
+
+[node name="Comp" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("3_gii8p")]
+layout_mode = 2
+
+[node name="Property" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="2" instance=ExtResource("4_wws2x")]
+layout_mode = 2
+
+[node name="Interpolate" type="VBoxContainer" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="3"]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Interpolate" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "DEBUG_CUTSCENES_INTERPOLATE"
+vertical_alignment = 1
+clip_text = true
+
+[node name="Value" type="CheckBox" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Interpolate" index="1"]
+layout_mode = 2
+
+[node name="Duration" type="VBoxContainer" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="4"]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Duration" index="0"]
+layout_mode = 2
+text = "DEBUG_CUTSCENES_DURATION"
+vertical_alignment = 1
+clip_text = true
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Duration" index="1" instance=ExtResource("7")]
+layout_mode = 2
+_e_value = 2.0
+_e_allow_greater = true
+
+[node name="Trans_Type" type="VBoxContainer" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="5"]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Trans_Type" index="0"]
+layout_mode = 2
+text = "DEBUG_CUTSCENES_TRANS_TYPE"
+vertical_alignment = 1
+clip_text = true
+
+[node name="Options" type="OptionButton" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Trans_Type" index="1"]
+layout_mode = 2
+
+[node name="Ease_Type" type="VBoxContainer" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="6"]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Ease_Type" index="0"]
+layout_mode = 2
+text = "DEBUG_CUTSCENES_EASE_TYPE"
+vertical_alignment = 1
+clip_text = true
+
+[node name="Options" type="OptionButton" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Ease_Type" index="1"]
+layout_mode = 2
+
+[node name="Start_Value" type="VBoxContainer" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="7"]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Start_Value" index="0"]
+layout_mode = 2
+text = "DEBUG_CUTSCENES_START_VALUE"
+vertical_alignment = 1
+clip_text = true
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Start_Value" index="1" instance=ExtResource("6")]
+layout_mode = 2
+_e_type = "Vector2"
+
+[node name="End_Value" type="VBoxContainer" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="8"]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Window/Contents/Margin/HBox/Right/Options/VBox/End_Value" index="0"]
+layout_mode = 2
+text = "DEBUG_CUTSCENES_END_VALUE"
+vertical_alignment = 1
+clip_text = true
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/End_Value" index="1" instance=ExtResource("6")]
+layout_mode = 2
+_e_type = "Vector2"
+
+[node name="Wait_Finish" type="VBoxContainer" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="9"]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "DEBUG_CUTSCENES_WAIT_FINISH"
+vertical_alignment = 1
+clip_text = true
+
+[node name="Value" type="CheckBox" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish" index="1"]
+layout_mode = 2
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]

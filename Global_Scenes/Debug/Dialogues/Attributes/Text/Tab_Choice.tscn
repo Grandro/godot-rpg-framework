@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbbh4l0iv8e00"]
+
+[ext_resource type="PackedScene" uid="uid://p8udo2171tc7" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/Base/Tab_Base.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bcmeit6hbj55l" path="res://Global_Scenes/Debug/Dialogues/Attributes/Text/Small_Preview.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://b0aycjvmp27ew" path="res://Global_Scenes/Debug/Scenes/Entry_List/Choice_Entry_List.tscn" id="3"]
+[ext_resource type="Script" uid="uid://2a3c046cni0s" path="res://Global_Scenes/Debug/Dialogues/Attributes/Text/Scripts/Tab_Choice.gd" id="4"]
+
+[node name="Tab_Choice" groups=["Translated"] instance=ExtResource("1")]
+script = ExtResource("4")
+_e_key = "Choice"
+
+[node name="Pos" type="VBoxContainer" parent="Margin/HSplit/Left" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Pos" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_POS"
+vertical_alignment = 1
+
+[node name="Options" type="OptionButton" parent="Margin/HSplit/Left/Pos" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="Small_Preview" parent="Margin/HSplit/Left/Pos" index="2" instance=ExtResource("2")]
+layout_mode = 2
+
+[node name="Entries" parent="Margin/HSplit/Left" index="1" instance=ExtResource("3")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

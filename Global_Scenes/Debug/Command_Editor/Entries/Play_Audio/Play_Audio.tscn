@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ffv3eg0um7mi"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_k702o"]
+[ext_resource type="Script" uid="uid://kc6i340lsak4" path="res://Global_Scenes/Debug/Command_Editor/Entries/Play_Audio/Scripts/Play_Audio.gd" id="2_pgvje"]
+
+[node name="Play_Audio" instance=ExtResource("1_k702o")]
+script = ExtResource("2_pgvje")
+_e_color = Color(0.368627, 0.529412, 1, 1)

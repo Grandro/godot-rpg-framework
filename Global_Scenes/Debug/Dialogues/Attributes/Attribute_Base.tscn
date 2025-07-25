@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhtf075na7yrj"]
+
+[ext_resource type="Script" uid="uid://etg4xg8s7xcq" path="res://Global_Scenes/Debug/Dialogues/Attributes/Scripts/Attribute_Base.gd" id="1"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="2"]
+[ext_resource type="PackedScene" uid="uid://cj7wq47s5stuj" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/Vox/Tab_Vox.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://bxxopr6jon7jx" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/Sprites/Tab_Sprites.tscn" id="5"]
+
+[node name="Attribute_Base" type="TabContainer"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("2")
+tab_alignment = 1
+current_tab = 0
+script = ExtResource("1")
+
+[node name="Sprites" parent="." instance=ExtResource("5")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Vox" parent="." instance=ExtResource("4")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1

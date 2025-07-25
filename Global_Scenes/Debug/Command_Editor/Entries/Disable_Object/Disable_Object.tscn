@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl1kwdbngnmvs"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_edi6q"]
+[ext_resource type="Script" uid="uid://byix8wk7nvbpn" path="res://Global_Scenes/Debug/Command_Editor/Entries/Disable_Object/Scripts/Disable_Object.gd" id="2_13hwx"]
+
+[node name="Disable_Object" instance=ExtResource("1_edi6q")]
+script = ExtResource("2_13hwx")
+_e_color = Color(0.07, 0.7, 0.553, 1)

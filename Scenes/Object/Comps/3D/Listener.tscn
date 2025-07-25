@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://catcx04rfio11"]
+
+[ext_resource type="Script" uid="uid://b5br3epaqwq1j" path="res://Scenes/Object/Comps/3D/Scripts/Listener.gd" id="1_7dcp5"]
+
+[node name="Listener" type="AudioListener3D" groups=["Comp"]]
+script = ExtResource("1_7dcp5")

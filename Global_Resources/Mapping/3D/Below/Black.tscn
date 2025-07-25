@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbyhch50ossj5"]
+
+[ext_resource type="PackedScene" uid="uid://c7l6gl3pndhn7" path="res://Global_Resources/Mapping/3D/Plane/Plane_Base.tscn" id="1_ew1q6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgs8o"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d6gnq"]
+material = SubResource("StandardMaterial3D_rgs8o")
+size = Vector2(1, 1)
+
+[node name="Black" instance=ExtResource("1_ew1q6")]
+mesh = SubResource("PlaneMesh_d6gnq")

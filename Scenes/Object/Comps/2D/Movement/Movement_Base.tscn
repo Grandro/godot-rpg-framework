@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgwbnne2kkmmi"]
+
+[ext_resource type="Script" uid="uid://cbt1lb4oopb5a" path="res://Scenes/Object/Comps/2D/Movement/Scripts/Movement_Base.gd" id="1_i1jsj"]
+
+[node name="Movement" type="Node2D" groups=["Comp"]]
+script = ExtResource("1_i1jsj")

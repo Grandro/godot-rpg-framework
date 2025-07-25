@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://cssxmrprrxvq0"]
+
+[ext_resource type="PackedScene" uid="uid://clcnrrgit18fj" path="res://Global_Scenes/Debug/Command_Edit/2D/Command_Preview_Object.tscn" id="1_cr2dw"]
+[ext_resource type="Script" uid="uid://c7yhnewdjn1xq" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Play_Audio.gd" id="2_edssg"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="2_wp1js"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_o5b38"]
+[ext_resource type="PackedScene" uid="uid://6eepsaof6sfg" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Audio.tscn" id="4_lw7oj"]
+[ext_resource type="PackedScene" uid="uid://cci0bq6durrvf" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Float.tscn" id="5_ucaoh"]
+[ext_resource type="PackedScene" uid="uid://cuohstyayaobg" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Point2D.tscn" id="6_2iubs"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="8_jt8m5"]
+[ext_resource type="Script" uid="uid://c120mpr0ilwqi" path="res://Global_Scenes/Debug/Command_Edit/2D/Play_Audio/Scripts/Dimensions.gd" id="8_ulegr"]
+
+[node name="Play_Audio" instance=ExtResource("1_cr2dw")]
+script = ExtResource("2_edssg")
+_e_dimensions = ExtResource("8_ulegr")
+
+[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
+size = Vector2i(544, 556)
+
+[node name="Audio_Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0" instance=ExtResource("2_wp1js")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_AUDIO_TYPE_%s"
+_e_options = ["BGM", "SFX", "BGS"]
+_e_heading_loc_id = "DEBUG_CUTSCENES_AUDIO_TYPE"
+_e_var_select_scene = ExtResource("3_o5b38")
+
+[node name="Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("2_wp1js")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_TYPE_%s"
+_e_options = ["Static", "Object", "Point"]
+_e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
+_e_var_select_scene = ExtResource("3_o5b38")
+
+[node name="Audio" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="2" instance=ExtResource("4_lw7oj")]
+layout_mode = 2
+_e_var_select_scene = ExtResource("3_o5b38")
+
+[node name="Volume" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="3" instance=ExtResource("5_ucaoh")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_VOLUME"
+_e_var_select_scene = ExtResource("3_o5b38")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Volume" index="1"]
+_e_value = 1.0
+
+[node name="Pitch" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="4" instance=ExtResource("5_ucaoh")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_PITCH"
+_e_var_select_scene = ExtResource("3_o5b38")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Pitch" index="1"]
+_e_min = 0.01
+_e_value = 1.0
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="5"]
+_e_needed_comps = Array[String](["Reference", "Audio"])
+
+[node name="Point" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="6" instance=ExtResource("6_2iubs")]
+layout_mode = 2
+_e_var_select_scene = ExtResource("3_o5b38")
+
+[node name="Max_Distance" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="7" instance=ExtResource("5_ucaoh")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_MAX_DISTANCE"
+_e_var_select_scene = ExtResource("3_o5b38")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Max_Distance" index="1"]
+_e_max = 1000.0
+_e_value = 50.0
+_e_allow_lesser = true
+_e_allow_greater = true
+
+[node name="Wait_Finish" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="8" instance=ExtResource("8_jt8m5")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_WAIT_FINISH"
+_e_var_select_scene = ExtResource("3_o5b38")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish" index="1"]
+button_pressed = true
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Volume"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Pitch"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Max_Distance"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish"]

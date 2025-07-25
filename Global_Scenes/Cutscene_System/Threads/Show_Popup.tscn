@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2u007f2s07uk"]
+
+[ext_resource type="Script" uid="uid://b21gj3whmw0nm" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Show_Popup.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="2"]
+
+[node name="Show_Popup" instance=ExtResource("2")]
+script = ExtResource("1")

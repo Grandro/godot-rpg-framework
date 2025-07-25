@@ -1,0 +1,265 @@
+[gd_scene load_steps=14 format=3 uid="uid://budfrkav30oj6"]
+
+[ext_resource type="Script" uid="uid://covdlw87i3amb" path="res://Global_Scenes/Progress/Quest_Info/Scripts/Quest_Info.gd" id="1_cas4q"]
+[ext_resource type="Texture2D" uid="uid://cc5yoyg4s0ec4" path="res://Global_Scenes/Dialogue_System/Sprites/Text_Box.png" id="2_3w2wa"]
+[ext_resource type="Texture2D" uid="uid://c0d6my4fuig56" path="res://Global_Scenes/Dialogue_System/Sprites/Proceed_Dot/Spritesheet.png" id="3_7deol"]
+[ext_resource type="PackedScene" uid="uid://c5bj8iy5uuq2c" path="res://Scenes/Loot/Rewards/Rewards_Loot.tscn" id="5_nergj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cml8"]
+atlas = ExtResource("3_7deol")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqodl"]
+atlas = ExtResource("3_7deol")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pew27"]
+atlas = ExtResource("3_7deol")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="Animation" id="6"]
+resource_name = "Blink"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("AtlasTexture_cqodl"), SubResource("AtlasTexture_pew27")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7k16w"]
+_data = {
+&"Blink": SubResource("6")
+}
+
+[sub_resource type="Animation" id="Animation_prcrs"]
+resource_name = "Fade_In"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_geppi"]
+resource_name = "Fade_Out"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rv58d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Info:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4s0th"]
+_data = {
+&"Fade_In": SubResource("Animation_prcrs"),
+&"Fade_Out": SubResource("Animation_geppi"),
+&"RESET": SubResource("Animation_rv58d")
+}
+
+[node name="Quest_Info" type="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cas4q")
+
+[node name="Background" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0.196078)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Info" type="MarginContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -209.0
+offset_top = -99.5
+offset_right = 209.0
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text_Box" type="NinePatchRect" parent="Info"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+texture = ExtResource("2_3w2wa")
+patch_margin_left = 48
+patch_margin_top = 48
+patch_margin_right = 48
+patch_margin_bottom = 48
+
+[node name="Proceed_Dot" type="TextureRect" parent="Info/Text_Box"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 8
+texture = SubResource("AtlasTexture_3cml8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Anims" type="AnimationPlayer" parent="Info/Text_Box/Proceed_Dot"]
+libraries = {
+&"": SubResource("AnimationLibrary_7k16w")
+}
+autoplay = "Blink"
+
+[node name="Margin" type="MarginContainer" parent="Info"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 34
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 34
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Info/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 48
+
+[node name="Heading" type="VBoxContainer" parent="Info/Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Chapter" type="HBoxContainer" parent="Info/Margin/VBox/Heading"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+alignment = 1
+
+[node name="Left" type="Label" parent="Info/Margin/VBox/Heading/Chapter"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Chapter:"
+horizontal_alignment = 1
+
+[node name="Right" type="Label" parent="Info/Margin/VBox/Heading/Chapter"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Desc"
+
+[node name="Name" type="Label" parent="Info/Margin/VBox/Heading"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Type" type="Label" parent="Info/Margin/VBox/Heading"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Type"
+horizontal_alignment = 1
+
+[node name="Rewards" type="VBoxContainer" parent="Info/Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Info/Margin/VBox/Rewards"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "PROGRESS_QUEST_INFO_REWARDS"
+horizontal_alignment = 1
+
+[node name="Entries" parent="Info/Margin/VBox/Rewards" instance=ExtResource("5_nergj")]
+layout_mode = 2
+_e_include_coins = true
+
+[node name="Status" type="Label" parent="Info/Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Status"
+horizontal_alignment = 1
+
+[node name="Anims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4s0th")
+}
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Start" type="AudioStreamPlayer" parent="Audio"]
+bus = &"SFX"

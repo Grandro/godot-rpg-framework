@@ -1,0 +1,163 @@
+[gd_scene load_steps=4 format=3 uid="uid://c81u85mpy73td"]
+
+[ext_resource type="Script" uid="uid://bmt7gcb24vlc1" path="res://Global_Scenes/Virtual_Keyboard/Scripts/Virtual_Keyboard.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bauey0sg20w5m" path="res://Global_Resources/Sprites/Joy/Letters_Color/Button_B.png" id="4_amh56"]
+[ext_resource type="Texture2D" uid="uid://bxakb45lklomh" path="res://Global_Resources/Sprites/Joy/Letters_Color/Button_X.png" id="5_q70ub"]
+
+[node name="Virtual_Keyboard" type="CanvasLayer" groups=["Translated"]]
+process_mode = 3
+layer = 30
+script = ExtResource("2")
+
+[node name="Control" type="Control" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+self_modulate = Color(1, 1, 1, 0.686275)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Hold_Down" type="Timer" parent="Control"]
+
+[node name="Explanation" type="VBoxContainer" parent="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -96.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Back" type="HBoxContainer" parent="Control/Explanation"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="Text" type="Label" parent="Control/Explanation/Back"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "CLOSE"
+vertical_alignment = 1
+
+[node name="Image" type="TextureRect" parent="Control/Explanation/Back"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_amh56")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Proceed" type="HBoxContainer" parent="Control/Explanation"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="Text" type="Label" parent="Control/Explanation/Proceed"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "PROCEED"
+vertical_alignment = 1
+
+[node name="Image" type="TextureRect" parent="Control/Explanation/Proceed"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("5_q70ub")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = 96.0
+offset_right = -48.0
+offset_bottom = -48.0
+mouse_filter = 2
+theme_override_constants/separation = 64
+
+[node name="HBox" type="HBoxContainer" parent="Control/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Input" type="Label" parent="Control/VBox/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Keys_HBoxs" type="VBoxContainer" parent="Control/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Dir_Pressed" type="AudioStreamPlayer" parent="SFX"]
+bus = &"SFX"
+
+[node name="Button_Down" type="AudioStreamPlayer" parent="SFX"]
+pitch_scale = 2.0
+bus = &"SFX"
+
+[node name="Button_Up" type="AudioStreamPlayer" parent="SFX"]
+pitch_scale = 0.81
+bus = &"SFX"
+
+[node name="Back" type="AudioStreamPlayer" parent="SFX"]
+pitch_scale = 1.23
+bus = &"SFX"
+
+[node name="Proceed" type="AudioStreamPlayer" parent="SFX"]
+pitch_scale = 0.9
+bus = &"SFX"

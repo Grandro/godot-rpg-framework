@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://xw0gxvbwo51g"]
+
+[ext_resource type="Script" uid="uid://nwat4fmqtey8" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Types/Scripts/Dictionary.gd" id="1_ui7ap"]
+
+[node name="Dictionary" type="VBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(300, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_ui7ap")
+
+[node name="Select" type="Button" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Value" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Entries" type="VBoxContainer" parent="Value"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="New_Key" type="PanelContainer" parent="Value"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Value/New_Key"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="HBox" type="HBoxContainer" parent="Value/New_Key/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="Value/New_Key/Margin/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_NEW_KEY"
+vertical_alignment = 1
+
+[node name="Value" type="LineEdit" parent="Value/New_Key/Margin/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="New_Value" type="PanelContainer" parent="Value"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Value/New_Value"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="HBox" type="HBoxContainer" parent="Value/New_Value/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="Value/New_Value/Margin/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_NEW_VALUE"
+vertical_alignment = 1
+
+[node name="Add" type="Button" parent="Value"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_ADD_KEY_VALUE"

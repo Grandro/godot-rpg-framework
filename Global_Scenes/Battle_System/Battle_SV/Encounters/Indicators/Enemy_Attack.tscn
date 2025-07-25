@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4g3oydk762s7"]
+
+[ext_resource type="Script" uid="uid://dow77flvmqja5" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Indicators/Scripts/Enemy_Attack.gd" id="1_diymt"]
+
+[sub_resource type="Animation" id="Animation_k3cwt"]
+resource_name = "Fade_In"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_m7d83"]
+resource_name = "Fade_Out"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ei4h"]
+_data = {
+&"Fade_In": SubResource("Animation_k3cwt"),
+&"Fade_Out": SubResource("Animation_m7d83")
+}
+
+[node name="Enemy_Attack" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_diymt")
+
+[node name="Reactions" type="MarginContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+
+[node name="VBox" type="VBoxContainer" parent="Reactions"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Anims" type="AnimationPlayer" parent="Reactions"]
+libraries = {
+&"": SubResource("AnimationLibrary_8ei4h")
+}

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cahxe34atpwlg"]
+
+[ext_resource type="PackedScene" uid="uid://c7rf1kiek0pcb" path="res://Scenes/Object/Comps/Speech_Bubble/Speech_Bubble_UI.tscn" id="2_0xyf1"]
+
+[node name="Base" type="TextureRect"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 76.0
+offset_bottom = 48.0
+size_flags_vertical = 8
+
+[node name="Speech_Bubble" parent="." instance=ExtResource("2_0xyf1")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -94.0
+offset_top = -124.0
+offset_right = 170.0
+offset_bottom = -28.0
+grow_horizontal = 1
+grow_vertical = 1

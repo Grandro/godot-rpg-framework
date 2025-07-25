@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://mf5s2woe0g33"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_rr6vc"]
+[ext_resource type="Script" uid="uid://d2oblf66xkqou" path="res://Global_Scenes/Debug/Command_Editor/Entries/Teleport_Object/Scripts/Teleport_Object.gd" id="2"]
+
+[node name="Teleport_Object" instance=ExtResource("1_rr6vc")]
+script = ExtResource("2")
+_e_color = Color(0.901961, 0.160784, 0.223529, 1)

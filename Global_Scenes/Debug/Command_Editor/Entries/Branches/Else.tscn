@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpuif3onqdjke"]
+
+[ext_resource type="PackedScene" uid="uid://c8lns07r4xyu8" path="res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Base.tscn" id="1"]
+
+[sub_resource type="FontVariation" id="FontVariation_r6vl4"]
+spacing_top = -5
+spacing_bottom = -5
+
+[node name="Else" instance=ExtResource("1")]
+offset_right = 48.0
+
+[node name="Colon" type="Label" parent="Base/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_r6vl4")
+text = ":"
+vertical_alignment = 1

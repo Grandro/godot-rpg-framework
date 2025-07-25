@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd04m3dv5wpvr"]
+
+[ext_resource type="PackedScene" uid="uid://5213guffkn3m" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object.tscn" id="1_2rm33"]
+[ext_resource type="PackedScene" uid="uid://cikv4n27cuuwp" path="res://Global_Scenes/Debug/Command_Edit/Show_Popup/Type.tscn" id="2_2bsgc"]
+[ext_resource type="Script" uid="uid://da6hvt1vs2il8" path="res://Global_Scenes/Debug/Command_Edit/Show_Popup/Scripts/Show_Popup.gd" id="2_i3war"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="3_0bk0i"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_xl5ca"]
+
+[node name="Show_Popup" instance=ExtResource("1_2rm33")]
+script = ExtResource("2_i3war")
+_e_draw_grid = false
+_e_draw_grid_scene = null
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
+_e_needed_comps = Array[String](["Reference", "Popup"])
+
+[node name="Type" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("2_2bsgc")]
+layout_mode = 2
+
+[node name="Wait_Finish" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="2" instance=ExtResource("3_0bk0i")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_WAIT_FINISH"
+_e_var_select_scene = ExtResource("4_xl5ca")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish" index="1"]
+button_pressed = true
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish"]

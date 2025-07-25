@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://clp2clj8wdf2j"]
+
+[ext_resource type="Script" uid="uid://dfoobavtvkabo" path="res://Scenes/Object/Comps/Movement/Comps/Knockbacks/Scripts/Knockback.gd" id="1_d1ih2"]
+
+[node name="Knockback" type="Timer"]
+autostart = true
+script = ExtResource("1_d1ih2")

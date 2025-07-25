@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy6l2i5yo5eci"]
+
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="1_vl4t2"]
+[ext_resource type="Script" uid="uid://6s6xxmj73m53" path="res://Global_Scenes/Debug/Command_Edit/Change_Equipable/Scripts/Equipable_Group.gd" id="2_8hfj7"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_cn372"]
+
+[node name="Equipable_Group" instance=ExtResource("1_vl4t2")]
+script = ExtResource("2_8hfj7")
+_e_options_loc_id = "DEBUG_CUTSCENES_EQUIPABLE_GROUP_%s"
+_e_heading_loc_id = "DEBUG_CUTSCENES_EQUIPABLE_GROUP"
+_e_var_select_scene = ExtResource("3_cn372")
+
+[node name="Heading" parent="HBox" index="0"]
+text = "DEBUG_CUTSCENES_EQUIPABLE_GROUP"

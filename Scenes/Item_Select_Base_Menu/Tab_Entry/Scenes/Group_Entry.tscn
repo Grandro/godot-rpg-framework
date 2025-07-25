@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://mfnt2ux5uio8"]
+
+[node name="Group_Entry" type="HFlowContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 40.0
+offset_bottom = 40.0

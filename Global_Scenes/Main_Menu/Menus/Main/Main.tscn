@@ -1,0 +1,121 @@
+[gd_scene load_steps=13 format=3 uid="uid://ur4d3omh4swl"]
+
+[ext_resource type="PackedScene" uid="uid://blnlehoktdefn" path="res://Global_Scenes/Main_Menu/Menus/Menu_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dbjluar6ywmov" path="res://Global_Scenes/Main_Menu/Menus/Main/Scripts/Main.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dpnilqmd31ns2" path="res://Global_Resources/Sprites/Coin/48_Spritesheet.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://b12csnw8oibc6" path="res://Global_Scenes/Main_Menu/Menus/Icons/Inventory.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://ch6tktatiw1m5" path="res://Global_Scenes/Main_Menu/Menus/Icons/Journal.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://xhk8b65jn8qa" path="res://Global_Scenes/Main_Menu/Menus/Icons/Options.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://cmv4424o6dqoo" path="res://Global_Scenes/Main_Menu/Menus/Icons/Party.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://dwimv7b4jcly5" path="res://Scenes/Stats_Display/Stats_Display_Base.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://dlnl3hywj0vta" path="res://Global_Scenes/Main_Menu/Menus/Icons/Quests.tscn" id="12"]
+
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("3")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="LabelSettings" id="LabelSettings_36avh"]
+font_size = 24
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main" instance=ExtResource("1")]
+script = ExtResource("2")
+_e_sub_menus = Array[String](["Inventory", "Journal", "Party", "Quests", "Options"])
+
+[node name="Background" type="TextureRect" parent="." index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+stretch_mode = 1
+
+[node name="Margin" type="MarginContainer" parent="." index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 64
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="Back" parent="Margin/VBox/HBox" index="0" instance=ExtResource("9")]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Titlescreen" type="Button" parent="Margin/VBox/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 20
+text = "MAIN_MENU_BACKTOTITLESCREEN"
+
+[node name="Menu_Icons" type="HFlowContainer" parent="Margin/VBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/h_separation = 48
+
+[node name="Inventory" parent="Margin/VBox/Menu_Icons" index="0" instance=ExtResource("4")]
+layout_mode = 2
+
+[node name="Journal" parent="Margin/VBox/Menu_Icons" index="1" instance=ExtResource("5")]
+layout_mode = 2
+
+[node name="Party" parent="Margin/VBox/Menu_Icons" index="2" instance=ExtResource("8")]
+layout_mode = 2
+
+[node name="Quests" parent="Margin/VBox/Menu_Icons" index="3" instance=ExtResource("12")]
+layout_mode = 2
+
+[node name="Options" parent="Margin/VBox/Menu_Icons" index="4" instance=ExtResource("6")]
+layout_mode = 2
+
+[node name="Coins" type="HBoxContainer" parent="Margin/VBox" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="Image" type="TextureRect" parent="Margin/VBox/Coins" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+texture = SubResource("1")
+
+[node name="Text" type="Label" parent="Margin/VBox/Coins" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_36avh")
+vertical_alignment = 1
+
+[node name="Stats_Display" parent="." index="2" instance=ExtResource("10")]
+layout_mode = 1
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bhetib7eiaiap"]
+
+[ext_resource type="Script" uid="uid://chajvvxqfrfw8" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Sub_Menu_Data.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+_e_unlocked = true

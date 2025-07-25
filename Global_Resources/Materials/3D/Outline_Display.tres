@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d1pplu8786jt1"]
+
+[ext_resource type="Shader" uid="uid://bl7ng0io5f3p6" path="res://Global_Resources/Materials/3D/Shaders/Outline_Display.gdshader" id="1_6nh3v"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_6nh3v")
+shader_parameter/line_color = Color(1, 0.866667, 0, 1)
+shader_parameter/glowSize = 4.0
+shader_parameter/glowDensity = 3
+shader_parameter/glowRadialCoverage = 4
+shader_parameter/glowAngle = 1.57
+shader_parameter/glowSharpness = 1.0
+shader_parameter/alphaThreshold = 0.2

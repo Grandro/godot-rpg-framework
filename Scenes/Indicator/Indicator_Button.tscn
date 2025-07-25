@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo2mux0ndygh1"]
+
+[ext_resource type="PackedScene" uid="uid://cva7lt6ccapbi" path="res://Scenes/Indicator/Indicator.tscn" id="1_2w5a2"]
+[ext_resource type="Script" uid="uid://ckqfsyvp500r6" path="res://Scenes/Indicator/Scripts/Indicator_Button.gd" id="2"]
+
+[node name="Indicator_Button" instance=ExtResource("1_2w5a2")]
+script = ExtResource("2")
+
+[node name="Select" type="Button" parent="." index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Margin" parent="." index="1"]
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8

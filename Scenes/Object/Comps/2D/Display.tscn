@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkih1khneqk6f"]
+
+[ext_resource type="Script" uid="uid://sewsl8jbk57j" path="res://Scenes/Object/Comps/2D/Scripts/Display.gd" id="1_jg3ag"]
+
+[node name="Display" type="Sprite2D" groups=["Comp"]]
+light_mask = 4
+visibility_layer = 4
+script = ExtResource("1_jg3ag")

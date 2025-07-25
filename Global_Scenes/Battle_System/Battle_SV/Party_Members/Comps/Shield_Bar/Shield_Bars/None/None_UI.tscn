@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbdbhrfoymjgq"]
+
+[ext_resource type="PackedScene" uid="uid://d2y0hy0td774l" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Shield_Bars/Shield_Bar_UI_Base.tscn" id="1_os7pq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qsck1"]
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="None_UI" instance=ExtResource("1_os7pq")]
+theme = null
+
+[node name="Progress" parent="." index="0"]
+theme_override_styles/fill = SubResource("StyleBoxTexture_qsck1")

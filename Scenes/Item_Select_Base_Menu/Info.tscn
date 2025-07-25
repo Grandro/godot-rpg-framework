@@ -1,0 +1,143 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjaemay65pyhl"]
+
+[ext_resource type="Script" uid="uid://biarlx83t1xua" path="res://Scenes/Item_Select_Base_Menu/Scripts/Info.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cjrw5luh13vlq" path="res://Scenes/Stats_Display/Entries/Stat_Entry.tscn" id="2"]
+
+[node name="Info" type="PanelContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 638.0
+offset_bottom = 720.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1")
+
+[node name="Margin" type="MarginContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Name" type="Label" parent="Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Image" type="TextureRect" parent="Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="Desc" type="RichTextLabel" parent="Margin/VBox/VBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Desc"
+fit_content = true
+scroll_active = false
+
+[node name="Stats" type="HBoxContainer" parent="Margin/VBox/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="Margin/VBox/VBox/Stats"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HP" parent="Margin/VBox/VBox/Stats/Left" instance=ExtResource("2")]
+layout_mode = 2
+size_flags_horizontal = 0
+_e_key = "HP"
+
+[node name="SP" parent="Margin/VBox/VBox/Stats/Left" instance=ExtResource("2")]
+layout_mode = 2
+size_flags_horizontal = 0
+_e_key = "SP"
+
+[node name="ATK" parent="Margin/VBox/VBox/Stats/Left" instance=ExtResource("2")]
+layout_mode = 2
+size_flags_horizontal = 0
+_e_key = "ATK"
+
+[node name="Middle" type="VBoxContainer" parent="Margin/VBox/VBox/Stats"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MAG" parent="Margin/VBox/VBox/Stats/Middle" instance=ExtResource("2")]
+layout_mode = 2
+size_flags_horizontal = 0
+_e_key = "MAG"
+
+[node name="DEF" parent="Margin/VBox/VBox/Stats/Middle" instance=ExtResource("2")]
+layout_mode = 2
+size_flags_horizontal = 0
+_e_key = "DEF"
+
+[node name="SPEED" parent="Margin/VBox/VBox/Stats/Middle" instance=ExtResource("2")]
+layout_mode = 2
+size_flags_horizontal = 0
+_e_key = "SPEED"
+
+[node name="Right" type="VBoxContainer" parent="Margin/VBox/VBox/Stats"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LUCK" parent="Margin/VBox/VBox/Stats/Right" instance=ExtResource("2")]
+layout_mode = 2
+size_flags_horizontal = 0
+_e_key = "LUCK"
+
+[node name="Options" type="HBoxContainer" parent="Margin/VBox/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme_override_constants/separation = 8
+
+[node name="Use" type="Button" parent="Margin/VBox/VBox/Options"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "USE"
+
+[node name="Select" type="Button" parent="Margin/VBox/VBox/Options"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "SELECT"

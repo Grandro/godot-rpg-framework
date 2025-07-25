@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf7brej2kdvii"]
+
+[ext_resource type="Script" uid="uid://2f0k64s7juri" path="res://Global_Scenes/Debug/Command_Edit/Command_Preview_Base/Scripts/Vector2.gd" id="1_1w8fh"]
+[ext_resource type="PackedScene" uid="uid://caj33yuoli0g" path="res://Global_Scenes/Debug/Scenes/Float_Edit/Float_Edit.tscn" id="2_v0by3"]
+
+[node name="Vector2" type="HBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+script = ExtResource("1_1w8fh")
+
+[node name="Desc" type="Label" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Desc"
+
+[node name="X" parent="." instance=ExtResource("2_v0by3")]
+layout_mode = 2
+alignment = 1
+_e_min = 1.0
+_e_value = 1.0
+_e_allow_greater = true
+
+[node name="Y" parent="." instance=ExtResource("2_v0by3")]
+layout_mode = 2
+alignment = 1
+_e_min = 1.0
+_e_value = 1.0
+_e_allow_greater = true

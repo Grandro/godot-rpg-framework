@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bddki7b1alyx8"]
+
+[ext_resource type="Script" uid="uid://caqq17jvd1we8" path="res://Global_Scenes/Dialogue_System/Thread/Scripts/Thread.gd" id="1"]
+
+[node name="Thread" type="Node"]
+script = ExtResource("1")
+
+[node name="Processes" type="Node" parent="."]

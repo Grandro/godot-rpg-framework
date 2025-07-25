@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b2c0llgtbtt4x"]
+
+[node name="Keys_HBox" type="HBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1

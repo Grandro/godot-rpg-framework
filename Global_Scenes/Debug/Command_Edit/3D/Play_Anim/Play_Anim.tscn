@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://826f1wh71o1y"]
+
+[ext_resource type="PackedScene" uid="uid://5213guffkn3m" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object.tscn" id="1_my02p"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="2_ncd2t"]
+[ext_resource type="Script" uid="uid://uqvnp6rfu1j4" path="res://Global_Scenes/Debug/Command_Edit/Play_Anim/Scripts/Play_Anim.gd" id="2_x6wls"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_r653i"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="4_us8v3"]
+[ext_resource type="PackedScene" uid="uid://bwjadxl0em04t" path="res://Global_Scenes/Debug/Command_Edit/Play_Anim/Anim_Keep_Dir.tscn" id="5_1s1jm"]
+[ext_resource type="PackedScene" uid="uid://dg4df175aufiv" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Slider.tscn" id="6_mdn4t"]
+
+[node name="Play_Anim" instance=ExtResource("1_my02p")]
+script = ExtResource("2_x6wls")
+_e_draw_grid = false
+_e_draw_grid_scene = null
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
+_e_needed_comps = Array[String](["Reference", "Anims"])
+
+[node name="Keep_Dir" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("2_ncd2t")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_KEEP_DIR"
+_e_var_select_scene = ExtResource("3_r653i")
+
+[node name="Backwards" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="2" instance=ExtResource("2_ncd2t")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_BACKWARDS"
+_e_var_select_scene = ExtResource("3_r653i")
+
+[node name="Anim_All" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="3" instance=ExtResource("4_us8v3")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_ANIM"
+_e_var_select_scene = ExtResource("3_r653i")
+
+[node name="Anim_Keep_Dir" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="4" instance=ExtResource("5_1s1jm")]
+layout_mode = 2
+
+[node name="Speed" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="5" instance=ExtResource("6_mdn4t")]
+layout_mode = 2
+_e_display_value = true
+_e_heading_loc_id = "DEBUG_CUTSCENES_SPEED"
+_e_var_select_scene = ExtResource("3_r653i")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Speed" index="1"]
+max_value = 5.0
+step = 0.1
+value = 1.0
+tick_count = 6
+ticks_on_borders = true
+
+[node name="Wait_Finish" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="6" instance=ExtResource("2_ncd2t")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_WAIT_FINISH"
+_e_var_select_scene = ExtResource("3_r653i")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish" index="1"]
+button_pressed = true
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Speed"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish"]

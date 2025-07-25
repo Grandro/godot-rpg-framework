@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://clbcurkhls2yb"]
+
+[ext_resource type="PackedScene" uid="uid://b0t5u8s6p2dc" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entry_List.tscn" id="1_8a241"]
+[ext_resource type="Script" uid="uid://coorj1ago52vn" path="res://Global_Scenes/Debug/Scenes/Entry_List/Scripts/Quest_Entry_List.gd" id="2_f2cmw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35nfp"]
+content_margin_left = 36.0
+bg_color = Color(0.105882, 0.0431373, 0.2, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="Quest_Entry_List" instance=ExtResource("1_8a241")]
+offset_right = 150.0
+offset_bottom = 35.0
+script = ExtResource("2_f2cmw")
+_e_show_duplicate = false
+_e_show_delete = false
+_e_confirm_delete = false
+_e_show_add = false
+_e_can_change_name = false
+_e_ensure_unique_names = false
+
+[node name="Input" parent="Search" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_35nfp")
+
+[node name="Add" parent="." index="2"]
+visible = false
+
+[editable path="Search"]

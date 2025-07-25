@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=4 uid="uid://haql28rjx2ti"]
+
+[ext_resource type="PackedScene" uid="uid://d0mpeng4w2sfd" path="res://Scenes/Maps/Map_Base/2D/Map_Base.tscn" id="1_i5yik"]
+[ext_resource type="PackedScene" uid="uid://umbuqkjbnwrj" path="res://Scenes/Player/2D/Player.tscn" id="2_yn5wa"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_20cwn"]
+vertices = PackedVector2Array(890, 490, 510, 490, 510, 310, 890, 310)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+source_geometry_mode = 2
+source_geometry_group_name = &"NavMesh_Main"
+
+[node name="Debug_2D" instance=ExtResource("1_i5yik")]
+
+[node name="Below_1" parent="Terrain" index="0"]
+tile_map_data = PackedByteArray("AAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAgAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAYAAAAAAAAAAAAMAAcAAAAAAAAAAAAMAAgAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAYAAAAAAAAAAAANAAcAAAAAAAAAAAANAAgAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAAOAAgAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAcAAAAAAAAAAAAPAAgAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAYAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAgAAAAAAAAAAAAQAAkAAAAAAAAAAAARAAYAAAAAAAAAAAARAAcAAAAAAAAAAAARAAgAAAAAAAAAAAARAAkAAAAAAAAAAAA=")
+
+[node name="Player" parent="Objects" index="2" instance=ExtResource("2_yn5wa")]
+position = Vector2(700, 400)
+
+[node name="Main" parent="Nav_Regions" index="0"]
+navigation_polygon = SubResource("NavigationPolygon_20cwn")
+
+[editable path="Objects/$Free_Camera"]

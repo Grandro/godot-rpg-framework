@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://b65ss3ty5g17i"]
+
+[ext_resource type="PackedScene" uid="uid://gi3fh4x5672i" path="res://Global_Scenes/Debug/Command_Edit/Command_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cnyfdrwjix87m" path="res://Global_Scenes/Debug/Command_Edit/Exit_Cutscene/Scripts/Exit_Cutscene.gd" id="2"]
+
+[node name="Exit_Cutscene" instance=ExtResource("1")]
+script = ExtResource("2")
+_e_command = "Exit_Cutscene"
+
+[node name="Background" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Window" parent="." index="1"]
+offset_left = -150.0
+offset_top = -50.0
+offset_right = 150.0
+offset_bottom = 50.0
+
+[node name="Margin" type="MarginContainer" parent="Window/Contents" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="Window/Contents/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="OK" type="Button" parent="Window/Contents/Margin/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "OK"
+
+[node name="Cancel" type="Button" parent="Window/Contents/Margin/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "CANCEL"
+
+[editable path="Window"]

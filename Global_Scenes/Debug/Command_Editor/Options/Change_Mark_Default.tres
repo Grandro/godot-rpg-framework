@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ContextMenuOptionEntryData" load_steps=3 format=3 uid="uid://dyb7014ndlq60"]
+
+[ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Scenes/Context_Menu/Option_Entry_Data.gd" id="1_biaym"]
+[ext_resource type="Texture2D" uid="uid://r6vb6j06pcdg" path="res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Sprites/Mark_Default.png" id="1_fhrom"]
+
+[resource]
+script = ExtResource("1_biaym")
+_e_hsep = false
+_e_icon_texture = ExtResource("1_fhrom")
+_e_show_left = true
+_e_show_right = false
+_e_visible = true
+_e_disabled = false
+_e_options = {}
+_e_options_order = Array[String]([])

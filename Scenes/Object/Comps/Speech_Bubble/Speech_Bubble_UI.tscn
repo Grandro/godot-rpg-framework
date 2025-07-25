@@ -1,0 +1,181 @@
+[gd_scene load_steps=11 format=3 uid="uid://c7rf1kiek0pcb"]
+
+[ext_resource type="Script" uid="uid://kqvha3ioex05" path="res://Scenes/Object/Comps/Speech_Bubble/Scripts/Speech_Bubble_UI.gd" id="1_8hwnq"]
+[ext_resource type="Texture2D" uid="uid://cc5yoyg4s0ec4" path="res://Global_Scenes/Dialogue_System/Sprites/Text_Box.png" id="2_g267h"]
+[ext_resource type="Texture2D" uid="uid://c0d6my4fuig56" path="res://Global_Scenes/Dialogue_System/Sprites/Proceed_Dot/Spritesheet.png" id="4_gnd6h"]
+[ext_resource type="Script" uid="uid://rnt4ambgryrh" path="res://Scenes/Object/Comps/Speech_Bubble/Scripts/Choices_Box.gd" id="6_s2h0b"]
+[ext_resource type="Texture2D" uid="uid://vodl3m6qp16b" path="res://Global_Scenes/Dialogue_System/Sprites/Choices_Box.png" id="7_vw0r6"]
+[ext_resource type="Texture2D" uid="uid://bvxryxg2rgtiq" path="res://Global_Scenes/Dialogue_System/Sprites/Arrow.png" id="8_hsop2"]
+
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("4_gnd6h")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("4_gnd6h")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="Animation" id="4"]
+resource_name = "Blink"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("2"), SubResource("3")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_elh63"]
+_data = {
+&"Blink": SubResource("4")
+}
+
+[node name="Speech_Bubble_UI" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(264, 96)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -120.0
+offset_right = 132.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_8hwnq")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/separation = -6
+
+[node name="Text_Box" type="MarginContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Nine" type="NinePatchRect" parent="VBox/Text_Box"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+texture = ExtResource("2_g267h")
+patch_margin_left = 48
+patch_margin_top = 48
+patch_margin_right = 48
+patch_margin_bottom = 48
+
+[node name="Margin" type="MarginContainer" parent="VBox/Text_Box"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+metadata/_edit_lock_ = true
+
+[node name="Text" type="RichTextLabel" parent="VBox/Text_Box/Margin"]
+light_mask = 8
+visibility_layer = 8
+texture_filter = 2
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.0
+
+[node name="Proceed_Dot" type="TextureRect" parent="VBox/Text_Box"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+texture = SubResource("2")
+metadata/_edit_lock_ = true
+
+[node name="Anims" type="AnimationPlayer" parent="VBox/Text_Box/Proceed_Dot"]
+libraries = {
+&"": SubResource("AnimationLibrary_elh63")
+}
+autoplay = "Blink"
+
+[node name="Choices_Box" type="MarginContainer" parent="VBox"]
+visible = false
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+script = ExtResource("6_s2h0b")
+metadata/_edit_group_ = true
+
+[node name="Box" type="NinePatchRect" parent="VBox/Choices_Box"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+texture = ExtResource("7_vw0r6")
+patch_margin_left = 24
+patch_margin_top = 12
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="Margin" type="MarginContainer" parent="VBox/Choices_Box"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Choices" type="VBoxContainer" parent="VBox/Choices_Box/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Control" type="Control" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Arrow" type="TextureRect" parent="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+offset_left = 120.0
+offset_top = 93.0
+offset_right = 144.0
+offset_bottom = 117.0
+size_flags_horizontal = 4
+mouse_filter = 2
+texture = ExtResource("8_hsop2")
+stretch_mode = 4

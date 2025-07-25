@@ -1,0 +1,116 @@
+[gd_scene load_steps=10 format=3 uid="uid://btuceiu23jtwm"]
+
+[ext_resource type="PackedScene" uid="uid://bc12fh7xhsyy6" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Value_Edit.tscn" id="2"]
+[ext_resource type="Script" uid="uid://7ettqtpmej5x" path="res://Global_Scenes/Debug/Dialogues/Attributes/Scripts/Choice_Entry.tres.gd" id="2_qiiuv"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://hijmuyifb08f" path="res://Global_Resources/Sprites/UI/Delete_Hover.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://df65or4arp1io" path="res://Global_Resources/Sprites/UI/Delete_Normal.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d0n7unem8uofg" path="res://Global_Resources/Sprites/UI/Arrow_Down_Normal.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://df4ra1524v8il" path="res://Global_Resources/Sprites/UI/Arrow_Down_Hover.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dd45cvgdwfhxm" path="res://Global_Resources/Sprites/UI/Arrow_Up_Hover.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://b5av2phl28y52" path="res://Global_Resources/Sprites/UI/Arrow_Up_Normal.png" id="9"]
+
+[node name="Choice_Entry" type="VBoxContainer" groups=["Translated"]]
+light_mask = 8
+visibility_layer = 8
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("3")
+theme_override_constants/separation = 8
+script = ExtResource("2_qiiuv")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Arrows" type="VBoxContainer" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Up" type="TextureButton" parent="HBox/Arrows"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+size_flags_horizontal = 0
+texture_normal = ExtResource("9")
+texture_hover = ExtResource("8")
+stretch_mode = 3
+
+[node name="Down" type="TextureButton" parent="HBox/Arrows"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+texture_normal = ExtResource("6")
+texture_hover = ExtResource("7")
+stretch_mode = 3
+
+[node name="VBox" type="VBoxContainer" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="HBox/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Heading" type="RichTextLabel" parent="HBox/VBox/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 4
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Delete" type="TextureButton" parent="HBox/VBox/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("5")
+texture_hover = ExtResource("4")
+stretch_mode = 3
+
+[node name="Loc_ID" type="HBoxContainer" parent="HBox/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Desc" type="Label" parent="HBox/VBox/Loc_ID"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_LOC_ID"
+vertical_alignment = 1
+
+[node name="Select" type="Button" parent="HBox/VBox/Loc_ID"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Value" type="HBoxContainer" parent="HBox/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Desc" type="Label" parent="HBox/VBox/Value"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 0
+text = "DEBUG_DIALOGUES_ATTRIBUTES_VALUE"
+vertical_alignment = 1
+
+[node name="Value_Edit" parent="HBox/VBox/Value" instance=ExtResource("2")]
+layout_mode = 2
+theme = ExtResource("3")
+_e_type = "String"

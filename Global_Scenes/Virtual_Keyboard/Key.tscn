@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctrt4xul7i2hc"]
+
+[ext_resource type="Script" uid="uid://cmyhoycvg777s" path="res://Global_Scenes/Virtual_Keyboard/Scripts/Key.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dtibx7edryw0s" path="res://Global_Resources/Sprites/Keys/27.png" id="2_eoyt4"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "Scale_Down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.75, 0.75)]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "Scale_Up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_123lf"]
+_data = {
+&"Scale_Down": SubResource("1"),
+&"Scale_Up": SubResource("2")
+}
+
+[node name="Key" type="TextureButton"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(67.5, 67.5)
+offset_right = 67.5
+offset_bottom = 67.5
+pivot_offset = Vector2(33.75, 33.75)
+texture_normal = ExtResource("2_eoyt4")
+stretch_mode = 5
+script = ExtResource("1")
+
+[node name="Anims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_123lf")
+}

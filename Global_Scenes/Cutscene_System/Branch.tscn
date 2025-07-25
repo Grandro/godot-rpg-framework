@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://wuqihst5cpg"]
+
+[ext_resource type="Script" uid="uid://gwh0er7ax4ei" path="res://Global_Scenes/Cutscene_System/Scripts/Branch.gd" id="1"]
+
+[node name="Branch" type="Node"]
+script = ExtResource("1")
+
+[node name="Branches" type="Node" parent="."]
+
+[node name="Threads" type="Node" parent="."]

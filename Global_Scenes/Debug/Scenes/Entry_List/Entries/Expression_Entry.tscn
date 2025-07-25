@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfb7cn8njq766"]
+
+[ext_resource type="PackedScene" uid="uid://ek1x7if6akb8" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Entry.tscn" id="1_lul0d"]
+[ext_resource type="Script" uid="uid://bt7on4ebkepdh" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Scripts/Expression_Entry.gd" id="2_ljqmb"]
+[ext_resource type="PackedScene" uid="uid://dmqr87nigr16x" path="res://Global_Scenes/Debug/Scenes/Expression_Base/Expression_Base.tscn" id="2_pt7uh"]
+
+[node name="Expression_Entry" instance=ExtResource("1_lul0d")]
+offset_right = 768.0
+offset_bottom = 178.0
+script = ExtResource("2_ljqmb")
+
+[node name="Expression" parent="HBox/VBox/Options" index="0" instance=ExtResource("2_pt7uh")]
+layout_mode = 2
+_e_create_curr_scene = true
+_e_create_objects = true
+_e_create_singletons = true

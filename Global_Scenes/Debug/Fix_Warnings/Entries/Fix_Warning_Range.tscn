@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvu035xd704yo"]
+
+[ext_resource type="PackedScene" uid="uid://ooodqj0cscur" path="res://Global_Scenes/Debug/Scenes/Num_Edit/Num_Edit.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://dfcne2xq1hclh" path="res://Global_Scenes/Debug/Fix_Warnings/Entries/Fix_Warning_Base.tscn" id="2"]
+[ext_resource type="Script" uid="uid://brs28rmllrxps" path="res://Global_Scenes/Debug/Fix_Warnings/Entries/Scripts/Fix_Warning_Range.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://bynvnvjeet3ik" path="res://Global_Scenes/Debug/Scenes/Range_Edit/Range_Edit.tscn" id="4"]
+
+[node name="Fix_Warning_Range" instance=ExtResource("2")]
+script = ExtResource("3")
+
+[node name="Range" parent="VBox/New" index="1" instance=ExtResource("4")]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="VBox/New" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Min" parent="VBox/New/HBox" index="0" instance=ExtResource("1")]
+layout_mode = 2
+alignment = 1
+
+[node name="Max" parent="VBox/New/HBox" index="1" instance=ExtResource("1")]
+layout_mode = 2
+alignment = 1

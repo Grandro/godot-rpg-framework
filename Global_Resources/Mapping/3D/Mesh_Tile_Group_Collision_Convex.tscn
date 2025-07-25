@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl7s3iren65xu"]
+
+[ext_resource type="PackedScene" uid="uid://ddv5m0gujpmte" path="res://Global_Resources/Mapping/3D/Mesh_Tile_Group_Collision_Base.tscn" id="1_e6n4q"]
+[ext_resource type="Script" uid="uid://dalj1b5qxca6n" path="res://Global_Resources/Mapping/3D/Scripts/Mesh_Tile_Group_Collision_Convex.gd" id="2_n8gfg"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n8gfg"]
+points = PackedVector3Array(-0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, 0.5, 1, -0.5)
+
+[node name="Mesh_Tile_Group_Collision_Convex" instance=ExtResource("1_e6n4q")]
+script = ExtResource("2_n8gfg")
+
+[node name="Static" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Collision" parent="Static" index="0"]
+shape = SubResource("ConvexPolygonShape3D_n8gfg")

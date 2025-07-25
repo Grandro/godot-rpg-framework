@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ContextMenuOptionEntryData" load_steps=4 format=3 uid="uid://duicl4g8h75yq"]
+
+[ext_resource type="Resource" uid="uid://dyb7014ndlq60" path="res://Global_Scenes/Debug/Command_Editor/Options/Change_Mark_Default.tres" id="1_wsnjt"]
+[ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Scenes/Context_Menu/Option_Entry_Data.gd" id="1_ydhff"]
+[ext_resource type="Resource" uid="uid://004ep7wjdan2" path="res://Global_Scenes/Debug/Command_Editor/Options/Change_Mark_Test.tres" id="2_nqt1p"]
+
+[resource]
+script = ExtResource("1_ydhff")
+_e_hsep = false
+_e_show_left = true
+_e_show_right = false
+_e_visible = true
+_e_disabled = false
+_e_options = {
+"Change_Mark_Default": ExtResource("1_wsnjt"),
+"Change_Mark_Test": ExtResource("2_nqt1p")
+}
+_e_options_order = Array[String](["Change_Mark_Default", "Change_Mark_Test"])

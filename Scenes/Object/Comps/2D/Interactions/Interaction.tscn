@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl6cwrkit3pr0"]
+
+[ext_resource type="Script" uid="uid://8xbxi2nk5d11" path="res://Scenes/Object/Comps/2D/Interactions/Scripts/Interaction.gd" id="1_e8s2q"]
+
+[node name="Interaction" type="Area2D"]
+collision_layer = 32
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_e8s2q")
+
+[node name="Collision" type="CollisionShape2D" parent="."]

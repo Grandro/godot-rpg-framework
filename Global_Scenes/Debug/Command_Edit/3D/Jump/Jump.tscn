@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://lrpclam7f1rk"]
+
+[ext_resource type="PackedScene" uid="uid://5213guffkn3m" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object.tscn" id="1_6h4an"]
+[ext_resource type="Script" uid="uid://c5s5uaafuga8v" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Jump.gd" id="2_33jsa"]
+[ext_resource type="PackedScene" uid="uid://c4crrjgxi6qq2" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Point3D.tscn" id="3_14j72"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_gosb3"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="5_744y5"]
+
+[node name="Jump" instance=ExtResource("1_6h4an")]
+script = ExtResource("2_33jsa")
+
+[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
+size = Vector2i(544, 556)
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
+_e_needed_comps = Array[String](["Reference", "Movement"])
+_e_allowed_classes = Array[String](["Node3D"])
+
+[node name="Point" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("3_14j72")]
+layout_mode = 2
+_e_var_select_scene = ExtResource("4_gosb3")
+
+[node name="Keep_Dir" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="2" instance=ExtResource("5_744y5")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_KEEP_DIR"
+_e_var_select_scene = ExtResource("4_gosb3")
+
+[node name="Wait_Finish" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="3" instance=ExtResource("5_744y5")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_WAIT_FINISH"
+_e_var_select_scene = ExtResource("4_gosb3")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish" index="1"]
+button_pressed = true
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish"]

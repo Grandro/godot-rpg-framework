@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwwclvh4q0qlv"]
+
+[ext_resource type="Script" uid="uid://cuw10l4j5w3f1" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Change_Item_Amount.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="2"]
+
+[node name="Change_Item_Amount" instance=ExtResource("2")]
+script = ExtResource("1")

@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxxopr6jon7jx"]
+
+[ext_resource type="PackedScene" uid="uid://p8udo2171tc7" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/Base/Tab_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bqms5nrflrsal" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/Sprites/Scripts/Tab_Sprites.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://i6fcoygjfmvk" path="res://Global_Scenes/Debug/Scenes/Image_Select/Image_Select.tscn" id="4"]
+
+[node name="Tab_Sprites" groups=["Translated"] instance=ExtResource("1")]
+script = ExtResource("3")
+_e_key = "Sprites"
+
+[node name="Left" type="VBoxContainer" parent="Margin/HSplit/Left" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Left" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_SPRITES_LEFT"
+vertical_alignment = 1
+
+[node name="Image" parent="Margin/HSplit/Left/Left" index="1" instance=ExtResource("4")]
+layout_mode = 2
+
+[node name="Right" type="VBoxContainer" parent="Margin/HSplit/Left" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Right" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_SPRITES_RIGHT"
+vertical_alignment = 1
+
+[node name="Image" parent="Margin/HSplit/Left/Right" index="1" instance=ExtResource("4")]
+layout_mode = 2
+
+[node name="Mini_Bust" type="VBoxContainer" parent="Margin/HSplit/Left" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Mini_Bust" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_MINI_BUST"
+vertical_alignment = 1
+
+[node name="Image" parent="Margin/HSplit/Left/Mini_Bust" index="1" instance=ExtResource("4")]
+layout_mode = 2

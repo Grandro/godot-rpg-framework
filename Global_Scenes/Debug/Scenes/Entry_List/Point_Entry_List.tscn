@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxofnnybm8oja"]
+
+[ext_resource type="PackedScene" uid="uid://b0t5u8s6p2dc" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entry_List.tscn" id="1"]
+[ext_resource type="Script" uid="uid://8purufnpbi33" path="res://Global_Scenes/Debug/Scenes/Entry_List/Scripts/Point_Entry_List.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://b4xi7ttc5afoc" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Point_Entry.tscn" id="3_n2rp6"]
+
+[node name="Point_Entry_List" instance=ExtResource("1")]
+script = ExtResource("3")
+_e_entry_scene = ExtResource("3_n2rp6")
+
+[editable path="Search"]

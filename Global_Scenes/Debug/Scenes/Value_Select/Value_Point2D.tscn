@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuohstyayaobg"]
+
+[ext_resource type="PackedScene" uid="uid://bw57hi82s1nl1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Point_Base.tscn" id="1_b8du2"]
+[ext_resource type="Script" uid="uid://b4w5u1inrll32" path="res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Point2D.gd" id="2_4hvhj"]
+[ext_resource type="PackedScene" uid="uid://bt52gl8gpfds7" path="res://Global_Scenes/Debug/Command_Edit/2D/Point.tscn" id="3_3qth2"]
+
+[node name="Value_Point2D" instance=ExtResource("1_b8du2")]
+script = ExtResource("2_4hvhj")
+_e_point_scene = ExtResource("3_3qth2")
+_e_heading_loc_id = "DEBUG_CUTSCENES_POINT"

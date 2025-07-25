@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dicb7n1ya10ha"]
+
+[ext_resource type="Script" uid="uid://cktfm8jhhga05" path="res://Scenes/Maps/Map_Base/3D/Terrain_Area/Scripts/Base.gd" id="1"]
+
+[node name="Base" type="Area3D"]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+script = ExtResource("1")

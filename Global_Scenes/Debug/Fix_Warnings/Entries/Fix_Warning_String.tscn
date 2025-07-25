@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dluo4c4ksikv"]
+
+[ext_resource type="PackedScene" uid="uid://dfcne2xq1hclh" path="res://Global_Scenes/Debug/Fix_Warnings/Entries/Fix_Warning_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://chpj8koedabof" path="res://Global_Scenes/Debug/Fix_Warnings/Entries/Scripts/Fix_Warning_String.gd" id="2"]
+
+[node name="Fix_Warning_String" instance=ExtResource("1")]
+size_flags_horizontal = 3
+script = ExtResource("2")
+
+[node name="VBox" parent="." index="1"]
+size_flags_horizontal = 3
+
+[node name="Value" type="LineEdit" parent="VBox/New" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3

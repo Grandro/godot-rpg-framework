@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://bybab63s04t0p"]
+
+[ext_resource type="PackedScene" uid="uid://birjyb23mdl01" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Terrain_Base.tscn" id="1_mgcux"]
+[ext_resource type="Script" uid="uid://w1qmb568qs5i" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Scripts/Terrain_Rigid.gd" id="2_j3t4e"]
+[ext_resource type="Script" uid="uid://bwoc3r3prt042" path="res://Scenes/Object/Comps/Movement/Comps/Terrain/Scripts/Shared_Rigid.gd" id="3_6nusf"]
+
+[node name="Terrain" instance=ExtResource("1_mgcux")]
+script = ExtResource("2_j3t4e")
+_e_shared = ExtResource("3_6nusf")

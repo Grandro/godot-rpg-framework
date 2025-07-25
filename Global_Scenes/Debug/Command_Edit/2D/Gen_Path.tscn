@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmu43g3hxt5wj"]
+
+[ext_resource type="Script" uid="uid://b5k7s5y32q58l" path="res://Global_Scenes/Debug/Command_Edit/2D/Scripts/Gen_Path.gd" id="1_15opt"]
+[ext_resource type="PackedScene" uid="uid://bt52gl8gpfds7" path="res://Global_Scenes/Debug/Command_Edit/2D/Point.tscn" id="2_kerua"]
+
+[node name="Gen_Path" type="Node2D"]
+script = ExtResource("1_15opt")
+_e_point_scene = ExtResource("2_kerua")

@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://mdjvifkhy77m"]
+
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="1"]
+[ext_resource type="Script" uid="uid://cithrym8ycqba" path="res://Scenes/Context_Menu/Scripts/Option_Entry.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cjhtd0m00v8js" path="res://Global_Resources/Sprites/UI/Forward.png" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvi34"]
+bg_color = Color(0.113725, 0.486275, 0.65098, 0.54902)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xlnw2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pn58"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yci6e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iffd0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_goiqb"]
+
+[node name="Option_Entry" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+light_mask = 8
+visibility_layer = 8
+mouse_filter = 2
+theme = ExtResource("1")
+theme_override_styles/panel = SubResource("StyleBoxFlat_gvi34")
+script = ExtResource("2")
+
+[node name="Margin" type="MarginContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBox" type="HBoxContainer" parent="Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 32
+
+[node name="Icon" type="MarginContainer" parent="Margin/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="Image" type="TextureRect" parent="Margin/HBox/Icon"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Left" type="Label" parent="Margin/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Left"
+vertical_alignment = 1
+
+[node name="Right" type="Label" parent="Margin/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Right"
+vertical_alignment = 1
+
+[node name="Arrow" type="TextureRect" parent="Margin/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Select" type="Button" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xlnw2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1pn58")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_yci6e")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iffd0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_goiqb")
+
+[node name="Expand_Timer" type="Timer" parent="."]
+one_shot = true

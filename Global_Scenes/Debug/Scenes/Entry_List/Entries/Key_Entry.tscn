@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpy7gbnx3mdhd"]
+
+[ext_resource type="PackedScene" uid="uid://ek1x7if6akb8" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Entry.tscn" id="1"]
+[ext_resource type="Script" uid="uid://eg7hbxkr0owx" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Scripts/Key_Entry.gd" id="2"]
+
+[node name="Key_Entry" instance=ExtResource("1")]
+script = ExtResource("2")

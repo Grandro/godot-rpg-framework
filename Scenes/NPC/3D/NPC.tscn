@@ -1,0 +1,95 @@
+[gd_scene load_steps=27 format=3 uid="uid://w5cxcgsk2pyw"]
+
+[ext_resource type="Script" uid="uid://dieeavfoc4v2w" path="res://Scenes/Object/Scripts/Character3D_Object.gd" id="1_ukin1"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_ryrbi"]
+[ext_resource type="PackedScene" uid="uid://dctpibkwbk8nq" path="res://Scenes/Object/Comps/3D/Equipment.tscn" id="3_5662g"]
+[ext_resource type="PackedScene" uid="uid://dsp0njc065uev" path="res://Scenes/Object/Comps/3D/Collision_Shape.tscn" id="4_dlpb3"]
+[ext_resource type="PackedScene" uid="uid://nr4813v0r2dg" path="res://Scenes/Object/Comps/3D/Interactions/Interactions.tscn" id="5_eks4x"]
+[ext_resource type="PackedScene" uid="uid://birjyb23mdl01" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Terrain_Base.tscn" id="6_2ja8q"]
+[ext_resource type="Script" uid="uid://evthfvvkbtpq" path="res://Scenes/NPC/3D/Comps/Scripts/Interactions.gd" id="6_q2llq"]
+[ext_resource type="PackedScene" uid="uid://blot4hpw1al18" path="res://Scenes/Object/Comps/3D/Camera.tscn" id="7_2582d"]
+[ext_resource type="PackedScene" uid="uid://br3fs6efh03rn" path="res://Scenes/Object/Comps/3D/Movement/Movement_Character.tscn" id="7_wtjq5"]
+[ext_resource type="PackedScene" uid="uid://catcx04rfio11" path="res://Scenes/Object/Comps/3D/Listener.tscn" id="8_4homa"]
+[ext_resource type="PackedScene" uid="uid://cjr0l2h3yj5lh" path="res://Scenes/Object/Comps/3D/Speech_Bubble.tscn" id="8_jp6d6"]
+[ext_resource type="PackedScene" uid="uid://djl16ro8388xh" path="res://Scenes/Object/Comps/3D/Movement/Comps/Jump.tscn" id="9_g50bc"]
+[ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="9_o6gmo"]
+[ext_resource type="PackedScene" uid="uid://omsbdulg45pv" path="res://Scenes/Object/Comps/3D/Popup.tscn" id="9_qmlbc"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="10_46rc0"]
+[ext_resource type="PackedScene" uid="uid://ks3max245ufk" path="res://Scenes/Object/Comps/3D/Movement/Comps/Nav_Agent.tscn" id="11_oqmr0"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="12_4jp0s"]
+[ext_resource type="PackedScene" uid="uid://367hnnm3kfjw" path="res://Scenes/Object/Comps/Operate.tscn" id="12_krme8"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="15_o6gmo"]
+[ext_resource type="PackedScene" uid="uid://du0jobeb0veao" path="res://Scenes/Object/Comps/Stater.tscn" id="16_imu3b"]
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="18_bimbb"]
+[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Scenes/Object/Comps/Cutscene.tscn" id="35_yrvj1"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="37_loxxq"]
+[ext_resource type="PackedScene" uid="uid://de2jy2ixhp2mw" path="res://Scenes/Object/Comps/Save.tscn" id="38_fyddm"]
+[ext_resource type="PackedScene" uid="uid://bnqagj5u7g0tm" path="res://Scenes/Object/Comps/3D/Debug.tscn" id="48_b4pu6"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_diesr"]
+
+[node name="NPC" type="CharacterBody3D" groups=["Object"]]
+collision_layer = 8
+collision_mask = 9
+floor_max_angle = 1.0472
+floor_snap_length = 0.15
+script = ExtResource("1_ukin1")
+
+[node name="Display" parent="." instance=ExtResource("2_ryrbi")]
+
+[node name="Collision" parent="." instance=ExtResource("4_dlpb3")]
+
+[node name="Equipment" parent="." instance=ExtResource("3_5662g")]
+
+[node name="Interactions" parent="." instance=ExtResource("5_eks4x")]
+script = ExtResource("6_q2llq")
+_e_look_at_player = true
+
+[node name="Movement" parent="." instance=ExtResource("7_wtjq5")]
+
+[node name="Terrain" parent="Movement" instance=ExtResource("6_2ja8q")]
+
+[node name="Nav_Agent" parent="Movement" instance=ExtResource("11_oqmr0")]
+
+[node name="States" parent="Movement" instance=ExtResource("9_o6gmo")]
+
+[node name="Jump" parent="Movement" instance=ExtResource("9_g50bc")]
+_e_speed = 10
+
+[node name="Camera" parent="." instance=ExtResource("7_2582d")]
+
+[node name="Listener" parent="." instance=ExtResource("8_4homa")]
+
+[node name="Audio" parent="." instance=ExtResource("12_4jp0s")]
+
+[node name="Jump" parent="Audio" instance=ExtResource("15_o6gmo")]
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="Speech_Bubble" parent="." instance=ExtResource("8_jp6d6")]
+visible = false
+
+[node name="Popup" parent="." instance=ExtResource("9_qmlbc")]
+
+[node name="Cutscene" parent="." instance=ExtResource("35_yrvj1")]
+
+[node name="Operate" parent="." instance=ExtResource("12_krme8")]
+
+[node name="Reference" parent="." instance=ExtResource("37_loxxq")]
+
+[node name="Save" parent="." instance=ExtResource("38_fyddm")]
+
+[node name="States" parent="." instance=ExtResource("18_bimbb")]
+_e_states = Array[String](["Stop", "Idle", "Walk"])
+_e_state = "Stop"
+
+[node name="Stater" parent="." instance=ExtResource("16_imu3b")]
+
+[node name="Anims" parent="." instance=ExtResource("10_46rc0")]
+libraries = {
+&"": SubResource("AnimationLibrary_diesr")
+}
+
+[node name="Debug" parent="." instance=ExtResource("48_b4pu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false

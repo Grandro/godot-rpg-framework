@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnwen4duxwc58"]
+
+[ext_resource type="PackedScene" uid="uid://4g75hu8xnu3b" path="res://Global_Scenes/Progress/Quests/Objective_Base.tscn" id="1_66rsl"]
+[ext_resource type="Script" uid="uid://bwdewuligh5dh" path="res://Global_Scenes/Progress/Quests/Scripts/Objective_Int.gd" id="2_dvkra"]
+
+[node name="Objective_Int" instance=ExtResource("1_66rsl")]
+script = ExtResource("2_dvkra")
+_e_item_key = ""

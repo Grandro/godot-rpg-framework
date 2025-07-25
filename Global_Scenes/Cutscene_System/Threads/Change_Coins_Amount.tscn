@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbjwm6c5qnw6n"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1_qaetg"]
+[ext_resource type="Script" uid="uid://dymvsix6wwuk8" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Change_Coins_Amount.gd" id="2_8vhkq"]
+
+[node name="Change_Coins_Amount" instance=ExtResource("1_qaetg")]
+script = ExtResource("2_8vhkq")

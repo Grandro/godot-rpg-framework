@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6hxht1blqh45"]
+
+[ext_resource type="PackedScene" uid="uid://bhtf075na7yrj" path="res://Global_Scenes/Debug/Dialogues/Attributes/Attribute_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://i0a4kj5v0xka" path="res://Global_Scenes/Debug/Dialogues/Attributes/Text/Scripts/Text.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://dc3gt430rdx13" path="res://Global_Scenes/Debug/Dialogues/Attributes/Text/Tab_Object.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bbbh4l0iv8e00" path="res://Global_Scenes/Debug/Dialogues/Attributes/Text/Tab_Choice.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cx3orjpyvucq1" path="res://Global_Scenes/Debug/Dialogues/Attributes/Text/Tab_Pos.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://b4rnpicp5kkno" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/General/Tab_General_Types.tscn" id="6"]
+
+[node name="Text" instance=ExtResource("1")]
+current_tab = 5
+script = ExtResource("2")
+
+[node name="Sprites" parent="." index="1"]
+visible = false
+
+[node name="General" parent="." index="3" instance=ExtResource("6")]
+visible = false
+layout_mode = 2
+_e_types = Array[String](["Object", "Pos"])
+metadata/_tab_index = 2
+
+[node name="Object" parent="." index="4" instance=ExtResource("3")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Pos" parent="." index="5" instance=ExtResource("5")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Choice" parent="." index="6" instance=ExtResource("4")]
+layout_mode = 2
+metadata/_tab_index = 5

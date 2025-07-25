@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc12fh7xhsyy6"]
+
+[ext_resource type="PackedScene" uid="uid://8ye5u4sw8coj" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Edit.tscn" id="4"]
+[ext_resource type="Script" uid="uid://btniyu0hpkkwr" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Scripts/Value_Edit.gd" id="5"]
+[ext_resource type="StyleBox" path="res://Global_Scenes/Debug/Scenes/Value_Edit/StyleBoxes/VSep.tres" id="13_6frxn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5pdl"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.635294, 0.811765, 0.807843, 1)
+
+[node name="Value_Edit" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 456.0
+offset_bottom = 33.0
+size_flags_horizontal = 3
+focus_mode = 2
+script = ExtResource("5")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Text" type="PanelContainer" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="HBox/Text"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 32
+
+[node name="Scroll" type="ScrollContainer" parent="HBox/Text/Margin"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+vertical_scroll_mode = 0
+
+[node name="Value" type="Label" parent="HBox/Text/Margin/Scroll"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 7
+vertical_alignment = 1
+
+[node name="Type" type="MarginContainer" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSep" type="VSeparator" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/separator = ExtResource("13_6frxn")
+
+[node name="Edit" parent="HBox" instance=ExtResource("4")]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Focus_Outlines" type="Panel" parent="."]
+visible = false
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x5pdl")

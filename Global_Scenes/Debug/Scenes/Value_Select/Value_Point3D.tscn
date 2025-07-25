@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4crrjgxi6qq2"]
+
+[ext_resource type="PackedScene" uid="uid://bw57hi82s1nl1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Point_Base.tscn" id="1_wye61"]
+[ext_resource type="Script" uid="uid://dc0vtc1kuruvd" path="res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Point3D.gd" id="2_5j443"]
+[ext_resource type="PackedScene" uid="uid://0dlg5a5q13g6" path="res://Global_Scenes/Debug/Command_Edit/3D/Point.tscn" id="3_trifb"]
+
+[node name="Value_Point3D" instance=ExtResource("1_wye61")]
+script = ExtResource("2_5j443")
+_e_point_scene = ExtResource("3_trifb")
+_e_heading_loc_id = "DEBUG_CUTSCENES_POINT"

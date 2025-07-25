@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://0iwgi3bid3ay"]
+
+[ext_resource type="Script" uid="uid://3hve8vn1dkos" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Indicators/Scripts/Indicators.gd" id="1_qi3fq"]
+[ext_resource type="PackedScene" uid="uid://k88nwf7dryym" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Indicators/Enemy_Select.tscn" id="2_1nfhp"]
+[ext_resource type="PackedScene" uid="uid://dmy71gp2i7sc1" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Indicators/Command_Circle.tscn" id="3_co6by"]
+[ext_resource type="PackedScene" uid="uid://d4g3oydk762s7" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Indicators/Enemy_Attack.tscn" id="4_jp17e"]
+[ext_resource type="PackedScene" uid="uid://bmpydjbwhwucc" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Indicators/Specials_Menu.tscn" id="5_xyqg6"]
+
+[node name="Indicators" type="Node3D"]
+script = ExtResource("1_qi3fq")
+
+[node name="Enemy_Select" parent="." instance=ExtResource("2_1nfhp")]
+
+[node name="Command_Circle" parent="." instance=ExtResource("3_co6by")]
+
+[node name="Enemy_Attack" parent="." instance=ExtResource("4_jp17e")]
+
+[node name="Specials_Menu" parent="." instance=ExtResource("5_xyqg6")]

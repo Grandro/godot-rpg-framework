@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://pu7yiomgntci"]
+
+[ext_resource type="Script" uid="uid://dork4uyiscejj" path="res://Scenes/Window/Scripts/Window_Base.gd" id="1_wbhgr"]
+
+[node name="Window_Base" type="Window"]
+own_world_3d = true
+script = ExtResource("1_wbhgr")

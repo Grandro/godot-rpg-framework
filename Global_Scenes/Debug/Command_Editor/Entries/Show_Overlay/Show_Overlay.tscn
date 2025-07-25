@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5lkovnv1h0vc"]
+
+[ext_resource type="Script" uid="uid://dk2m7xuuvagpl" path="res://Global_Scenes/Debug/Command_Editor/Entries/Show_Overlay/Scripts/Show_Overlay.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cb1ikaj310yps" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Command.tscn" id="1_dtk3b"]
+
+[node name="Show_Overlay" instance=ExtResource("1_dtk3b")]
+script = ExtResource("1")
+_e_color = Color(0.07, 0.7, 0.553, 1)

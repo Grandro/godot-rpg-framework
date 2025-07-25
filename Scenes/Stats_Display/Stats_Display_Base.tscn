@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwimv7b4jcly5"]
+
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="1_pgj22"]
+[ext_resource type="Script" uid="uid://c61wk1ltgpnm1" path="res://Scenes/Stats_Display/Scripts/Stats_Display_Base.gd" id="2_gogad"]
+
+[node name="Stats_Display_Base" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_pgj22")
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_bottom = -160
+script = ExtResource("2_gogad")
+metadata/_edit_group_ = true
+
+[node name="Entries" type="HBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkbrgpoedn85h"]
+
+[ext_resource type="PackedScene" uid="uid://dqr56lt142dso" path="res://Global_Scenes/Debug/Command_Edit/3D/Change_Args/Change_Args_Idx.tscn" id="1_gvqam"]
+
+[node name="Change_Dialogue_Args_Idx" instance=ExtResource("1_gvqam")]
+_e_command = "Change_Dialogue_Args_Idx"
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Value"]

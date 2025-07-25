@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ch46el64hngho"]
+
+[ext_resource type="Script" uid="uid://cgx4qljo5ouln" path="res://Global_Resources/Databases/Maps/Map_Data.gd" id="1_gvp0o"]
+[ext_resource type="Resource" uid="uid://cjadhcf7merkg" path="res://Global_Resources/Databases/Maps/3D/Game_Over/Destinations/Start.tres" id="1_vsv80"]
+
+[resource]
+script = ExtResource("1_gvp0o")
+_e_path = "res://Scenes/Maps/3D/Game_Over/Game_Over.tscn"
+_e_destinations = {
+"Start": ExtResource("1_vsv80")
+}

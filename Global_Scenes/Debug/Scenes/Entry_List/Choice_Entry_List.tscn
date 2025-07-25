@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0aycjvmp27ew"]
+
+[ext_resource type="PackedScene" uid="uid://b0t5u8s6p2dc" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entry_List.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bbpamma6xrijf" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Choice_Entry.tscn" id="2"]
+[ext_resource type="Script" uid="uid://bsc6sdrm13pyx" path="res://Global_Scenes/Debug/Scenes/Entry_List/Scripts/Choice_Entry_List.gd" id="3"]
+
+[node name="Choice_Entry_List" instance=ExtResource("1")]
+script = ExtResource("3")
+_e_entry_scene = ExtResource("2")
+_e_delete_loc_id = "CONFIRM_DELETE_CHOICE"
+_e_enumerate = true
+
+[editable path="Search"]

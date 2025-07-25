@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj7wq47s5stuj"]
+
+[ext_resource type="PackedScene" uid="uid://p8udo2171tc7" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/Base/Tab_Base.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://d2lf8mjy8lsm8" path="res://Global_Scenes/Debug/Scenes/Audio_Select/Audio_Select.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://caj33yuoli0g" path="res://Global_Scenes/Debug/Scenes/Float_Edit/Float_Edit.tscn" id="3"]
+[ext_resource type="Script" uid="uid://iteiircncv3e" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/Vox/Scripts/Tab_Vox.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://co04pnio1htpq" path="res://Global_Scenes/Debug/Scenes/Object_Select/Object_Select.tscn" id="5"]
+
+[node name="Tab_Vox" groups=["Translated"] instance=ExtResource("1")]
+script = ExtResource("4")
+_e_key = "Vox"
+
+[node name="Object" parent="Margin/HSplit/Left" index="0" instance=ExtResource("5")]
+layout_mode = 2
+
+[node name="Custom" type="VBoxContainer" parent="Margin/HSplit/Left" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBox_1" type="VBoxContainer" parent="Margin/HSplit/Left/Custom" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Custom/VBox_1" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "CUSTOM"
+vertical_alignment = 1
+
+[node name="Value" type="CheckBox" parent="Margin/HSplit/Left/Custom/VBox_1" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="VBox_2" type="VBoxContainer" parent="Margin/HSplit/Left/Custom" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="File" type="VBoxContainer" parent="Margin/HSplit/Left/Custom/VBox_2" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Custom/VBox_2/File" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_VOX_FILE"
+vertical_alignment = 1
+
+[node name="Audio" parent="Margin/HSplit/Left/Custom/VBox_2/File" index="1" instance=ExtResource("2")]
+layout_mode = 2
+_e_access = 0
+_e_dir_path = "res://Global_Scenes/Dialogue_System/Audio/Vox"
+_e_bus = "SFX"
+
+[node name="Pitch" type="VBoxContainer" parent="Margin/HSplit/Left/Custom/VBox_2" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Custom/VBox_2/Pitch" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_VOX_PITCH"
+vertical_alignment = 1
+
+[node name="Value" parent="Margin/HSplit/Left/Custom/VBox_2/Pitch" index="1" instance=ExtResource("3")]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+_e_value = 1.0
+_e_allow_greater = true

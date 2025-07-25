@@ -1,0 +1,639 @@
+[gd_scene load_steps=5 format=3 uid="uid://esqnk2qbp34y"]
+
+[ext_resource type="PackedScene" uid="uid://djhpux4n30xgb" path="res://Scenes/Window/Window_Control_Base.tscn" id="1"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="2"]
+[ext_resource type="Script" uid="uid://cbvikggcr1tw" path="res://Global_Scenes/Debug/Commands_List/Scripts/Commands_List.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://6i7bcxgislsv" path="res://Global_Scenes/Debug/Commands_List/Commands_List_Entry.tscn" id="7"]
+
+[node name="Commands_List" type="CanvasLayer" groups=["Translated"]]
+layer = 2
+script = ExtResource("5")
+
+[node name="Window" parent="." instance=ExtResource("1")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -361.0
+offset_right = 282.0
+offset_bottom = 361.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2")
+
+[node name="Close" parent="Window/Bar/HBox" index="2"]
+texture_normal = null
+
+[node name="Margin" type="MarginContainer" parent="Window/Contents" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Tab" type="TabContainer" parent="Window/Contents/Margin"]
+layout_mode = 2
+current_tab = 0
+
+[node name="1" type="MarginContainer" parent="Window/Contents/Margin/Tab"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 0
+
+[node name="HSplit" type="HSplitContainer" parent="Window/Contents/Margin/Tab/1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+collapsed = true
+dragger_visibility = 1
+
+[node name="Left" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Movement" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Movement}"
+fit_content = true
+scroll_active = false
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement"]
+layout_mode = 2
+
+[node name="Set_Move_Route" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_SET_MOVE_ROUTE"
+_e_command = "Set_Move_Route"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Set_Move_Route/Set_Move_Route.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Set_Move_Route/Set_Move_Route.tscn"
+}
+
+[node name="Change_Dir" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_CHANGE_DIR"
+_e_command = "Change_Dir"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Dir/Change_Dir.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Dir/Change_Dir.tscn"
+}
+
+[node name="Tween" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_TWEEN"
+_e_command = "Tween"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Tween/Tween.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Tween/Tween.tscn"
+}
+
+[node name="Play_Anim" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_PLAY_ANIM"
+_e_command = "Play_Anim"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Play_Anim/Play_Anim.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Play_Anim/Play_Anim.tscn"
+}
+
+[node name="Teleport_Object" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_TELEPORT_OBJECT"
+_e_command = "Teleport_Object"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Teleport_Object/Teleport_Object.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Teleport_Object/Teleport_Object.tscn"
+}
+
+[node name="Jump" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Movement/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.160784, 0.223529, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.1188, 0.1639, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_JUMP"
+_e_command = "Jump"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Jump/Jump.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Jump/Jump.tscn"
+}
+
+[node name="Camera" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Camera"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Camera}"
+fit_content = true
+scroll_active = false
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Camera"]
+layout_mode = 2
+
+[node name="Move_Free_Camera" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Camera/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_hover_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_focus_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_pressed_color = Color(0.2353, 0.52, 0.1404, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_MOVE_FREE_CAMERA"
+_e_command = "Move_Free_Camera"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Move_Free_Camera/Move_Free_Camera.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Move_Free_Camera/Move_Free_Camera.tscn"
+}
+
+[node name="Change_Camera" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Camera/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_hover_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_focus_color = Color(0.34902, 0.756863, 0.207843, 1)
+theme_override_colors/font_pressed_color = Color(0.2353, 0.52, 0.1404, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_CHANGE_CAMERA"
+_e_command = "Change_Camera"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Camera/Change_Camera.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Camera/Change_Camera.tscn"
+}
+
+[node name="Flow_Control" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Flow_Control"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Flow_Control}"
+fit_content = true
+scroll_active = false
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Flow_Control"]
+layout_mode = 2
+
+[node name="Cond_Branch" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Flow_Control/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_pressed_color = Color(0.1008, 0.4536, 0.63, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_COND_BRANCH"
+_e_command = "Cond_Branch"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Cond_Branch/Cond_Branch.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Cond_Branch/Cond_Branch.tscn"
+}
+
+[node name="Match" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Flow_Control/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_pressed_color = Color(0.1008, 0.4536, 0.63, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_MATCH"
+_e_command = "Match"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Match/Match.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Match/Match.tscn"
+}
+
+[node name="Loop" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Flow_Control/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_pressed_color = Color(0.1008, 0.4536, 0.63, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_LOOP"
+_e_command = "Loop"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Loop/Loop.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Loop/Loop.tscn"
+}
+
+[node name="Sub_Process" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Flow_Control/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_pressed_color = Color(0.1008, 0.4536, 0.63, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_SUB_PROCESS"
+_e_command = "Sub_Process"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Sub_Process/Sub_Process.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Sub_Process/Sub_Process.tscn"
+}
+
+[node name="Wait_For_Sub_Process" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Flow_Control/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_pressed_color = Color(0.1008, 0.4536, 0.63, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_WAIT_FOR_SUB_PROCESS"
+_e_command = "Wait_For_Sub_Process"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Wait_For_Sub_Process/Wait_For_Sub_Process.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Wait_For_Sub_Process/Wait_For_Sub_Process.tscn"
+}
+
+[node name="Exit_Cutscene" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Flow_Control/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_hover_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_focus_color = Color(0.141176, 0.623529, 0.870588, 1)
+theme_override_colors/font_pressed_color = Color(0.1008, 0.4536, 0.63, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_EXIT_CUTSCENE"
+_e_command = "Exit_Cutscene"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Exit_Cutscene/Exit_Cutscene.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Exit_Cutscene/Exit_Cutscene.tscn"
+}
+
+[node name="Items" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Items"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Items}"
+fit_content = true
+scroll_active = false
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Items"]
+layout_mode = 2
+
+[node name="Change_Item_Amount" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Items/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.275, 0.198, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_CHANGE_ITEM_AMOUNT"
+_e_command = "Change_Item_Amount"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Change_Item_Amount/Change_Item_Amount.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Change_Item_Amount/Change_Item_Amount.tscn"
+}
+
+[node name="Change_Equipable" parent="Window/Contents/Margin/Tab/1/HSplit/Left/Items/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_hover_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_focus_color = Color(0.901961, 0.376471, 0.270588, 1)
+theme_override_colors/font_pressed_color = Color(0.66, 0.275, 0.198, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_CHANGE_EQUIPABLE"
+_e_command = "Change_Equipable"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Equipable/Change_Equipable.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Equipable/Change_Equipable.tscn"
+}
+
+[node name="Right" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Timing" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Right"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Timing"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.8, 0.678431, 0, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Timing}"
+fit_content = true
+scroll_active = false
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Timing"]
+layout_mode = 2
+
+[node name="Wait" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Timing/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.8, 0.678431, 0, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.678431, 0, 1)
+theme_override_colors/font_color = Color(0.8, 0.678431, 0, 1)
+theme_override_colors/font_focus_color = Color(0.8, 0.678431, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.56, 0.476, 0, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_WAIT"
+_e_command = "Wait"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Wait/Wait.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Wait/Wait.tscn"
+}
+
+[node name="Audio" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Right"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Audio"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.368627, 0.529412, 1, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Audio}"
+fit_content = true
+scroll_active = false
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Audio"]
+layout_mode = 2
+
+[node name="Play_Audio" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Audio/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.368627, 0.529412, 1, 1)
+theme_override_colors/font_hover_color = Color(0.368627, 0.529412, 1, 1)
+theme_override_colors/font_color = Color(0.368627, 0.529412, 1, 1)
+theme_override_colors/font_focus_color = Color(0.368627, 0.529412, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.2812, 0.4009, 0.76, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_PLAY_AUDIO"
+_e_command = "Play_Audio"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Play_Audio/Play_Audio.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Play_Audio/Play_Audio.tscn"
+}
+
+[node name="Misc" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Right"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Heading" type="RichTextLabel" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.0705882, 0.701961, 0.552941, 1)
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
+text = "{Misc}"
+fit_content = true
+scroll_active = false
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc"]
+layout_mode = 2
+
+[node name="Script" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_SCRIPT"
+_e_command = "Script"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Script/Script.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Script/Script.tscn"
+}
+
+[node name="Change_State" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_CHANGE_STATE"
+_e_command = "Change_State"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_State/Change_State.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_State/Change_State.tscn"
+}
+
+[node name="Show_Dialogue" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_SHOW_DIALOGUE"
+_e_command = "Show_Dialogue"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Show_Dialogue/Show_Dialogue.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Show_Dialogue/Show_Dialogue.tscn"
+}
+
+[node name="Show_Popup" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_SHOW_POPUP"
+_e_command = "Show_Popup"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Show_Popup/Show_Popup.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Show_Popup/Show_Popup.tscn"
+}
+
+[node name="Show_Overlay" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_SHOW_OVERLAY"
+_e_command = "Show_Overlay"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Show_Overlay/Show_Overlay.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Show_Overlay/Show_Overlay.tscn"
+}
+
+[node name="Teleport" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_TELEPORT"
+_e_command = "Teleport"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Teleport/Teleport.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Teleport/Teleport.tscn"
+}
+
+[node name="Change_Visibility" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_CHANGE_VISIBILITY"
+_e_command = "Change_Visibility"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Visibility/Change_Visibility.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Visibility/Change_Visibility.tscn"
+}
+
+[node name="Comment" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_COMMENT"
+_e_command = "Comment"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Comment/Comment.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Comment/Comment.tscn"
+}
+
+[node name="Default_Object_Key" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.0705882, 0.701961, 0.552941, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_DEFAULT_OBJECT_KEY"
+_e_command = "Default_Object_Key"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Default_Object_Key/Default_Object_Key.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Default_Object_Key/Default_Object_Key.tscn"
+}
+
+[node name="Disable_Object" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_DISABLE_OBJECT"
+_e_command = "Disable_Object"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Disable_Object/Disable_Object.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Disable_Object/Disable_Object.tscn"
+}
+
+[node name="Change_Cutscene_Args" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_CHANGE_CUTSCENE_ARGS"
+_e_command = "Change_Cutscene_Args"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Args/Change_Cutscene_Args.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Args/Change_Cutscene_Args.tscn"
+}
+
+[node name="Change_Dialogue_Args" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_CHANGE_DIALOGUE_ARGS"
+_e_command = "Change_Dialogue_Args"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Args/Change_Dialogue_Args.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Args/Change_Dialogue_Args.tscn"
+}
+
+[node name="Change_Cutscene_Args_Idx" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_CHANGE_CUTSCENE_ARGS_IDX"
+_e_command = "Change_Cutscene_Args_Idx"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Args/Change_Cutscene_Args_Idx.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Args/Change_Cutscene_Args_Idx.tscn"
+}
+
+[node name="Change_Dialogue_Args_Idx" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_CHANGE_DIALOGUE_ARGS_IDX"
+_e_command = "Change_Dialogue_Args_Idx"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/2D/Change_Args/Change_Dialogue_Args_Idx.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/3D/Change_Args/Change_Dialogue_Args_Idx.tscn"
+}
+
+[node name="Change_Coins_Amount" parent="Window/Contents/Margin/Tab/1/HSplit/Right/Misc/VBox" instance=ExtResource("7")]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_hover_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_focus_color = Color(0.07, 0.7, 0.553, 1)
+theme_override_colors/font_pressed_color = Color(0.046, 0.46, 0.3634, 1)
+text = "DEBUG_CUTSCENES_COMMANDS_CHANGE_COINS_AMOUNT"
+_e_command = "Change_Coins_Amount"
+_e_scene_paths = {
+"2D": "res://Global_Scenes/Debug/Command_Edit/Change_Coins_Amount/Change_Coins_Amount.tscn",
+"3D": "res://Global_Scenes/Debug/Command_Edit/Change_Coins_Amount/Change_Coins_Amount.tscn"
+}
+
+[editable path="Window"]

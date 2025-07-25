@@ -1,0 +1,226 @@
+[gd_scene load_steps=15 format=3 uid="uid://k88nwf7dryym"]
+
+[ext_resource type="Script" uid="uid://byiq5yjabn2it" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Indicators/Scripts/Enemy_Select.gd" id="1_oq1rt"]
+[ext_resource type="Texture2D" uid="uid://bpaiyjrw8yrv4" path="res://Global_Resources/Sprites/SV/A_Button_Spritesheet.png" id="2_pgtvl"]
+[ext_resource type="Texture2D" uid="uid://dpnps5sm6dc08" path="res://Global_Resources/Sprites/SV/A_Arrow_Spritesheet.png" id="3_2oaoo"]
+[ext_resource type="Texture2D" uid="uid://cqxvdm8r25usg" path="res://Global_Resources/Sprites/SV/B_Button_Spritesheet.png" id="7_c7488"]
+
+[sub_resource type="Animation" id="Animation_8f0rx"]
+resource_name = "Blink"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vsdh8"]
+_data = {
+&"Blink": SubResource("Animation_8f0rx")
+}
+
+[sub_resource type="Animation" id="Animation_0f8h5"]
+resource_name = "Expand"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gde6p"]
+_data = {
+&"Expand": SubResource("Animation_0f8h5")
+}
+
+[sub_resource type="Animation" id="Animation_3blsf"]
+resource_name = "Indicate"
+length = 1.2
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enemy_Select/Sprites:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.075, 0), Vector3(0, -0.075, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8wgxs"]
+_data = {
+&"Indicate": SubResource("Animation_3blsf")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klt65"]
+atlas = ExtResource("7_c7488")
+region = Rect2(0, 0, 24, 23)
+
+[sub_resource type="Animation" id="Animation_lnmo5"]
+resource_name = "Fade_In"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e1xg1"]
+resource_name = "Fade_Out"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mh3w7"]
+_data = {
+&"Fade_In": SubResource("Animation_lnmo5"),
+&"Fade_Out": SubResource("Animation_e1xg1")
+}
+
+[node name="Enemy_Select" type="Node3D"]
+script = ExtResource("1_oq1rt")
+
+[node name="Sprites" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0124141, 0)
+
+[node name="Button" type="Sprite3D" parent="Sprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.2, 0)
+layers = 4
+pixel_size = 0.02
+double_sided = false
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("2_pgtvl")
+hframes = 2
+
+[node name="Anims" type="AnimationPlayer" parent="Sprites/Button"]
+libraries = {
+&"": SubResource("AnimationLibrary_vsdh8")
+}
+
+[node name="Arrow" type="Sprite3D" parent="Sprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, -0.07, 0)
+layers = 4
+pixel_size = 0.02
+double_sided = false
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("3_2oaoo")
+hframes = 4
+
+[node name="Anims" type="AnimationPlayer" parent="Sprites/Arrow"]
+libraries = {
+&"": SubResource("AnimationLibrary_gde6p")
+}
+
+[node name="Anims" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_8wgxs")
+}
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="VBox" type="VBoxContainer" parent="Canvas"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 16
+
+[node name="Enemy" type="MarginContainer" parent="Canvas/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Border" type="TextureRect" parent="Canvas/VBox/Enemy"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Canvas/VBox/Enemy"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="Text" type="Label" parent="Canvas/VBox/Enemy/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+text = "Citrin"
+vertical_alignment = 1
+
+[node name="Cancel" type="MarginContainer" parent="Canvas/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="HBox" type="HBoxContainer" parent="Canvas/VBox/Cancel"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Image" type="TextureRect" parent="Canvas/VBox/Cancel/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_klt65")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Text" type="Label" parent="Canvas/VBox/Cancel/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "CANCEL"
+
+[node name="Anims" type="AnimationPlayer" parent="Canvas/VBox"]
+root_node = NodePath("../Enemy")
+libraries = {
+&"": SubResource("AnimationLibrary_mh3w7")
+}

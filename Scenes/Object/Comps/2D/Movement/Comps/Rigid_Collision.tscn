@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://5rytcm7ifelj"]
+
+[ext_resource type="Script" uid="uid://cl1cutlk422ow" path="res://Scenes/Object/Comps/2D/Movement/Comps/Scripts/Rigid_Collision.gd" id="1_lcddf"]
+
+[node name="Rigid_Collision" type="Node" groups=["Comp"]]
+script = ExtResource("1_lcddf")

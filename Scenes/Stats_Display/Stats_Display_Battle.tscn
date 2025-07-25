@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmljsmgx2wmsn"]
+
+[ext_resource type="PackedScene" uid="uid://dwimv7b4jcly5" path="res://Scenes/Stats_Display/Stats_Display_Base.tscn" id="1_eb86v"]
+[ext_resource type="Script" uid="uid://d3weo7j7452j6" path="res://Scenes/Stats_Display/Scripts/Stats_Display_Battle.gd" id="2_at46r"]
+
+[node name="Stats_Display_Battle" instance=ExtResource("1_eb86v")]
+script = ExtResource("2_at46r")

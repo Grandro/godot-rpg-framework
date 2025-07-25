@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://cihklq15ngh8h"]
+
+[ext_resource type="Script" uid="uid://dicw2cbfdsjt1" path="res://Scenes/Item_Select_Base_Menu/Tab_Entry/Scripts/Tab_Entry.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://de0xrbigi3qvr" path="res://Scenes/Custom_Containers/Entry_Toggler/Key_Entry_Toggler.tscn" id="3_3frfd"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_vhc5r"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 2
+
+[node name="Tab_Entry" type="ScrollContainer"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+script = ExtResource("1")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Icons" type="MarginContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Toggler" parent="VBox/Icons" instance=ExtResource("3_3frfd")]
+layout_mode = 2
+
+[node name="HSep" type="HSeparator" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_vhc5r")
+
+[node name="Groups" type="MarginContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12

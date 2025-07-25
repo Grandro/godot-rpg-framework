@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxefmsdndx7a2"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cuy7oh7qvfsdm" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Change_Dir.gd" id="2"]
+
+[node name="Change_Dir" instance=ExtResource("1")]
+script = ExtResource("2")

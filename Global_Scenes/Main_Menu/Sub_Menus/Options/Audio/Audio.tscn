@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://b336a3my66r7w"]
+
+[ext_resource type="PackedScene" uid="uid://c41rk18ubb0th" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Option_Tab.tscn" id="1_sdvxl"]
+[ext_resource type="Script" uid="uid://d1f40jwwvkyck" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Audio/Scripts/Audio.gd" id="2_p04l4"]
+[ext_resource type="Script" uid="uid://cpmvrytrq5it7" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Audio/Scripts/Volume.gd" id="3_sfffj"]
+[ext_resource type="PackedScene" uid="uid://dg4df175aufiv" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Slider.tscn" id="4_1r5aj"]
+
+[node name="Audio" instance=ExtResource("1_sdvxl")]
+script = ExtResource("2_p04l4")
+
+[node name="HSplit" parent="." index="0"]
+dragger_visibility = 1
+
+[node name="Volume" type="VBoxContainer" parent="HSplit/Left" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 24
+script = ExtResource("3_sfffj")
+
+[node name="Master" parent="HSplit/Left/Volume" index="0" instance=ExtResource("4_1r5aj")]
+layout_mode = 2
+_e_heading_loc_id = "OPTIONS_AUDIO_VOLUME_MASTER"
+
+[node name="Heading" parent="HSplit/Left/Volume/Master/HBox" index="0"]
+custom_minimum_size = Vector2(250, 0)
+text = "OPTIONS_AUDIO_VOLUME_MASTER"
+
+[node name="Value" parent="HSplit/Left/Volume/Master" index="1"]
+custom_minimum_size = Vector2(400, 0)
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.025
+value = 1.0
+tick_count = 11
+
+[node name="Display" parent="HSplit/Left/Volume/Master" index="2"]
+visible = false
+
+[node name="BGM" parent="HSplit/Left/Volume" index="1" instance=ExtResource("4_1r5aj")]
+layout_mode = 2
+_e_heading_loc_id = "OPTIONS_AUDIO_VOLUME_BGM"
+
+[node name="Heading" parent="HSplit/Left/Volume/BGM/HBox" index="0"]
+custom_minimum_size = Vector2(250, 0)
+text = "OPTIONS_AUDIO_VOLUME_BGM"
+
+[node name="Value" parent="HSplit/Left/Volume/BGM" index="1"]
+custom_minimum_size = Vector2(400, 0)
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.025
+value = 1.0
+tick_count = 11
+
+[node name="Display" parent="HSplit/Left/Volume/BGM" index="2"]
+visible = false
+
+[node name="BGS" parent="HSplit/Left/Volume" index="2" instance=ExtResource("4_1r5aj")]
+layout_mode = 2
+_e_heading_loc_id = "OPTIONS_AUDIO_VOLUME_BGS"
+
+[node name="Heading" parent="HSplit/Left/Volume/BGS/HBox" index="0"]
+custom_minimum_size = Vector2(250, 0)
+text = "OPTIONS_AUDIO_VOLUME_BGS"
+
+[node name="Value" parent="HSplit/Left/Volume/BGS" index="1"]
+custom_minimum_size = Vector2(400, 0)
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.025
+value = 1.0
+tick_count = 11
+
+[node name="Display" parent="HSplit/Left/Volume/BGS" index="2"]
+visible = false
+
+[node name="SFX" parent="HSplit/Left/Volume" index="3" instance=ExtResource("4_1r5aj")]
+layout_mode = 2
+_e_heading_loc_id = "OPTIONS_AUDIO_VOLUME_SFX"
+
+[node name="Heading" parent="HSplit/Left/Volume/SFX/HBox" index="0"]
+custom_minimum_size = Vector2(250, 0)
+text = "OPTIONS_AUDIO_VOLUME_SFX"
+
+[node name="Value" parent="HSplit/Left/Volume/SFX" index="1"]
+custom_minimum_size = Vector2(400, 0)
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.025
+value = 1.0
+tick_count = 11
+
+[node name="Display" parent="HSplit/Left/Volume/SFX" index="2"]
+visible = false
+
+[editable path="HSplit/Left/Volume/Master"]
+[editable path="HSplit/Left/Volume/BGM"]
+[editable path="HSplit/Left/Volume/BGS"]
+[editable path="HSplit/Left/Volume/SFX"]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ContextMenuOptionEntryData" load_steps=3 format=3 uid="uid://004ep7wjdan2"]
+
+[ext_resource type="Texture2D" uid="uid://dy6yxomdqftk5" path="res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Sprites/Mark_Test.png" id="1_y56i7"]
+[ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Scenes/Context_Menu/Option_Entry_Data.gd" id="2_euw58"]
+
+[resource]
+script = ExtResource("2_euw58")
+_e_hsep = false
+_e_icon_texture = ExtResource("1_y56i7")
+_e_show_left = true
+_e_show_right = false
+_e_visible = true
+_e_disabled = false
+_e_options = {}
+_e_options_order = Array[String]([])

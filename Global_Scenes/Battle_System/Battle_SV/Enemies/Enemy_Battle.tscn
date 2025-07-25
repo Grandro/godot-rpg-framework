@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj5d5f0i16w5u"]
+
+[ext_resource type="PackedScene" uid="uid://6awbb064kh7p" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Character_Battle.tscn" id="1_v6p3j"]
+[ext_resource type="Script" uid="uid://c6gbwupsfmx8" path="res://Global_Scenes/Battle_System/Battle_SV/Enemies/Scripts/Enemy_Battle.gd" id="2_vdut4"]
+
+[node name="Enemy_Battle" groups=["Enemy"] instance=ExtResource("1_v6p3j")]
+collision_layer = 72
+script = ExtResource("2_vdut4")
+_e_select_offset = Vector3(0, 0, 0)
+
+[node name="Hitbox" parent="." index="6"]
+collision_mask = 256

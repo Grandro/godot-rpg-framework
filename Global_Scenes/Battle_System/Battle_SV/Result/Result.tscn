@@ -1,0 +1,147 @@
+[gd_scene load_steps=10 format=3 uid="uid://xts4jxlx4dgp"]
+
+[ext_resource type="Script" uid="uid://cdm8b33dw05ww" path="res://Global_Scenes/Battle_System/Battle_SV/Scripts/Result.gd" id="1_gto08"]
+[ext_resource type="PackedScene" uid="uid://xmfga7dl3slw" path="res://Scenes/Loot/Rewards/Rewards_Result.tscn" id="4_bd05d"]
+[ext_resource type="PackedScene" uid="uid://ctmdtgtdjkp8y" path="res://Global_Scenes/Battle_System/Battle_SV/Result/Party_Members/Party_Members.tscn" id="5_7g636"]
+[ext_resource type="PackedScene" uid="uid://c6ug0m0m4daq4" path="res://Scenes/Loot/Coins/Coins.tscn" id="6_rc286"]
+[ext_resource type="PackedScene" uid="uid://6jwys27w5uwp" path="res://Scenes/Indicator/Proceed_Button.tscn" id="13_ce7pm"]
+
+[sub_resource type="Resource" id="Resource_b0m7g"]
+metadata/__load_path__ = "res://Global_Resources/Audio/SFX/Win_1.wav"
+
+[sub_resource type="Animation" id="Animation_3tpal"]
+resource_name = "Fade_In"
+length = 1.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Win")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("Resource_b0m7g")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_ow8il"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dnv45"]
+_data = {
+&"Fade_In": SubResource("Animation_3tpal"),
+&"RESET": SubResource("Animation_ow8il")
+}
+
+[node name="Result" type="CanvasLayer"]
+script = ExtResource("1_gto08")
+
+[node name="Control" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="VBox" type="VBoxContainer" parent="Control"]
+light_mask = 8
+visibility_layer = 8
+clip_contents = true
+layout_mode = 0
+offset_top = 16.0
+offset_right = 1280.0
+offset_bottom = 624.0
+theme_override_constants/separation = 12
+
+[node name="Heading" type="Label" parent="Control/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_font_sizes/font_size = 48
+text = "SV_BATTLE_WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rewards" parent="Control/VBox" instance=ExtResource("4_bd05d")]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_constants/h_separation = 16
+alignment = 1
+
+[node name="Party_Members" parent="Control/VBox" instance=ExtResource("5_7g636")]
+layout_mode = 2
+
+[node name="Coins" parent="Control" instance=ExtResource("6_rc286")]
+layout_mode = 1
+
+[node name="Proceed" parent="Control" instance=ExtResource("13_ce7pm")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -76.0
+offset_top = -76.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 1
+
+[node name="Win" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="Anims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dnv45")
+}

@@ -1,0 +1,285 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd16bj5kq7q0m"]
+
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="1"]
+[ext_resource type="Script" uid="uid://g000e8b3q5ku" path="res://Global_Scenes/Debug/General/Teleport_Scene/Scripts/Select_Teleport.gd" id="3"]
+[ext_resource type="Script" uid="uid://ccjcmrjiibt0y" path="res://Global_Scenes/Debug/General/Teleport_Map/Scripts/Teleport_Map.gd" id="4"]
+[ext_resource type="Script" uid="uid://dlwfifsysb1do" path="res://Global_Scenes/Debug/General/Change_Chapter/Scripts/Change_Chapter.gd" id="5"]
+[ext_resource type="Script" uid="uid://b31ojc47mdu8w" path="res://Global_Scenes/Debug/General/Teleport_Scene/Scripts/Teleport_Scene.gd" id="6"]
+[ext_resource type="Script" uid="uid://c6q88ww16knho" path="res://Global_Scenes/Debug/General/Change_Chapter/Scripts/Select_Chapter.gd" id="7"]
+
+[node name="General" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HSplit" type="HSplitContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+collapsed = true
+
+[node name="Left" type="VBoxContainer" parent="HSplit"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Teleport_Map" type="HBoxContainer" parent="HSplit/Left"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 16
+script = ExtResource("4")
+
+[node name="Desc" type="Label" parent="HSplit/Left/Teleport_Map"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_GENERAL_TELEPORT_MAP"
+vertical_alignment = 1
+
+[node name="Select" type="Button" parent="HSplit/Left/Teleport_Map"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "SELECT"
+
+[node name="Teleport_Scene" type="HBoxContainer" parent="HSplit/Left" groups=["Translated"]]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 16
+script = ExtResource("6")
+
+[node name="Desc" type="Label" parent="HSplit/Left/Teleport_Scene"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_GENERAL_TELEPORT_SCENE"
+vertical_alignment = 1
+
+[node name="Select" type="Button" parent="HSplit/Left/Teleport_Scene"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "SELECT"
+
+[node name="Select_Teleport" type="CanvasLayer" parent="HSplit/Left/Teleport_Scene" groups=["Translated"]]
+layer = 3
+visible = false
+script = ExtResource("3")
+
+[node name="Control" type="Control" parent="HSplit/Left/Teleport_Scene/Select_Teleport"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+
+[node name="Background" type="Panel" parent="HSplit/Left/Teleport_Scene/Select_Teleport/Control"]
+self_modulate = Color(1, 1, 1, 0.784314)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="HSplit/Left/Teleport_Scene/Select_Teleport/Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -300.0
+offset_right = 180.0
+offset_bottom = 300.0
+theme_override_constants/separation = 16
+
+[node name="Return" type="Button" parent="HSplit/Left/Teleport_Scene/Select_Teleport/Control/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+text = "<---"
+
+[node name="Scroll" type="ScrollContainer" parent="HSplit/Left/Teleport_Scene/Select_Teleport/Control/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="HSplit/Left/Teleport_Scene/Select_Teleport/Control/VBox/Scroll"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 44
+
+[node name="Teleportations" type="VBoxContainer" parent="HSplit/Left/Teleport_Scene/Select_Teleport/Control/VBox/Scroll/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Heading" type="RichTextLabel" parent="HSplit/Left/Teleport_Scene/Select_Teleport/Control/VBox/Scroll/VBox/Teleportations"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="VBox" type="VBoxContainer" parent="HSplit/Left/Teleport_Scene/Select_Teleport/Control/VBox/Scroll/VBox/Teleportations"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Change_Chapter" type="HBoxContainer" parent="HSplit/Left"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 16
+script = ExtResource("5")
+
+[node name="Desc" type="Label" parent="HSplit/Left/Change_Chapter"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_GENERAL_CHANGE_CHAPTER"
+vertical_alignment = 1
+
+[node name="Select" type="Button" parent="HSplit/Left/Change_Chapter"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "SELECT"
+
+[node name="Select_Chapter" type="CanvasLayer" parent="HSplit/Left/Change_Chapter"]
+layer = 3
+visible = false
+script = ExtResource("7")
+
+[node name="Control" type="Control" parent="HSplit/Left/Change_Chapter/Select_Chapter"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+
+[node name="Background" type="Panel" parent="HSplit/Left/Change_Chapter/Select_Chapter/Control"]
+self_modulate = Color(1, 1, 1, 0.784314)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="HSplit/Left/Change_Chapter/Select_Chapter/Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -300.0
+offset_right = 180.0
+offset_bottom = 300.0
+theme_override_constants/separation = 16
+
+[node name="Return" type="Button" parent="HSplit/Left/Change_Chapter/Select_Chapter/Control/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+text = "<---"
+
+[node name="Scroll" type="ScrollContainer" parent="HSplit/Left/Change_Chapter/Select_Chapter/Control/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Chapters" type="VBoxContainer" parent="HSplit/Left/Change_Chapter/Select_Chapter/Control/VBox/Scroll"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Heading" type="RichTextLabel" parent="HSplit/Left/Change_Chapter/Select_Chapter/Control/VBox/Scroll/Chapters"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Curr" type="HBoxContainer" parent="HSplit/Left/Change_Chapter/Select_Chapter/Control/VBox/Scroll/Chapters"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Desc" type="Label" parent="HSplit/Left/Change_Chapter/Select_Chapter/Control/VBox/Scroll/Chapters/Curr"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+text = "DEBUG_GENERAL_CURR_CHAPTER"
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="HSplit/Left/Change_Chapter/Select_Chapter/Control/VBox/Scroll/Chapters/Curr"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="HSplit/Left/Change_Chapter/Select_Chapter/Control/VBox/Scroll/Chapters"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Right" type="VBoxContainer" parent="HSplit"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ContextMenuOptionEntryData" load_steps=2 format=3 uid="uid://cme23a5k67kff"]
+
+[ext_resource type="Script" uid="uid://v0jwe56fkhao" path="res://Scenes/Context_Menu/Option_Entry_Data.gd" id="1_3i45f"]
+
+[resource]
+script = ExtResource("1_3i45f")
+_e_hsep = true
+_e_show_left = true
+_e_show_right = true
+_e_visible = true
+_e_disabled = false
+_e_options = {}
+_e_options_order = Array[String]([])

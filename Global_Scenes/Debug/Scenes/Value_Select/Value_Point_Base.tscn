@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw57hi82s1nl1"]
+
+[ext_resource type="PackedScene" uid="uid://be6yntrlk06ra" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Select.tscn" id="1_t3q8o"]
+[ext_resource type="Texture2D" uid="uid://dt70asssy8c3g" path="res://Global_Scenes/Debug/Sprites/Path/End.png" id="2_rrltb"]
+[ext_resource type="Script" uid="uid://dtht7ymvy2ggs" path="res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Point_Base.gd" id="2_upe2o"]
+
+[node name="Value_Point_Base" instance=ExtResource("1_t3q8o")]
+script = ExtResource("2_upe2o")
+_e_type_texture = ExtResource("2_rrltb")
+_e_point_scene = null
+
+[node name="Heading" parent="HBox" index="0"]
+text = "DEBUG_CUTSCENES_POINT"
+
+[node name="Value" type="PanelContainer" parent="." index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Margin" type="MarginContainer" parent="Value" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="Text" type="Label" parent="Value/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Value"
+vertical_alignment = 1
+
+[node name="Type" type="TextureRect" parent="Value/Margin" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("2_rrltb")
+expand_mode = 1
+stretch_mode = 3

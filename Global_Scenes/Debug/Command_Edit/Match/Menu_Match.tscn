@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://btb7d6ikxaqe2"]
+
+[ext_resource type="Script" uid="uid://bosqfr57i61sh" path="res://Global_Scenes/Debug/Command_Edit/Match/Scripts/Menu_Match.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://dnw88jp58kcao" path="res://Global_Scenes/Debug/Command_Edit/Menu_Base.tscn" id="2"]
+
+[node name="Menu_Match" instance=ExtResource("2")]
+script = ExtResource("1")
+_e_branches_editable = true

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnw88jp58kcao"]
+
+[ext_resource type="Script" uid="uid://clklcwe2typjn" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Menu_Base.gd" id="1"]
+
+[node name="Menu_Base" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 456.0
+offset_bottom = 217.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1")

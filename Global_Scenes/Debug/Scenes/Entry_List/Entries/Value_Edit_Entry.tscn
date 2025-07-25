@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://ybmr2rknm3h"]
+
+[ext_resource type="PackedScene" uid="uid://ek1x7if6akb8" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Entry.tscn" id="1_ck28v"]
+[ext_resource type="PackedScene" uid="uid://bc12fh7xhsyy6" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Value_Edit.tscn" id="2_mg5gl"]
+[ext_resource type="Script" uid="uid://44scvystsfeu" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Scripts/Value_Edit_Entry.gd" id="2_s6b7k"]
+
+[node name="Value_Edit_Entry" instance=ExtResource("1_ck28v")]
+script = ExtResource("2_s6b7k")
+
+[node name="Value" parent="HBox/VBox/Options" index="0" instance=ExtResource("2_mg5gl")]
+layout_mode = 2

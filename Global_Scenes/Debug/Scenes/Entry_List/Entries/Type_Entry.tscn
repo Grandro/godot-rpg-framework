@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://2ou0266g7a1w"]
+
+[ext_resource type="PackedScene" uid="uid://ek1x7if6akb8" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Entry.tscn" id="1_6h3fa"]
+[ext_resource type="Script" uid="uid://ykj87v0b8073" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Scripts/Type_Entry.gd" id="2_t5cdn"]
+
+[node name="Type_Entry" instance=ExtResource("1_6h3fa")]
+script = ExtResource("2_t5cdn")
+
+[node name="Options" parent="HBox/VBox" index="1"]
+visible = true
+
+[node name="Types" type="OptionButton" parent="HBox/VBox/Options" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2

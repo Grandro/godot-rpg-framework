@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://xw4tlkb84rru"]
+
+[ext_resource type="PackedScene" uid="uid://dgwbnne2kkmmi" path="res://Scenes/Object/Comps/2D/Movement/Movement_Base.tscn" id="1_peujy"]
+[ext_resource type="Script" uid="uid://icxwbbp7jrr7" path="res://Scenes/Object/Comps/2D/Movement/Scripts/Movement_Rigid.gd" id="2_tkgm7"]
+[ext_resource type="Script" uid="uid://c4d7565n3r7c8" path="res://Scenes/Object/Comps/Movement/Scripts/Shared_Rigid.gd" id="3_ai12p"]
+
+[node name="Movement" instance=ExtResource("1_peujy")]
+script = ExtResource("2_tkgm7")
+_e_shared = ExtResource("3_ai12p")

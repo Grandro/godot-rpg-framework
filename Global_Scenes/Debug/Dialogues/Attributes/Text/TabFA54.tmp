@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx3orjpyvucq1"]
+
+[ext_resource type="PackedScene" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/Base/Tab_Base.tscn" id="1"]
+[ext_resource type="Script" path="res://Global_Scenes/Debug/Dialogues/Attributes/Text/Scripts/Tab_Pos.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://bc12fh7xhsyy6" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Value_Edit.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bcmeit6hbj55l" path="res://Global_Scenes/Debug/Dialogues/Attributes/Text/Small_Preview.tscn" id="4"]
+
+[node name="Tab_Pos" groups=["Translated"] instance=ExtResource("1")]
+script = ExtResource("2")
+_e_key = "Pos"
+
+[node name="Pos" type="VBoxContainer" parent="Margin/HSplit/Left" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Type" type="VBoxContainer" parent="Margin/HSplit/Left/Pos" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Pos/Type" index="0"]
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_TYPE"
+vertical_alignment = 1
+
+[node name="Options" type="OptionButton" parent="Margin/HSplit/Left/Pos/Type" index="1"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Custom" type="VBoxContainer" parent="Margin/HSplit/Left/Pos" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Pos/Custom" index="0"]
+layout_mode = 2
+text = "CUSTOM"
+vertical_alignment = 1
+
+[node name="Value" parent="Margin/HSplit/Left/Pos/Custom" index="1" instance=ExtResource("3")]
+layout_mode = 2
+_e_type = "Vector2"
+_e_editable = false
+
+[node name="Name_Type" type="VBoxContainer" parent="Margin/HSplit/Left/Pos" index="2"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Pos/Name_Type" index="0"]
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_NAME_POS"
+vertical_alignment = 1
+
+[node name="Options" type="OptionButton" parent="Margin/HSplit/Left/Pos/Name_Type" index="1"]
+custom_minimum_size = Vector2(100, 22)
+layout_mode = 2
+
+[node name="Small_Preview" parent="Margin/HSplit/Left/Pos" index="3" instance=ExtResource("4")]
+layout_mode = 2
+
+[node name="Name" type="VBoxContainer" parent="Margin/HSplit/Left" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Name" index="0"]
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_NAME"
+vertical_alignment = 1
+
+[node name="Select" type="Button" parent="Margin/HSplit/Left/Name" index="1"]
+custom_minimum_size = Vector2(100, 22)
+layout_mode = 2
+
+[node name="Show_Arrow" type="VBoxContainer" parent="Margin/HSplit/Left" index="2"]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Show_Arrow" index="0"]
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_SHOW_ARROW"
+vertical_alignment = 1
+
+[node name="Value" type="CheckBox" parent="Margin/HSplit/Left/Show_Arrow" index="1"]
+layout_mode = 2

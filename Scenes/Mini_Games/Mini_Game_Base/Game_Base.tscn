@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://xuy0gyipng5m"]
+
+[ext_resource type="Script" uid="uid://dcsldb4ixn20o" path="res://Scenes/Mini_Games/Mini_Game_Base/Scripts/Game_Base.gd" id="1_ajqtg"]
+
+[node name="Game_Base" type="Node2D"]
+light_mask = 4
+visibility_layer = 4
+script = ExtResource("1_ajqtg")
+
+[node name="Canvas_1" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="Canvas_1"]
+self_modulate = Color(0.301961, 0.301961, 0.301961, 1)
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 6
+
+[node name="Canvas_2" type="CanvasLayer" parent="."]

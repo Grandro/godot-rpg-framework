@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5r7lkughrks5"]
+
+[ext_resource type="Script" uid="uid://bwrrpyq5qj4et" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Command_Edit.gd" id="5"]
+
+[node name="Command_Edit" type="CanvasLayer"]
+layer = 2
+script = ExtResource("5")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5uev8po81iw1"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_sbmuc"]
+[ext_resource type="Script" uid="uid://xat5wpy6f7si" path="res://Global_Scenes/Debug/Command_Editor/Entries/Change_Equipable/Scripts/Change_Equipable.gd" id="2"]
+
+[node name="Change_Equipable" instance=ExtResource("1_sbmuc")]
+script = ExtResource("2")
+_e_color = Color(0.901961, 0.376471, 0.270588, 1)

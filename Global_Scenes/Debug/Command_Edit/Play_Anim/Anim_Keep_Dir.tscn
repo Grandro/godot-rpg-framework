@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwjadxl0em04t"]
+
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="1_yfwvd"]
+[ext_resource type="Script" uid="uid://c3xj1i0ndybiu" path="res://Global_Scenes/Debug/Command_Edit/Play_Anim/Scripts/Anim_Keep_Dir.gd" id="2_ur477"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_7stv1"]
+
+[node name="Anim_Keep_Dir" instance=ExtResource("1_yfwvd")]
+script = ExtResource("2_ur477")
+_e_heading_loc_id = "DEBUG_CUTSCENES_ANIM"
+_e_var_select_scene = ExtResource("3_7stv1")
+
+[node name="Heading" parent="HBox" index="0"]
+text = "DEBUG_CUTSCENES_ANIM"

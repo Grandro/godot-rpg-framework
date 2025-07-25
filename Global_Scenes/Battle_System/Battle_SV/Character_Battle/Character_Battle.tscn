@@ -1,0 +1,37 @@
+[gd_scene load_steps=10 format=3 uid="uid://6awbb064kh7p"]
+
+[ext_resource type="Script" uid="uid://jr0suxnll6nt" path="res://Global_Scenes/Battle_System/Battle_SV/Scripts/Character_Battle.gd" id="1_wucqe"]
+[ext_resource type="PackedScene" uid="uid://bblmb8yfchyxr" path="res://Scenes/Object/Comps/3D/Display.tscn" id="2_c7url"]
+[ext_resource type="PackedScene" uid="uid://cfdwl620axohy" path="res://Scenes/Object/Comps/3D/Audio.tscn" id="4_q2d3w"]
+[ext_resource type="PackedScene" uid="uid://boh1rwcj5rgwf" path="res://Scenes/Object/Comps/States.tscn" id="5_nhvs1"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="6_1spmg"]
+[ext_resource type="PackedScene" uid="uid://kwe0wi2c8er5" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Stats.tscn" id="6_w5p3p"]
+[ext_resource type="PackedScene" uid="uid://b1q143fixhaj5" path="res://Scenes/Object/Comps/Anims.tscn" id="7_djs4b"]
+[ext_resource type="Script" uid="uid://14x1ifsvgd6b" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Scripts/Anims.gd" id="8_bmb2c"]
+[ext_resource type="PackedScene" uid="uid://dtsovamjoipgb" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Status/Status.tscn" id="9_vbmw5"]
+
+[node name="Character_Battle" type="CharacterBody3D" groups=["Object"]]
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_wucqe")
+
+[node name="Display" parent="." instance=ExtResource("2_c7url")]
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="Audio" parent="." instance=ExtResource("4_q2d3w")]
+
+[node name="Status" parent="." instance=ExtResource("9_vbmw5")]
+
+[node name="States" parent="." instance=ExtResource("5_nhvs1")]
+
+[node name="Stats" parent="." instance=ExtResource("6_w5p3p")]
+
+[node name="Reference" parent="." instance=ExtResource("6_1spmg")]
+
+[node name="Anims" parent="." instance=ExtResource("7_djs4b")]
+script = ExtResource("8_bmb2c")

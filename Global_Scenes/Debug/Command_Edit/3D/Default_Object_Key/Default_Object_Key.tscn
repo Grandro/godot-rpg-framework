@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnbf7s83p1sa2"]
+
+[ext_resource type="PackedScene" uid="uid://5213guffkn3m" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object.tscn" id="1_mtvel"]
+[ext_resource type="Script" uid="uid://disusjpt4vt12" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Default_Object_Key.gd" id="2_rg3of"]
+
+[node name="Default_Object_Key" instance=ExtResource("1_mtvel")]
+script = ExtResource("2_rg3of")
+_e_draw_grid = false
+_e_draw_grid_scene = null
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbwvbrff3tof0"]
+
+[ext_resource type="PackedScene" uid="uid://cq7x4410fjnnc" path="res://Scenes/Item_Select_Base_Menu/Inventory.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bg8en6okgxiur" path="res://Global_Scenes/Main_Menu/Sub_Menus/Inventory/Scripts/Inventory_Menu.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://tw8jq5isd0qp" path="res://Scenes/Item_Select_Base_Menu/Item_Select_Base_Menu.tscn" id="4"]
+
+[node name="Inventory_Menu" instance=ExtResource("4")]
+script = ExtResource("3")
+
+[node name="Back" parent="." index="1"]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 112.0
+offset_bottom = 64.0
+
+[node name="Heading" type="Label" parent="." index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 48
+text = "MAIN_MENU_INVENTORY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Inventory" parent="." index="3" instance=ExtResource("1")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 16.0
+offset_top = 96.0
+offset_right = 1264.0
+offset_bottom = 704.0

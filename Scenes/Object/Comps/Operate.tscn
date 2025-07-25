@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://367hnnm3kfjw"]
+
+[ext_resource type="Script" uid="uid://16jhysxeml4" path="res://Scenes/Object/Comps/Scripts/Operate.gd" id="1_x4d27"]
+
+[node name="Operate" type="Node" groups=["Comp"]]
+script = ExtResource("1_x4d27")

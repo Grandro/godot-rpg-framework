@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://crvbia8mojvsp"]
+
+[ext_resource type="PackedScene" uid="uid://sa1x511bddau" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Text.tscn" id="1_qcfle"]
+[ext_resource type="Script" uid="uid://bvam37llkee84" path="res://Global_Scenes/Debug/Command_Edit/Scenes/Char_Select/Scripts/Char_Select.gd" id="2_j1byp"]
+
+[node name="Char_Select" instance=ExtResource("1_qcfle")]
+script = ExtResource("2_j1byp")
+_e_pattern = "[a-z]"
+_e_ord_min = 97
+_e_ord_max = 122
+_e_ord = 97
+
+[node name="Value" parent="." index="1"]
+text = "a"
+max_length = 1

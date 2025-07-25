@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://b31wlri5vunar"]
+
+[ext_resource type="PackedScene" uid="uid://gi3fh4x5672i" path="res://Global_Scenes/Debug/Command_Edit/Command_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bcdgep250uagx" path="res://Global_Scenes/Debug/Command_Edit/Teleport/Scripts/Teleport.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="3_gegy4"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_24dgs"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="5_e43bm"]
+
+[node name="Teleport" instance=ExtResource("1")]
+script = ExtResource("2")
+_e_command = "Teleport"
+
+[node name="Background" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Window" parent="." index="1"]
+offset_left = -240.0
+offset_top = -165.0
+offset_right = 240.0
+offset_bottom = 165.0
+
+[node name="Margin" type="MarginContainer" parent="Window/Contents" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Type" parent="Window/Contents/Margin/VBox" index="0" instance=ExtResource("3_gegy4")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_TYPE_%s"
+_e_options = Array[String](["Map", "Battle"])
+_e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
+_e_var_select_scene = ExtResource("4_24dgs")
+
+[node name="Teleportation" parent="Window/Contents/Margin/VBox" index="1" instance=ExtResource("3_gegy4")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_TELEPORTATIONS"
+_e_var_select_scene = ExtResource("4_24dgs")
+
+[node name="Destination" parent="Window/Contents/Margin/VBox" index="2" instance=ExtResource("3_gegy4")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_DESTINATIONS"
+_e_var_select_scene = ExtResource("4_24dgs")
+
+[node name="Handle_Lost_Battle" parent="Window/Contents/Margin/VBox" index="3" instance=ExtResource("5_e43bm")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_HANDLE_LOST_BATTLE"
+_e_var_select_scene = ExtResource("4_24dgs")
+
+[node name="HBox" type="HBoxContainer" parent="Window/Contents/Margin/VBox" index="4"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="OK" type="Button" parent="Window/Contents/Margin/VBox/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "OK"
+
+[node name="Cancel" type="Button" parent="Window/Contents/Margin/VBox/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "CANCEL"
+
+[editable path="Window"]

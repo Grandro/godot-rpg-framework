@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbpamma6xrijf"]
+
+[ext_resource type="PackedScene" uid="uid://ek1x7if6akb8" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Entry.tscn" id="1"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="2"]
+[ext_resource type="PackedScene" uid="uid://bc12fh7xhsyy6" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Value_Edit.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bf8m2llgekjpu" path="res://Global_Scenes/Debug/Scenes/Loc_ID_Select/Loc_ID_Select.tscn" id="3_57kpo"]
+[ext_resource type="Script" uid="uid://cnxlhmgtsexp5" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Scripts/Choice_Entry.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://bqd7n7g3d2q30" path="res://Global_Scenes/Debug/Scenes/Entry_List/Expression_Entry_List.tscn" id="5_08u88"]
+
+[node name="Choice_Entry" groups=["Translated"] instance=ExtResource("1")]
+offset_right = 768.0
+offset_bottom = 252.0
+script = ExtResource("4")
+
+[node name="Loc_ID" parent="HBox/VBox/Options" index="0" instance=ExtResource("3_57kpo")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_DIALOGUES_ATTRIBUTES_LOC_ID"
+
+[node name="Value" type="VBoxContainer" parent="HBox/VBox/Options" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Heading" type="Label" parent="HBox/VBox/Options/Value" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 0
+text = "DEBUG_DIALOGUES_ATTRIBUTES_VALUE"
+vertical_alignment = 1
+
+[node name="Value_Edit" parent="HBox/VBox/Options/Value" index="1" instance=ExtResource("3")]
+layout_mode = 2
+theme = ExtResource("2")
+
+[node name="Conditions" type="VBoxContainer" parent="HBox/VBox/Options" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Heading" type="Label" parent="HBox/VBox/Options/Conditions" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 0
+text = "DEBUG_DIALOGUES_ATTRIBUTES_CONDITIONS"
+vertical_alignment = 1
+
+[node name="Entries" parent="HBox/VBox/Options/Conditions" index="1" instance=ExtResource("5_08u88")]
+layout_mode = 2
+_e_delete_loc_id = "CONFIRM_DELETE_CONDITION"
+
+[node name="Scroll" parent="HBox/VBox/Options/Conditions/Entries" index="1"]
+vertical_scroll_mode = 0
+
+[editable path="HBox/VBox/Options/Conditions/Entries"]
+[editable path="HBox/VBox/Options/Conditions/Entries/Search"]

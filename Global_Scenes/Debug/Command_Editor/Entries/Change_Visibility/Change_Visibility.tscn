@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bow260nhdhatl"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_rln0s"]
+[ext_resource type="Script" uid="uid://cpa8p8n5trecl" path="res://Global_Scenes/Debug/Command_Editor/Entries/Change_Visibility/Scripts/Change_Visibility.gd" id="2"]
+
+[node name="Change_Visibility" instance=ExtResource("1_rln0s")]
+script = ExtResource("2")
+_e_color = Color(0.07, 0.7, 0.553, 1)

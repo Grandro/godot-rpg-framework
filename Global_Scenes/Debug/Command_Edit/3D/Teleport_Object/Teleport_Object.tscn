@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0a6k66wb4651"]
+
+[ext_resource type="PackedScene" uid="uid://5213guffkn3m" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object.tscn" id="1_flerq"]
+[ext_resource type="PackedScene" uid="uid://c4crrjgxi6qq2" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Point3D.tscn" id="2_7s07g"]
+[ext_resource type="Script" uid="uid://83byv5e05bwr" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Teleport_Object.gd" id="2_i6vq6"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_gahxo"]
+
+[node name="Teleport_Object" instance=ExtResource("1_flerq")]
+script = ExtResource("2_i6vq6")
+
+[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
+size = Vector2i(544, 556)
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
+_e_allowed_classes = Array[String](["Node3D"])
+
+[node name="Point" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("2_7s07g")]
+layout_mode = 2
+_e_var_select_scene = ExtResource("3_gahxo")
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]

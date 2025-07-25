@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://br3bjwwah3g7r"]
+
+[ext_resource type="Script" uid="uid://byo4wf2te3pj" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Controls/Scripts/Controls.gd" id="1_13he2"]
+[ext_resource type="PackedScene" uid="uid://c41rk18ubb0th" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Option_Tab.tscn" id="1_tel7v"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="3_p47xj"]
+
+[node name="Controls" instance=ExtResource("1_tel7v")]
+script = ExtResource("1_13he2")
+
+[node name="HSplit" parent="." index="0"]
+dragger_visibility = 1
+
+[node name="Keyboard_Layout" parent="HSplit/Left" index="0" instance=ExtResource("3_p47xj")]
+layout_mode = 2
+_e_init_key = ""
+_e_options = Array[String](["AZERTY", "Colemak", "Dvorak", "QWERTY", "QWERTZ"])
+_e_heading_loc_id = "OPTIONS_CONTROLS_KEYBOARD_LAYOUT"

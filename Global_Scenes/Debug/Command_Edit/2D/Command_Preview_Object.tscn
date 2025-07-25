@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://clcnrrgit18fj"]
+
+[ext_resource type="PackedScene" uid="uid://b3qywd1peglav" path="res://Global_Scenes/Debug/Command_Edit/2D/Command_Preview/Command_Preview.tscn" id="1_hnpds"]
+[ext_resource type="Script" uid="uid://bhhe7gsmlbcae" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Command_Preview_Object.gd" id="2_7ukfy"]
+[ext_resource type="PackedScene" uid="uid://co04pnio1htpq" path="res://Global_Scenes/Debug/Scenes/Object_Select/Object_Select.tscn" id="3_mommg"]
+
+[node name="Command_Preview_Object" instance=ExtResource("1_hnpds")]
+script = ExtResource("2_7ukfy")
+
+[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
+size = Vector2i(2, 2)
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0" instance=ExtResource("3_mommg")]
+layout_mode = 2
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]

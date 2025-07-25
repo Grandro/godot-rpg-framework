@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://gi3fh4x5672i"]
+
+[ext_resource type="PackedScene" uid="uid://djhpux4n30xgb" path="res://Scenes/Window/Window_Control_Base.tscn" id="3_23ym4"]
+[ext_resource type="Script" uid="uid://dl60mxyje5mmu" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Command_Base.gd" id="4"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="5"]
+
+[node name="Command_Base" type="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5")
+script = ExtResource("4")
+
+[node name="Background" type="Panel" parent="."]
+modulate = Color(0, 0, 0, 0.196078)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Window" parent="." instance=ExtResource("3_23ym4")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -240.0
+offset_right = 360.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = null
+
+[editable path="Window"]

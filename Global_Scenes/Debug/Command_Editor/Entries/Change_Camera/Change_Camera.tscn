@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhs1ywcpkcc73"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_idp6l"]
+[ext_resource type="Script" uid="uid://biiebpx83q32d" path="res://Global_Scenes/Debug/Command_Editor/Entries/Change_Camera/Scripts/Change_Camera.gd" id="2_r1so2"]
+
+[node name="Change_Camera" instance=ExtResource("1_idp6l")]
+script = ExtResource("2_r1so2")
+_e_color = Color(0.34902, 0.756863, 0.207843, 1)

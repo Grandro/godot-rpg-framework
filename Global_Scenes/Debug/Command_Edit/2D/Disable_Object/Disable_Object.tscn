@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bufj4gp243ii0"]
+
+[ext_resource type="PackedScene" uid="uid://clcnrrgit18fj" path="res://Global_Scenes/Debug/Command_Edit/2D/Command_Preview_Object.tscn" id="1_4j5id"]
+[ext_resource type="Script" uid="uid://ckappxvw1e7k0" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Disable_Object.gd" id="2_2e2vh"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="2_lxc4a"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_epeku"]
+
+[node name="Disable_Object" instance=ExtResource("1_4j5id")]
+script = ExtResource("2_2e2vh")
+_e_draw_grid_scene = null
+
+[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
+size = Vector2i(544, 556)
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
+_e_needed_comps = Array[String](["Reference", "Operate"])
+
+[node name="Disable" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("2_lxc4a")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_DISABLE"
+_e_var_select_scene = ExtResource("3_epeku")
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]

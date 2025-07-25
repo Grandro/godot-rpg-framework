@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctcfcbosrs5k6"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://540vnnwcpod8" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Play_Anim.gd" id="2"]
+
+[node name="Play_Anim" instance=ExtResource("1")]
+script = ExtResource("2")

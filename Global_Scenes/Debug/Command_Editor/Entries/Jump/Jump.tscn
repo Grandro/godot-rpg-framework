@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5jdvh8bf2scp"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_psaaq"]
+[ext_resource type="Script" uid="uid://cmh7x6tjyk436" path="res://Global_Scenes/Debug/Command_Editor/Entries/Jump/Scripts/Jump.gd" id="2"]
+
+[node name="Jump" instance=ExtResource("1_psaaq")]
+script = ExtResource("2")
+_e_color = Color(0.901961, 0.160784, 0.223529, 1)

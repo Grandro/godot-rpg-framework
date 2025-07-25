@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmpydjbwhwucc"]
+
+[ext_resource type="Script" uid="uid://3trywrsuuhih" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Indicators/Scripts/Specials_Menu.gd" id="1_mab4n"]
+[ext_resource type="Texture2D" uid="uid://cqxvdm8r25usg" path="res://Global_Resources/Sprites/SV/B_Button_Spritesheet.png" id="2_n1og8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2a4g"]
+atlas = ExtResource("2_n1og8")
+region = Rect2(0, 0, 24, 23)
+
+[sub_resource type="Animation" id="Animation_lnmo5"]
+resource_name = "Fade_In"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cancel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e1xg1"]
+resource_name = "Fade_Out"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cancel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mh3w7"]
+_data = {
+&"Fade_In": SubResource("Animation_lnmo5"),
+&"Fade_Out": SubResource("Animation_e1xg1")
+}
+
+[node name="Specials_Menu" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_mab4n")
+
+[node name="Cancel" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+light_mask = 8
+visibility_layer = 8
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+
+[node name="HBox" type="HBoxContainer" parent="Cancel"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Image" type="TextureRect" parent="Cancel/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_x2a4g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Text" type="Label" parent="Cancel/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "CANCEL"
+
+[node name="Anims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mh3w7")
+}

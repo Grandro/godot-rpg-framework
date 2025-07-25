@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://du2j8xkxwc2ne"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhqbp"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.901961, 0.886275, 0.792157, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ldgn6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sky78"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.901961, 0.886275, 0.792157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6ci0"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.901961, 0.886275, 0.792157, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f6m0i"]
+
+[node name="Choice_Entry" type="Button"]
+light_mask = 8
+visibility_layer = 8
+texture_filter = 2
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_disabled_color = Color(0.4, 0.4, 0.4, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.541176, 0.235294, 0.964706, 1)
+theme_override_colors/font_hover_color = Color(0.541176, 0.235294, 0.964706, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.541176, 0.235294, 0.964706, 1)
+theme_override_colors/font_pressed_color = Color(0.541176, 0.235294, 0.964706, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_bhqbp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ldgn6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sky78")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o6ci0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f6m0i")
+text = "Hallo"

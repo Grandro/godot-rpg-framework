@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cva7lt6ccapbi"]
+
+[ext_resource type="Script" uid="uid://c31prddib3ueg" path="res://Scenes/Indicator/Scripts/Indicator.gd" id="1_lvobj"]
+[ext_resource type="Texture2D" uid="uid://dtibx7edryw0s" path="res://Global_Resources/Sprites/Keys/27.png" id="2_i0fvt"]
+
+[node name="Indicator" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 36.0
+offset_bottom = 36.0
+mouse_filter = 2
+script = ExtResource("1_lvobj")
+
+[node name="Margin" type="MarginContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBox" type="HBoxContainer" parent="Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="Input" type="TextureRect" parent="Margin/HBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("2_i0fvt")
+expand_mode = 1
+stretch_mode = 5

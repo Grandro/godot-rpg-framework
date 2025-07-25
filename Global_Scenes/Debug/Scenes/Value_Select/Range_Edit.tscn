@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw52y37euywya"]
+
+[ext_resource type="PackedScene" uid="uid://bynvnvjeet3ik" path="res://Global_Scenes/Debug/Scenes/Range_Edit/Range_Edit.tscn" id="1_3w411"]
+[ext_resource type="Script" uid="uid://w700inrfin2v" path="res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Range_Edit.gd" id="2_hyjmy"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_7r1uv"]
+
+[node name="Range_Edit" instance=ExtResource("1_3w411")]
+script = ExtResource("2_hyjmy")
+
+[node name="Var_Select" parent="Min" index="1" instance=ExtResource("3_7r1uv")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Var_Select" parent="Max" index="1" instance=ExtResource("3_7r1uv")]
+layout_mode = 2
+size_flags_vertical = 0

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://deh11u32lcoj"]
+
+[ext_resource type="PackedScene" uid="uid://cf7brej2kdvii" path="res://Global_Scenes/Debug/Command_Edit/Command_Preview_Base/Vector2.tscn" id="1_h3ppy"]
+[ext_resource type="Script" uid="uid://w60yeshv0llx" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview/Scripts/Vector3.gd" id="2_tsoh4"]
+[ext_resource type="PackedScene" uid="uid://caj33yuoli0g" path="res://Global_Scenes/Debug/Scenes/Float_Edit/Float_Edit.tscn" id="3_1g7b4"]
+
+[node name="Vector3" instance=ExtResource("1_h3ppy")]
+script = ExtResource("2_tsoh4")
+
+[node name="Z" parent="." index="3" instance=ExtResource("3_1g7b4")]
+layout_mode = 2
+alignment = 1
+_e_min = 1.0
+_e_value = 1.0
+_e_allow_greater = true

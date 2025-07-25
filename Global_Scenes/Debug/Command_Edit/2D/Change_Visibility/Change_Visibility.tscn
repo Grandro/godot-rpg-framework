@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctvuya8j5g624"]
+
+[ext_resource type="PackedScene" uid="uid://clcnrrgit18fj" path="res://Global_Scenes/Debug/Command_Edit/2D/Command_Preview_Object.tscn" id="1_fhxwj"]
+[ext_resource type="Script" uid="uid://cvx4jidqat35d" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Change_Visibility.gd" id="2_6lfei"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="3_8va1q"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_3wvxb"]
+
+[node name="Change_Visibility" instance=ExtResource("1_fhxwj")]
+script = ExtResource("2_6lfei")
+_e_draw_grid = false
+_e_draw_grid_scene = null
+
+[node name="Visible" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("3_8va1q")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_VISIBLE"
+_e_var_select_scene = ExtResource("4_3wvxb")
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]

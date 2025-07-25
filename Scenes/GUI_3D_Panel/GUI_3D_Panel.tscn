@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://qeicd1w7hese"]
+
+[ext_resource type="Script" uid="uid://bnpxxh0xco6vr" path="res://Scenes/GUI_3D_Panel/Scripts/GUI_3D_Panel.gd" id="1_gm0mx"]
+[ext_resource type="PackedScene" uid="uid://nt5gfdybdx7v" path="res://Scenes/VP_Container/VP.tscn" id="2_410e2"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vunfy"]
+viewport_path = NodePath("VP")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ri7na"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_vunfy")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g6unx"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_ri7na")
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jrwck"]
+size = Vector3(0.629862, 1, 0.05)
+
+[node name="GUI_3D_Panel" type="Node3D"]
+script = ExtResource("1_gm0mx")
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+layers = 4
+mesh = SubResource("PlaneMesh_g6unx")
+
+[node name="Area" type="Area3D" parent="Plane"]
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+
+[node name="Collision" type="CollisionShape3D" parent="Plane/Area"]
+shape = SubResource("BoxShape3D_jrwck")
+
+[node name="VP" parent="." instance=ExtResource("2_410e2")]
+transparent_bg = true
+handle_input_locally = true
+canvas_cull_mask = 4293918728
+size = Vector2i(512, 512)
+_e_sub_world = false
+_e_game_world = false

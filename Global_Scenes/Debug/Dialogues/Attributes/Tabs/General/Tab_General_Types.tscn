@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4rnpicp5kkno"]
+
+[ext_resource type="PackedScene" uid="uid://cttubfh75d6oq" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/General/Tab_General.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dh83juxktssvi" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/General/Scripts/Tab_General_Types.gd" id="2"]
+
+[node name="Tab_General_Types" instance=ExtResource("1")]
+script = ExtResource("2")
+_e_types = Array[String]([])
+
+[node name="Type" type="VBoxContainer" parent="Margin/HSplit/Left" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Type" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_TYPE"
+vertical_alignment = 1
+
+[node name="Options" type="OptionButton" parent="Margin/HSplit/Left/Type" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2

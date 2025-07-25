@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=3 uid="uid://scudq4m3joes"]
+
+[ext_resource type="PackedScene" uid="uid://gi3fh4x5672i" path="res://Global_Scenes/Debug/Command_Edit/Command_Base.tscn" id="1_4xyf8"]
+[ext_resource type="Script" uid="uid://da7ujd58gs7p7" path="res://Global_Scenes/Debug/Command_Edit/Command_Preview_Base/Scripts/Command_Preview_Base.gd" id="2_h60y2"]
+[ext_resource type="Script" uid="uid://b6js3aqbvcggv" path="res://Global_Scenes/Debug/Command_Edit/Command_Preview_Base/Scripts/Dimensions.gd" id="3_31fhx"]
+[ext_resource type="PackedScene" uid="uid://csxl7e1wrfvnx" path="res://Global_Scenes/Debug/Preview/Preview.tscn" id="3_vgy7b"]
+
+[node name="Command_Preview_Base" instance=ExtResource("1_4xyf8")]
+script = ExtResource("2_h60y2")
+_e_free_camera_scene = null
+_e_draw_grid_scene = null
+_e_gen_path_scene = null
+_e_dimensions = ExtResource("3_31fhx")
+
+[node name="Window" parent="." index="1"]
+offset_left = -560.0
+offset_top = -315.0
+offset_right = 560.0
+offset_bottom = 315.0
+
+[node name="Margin" type="MarginContainer" parent="Window/Contents" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="Window/Contents/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Left" type="VBoxContainer" parent="Window/Contents/Margin/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Preview" parent="Window/Contents/Margin/HBox/Left" index="0" instance=ExtResource("3_vgy7b")]
+layout_mode = 2
+size_flags_vertical = 3
+_e_singletons = Array[String](["Global"])
+
+[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
+size = Vector2i(544, 586)
+_e_game_world = false
+_e_resize = false
+_e_activate_physics = false
+
+[node name="Grid" type="HBoxContainer" parent="Window/Contents/Margin/HBox/Left" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Right" type="VBoxContainer" parent="Window/Contents/Margin/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Options" type="ScrollContainer" parent="Window/Contents/Margin/HBox/Right" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/HBox/Right/Options" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="HBox" type="HBoxContainer" parent="Window/Contents/Margin/HBox/Right" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="OK" type="Button" parent="Window/Contents/Margin/HBox/Right/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "OK"
+
+[node name="Cancel" type="Button" parent="Window/Contents/Margin/HBox/Right/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "CANCEL"
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]

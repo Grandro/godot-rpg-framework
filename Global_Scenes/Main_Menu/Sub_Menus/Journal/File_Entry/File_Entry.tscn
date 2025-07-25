@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8e0l4fiwh36t"]
+
+[ext_resource type="Texture2D" uid="uid://b0fnnqoau01k1" path="res://Global_Resources/Sprites/Box.png" id="1"]
+[ext_resource type="Script" uid="uid://c2rck236i6oie" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/File_Entry/Scripts/File_Entry.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dc6o55bdgtifc" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/Sprites/Clock.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dc5scrpjv4ck1" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/Sprites/Location.png" id="6"]
+
+[node name="File_Entry" type="VBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 384.0
+offset_bottom = 384.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+script = ExtResource("2")
+
+[node name="Mini_Busts" type="HBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Nine" type="NinePatchRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1")
+region_rect = Rect2(0, 0, 63, 63)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="Margin" type="MarginContainer" parent="Nine"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Grid" type="GridContainer" parent="Nine/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+columns = 2
+
+[node name="Play_Time" type="VBoxContainer" parent="Nine/Margin/Grid"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Image" type="TextureRect" parent="Nine/Margin/Grid/Play_Time"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3")
+
+[node name="Value" type="Label" parent="Nine/Margin/Grid/Play_Time"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "12:34:56"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Location" type="VBoxContainer" parent="Nine/Margin/Grid"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Image" type="TextureRect" parent="Nine/Margin/Grid/Location"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("6")
+
+[node name="Value" type="Label" parent="Nine/Margin/Grid/Location"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+text = "Broko Town"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Select" type="Button" parent="Nine"]
+self_modulate = Color(0, 0, 0, 0)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0

@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxLine" format=2]
+
+[resource]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+color = Color( 0.878431, 0.878431, 0.878431, 1 )
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 4
+vertical = true

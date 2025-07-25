@@ -1,0 +1,112 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0024rmnc641w"]
+
+[ext_resource type="Script" uid="uid://dutp1bsmwpqpl" path="res://Global_Scenes/Debug/Command_Edit/Cond_Branch/Scripts/Cond_Branch.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://gi3fh4x5672i" path="res://Global_Scenes/Debug/Command_Edit/Command_Base.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bxn66p8i5vfx5" path="res://Global_Scenes/Debug/Scenes/Item_Select/Item_Select.tscn" id="9_7viti"]
+[ext_resource type="Script" uid="uid://2u7q54alptxf" path="res://Global_Scenes/Debug/Command_Edit/Cond_Branch/Items/Scripts/Items.gd" id="10"]
+[ext_resource type="PackedScene" uid="uid://b3frwdb8c2ikx" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Range.tscn" id="10_jqowe"]
+[ext_resource type="Script" uid="uid://d4kjmqkbgrl3" path="res://Global_Scenes/Debug/Command_Edit/Cond_Branch/Script/Scripts/Script.gd" id="12"]
+[ext_resource type="PackedScene" uid="uid://dnw88jp58kcao" path="res://Global_Scenes/Debug/Command_Edit/Menu_Base.tscn" id="17"]
+[ext_resource type="PackedScene" uid="uid://dmqr87nigr16x" path="res://Global_Scenes/Debug/Scenes/Expression_Base/Expression_Base.tscn" id="18"]
+
+[node name="Cond_Branch" instance=ExtResource("3")]
+script = ExtResource("1")
+
+[node name="Background" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="Window/Contents" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Menus" type="TabContainer" parent="Window/Contents/Margin/VBox" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Items" parent="Window/Contents/Margin/VBox/Menus" index="1" groups=["Translated"] instance=ExtResource("17")]
+layout_mode = 2
+script = ExtResource("10")
+_e_key = "Items"
+metadata/_tab_index = 0
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/VBox/Menus/Items" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Item" parent="Window/Contents/Margin/VBox/Menus/Items/VBox" index="0" instance=ExtResource("9_7viti")]
+layout_mode = 2
+
+[node name="Amount" parent="Window/Contents/Margin/VBox/Menus/Items/VBox" index="1" instance=ExtResource("10_jqowe")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_AMOUNT"
+
+[node name="Script" parent="Window/Contents/Margin/VBox/Menus" index="2" instance=ExtResource("17")]
+visible = false
+layout_mode = 2
+script = ExtResource("12")
+_e_key = "Script"
+metadata/_tab_index = 1
+
+[node name="Expression" parent="Window/Contents/Margin/VBox/Menus/Script" index="0" instance=ExtResource("18")]
+layout_mode = 2
+size_flags_vertical = 2
+_e_create_curr_scene = true
+_e_create_objects = true
+_e_create_singletons = true
+
+[node name="Else_Branch" type="VBoxContainer" parent="Window/Contents/Margin/VBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Window/Contents/Margin/VBox/Else_Branch" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "DEBUG_CUTSCENES_ELSE_BRANCH"
+
+[node name="Value" type="CheckBox" parent="Window/Contents/Margin/VBox/Else_Branch" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="Window/Contents/Margin/VBox" index="2"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="OK" type="Button" parent="Window/Contents/Margin/VBox/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "OK"
+
+[node name="Cancel" type="Button" parent="Window/Contents/Margin/VBox/HBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "CANCEL"
+
+[editable path="Window"]

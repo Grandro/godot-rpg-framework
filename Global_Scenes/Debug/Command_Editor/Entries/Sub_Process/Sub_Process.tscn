@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnx0xdtlupv33"]
+
+[ext_resource type="PackedScene" uid="uid://bencex1ddgld3" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Branch.tscn" id="1_tj4i8"]
+[ext_resource type="Script" uid="uid://c5ej7c8ag8o1" path="res://Global_Scenes/Debug/Command_Editor/Entries/Sub_Process/Scripts/Sub_Process.gd" id="2_dcfra"]
+
+[node name="Sub_Process" instance=ExtResource("1_tj4i8")]
+script = ExtResource("2_dcfra")
+_e_color = Color(0.141176, 0.623529, 0.870588, 1)

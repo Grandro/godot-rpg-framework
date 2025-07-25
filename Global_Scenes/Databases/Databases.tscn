@@ -1,0 +1,100 @@
+[gd_scene load_steps=21 format=3 uid="uid://ctwo1tyq87pp6"]
+
+[ext_resource type="Script" uid="uid://b0vn6f1426n8k" path="res://Global_Scenes/Databases/Scripts/Databases.gd" id="1"]
+[ext_resource type="Resource" uid="uid://cdsogy3mi43o" path="res://Global_Resources/Databases/Keyboard_Layouts/Dvorak.tres" id="3"]
+[ext_resource type="Resource" uid="uid://bq1glosbfgx77" path="res://Global_Resources/Databases/Keyboard_Layouts/AZERTY.tres" id="7"]
+[ext_resource type="Resource" uid="uid://nswdca58b3o3" path="res://Global_Resources/Databases/Keyboard_Layouts/Colemak.tres" id="8"]
+[ext_resource type="Resource" uid="uid://4dncx81ar5qi" path="res://Global_Resources/Databases/Keyboard_Layouts/QWERTY.tres" id="11"]
+[ext_resource type="Resource" uid="uid://d1ombcialff7i" path="res://Global_Resources/Databases/Keyboard_Layouts/QWERTZ.tres" id="14"]
+[ext_resource type="Resource" uid="uid://feuegl0w0af3" path="res://Global_Resources/Databases/Maps/3D/Debug_3D/Debug_3D.tres" id="22"]
+[ext_resource type="Resource" uid="uid://cuglsp1gpsi7p" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Journal.tres" id="25"]
+[ext_resource type="Resource" uid="uid://cix2dc0yh34lj" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Options.tres" id="26"]
+[ext_resource type="Resource" uid="uid://dywjv5vqipjgy" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Inventory.tres" id="27"]
+[ext_resource type="Resource" uid="uid://bamxvlht07gd5" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Journal_Write.tres" id="28"]
+[ext_resource type="Resource" uid="uid://bhetib7eiaiap" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Journal_Read.tres" id="29"]
+[ext_resource type="Resource" uid="uid://cch0tn24ywpgi" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Party.tres" id="30"]
+[ext_resource type="Resource" uid="uid://ybkmuxkeepiw" path="res://Global_Resources/Databases/Main_Menu/Sub_Menus/Quests.tres" id="32"]
+[ext_resource type="Resource" uid="uid://ch46el64hngho" path="res://Global_Resources/Databases/Maps/3D/Game_Over/Game_Over.tres" id="36_10vt8"]
+[ext_resource type="Resource" uid="uid://xaxrro82k2dj" path="res://Global_Resources/Databases/Maps/2D/Debug_2D/Debug_2D.tres" id="40_wvujn"]
+
+[sub_resource type="Resource" id="Resource_skkow"]
+metadata/__load_path__ = "res://Global_Resources/Databases/Battle_System/Actions/Commands/Attack_ATK.tres"
+
+[sub_resource type="Resource" id="Resource_1l3sv"]
+metadata/__load_path__ = "res://Global_Resources/Databases/Battle_System/Actions/Commands/Defense_DEF.tres"
+
+[sub_resource type="Resource" id="Resource_lp8tp"]
+metadata/__load_path__ = "res://Global_Resources/Databases/Battle_System/Actions/Commands/Flee.tres"
+
+[sub_resource type="Resource" id="Resource_tfcd2"]
+metadata/__load_path__ = "res://Global_Resources/Databases/Battle_System/Actions/Commands/Special.tres"
+
+[node name="Databases" type="Node"]
+script = ExtResource("1")
+_e_data = {
+"Debug": {
+"Data": {},
+"Path": "res://Data/Debug.dat"
+},
+"Enemies": {
+"Data": {}
+},
+"Items": {
+"Data": {}
+},
+"Keyboard_Layouts": {
+"Data": {
+"AZERTY": ExtResource("7"),
+"Colemak": ExtResource("8"),
+"Dvorak": ExtResource("3"),
+"QWERTY": ExtResource("11"),
+"QWERTZ": ExtResource("14")
+}
+},
+"Main_Menu": {
+"Data": {
+"Sub_Menus": {
+"Inventory": ExtResource("27"),
+"Journal": ExtResource("25"),
+"Journal_Read": ExtResource("29"),
+"Journal_Write": ExtResource("28"),
+"Options": ExtResource("26"),
+"Party": ExtResource("30"),
+"Quests": ExtResource("32")
+}
+}
+},
+"Maps": {
+"Data": {
+"Debug_2D": ExtResource("40_wvujn"),
+"Debug_3D": ExtResource("22"),
+"Game_Over": ExtResource("36_10vt8")
+}
+},
+"Party_Members": {
+"Data": {}
+},
+"Quests": {
+"Data": {}
+},
+"SV_Actions": {
+"Data": {
+"Commands": {
+"Attack_ATK": SubResource("Resource_skkow"),
+"Defense_DEF": SubResource("Resource_1l3sv"),
+"Flee": SubResource("Resource_lp8tp"),
+"Special": SubResource("Resource_tfcd2")
+},
+"Specials": {}
+}
+},
+"SV_Encounters": {
+"Data": {}
+},
+"Status": {
+"Data": {}
+},
+"Vox": {
+"Data": {}
+}
+}

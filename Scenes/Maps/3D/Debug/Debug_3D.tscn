@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0crwvyh5yulj"]
+
+[ext_resource type="PackedScene" uid="uid://cl2vhhqvmf6i2" path="res://Scenes/Maps/Map_Base/3D/Map_Base.tscn" id="1_4113k"]
+[ext_resource type="PackedScene" uid="uid://d3rnjkhvcxxr0" path="res://Scenes/Player/3D/Player.tscn" id="2_p2eag"]
+
+[node name="Debug_3D" instance=ExtResource("1_4113k")]
+
+[node name="Player" parent="Objects" index="2" instance=ExtResource("2_p2eag")]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjrw5luh13vlq"]
+
+[ext_resource type="Texture2D" uid="uid://boxmgf0temvst" path="res://Global_Resources/Sprites/Icons/Stats/HP.png" id="1"]
+[ext_resource type="Script" uid="uid://dklbg27r2yqpd" path="res://Scenes/Stats_Display/Entries/Scripts/Stat_Entry.gd" id="3"]
+
+[node name="Stat_Entry" type="HBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 60.0
+offset_bottom = 28.0
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/separation = 12
+script = ExtResource("3")
+
+[node name="Icon" type="TextureRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Value" type="Label" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 28
+text = "-1"
+horizontal_alignment = 1
+vertical_alignment = 1

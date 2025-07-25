@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqd7n7g3d2q30"]
+
+[ext_resource type="PackedScene" uid="uid://b0t5u8s6p2dc" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entry_List.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://bfb7cn8njq766" path="res://Global_Scenes/Debug/Scenes/Entry_List/Entries/Expression_Entry.tscn" id="2"]
+[ext_resource type="Script" uid="uid://jtrmgi8ojpq2" path="res://Global_Scenes/Debug/Scenes/Entry_List/Scripts/Expression_Entry_List.gd" id="3"]
+
+[node name="Expression_Entry_List" instance=ExtResource("1")]
+offset_right = 577.0
+offset_bottom = 35.0
+size_flags_vertical = 3
+script = ExtResource("3")
+_e_entry_scene = ExtResource("2")
+
+[node name="Add" parent="." index="2"]
+visible = false

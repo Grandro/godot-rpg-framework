@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd3phdbrcul61"]
+
+[ext_resource type="PackedScene" uid="uid://5213guffkn3m" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object.tscn" id="1_5jjpk"]
+[ext_resource type="Script" uid="uid://cntmhfymtonsv" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Command_Preview_Object_Path.gd" id="2_d4byt"]
+[ext_resource type="PackedScene" uid="uid://bxofnnybm8oja" path="res://Global_Scenes/Debug/Scenes/Entry_List/Point_Entry_List.tscn" id="3_afka4"]
+[ext_resource type="PackedScene" uid="uid://bo2fbdjcv2n7g" path="res://Global_Scenes/Debug/Command_Edit/3D/Gen_Path.tscn" id="3_d4byt"]
+
+[node name="Command_Preview_Object_Path" instance=ExtResource("1_5jjpk")]
+script = ExtResource("2_d4byt")
+_e_selected_color = Color(1, 0.84, 0, 1)
+_e_normal_color = Color(1, 1, 1, 1)
+_e_gen_path_scene = ExtResource("3_d4byt")
+
+[node name="Path_Points" parent="Window/Contents/Margin/HBox" index="1" instance=ExtResource("3_afka4")]
+layout_mode = 2
+size_flags_horizontal = 3
+_e_delete_loc_id = "CONFIRM_DELETE_POINT"
+_e_show_duplicate = false
+_e_confirm_delete = false
+_e_show_search = false
+_e_show_add = false
+_e_can_change_name = false
+_e_ensure_unique_names = false
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]

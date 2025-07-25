@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://6jwys27w5uwp"]
+
+[ext_resource type="PackedScene" uid="uid://bo2mux0ndygh1" path="res://Scenes/Indicator/Indicator_Button.tscn" id="1_u48ng"]
+[ext_resource type="Texture2D" uid="uid://dti8yjdd8swkr" path="res://Global_Resources/Sprites/Joy/Letters_Color/Button_A.png" id="2_ams1c"]
+[ext_resource type="Texture2D" uid="uid://pelxbitvttd4" path="res://Global_Resources/Sprites/Keys/32.png" id="2_qis8h"]
+[ext_resource type="Texture2D" uid="uid://dfl4bd2splv71" path="res://Global_Resources/Sprites/Joy/Letters_Neutral/Button_A.png" id="3_yxv2c"]
+[ext_resource type="Texture2D" uid="uid://c0cd4qawbxfrb" path="res://Global_Resources/Sprites/Joy/Shapes_Color/Button_Cross.png" id="4_46gfi"]
+[ext_resource type="Texture2D" uid="uid://0m0fk0ph0b0y" path="res://Global_Resources/Sprites/UI/Arrow_Right_Normal.png" id="6_orn4f"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_y37gh"]
+action = &"OK"
+
+[sub_resource type="Shortcut" id="Shortcut_u7eio"]
+events = [SubResource("InputEventAction_y37gh")]
+
+[node name="Proceed_Button" instance=ExtResource("1_u48ng")]
+_e_keyboard_texture = ExtResource("2_qis8h")
+_e_joy_letters_color_texture = ExtResource("2_ams1c")
+_e_joy_letters_neutral_texture = ExtResource("3_yxv2c")
+_e_joy_shapes_color_texture = ExtResource("4_46gfi")
+
+[node name="Select" parent="." index="0"]
+shortcut = SubResource("Shortcut_u7eio")
+
+[node name="Arrow" type="TextureRect" parent="Margin/HBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("6_orn4f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Input" parent="Margin/HBox" index="1"]
+texture = ExtResource("2_qis8h")

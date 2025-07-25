@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://nbf5uk2vnl0y"]
+
+[ext_resource type="PackedScene" uid="uid://bencex1ddgld3" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Branch.tscn" id="1_5vmum"]
+[ext_resource type="Script" uid="uid://km3c3og0802u" path="res://Global_Scenes/Debug/Command_Editor/Entries/Match/Scripts/Match.gd" id="2"]
+
+[node name="Match" instance=ExtResource("1_5vmum")]
+script = ExtResource("2")
+_e_start_branch_idx = 1
+_e_color = Color(0.141176, 0.623529, 0.870588, 1)

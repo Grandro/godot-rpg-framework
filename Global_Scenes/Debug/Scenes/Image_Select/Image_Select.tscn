@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://i6fcoygjfmvk"]
+
+[ext_resource type="Script" uid="uid://cjm2l0uvl1o0q" path="res://Global_Scenes/Debug/Scenes/Image_Select/Scripts/Image_Select.gd" id="1_m5iee"]
+[ext_resource type="Texture2D" uid="uid://co1nae4x13f42" path="res://Global_Resources/Sprites/Icons/Background.png" id="2_7ykak"]
+[ext_resource type="Texture2D" uid="uid://dahqj21e336wb" path="res://Global_Resources/Sprites/UI/Revert.png" id="3_e2jcq"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="4_w33k0"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.25
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -360, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vyhyy"]
+_data = {
+&"Spin": SubResource("1")
+}
+
+[node name="Image_Select" type="HBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(0, 96)
+offset_right = 172.0
+offset_bottom = 96.0
+script = ExtResource("1_m5iee")
+
+[node name="Image" type="TextureButton" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(144, 96)
+layout_mode = 2
+texture_normal = ExtResource("2_7ykak")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Revert" type="TextureButton" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 35)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("3_e2jcq")
+stretch_mode = 5
+
+[node name="Anims" type="AnimationPlayer" parent="Revert"]
+libraries = {
+&"": SubResource("AnimationLibrary_vyhyy")
+}
+
+[node name="File" type="FileDialog" parent="."]
+title = "Open a File"
+size = Vector2i(312, 175)
+theme = ExtResource("4_w33k0")
+ok_button_text = "Open"
+file_mode = 0
+filters = PackedStringArray("*.png")
+show_hidden_files = true

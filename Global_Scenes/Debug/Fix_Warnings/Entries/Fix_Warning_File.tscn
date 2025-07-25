@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://csyu176faiybm"]
+
+[ext_resource type="PackedScene" uid="uid://dfcne2xq1hclh" path="res://Global_Scenes/Debug/Fix_Warnings/Entries/Fix_Warning_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://ctelevck51j8b" path="res://Global_Scenes/Debug/Fix_Warnings/Entries/Scripts/Fix_Warning_File.gd" id="2"]
+
+[node name="Fix_Warning_File" instance=ExtResource("1")]
+offset_right = 305.0
+script = ExtResource("2")
+
+[node name="Value" type="Label" parent="VBox/New" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+vertical_alignment = 1
+
+[node name="Select" type="Button" parent="." index="2"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_vertical = 4
+text = "SELECT"
+
+[node name="Select_File" type="FileDialog" parent="." index="3"]
+title = "Open a File"
+ok_button_text = "Open"
+file_mode = 0
+show_hidden_files = true

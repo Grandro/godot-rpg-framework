@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://lsv022k5m6ud"]
+
+[ext_resource type="Script" uid="uid://dbtmd80302add" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Thread_Base.gd" id="1"]
+
+[node name="Thread_Base" type="Node"]
+script = ExtResource("1")

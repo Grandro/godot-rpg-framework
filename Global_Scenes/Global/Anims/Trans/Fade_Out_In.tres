@@ -1,0 +1,18 @@
+[gd_resource type="Animation" format=3 uid="uid://0xxa4f248q64"]
+
+[resource]
+resource_local_to_scene = true
+resource_name = "Fade_Out_In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0]
+}

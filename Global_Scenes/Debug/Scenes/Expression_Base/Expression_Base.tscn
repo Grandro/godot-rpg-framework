@@ -1,0 +1,130 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmqr87nigr16x"]
+
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="1_oljv3"]
+[ext_resource type="Script" uid="uid://7bl5keecgbyn" path="res://Global_Scenes/Debug/Scenes/Expression_Base/Scripts/Expression_Base.gd" id="3"]
+
+[node name="Expression_Base" type="HBoxContainer" groups=["Translated"]]
+light_mask = 8
+visibility_layer = 8
+offset_right = 550.0
+offset_bottom = 136.0
+size_flags_horizontal = 3
+theme = ExtResource("1_oljv3")
+theme_override_constants/separation = 8
+script = ExtResource("3")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="VBox" type="VBoxContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="HBox" type="HBoxContainer" parent="VBox/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Instance" type="HBoxContainer" parent="VBox/VBox/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Desc" type="Label" parent="VBox/VBox/HBox/Instance"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "DEBUG_EXPRESSION_INSTANCE"
+vertical_alignment = 1
+
+[node name="Options" type="OptionButton" parent="VBox/VBox/HBox/Instance"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+
+[node name="Execute" type="Button" parent="VBox/VBox/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 18
+text = "DEBUG_EXPRESSION_EXECUTE"
+
+[node name="Comp" type="HBoxContainer" parent="VBox/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Desc" type="Label" parent="VBox/VBox/Comp"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "DEBUG_EXPRESSION_COMP"
+vertical_alignment = 1
+
+[node name="Options" type="OptionButton" parent="VBox/VBox/Comp"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+
+[node name="Expression" type="HBoxContainer" parent="VBox/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="Desc" type="Label" parent="VBox/VBox/Expression"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "DEBUG_EXPRESSION"
+vertical_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="VBox/VBox/Expression"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Value" type="LineEdit" parent="VBox/VBox/Expression/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+caret_blink = true
+
+[node name="Error" type="Label" parent="VBox/VBox/Expression/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 18
+vertical_alignment = 1
+
+[node name="Attributes" type="Button" parent="VBox/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+text = "DEBUG_EXPRESSION_ATTRIBUTES"

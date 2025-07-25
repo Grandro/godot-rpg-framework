@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnv7mi5jlnul0"]
+
+[ext_resource type="Script" uid="uid://c6ihgh4aspgr" path="res://Global_Resources/Mapping/3D/Scripts/Mesh_Tile_Group.gd" id="1_lxh3r"]
+
+[node name="Mesh_Tile_Group" type="Node3D"]
+script = ExtResource("1_lxh3r")
+
+[node name="Tiles" type="Node3D" parent="."]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://vgrgu3cdugnd"]
+
+[ext_resource type="PackedScene" uid="uid://cb1ikaj310yps" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Command.tscn" id="1_1bfew"]
+[ext_resource type="Script" uid="uid://c8xvfhowoj42y" path="res://Global_Scenes/Debug/Command_Editor/Entries/Change_Coins_Amount/Scripts/Change_Coins_Amount.gd" id="2_ve8ow"]
+
+[node name="Change_Coins_Amount" instance=ExtResource("1_1bfew")]
+script = ExtResource("2_ve8ow")
+_e_color = Color(0.07, 0.7, 0.553, 1)

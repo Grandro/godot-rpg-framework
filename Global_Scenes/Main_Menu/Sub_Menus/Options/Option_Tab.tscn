@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://c41rk18ubb0th"]
+
+[ext_resource type="Script" uid="uid://dr2nm7skrkfpv" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Scripts/Option_Tab.gd" id="2_p8ocx"]
+
+[node name="Option_Tab" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+script = ExtResource("2_p8ocx")
+
+[node name="HSplit" type="HSplitContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Left" type="VBoxContainer" parent="HSplit"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Right" type="VBoxContainer" parent="HSplit"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk5n75q2ma2jl"]
+
+[ext_resource type="Script" uid="uid://bbww2d42mouq1" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Types/Scripts/Color.gd" id="2_c8lw4"]
+
+[node name="Color" type="PanelContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(300, 0)
+offset_right = 300.0
+offset_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_c8lw4")
+
+[node name="Value" type="ColorPickerButton" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2

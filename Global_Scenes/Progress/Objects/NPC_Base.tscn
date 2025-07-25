@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnofm24wdw2e3"]
+
+[ext_resource type="PackedScene" uid="uid://y0ims6itmqkn" path="res://Global_Scenes/Progress/Objects/Object_Base.tscn" id="1_foung"]
+[ext_resource type="Script" uid="uid://cqkbelswo6kvi" path="res://Global_Scenes/Progress/Objects/Scripts/NPC_Base.gd" id="2_e6lt4"]
+
+[node name="NPC_Base" instance=ExtResource("1_foung")]
+script = ExtResource("2_e6lt4")

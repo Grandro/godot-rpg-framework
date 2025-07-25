@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8wgusdjviqi4"]
+
+[ext_resource type="PackedScene" uid="uid://cb1ikaj310yps" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Command.tscn" id="1_eavx5"]
+[ext_resource type="Script" uid="uid://b31vh43lry6s4" path="res://Global_Scenes/Debug/Command_Editor/Entries/Wait_For_Sub_Process/Scripts/Wait_For_Sub_Process.gd" id="2_ftn24"]
+
+[node name="Wait_For_Sub_Process" instance=ExtResource("1_eavx5")]
+script = ExtResource("2_ftn24")
+_e_color = Color(0.141176, 0.623529, 0.870588, 1)

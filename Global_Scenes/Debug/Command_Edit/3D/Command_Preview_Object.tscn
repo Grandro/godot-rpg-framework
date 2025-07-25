@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://5213guffkn3m"]
+
+[ext_resource type="PackedScene" uid="uid://bnr7w3fmgjbty" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview/Command_Preview.tscn" id="1_5qatk"]
+[ext_resource type="Script" uid="uid://bhhe7gsmlbcae" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Command_Preview_Object.gd" id="2_qkytl"]
+[ext_resource type="PackedScene" uid="uid://co04pnio1htpq" path="res://Global_Scenes/Debug/Scenes/Object_Select/Object_Select.tscn" id="3_wxtw7"]
+
+[node name="Command_Preview_Object" instance=ExtResource("1_5qatk")]
+script = ExtResource("2_qkytl")
+
+[node name="Preview" parent="Window/Contents/Margin/HBox/Left" index="0"]
+size_flags_vertical = 3
+
+[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
+size = Vector2i(544, 556)
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0" instance=ExtResource("3_wxtw7")]
+layout_mode = 2
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]

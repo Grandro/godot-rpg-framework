@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqya2hf2pn02d"]
+
+[ext_resource type="Script" uid="uid://d17g61i1em0h3" path="res://Scenes/Object/Comps/2D/Interactions/Scripts/Interactions.gd" id="1_x3uju"]
+[ext_resource type="PackedScene" uid="uid://cl6cwrkit3pr0" path="res://Scenes/Object/Comps/2D/Interactions/Interaction.tscn" id="2_ixr4i"]
+
+[node name="Interactions" type="Node2D" groups=["Comp"]]
+script = ExtResource("1_x3uju")
+
+[node name="1" parent="." instance=ExtResource("2_ixr4i")]
+
+[editable path="1"]

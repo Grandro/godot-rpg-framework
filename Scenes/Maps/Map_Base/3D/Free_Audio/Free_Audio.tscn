@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c67cxkpsuanog"]
+
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="1_1dxrw"]
+
+[node name="Free_Audio" instance=ExtResource("1_1dxrw")]

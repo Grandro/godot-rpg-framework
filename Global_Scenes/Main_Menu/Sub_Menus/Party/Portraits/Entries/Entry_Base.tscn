@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://0wglwyv7m4dh"]
+
+[ext_resource type="Script" uid="uid://cdbjwlf3rss84" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Portraits/Entries/Scripts/Entry_Base.gd" id="2"]
+
+[node name="Entry_Base" type="TextureButton"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 80.0
+offset_bottom = 58.0
+size_flags_vertical = 8
+script = ExtResource("2")

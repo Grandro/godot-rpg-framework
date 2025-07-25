@@ -1,0 +1,260 @@
+[gd_scene load_steps=9 format=3 uid="uid://crohm4h37hd7v"]
+
+[ext_resource type="PackedScene" uid="uid://duj1q7mhu6mlg" path="res://Global_Scenes/Dialogue_System/Thread/Process/Process_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dy2u5lnmnryt5" path="res://Global_Scenes/Dialogue_System/Thread/Process/Scripts/Process_Choice.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cc5yoyg4s0ec4" path="res://Global_Scenes/Dialogue_System/Sprites/Text_Box.png" id="6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ylgi"]
+draw_center = false
+
+[sub_resource type="Animation" id="4"]
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="5"]
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="6"]
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_81vcy"]
+_data = {
+&"Fade_In": SubResource("4"),
+&"Fade_Out": SubResource("5"),
+&"Faded_In": SubResource("6")
+}
+
+[node name="Process_Choice" instance=ExtResource("1")]
+script = ExtResource("2")
+
+[node name="Background" type="Panel" parent="." index="0"]
+self_modulate = Color(1, 1, 1, 0.196078)
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="." index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(640, 360)
+mouse_filter = 2
+
+[node name="Choice" type="NinePatchRect" parent="Control" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -432.0
+offset_top = -256.0
+offset_right = 432.0
+offset_bottom = -16.0
+texture = ExtResource("6")
+patch_margin_left = 48
+patch_margin_top = 48
+patch_margin_right = 48
+patch_margin_bottom = 48
+
+[node name="Margin" type="MarginContainer" parent="Control/Choice" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="Control/Choice/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="HBox_1" type="HBoxContainer" parent="Control/Choice/Margin/VBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Choice_1" type="MarginContainer" parent="Control/Choice/Margin/VBox/HBox_1" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Select" type="Button" parent="Control/Choice/Margin/VBox/HBox_1/Choice_1" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Choice_1"
+
+[node name="Choice_2" type="MarginContainer" parent="Control/Choice/Margin/VBox/HBox_1" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Select" type="Button" parent="Control/Choice/Margin/VBox/HBox_1/Choice_2" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Choice_2"
+
+[node name="HBox_2" type="HBoxContainer" parent="Control/Choice/Margin/VBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Choice_3" type="MarginContainer" parent="Control/Choice/Margin/VBox/HBox_2" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Select" type="Button" parent="Control/Choice/Margin/VBox/HBox_2/Choice_3" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Choice_3"
+
+[node name="Choice_4" type="MarginContainer" parent="Control/Choice/Margin/VBox/HBox_2" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Select" type="Button" parent="Control/Choice/Margin/VBox/HBox_2/Choice_4" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Choice_4"
+
+[node name="Name" type="NinePatchRect" parent="Control" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = -328.0
+offset_right = 196.0
+offset_bottom = -274.0
+texture = ExtResource("6")
+patch_margin_left = 27
+patch_margin_top = 27
+patch_margin_right = 27
+patch_margin_bottom = 27
+
+[node name="Margin" type="MarginContainer" parent="Control/Name" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -1.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Text" type="RichTextLabel" parent="Control/Name/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ylgi")
+bbcode_enabled = true
+text = "Name"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Anims" type="AnimationPlayer" parent="Control" index="2"]
+callback_mode_method = 1
+libraries = {
+&"": SubResource("AnimationLibrary_81vcy")
+}

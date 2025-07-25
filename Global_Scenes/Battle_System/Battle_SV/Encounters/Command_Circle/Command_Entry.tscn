@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://fb8f6x0c3kdl"]
+
+[ext_resource type="Script" uid="uid://cp311b6hle3lr" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Scripts/Command_Entry.gd" id="1_82apt"]
+[ext_resource type="Texture2D" uid="uid://5aoswujhwbye" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Sprites/Commands/Special.png" id="2_u04lt"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "Bounce_Up"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 14), Vector2(0, 20), Vector2(0, 14), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio_Bounce")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "Selected"
+length = 2.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -4), Vector2(0, 4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nkdgk"]
+_data = {
+&"Bounce_Up": SubResource("1"),
+&"Selected": SubResource("2")
+}
+
+[node name="Command_Entry" type="Node3D"]
+script = ExtResource("1_82apt")
+
+[node name="Image" type="Sprite3D" parent="."]
+layers = 4
+pixel_size = 0.02
+alpha_cut = 2
+texture_filter = 0
+texture = ExtResource("2_u04lt")
+
+[node name="Audio_Bounce" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="Anims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nkdgk")
+}

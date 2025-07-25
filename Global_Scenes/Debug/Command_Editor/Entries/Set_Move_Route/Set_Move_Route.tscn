@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://qo66u1o32dpl"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_ubi33"]
+[ext_resource type="Script" uid="uid://cxddgc1yj2sar" path="res://Global_Scenes/Debug/Command_Editor/Entries/Set_Move_Route/Scripts/Set_Move_Route.gd" id="2"]
+
+[node name="Set_Move_Route" instance=ExtResource("1_ubi33")]
+script = ExtResource("2")
+_e_color = Color(0.901961, 0.160784, 0.223529, 1)

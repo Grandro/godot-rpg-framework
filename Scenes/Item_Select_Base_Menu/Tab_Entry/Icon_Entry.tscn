@@ -1,0 +1,56 @@
+[gd_scene load_steps=14 format=3 uid="uid://cnifiatwena8x"]
+
+[ext_resource type="PackedScene" uid="uid://cmpoefofcrhwt" path="res://Scenes/Custom_Containers/Entry_Toggler/Entries/Key_Entry.tscn" id="1_gqbfu"]
+[ext_resource type="Texture2D" uid="uid://cn133o3nv3ip8" path="res://Icon.svg" id="2_udn3v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udn3v"]
+bg_color = Color(0.3724, 0.154, 0.7, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i38hc"]
+bg_color = Color(0.3724, 0.154, 0.7, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kpej"]
+bg_color = Color(0.3724, 0.154, 0.7, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01d0i"]
+bg_color = Color(0.266, 0.11, 0.5, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wukdj"]
+bg_color = Color(0.266, 0.11, 0.5, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jn362"]
+bg_color = Color(0.266, 0.11, 0.5, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7qdx"]
+bg_color = Color(0.266, 0.11, 0.5, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83wmo"]
+bg_color = Color(0.266, 0.11, 0.5, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0byu"]
+bg_color = Color(0.266, 0.11, 0.5, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18h7t"]
+bg_color = Color(0.1596, 0.066, 0.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_100my"]
+bg_color = Color(0.1596, 0.066, 0.3, 1)
+
+[node name="Icon_Entry" instance=ExtResource("1_gqbfu")]
+
+[node name="Select" parent="." index="0"]
+theme_override_styles/focus = SubResource("StyleBoxFlat_udn3v")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_i38hc")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6kpej")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_01d0i")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_wukdj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_jn362")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d7qdx")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_83wmo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f0byu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_18h7t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_100my")
+
+[node name="Texture" parent="Margin" index="0"]
+texture = ExtResource("2_udn3v")
+stretch_mode = 5

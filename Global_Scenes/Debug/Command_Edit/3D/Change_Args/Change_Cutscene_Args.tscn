@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgoe6kr8knhns"]
+
+[ext_resource type="PackedScene" uid="uid://bw5vq5wr6c4vv" path="res://Global_Scenes/Debug/Command_Edit/3D/Change_Args/Change_Args.tscn" id="1_vijxa"]
+[ext_resource type="Script" uid="uid://bdjd52e6q26at" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Change_Cutscene_Args.gd" id="2_o7a57"]
+
+[node name="Change_Cutscene_Args" instance=ExtResource("1_vijxa")]
+script = ExtResource("2_o7a57")
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Value"]

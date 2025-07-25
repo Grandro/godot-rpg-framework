@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bomcuadn7jwg"]
+
+[ext_resource type="PackedScene" uid="uid://bencex1ddgld3" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Branch.tscn" id="1_wwk0q"]
+[ext_resource type="Script" uid="uid://butsgq5xkg6x5" path="res://Global_Scenes/Debug/Command_Editor/Entries/Cond_Branch/Scripts/Cond_Branch.gd" id="2_h2l8w"]
+[ext_resource type="PackedScene" uid="uid://bpuif3onqdjke" path="res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Else.tscn" id="3_m0lnv"]
+
+[node name="Cond_Branch" instance=ExtResource("1_wwk0q")]
+script = ExtResource("2_h2l8w")
+_e_color = Color(0.141176, 0.623529, 0.870588, 1)
+
+[node name="Else" parent="HBox/VBox/Branches" index="1" instance=ExtResource("3_m0lnv")]
+layout_mode = 2

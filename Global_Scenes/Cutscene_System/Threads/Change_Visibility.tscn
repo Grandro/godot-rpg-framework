@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmrdgyhvepj3a"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cat2cmio837yx" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Change_Visibility.gd" id="2"]
+
+[node name="Change_Visibility" instance=ExtResource("1")]
+script = ExtResource("2")

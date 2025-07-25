@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://w1x5trmv6er6"]
+
+[ext_resource type="Script" uid="uid://d03028cm2hmn2" path="res://Scenes/Joy/Scripts/LineEdit.gd" id="1"]
+
+[node name="LineEdit" type="LineEdit"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 58.0
+offset_bottom = 24.0
+script = ExtResource("1")

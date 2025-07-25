@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://du8ubfp3v764j"]
+
+[ext_resource type="PackedScene" uid="uid://c41rk18ubb0th" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Option_Tab.tscn" id="1_vaxwx"]
+[ext_resource type="Script" uid="uid://dpufqc7gdpn1f" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Video/Scripts/Video.gd" id="2_doge1"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="3_4758q"]
+[ext_resource type="Script" uid="uid://batnjx686ayio" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Video/Scripts/Window_Mode.gd" id="5_qma3s"]
+
+[node name="Video" instance=ExtResource("1_vaxwx")]
+script = ExtResource("2_doge1")
+
+[node name="HSplit" parent="." index="0"]
+dragger_visibility = 1
+
+[node name="VSync_Mode" parent="HSplit/Left" index="0" instance=ExtResource("3_4758q")]
+layout_mode = 2
+_e_options_loc_id = "OPTIONS_VIDEO_VSYNC_MODE_%s"
+_e_options = ["Disabled", "Enabled", "Adaptive", "Mailbox"]
+_e_heading_loc_id = "OPTIONS_VIDEO_VSYNC_MODE"
+
+[node name="Heading" parent="HSplit/Left/VSync_Mode/HBox" index="0"]
+text = "OPTIONS_VIDEO_VSYNC_MODE"
+
+[node name="Window_Size" parent="HSplit/Left" index="1" instance=ExtResource("3_4758q")]
+layout_mode = 2
+_e_options = ["240x135", "480x270", "720x405", "960x540", "1280x720", "1600x900", "1920x1080", "2560x1440", "3840x2160"]
+_e_heading_loc_id = "OPTIONS_VIDEO_WINDOW_SIZE"
+
+[node name="Heading" parent="HSplit/Left/Window_Size/HBox" index="0"]
+text = "OPTIONS_VIDEO_WINDOW_SIZE"
+
+[node name="Window_Mode" parent="HSplit/Left" index="2" instance=ExtResource("3_4758q")]
+layout_mode = 2
+script = ExtResource("5_qma3s")
+_e_options = ["Windowed", "Fullscreen", "Exclusive_Fullscreen"]
+_e_heading_loc_id = "OPTIONS_VIDEO_WINDOW_MODE"
+
+[node name="Heading" parent="HSplit/Left/Window_Mode/HBox" index="0"]
+text = "OPTIONS_VIDEO_WINDOW_MODE"
+
+[editable path="HSplit/Left/VSync_Mode"]
+[editable path="HSplit/Left/Window_Size"]
+[editable path="HSplit/Left/Window_Mode"]

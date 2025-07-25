@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyc028u1boi4h"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1_314bk"]
+[ext_resource type="Script" uid="uid://dy6uo1p2rhhrs" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Teleport_Object.gd" id="2_en0xb"]
+
+[node name="Teleport_Object" instance=ExtResource("1_314bk")]
+script = ExtResource("2_en0xb")

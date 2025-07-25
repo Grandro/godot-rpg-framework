@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgao86g28735j"]
+
+[ext_resource type="Script" uid="uid://dw1ping0rfynp" path="res://Scenes/Object/Comps/2D/Movement/Comps/Terrain/Scripts/Area.gd" id="1_ir2ua"]
+
+[node name="Area" type="Area2D"]
+light_mask = 4
+visibility_layer = 4
+collision_layer = 16
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_ir2ua")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+volume_db = -20.0
+bus = &"SFX"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+
+[node name="Veil" type="Sprite2D" parent="."]
+light_mask = 4
+visibility_layer = 4

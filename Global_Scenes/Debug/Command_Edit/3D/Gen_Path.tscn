@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo2fbdjcv2n7g"]
+
+[ext_resource type="Script" uid="uid://b50jhmyad72bj" path="res://Global_Scenes/Debug/Command_Edit/3D/Scripts/Gen_Path.gd" id="1_mha2d"]
+[ext_resource type="PackedScene" uid="uid://0dlg5a5q13g6" path="res://Global_Scenes/Debug/Command_Edit/3D/Point.tscn" id="2_c468r"]
+
+[node name="Gen_Path" type="Node3D"]
+script = ExtResource("1_mha2d")
+_e_point_scene = ExtResource("2_c468r")

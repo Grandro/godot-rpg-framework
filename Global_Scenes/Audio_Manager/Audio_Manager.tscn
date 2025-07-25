@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://uxi8x7dn0e7i"]
+
+[ext_resource type="Script" uid="uid://cf1n6sixjdvlk" path="res://Global_Scenes/Audio_Manager/Scripts/Audio_Manager.gd" id="1"]
+
+[node name="Audio_Manager" type="Node"]
+process_mode = 3
+script = ExtResource("1")
+
+[node name="BGM" type="Node" parent="."]
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="BGS" type="Node" parent="."]

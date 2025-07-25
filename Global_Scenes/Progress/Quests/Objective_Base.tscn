@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://4g75hu8xnu3b"]
+
+[ext_resource type="Script" uid="uid://b5701t1jlg871" path="res://Global_Scenes/Progress/Quests/Scripts/Objective_Base.gd" id="1_a8slv"]
+
+[node name="Objective_Base" type="Node"]
+script = ExtResource("1_a8slv")

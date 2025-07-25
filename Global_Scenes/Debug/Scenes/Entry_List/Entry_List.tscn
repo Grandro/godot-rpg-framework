@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0t5u8s6p2dc"]
+
+[ext_resource type="Script" uid="uid://sinfg7yh5pl2" path="res://Scenes/Custom_Containers/Anim_Box/Scripts/VBox.gd" id="1"]
+[ext_resource type="Script" uid="uid://duvp3nrx0xepu" path="res://Global_Scenes/Debug/Scenes/Entry_List/Scripts/Entry_List.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://brwnr7v5wrvx" path="res://Scenes/Search/Search.tscn" id="3_ppih2"]
+[ext_resource type="Texture2D" uid="uid://bs60s3wtm3mpr" path="res://Global_Resources/Sprites/UI/Add.png" id="4_jvly7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5hb6"]
+content_margin_left = 36.0
+bg_color = Color(0.145098, 0.172549, 0.231373, 1)
+
+[node name="Entry_List" type="VBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+script = ExtResource("2")
+
+[node name="Search" parent="." instance=ExtResource("3_ppih2")]
+layout_mode = 2
+
+[node name="Input" parent="Search" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_h5hb6")
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="Container" parent="Scroll"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1")
+_e_separation = 4
+
+[node name="Add" type="Button" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("4_jvly7")
+icon_alignment = 1
+
+[editable path="Search"]

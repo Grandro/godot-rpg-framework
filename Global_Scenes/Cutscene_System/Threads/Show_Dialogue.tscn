@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7o0xa6euelwd"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://dojo7n3yxqat4" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Show_Dialogue.gd" id="2"]
+
+[node name="Show_Dialogue" instance=ExtResource("1")]
+script = ExtResource("2")

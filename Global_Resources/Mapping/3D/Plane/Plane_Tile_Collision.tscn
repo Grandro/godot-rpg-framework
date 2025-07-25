@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct1aowjqmhk1c"]
+
+[ext_resource type="PackedScene" uid="uid://dbxigq53qnnvo" path="res://Global_Resources/Mapping/3D/Plane/Plane_Tile.tscn" id="1_dcnop"]
+[ext_resource type="Script" uid="uid://bdn84o7xq2tbq" path="res://Global_Resources/Mapping/3D/Plane/Scripts/Plane_Tile_Collision.gd" id="2_s1q8p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e31aw"]
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1kab8"]
+material = SubResource("StandardMaterial3D_e31aw")
+size = Vector2(1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e31aw"]
+resource_local_to_scene = true
+size = Vector3(1, 0.2, 1)
+
+[node name="Plane_Tile_Collision" instance=ExtResource("1_dcnop")]
+mesh = SubResource("PlaneMesh_1kab8")
+script = ExtResource("2_s1q8p")
+
+[node name="Static" type="StaticBody3D" parent="." index="0"]
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape3D" parent="Static" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("BoxShape3D_e31aw")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://mtcsjh6ppldu"]
+
+[ext_resource type="Script" uid="uid://b6tcgemwd550t" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Types/Scripts/Int.gd" id="2_lk6d7"]
+
+[node name="Int" type="PanelContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(300, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_lk6d7")
+
+[node name="Value" type="SpinBox" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 0.0
+allow_greater = true
+allow_lesser = true

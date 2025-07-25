@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://bq340dbv4ksvc"]
+
+[ext_resource type="PackedScene" uid="uid://6awbb064kh7p" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Character_Battle.tscn" id="1_segbb"]
+[ext_resource type="Script" uid="uid://bg8utuga3hh6p" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Scripts/Party_Member_Battle.gd" id="2_ihvmg"]
+[ext_resource type="PackedScene" uid="uid://g11o4ut16cvo" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Movement/Movement_Character.tscn" id="3_awilh"]
+[ext_resource type="PackedScene" uid="uid://dctpibkwbk8nq" path="res://Scenes/Object/Comps/3D/Equipment.tscn" id="3_ynp27"]
+[ext_resource type="PackedScene" uid="uid://mddl8g7ub2qx" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Shield_Bar.tscn" id="4_47gxf"]
+[ext_resource type="PackedScene" uid="uid://dsxxput7t3drq" path="res://Scenes/Object/Comps/Party_Member.tscn" id="4_jjtkt"]
+[ext_resource type="PackedScene" uid="uid://djl16ro8388xh" path="res://Scenes/Object/Comps/3D/Movement/Comps/Jump.tscn" id="5_3x2ef"]
+[ext_resource type="PackedScene" uid="uid://cekkcfeurbewx" path="res://Scenes/Object/Comps/3D/Movement/Comps/States.tscn" id="8_4ni30"]
+[ext_resource type="PackedScene" uid="uid://ks3max245ufk" path="res://Scenes/Object/Comps/3D/Movement/Comps/Nav_Agent.tscn" id="8_awilh"]
+
+[node name="Party_Member_Battle" groups=["Party_Member"] instance=ExtResource("1_segbb")]
+collision_layer = 264
+script = ExtResource("2_ihvmg")
+_e_command_circle_offset = Vector3(0, 5, 0)
+_e_reactions = {}
+
+[node name="Movement" parent="." index="1" instance=ExtResource("3_awilh")]
+_e_reset_dir = "Right"
+
+[node name="Nav_Agent" parent="Movement" index="0" instance=ExtResource("8_awilh")]
+
+[node name="States" parent="Movement" index="1" instance=ExtResource("8_4ni30")]
+
+[node name="Jump" parent="Movement" index="2" instance=ExtResource("5_3x2ef")]
+
+[node name="Equipment" parent="." index="2" instance=ExtResource("3_ynp27")]
+_e_scenes = {
+"Feet": {},
+"Head": {},
+"Legs": {},
+"Shield": {},
+"Torso": {},
+"Weapon": {}
+}
+
+[node name="Weapon" type="Node3D" parent="Equipment" index="4"]
+
+[node name="Shield" type="Node3D" parent="Equipment" index="5"]
+
+[node name="Hitbox" parent="." index="3"]
+collision_mask = 64
+
+[node name="Perform" type="AudioStreamPlayer" parent="Audio" index="1"]
+bus = &"SFX"
+
+[node name="Flee" type="AudioStreamPlayer" parent="Audio" index="2"]
+bus = &"SFX"
+
+[node name="Shield_Bar" parent="." index="6" instance=ExtResource("4_47gxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, 0)
+
+[node name="Party_Member" parent="." index="8" instance=ExtResource("4_jjtkt")]

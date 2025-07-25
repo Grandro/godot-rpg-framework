@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://b040ygvylvjb3"]
+
+[ext_resource type="PackedScene" uid="uid://cd4spbjjxip61" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Shield_Bars/Shield_Bar_Base.tscn" id="1_16nf5"]
+[ext_resource type="Script" uid="uid://t2d4tvqat4dl" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Shield_Bars/None/Scripts/None.gd" id="2_6d8hh"]
+[ext_resource type="PackedScene" uid="uid://dbdbhrfoymjgq" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Shield_Bars/None/None_UI.tscn" id="2_hqqi0"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0q656"]
+viewport_path = NodePath("VP")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3c0e"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_0q656")
+texture_filter = 0
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_my0rg"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_e3c0e")
+size = Vector2(3, 2)
+orientation = 2
+
+[node name="None" instance=ExtResource("1_16nf5")]
+script = ExtResource("2_6d8hh")
+
+[node name="Plane" parent="." index="0"]
+mesh = SubResource("PlaneMesh_my0rg")
+
+[node name="None_UI" parent="VP" index="0" instance=ExtResource("2_hqqi0")]

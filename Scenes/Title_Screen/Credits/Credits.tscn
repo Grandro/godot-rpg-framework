@@ -1,0 +1,259 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx38lvawqxups"]
+
+[ext_resource type="Script" uid="uid://dtl2dawxeo6fw" path="res://Scenes/Title_Screen/Credits/Scripts/Credits.gd" id="1_2y0wn"]
+[ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="2_7sxxe"]
+[ext_resource type="Texture2D" uid="uid://cn133o3nv3ip8" path="res://Icon.svg" id="2_xd8f5"]
+
+[node name="Credits" type="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2y0wn")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.2, 0.2, 0.2, 1)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_xd8f5")
+stretch_mode = 1
+
+[node name="Back" parent="." instance=ExtResource("2_7sxxe")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 112.0
+offset_bottom = 64.0
+size_flags_horizontal = 8
+
+[node name="Margin" type="MarginContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 32
+
+[node name="Heading" type="Label" parent="Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scroll" type="ScrollContainer" parent="Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBox/Scroll"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+
+[node name="Godot_Engine" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Godot_Engine"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[u]Godot Engine[/u]"
+fit_content = true
+
+[node name="Text" type="Label" parent="Margin/VBox/Scroll/VBox/Godot_Engine"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Shaders" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Shaders"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[u]Shaders[/u]"
+fit_content = true
+
+[node name="2D_Outline" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Shaders/2D_Outline"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]2D Outline[/u]"
+fit_content = true
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders/2D_Outline"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Shaders/2D_Outline/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "GDQuest"
+underline = 1
+uri = "https://github.com/gdquest-demos/godot-shaders"
+
+[node name="Text" type="Label" parent="Margin/VBox/Scroll/VBox/Shaders/2D_Outline/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "Copyright (c) 2020 GDQuest
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the \"Software\"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE."
+horizontal_alignment = 1
+
+[node name="3D_Outline" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Shaders/3D_Outline"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]3D Outline[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Shaders/3D_Outline"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "axilirate"
+underline = 1
+uri = "https://godotshaders.com/shader/pixel-perfect-outline-shader"
+
+[node name="Transition" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Shaders"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Shaders/Transition"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]Transition[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Shaders/Transition"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "GDQuest"
+underline = 1
+uri = "https://github.com/gdquest-demos/godot-shaders"
+
+[node name="Textures" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Textures"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[u]Textures[/u]"
+fit_content = true
+
+[node name="Kenney" type="VBoxContainer" parent="Margin/VBox/Scroll/VBox/Textures"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox/Scroll/VBox/Textures/Kenney"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[u]Kenney[/u]"
+fit_content = true
+
+[node name="Link" type="LinkButton" parent="Margin/VBox/Scroll/VBox/Textures/Kenney"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "License (CC0)"
+underline = 1
+uri = "https://kenney.nl/assets"

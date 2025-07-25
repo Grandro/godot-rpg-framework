@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs8m1n5rmnwfd"]
+
+[ext_resource type="Script" uid="uid://bkn7q5wmxjux7" path="res://Scenes/Object/Comps/2D/Scripts/Camera.gd" id="1_1a6bk"]
+
+[node name="Camera" type="Camera2D" groups=["Comp"]]
+light_mask = 4
+visibility_layer = 4
+zoom = Vector2(2, 2)
+editor_draw_limits = true
+script = ExtResource("1_1a6bk")

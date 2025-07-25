@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcvpnmql3yedt"]
+
+[ext_resource type="Script" uid="uid://ccrt6r72lmjvn" path="res://Scenes/Item_Amount_Display/Scripts/Item_Amount_Display.gd" id="1_4wk2a"]
+
+[node name="Item_Amount_Display" type="HBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 8
+script = ExtResource("1_4wk2a")
+
+[node name="Image" type="TextureRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Text" type="Label" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "123"
+vertical_alignment = 1

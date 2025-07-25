@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0mpeng4w2sfd"]
+
+[ext_resource type="Script" uid="uid://bs3ud0cs4gvrs" path="res://Scenes/Maps/Map_Base/2D/Scripts/Map_Base.gd" id="1_q18ex"]
+[ext_resource type="PackedScene" uid="uid://c5v8d22uei0f2" path="res://Scenes/Maps/Map_Base/2D/Free_Audio/Free_Audio.tscn" id="3_3daxl"]
+[ext_resource type="PackedScene" uid="uid://bdx7s18jxuvtn" path="res://Scenes/Maps/Map_Base/2D/Free_Camera/Free_Camera.tscn" id="3_6wrwr"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_3daxl"]
+source_geometry_mode = 2
+source_geometry_group_name = &"NavMesh_Main"
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3daxl"]
+
+[sub_resource type="Sky" id="Sky_1fsf3"]
+sky_material = SubResource("ProceduralSkyMaterial_3daxl")
+
+[sub_resource type="Environment" id="Environment_rty0n"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_1fsf3")
+ambient_light_color = Color(0.5, 0.5, 0.5, 1)
+ambient_light_sky_contribution = 0.3
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 0.6
+tonemap_white = 1.4
+glow_strength = 1.9
+volumetric_fog_albedo = Color(0.4, 0.4, 0.4, 1)
+volumetric_fog_emission = Color(0.2215, 0.25, 0.22, 1)
+volumetric_fog_emission_energy = 0.5
+
+[node name="Map_Base" type="Node2D"]
+script = ExtResource("1_q18ex")
+
+[node name="Terrain" type="Node2D" parent="."]
+
+[node name="Below_1" type="TileMapLayer" parent="Terrain" groups=["NavMesh_Main"]]
+y_sort_enabled = true
+
+[node name="Same_As_1" type="TileMapLayer" parent="Terrain"]
+y_sort_enabled = true
+
+[node name="Areas" type="Node2D" parent="Terrain"]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="$Free_Camera" parent="Objects" instance=ExtResource("3_6wrwr")]
+
+[node name="$Free_Audio" parent="Objects" instance=ExtResource("3_3daxl")]
+
+[node name="Teleporters" type="Node2D" parent="Objects"]
+
+[node name="Nav_Regions" type="Node2D" parent="."]
+
+[node name="Main" type="NavigationRegion2D" parent="Nav_Regions"]
+navigation_polygon = SubResource("NavigationPolygon_3daxl")
+
+[node name="Cutscenes" type="Node2D" parent="."]
+
+[node name="Env" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rty0n")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0fds4pdvi1xl"]
+
+[ext_resource type="Script" uid="uid://dri6q55453xmb" path="res://Scenes/Item_Drag_Menu_Base/Scripts/Slot.gd" id="1_0s1n4"]
+
+[node name="Slot" type="PanelContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(192, 192)
+size_flags_horizontal = 6
+size_flags_vertical = 4
+script = ExtResource("1_0s1n4")
+
+[node name="BG_Icon" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.392157)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Item_Icon" type="TextureRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2

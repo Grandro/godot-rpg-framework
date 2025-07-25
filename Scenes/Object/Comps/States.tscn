@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://boh1rwcj5rgwf"]
+
+[ext_resource type="Script" uid="uid://8gm711sne55" path="res://Scenes/Object/Comps/Scripts/States.gd" id="1_7npee"]
+
+[node name="States" type="Node" groups=["Comp"]]
+script = ExtResource("1_7npee")

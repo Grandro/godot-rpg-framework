@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bur1664yc8pn8"]
+
+[ext_resource type="Script" uid="uid://pa1mjyef8aqg" path="res://Scenes/Equipable/3D/Scripts/Equipable.gd" id="1_kscqw"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_608ht"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1acn7"]
+
+[node name="Equipable" type="Sprite3D"]
+layers = 4
+pixel_size = 0.02
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+hframes = 8
+vframes = 24
+frame = 62
+script = ExtResource("1_kscqw")
+
+[node name="Anims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_608ht"),
+&"SV": SubResource("AnimationLibrary_1acn7")
+}

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch6tktatiw1m5"]
+
+[ext_resource type="PackedScene" uid="uid://cvvtbog5w6a0b" path="res://Global_Scenes/Main_Menu/Menus/Icons/Menu_Icon.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://d3e32p0y2njmt" path="res://Global_Scenes/Main_Menu/Sprites/Icons/Journal/Spritesheet.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://d0o30u04w1jy5" path="res://Global_Scenes/Main_Menu/Menus/Journal/Journal.tscn" id="3"]
+
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("2")
+region = Rect2(0, 0, 96, 96)
+
+[node name="Journal" instance=ExtResource("1")]
+_e_key = "Journal"
+_e_menu_scene = ExtResource("3")
+
+[node name="Image" parent="." index="0"]
+texture_normal = SubResource("1")
+
+[node name="Desc" parent="." index="1"]
+text = "JOURNAL"

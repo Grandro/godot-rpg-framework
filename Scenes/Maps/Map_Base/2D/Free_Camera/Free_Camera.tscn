@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdx7s18jxuvtn"]
+
+[ext_resource type="PackedScene" uid="uid://bqaejxhbpyk1b" path="res://Scenes/Maps/Map_Base/2D/Free_Camera/Free_Camera_Base.tscn" id="1_bo78q"]
+[ext_resource type="PackedScene" uid="uid://drpp26gth4snn" path="res://Scenes/Object/Comps/Reference.tscn" id="2_5bv36"]
+[ext_resource type="PackedScene" uid="uid://b4dvlhw3jh0go" path="res://Scenes/Object/Comps/Cutscene.tscn" id="2_kx2qh"]
+
+[node name="Free_Camera" instance=ExtResource("1_bo78q")]
+
+[node name="Cutscene" parent="." index="2" instance=ExtResource("2_kx2qh")]
+
+[node name="Reference" parent="." index="3" instance=ExtResource("2_5bv36")]

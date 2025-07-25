@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnnp5e33pssq4"]
+
+[ext_resource type="Script" uid="uid://bwcpvu81xus4h" path="res://Global_Scenes/Main_Menu/Sub_Menus/Quests/Info/Scripts/Pin.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cmsctptdrp8n1" path="res://Global_Resources/Sprites/UI/Pin.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://il8km0isrp4x" path="res://Global_Scenes/Main_Menu/Sub_Menus/Quests/Info/Info_Base.tscn" id="3"]
+[ext_resource type="Script" uid="uid://ivknqvqm2wpl" path="res://Global_Scenes/Main_Menu/Sub_Menus/Quests/Info/Scripts/Info_Pin.gd" id="4"]
+
+[node name="Info_Pin" instance=ExtResource("3")]
+script = ExtResource("4")
+
+[node name="Pin" type="Button" parent="Margin/VBox" index="2"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+toggle_mode = true
+text = "PIN"
+icon = ExtResource("2")
+script = ExtResource("1")

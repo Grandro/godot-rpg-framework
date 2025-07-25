@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt52gl8gpfds7"]
+
+[ext_resource type="Texture2D" uid="uid://dt70asssy8c3g" path="res://Global_Scenes/Debug/Sprites/Path/End.png" id="1_ruelq"]
+
+[node name="Point" type="Sprite2D"]
+light_mask = 4
+visibility_layer = 4
+texture = ExtResource("1_ruelq")

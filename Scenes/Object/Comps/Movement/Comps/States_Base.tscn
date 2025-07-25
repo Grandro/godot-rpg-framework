@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcjnmbcfdeupb"]
+
+[ext_resource type="Script" uid="uid://nc8figlhaysr" path="res://Scenes/Object/Comps/Movement/Comps/Scripts/States_Base.gd" id="1_20v6e"]
+
+[node name="States_Base" type="Node" groups=["Comp"]]
+script = ExtResource("1_20v6e")
+_e_speeds = Dictionary[String, float]({
+"Jump": 0.0,
+"Run": 0.0,
+"Walk": 0.0
+})

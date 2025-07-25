@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn0nrurab5o0a"]
+
+[ext_resource type="PackedScene" uid="uid://bhtf075na7yrj" path="res://Global_Scenes/Debug/Dialogues/Attributes/Attribute_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://benqqild4kaht" path="res://Global_Scenes/Debug/Dialogues/Attributes/Info/Scripts/Info.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://cttubfh75d6oq" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/General/Tab_General.tscn" id="3"]
+
+[node name="Info" instance=ExtResource("1")]
+tab_alignment = 1
+script = ExtResource("2")
+
+[node name="General" parent="." index="1" instance=ExtResource("3")]
+layout_mode = 2
+
+[node name="Sprites" parent="." index="2"]
+visible = false

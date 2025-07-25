@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://8ye5u4sw8coj"]
+
+[ext_resource type="Texture2D" uid="uid://c7n3tnll10eis" path="res://Global_Resources/Sprites/UI/Edit.png" id="1"]
+[ext_resource type="Script" uid="uid://cpwmljeum8fgm" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Scripts/Edit.gd" id="4"]
+
+[node name="Edit" type="PanelContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 24.0
+offset_bottom = 34.0
+script = ExtResource("4")
+_e_types = Array[String](["Dictionary", "Array", "String", "Float", "Int", "Vector2", "Vector3", "Color", "Bool", "Null"])
+
+[node name="Select" type="TextureButton" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 5
+texture_normal = ExtResource("1")
+stretch_mode = 5
+
+[node name="Types" type="Popup" parent="Select"]
+canvas_cull_mask = 4293918728
+
+[node name="VBox" type="VBoxContainer" parent="Select/Types"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 0

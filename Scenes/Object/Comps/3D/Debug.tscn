@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnqagj5u7g0tm"]
+
+[ext_resource type="Script" uid="uid://kpt4g34s4gj6" path="res://Scenes/Object/Comps/3D/Scripts/Debug.gd" id="1_u86io"]
+
+[node name="Debug" type="Node3D" groups=["Comp"]]
+script = ExtResource("1_u86io")
+
+[node name="Reference_Key" type="Label3D" parent="."]
+layers = 4
+text = "Key:"
+font_size = 72

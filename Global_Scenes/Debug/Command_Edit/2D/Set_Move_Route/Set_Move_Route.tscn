@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvhbfpgivxgmc"]
+
+[ext_resource type="PackedScene" uid="uid://bdrem82kdb2mn" path="res://Global_Scenes/Debug/Command_Edit/2D/Command_Preview_Object_Path.tscn" id="1_gqoyd"]
+[ext_resource type="PackedScene" uid="uid://dkxeoahqc7tdy" path="res://Global_Scenes/Debug/Command_Edit/Set_Move_Route/State.tscn" id="2_kk044"]
+[ext_resource type="Script" uid="uid://df1swii80imp1" path="res://Global_Scenes/Debug/Command_Edit/Set_Move_Route/Scripts/Set_Move_Route.gd" id="2_v8tui"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="3_v8tui"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_a8d4h"]
+[ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="5_34ekc"]
+
+[node name="Set_Move_Route" instance=ExtResource("1_gqoyd")]
+script = ExtResource("2_v8tui")
+
+[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
+size = Vector2i(2, 2)
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
+_e_needed_comps = Array[String](["Reference", "Movement", "States"])
+_e_allowed_classes = Array[String](["Node2D"])
+
+[node name="State" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("2_kk044")]
+layout_mode = 2
+
+[node name="Speed" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="2" instance=ExtResource("3_v8tui")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_SPEED_%s"
+_e_options = ["Very_Slow", "Slow", "Normal", "Fast", "Very_Fast"]
+_e_heading_loc_id = "DEBUG_CUTSCENES_SPEED"
+_e_var_select_scene = ExtResource("4_a8d4h")
+
+[node name="Wait_Finish" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="3" instance=ExtResource("5_34ekc")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_WAIT_FINISH"
+_e_var_select_scene = ExtResource("4_a8d4h")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish" index="1"]
+button_pressed = true
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Wait_Finish"]

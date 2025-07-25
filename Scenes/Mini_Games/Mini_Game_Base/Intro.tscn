@@ -1,0 +1,227 @@
+[gd_scene load_steps=11 format=3 uid="uid://cmjmyox67k3lp"]
+
+[ext_resource type="Script" uid="uid://cwvpitkvngp42" path="res://Scenes/Mini_Games/Mini_Game_Base/Scripts/Intro.gd" id="2_53423"]
+[ext_resource type="PackedScene" uid="uid://ba34eyav3ir6j" path="res://Scenes/VP_Container/VP_Container.tscn" id="4_gamai"]
+[ext_resource type="Texture2D" uid="uid://dti8yjdd8swkr" path="res://Global_Resources/Sprites/Joy/Letters_Color/Button_A.png" id="6_hbbo5"]
+
+[sub_resource type="FontVariation" id="FontVariation_qi6lu"]
+spacing_glyph = -4
+
+[sub_resource type="Animation" id="3"]
+resource_name = "Scale_Down"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.75, 0.75)]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "Scale_Up"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iyai0"]
+_data = {
+&"Scale_Down": SubResource("3"),
+&"Scale_Up": SubResource("4")
+}
+
+[sub_resource type="Animation" id="5"]
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="6"]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h6ctl"]
+_data = {
+&"Fade_In": SubResource("5"),
+&"Fade_Out": SubResource("6")
+}
+
+[node name="Intro" type="MarginContainer"]
+modulate = Color(0, 0, 0, 1)
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2_53423")
+
+[node name="Background" type="TextureRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+stretch_mode = 1
+
+[node name="Margin" type="MarginContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Heading" type="RichTextLabel" parent="Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+clip_contents = false
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 36
+theme_override_fonts/normal_font = SubResource("FontVariation_qi6lu")
+theme_override_font_sizes/normal_font_size = 75
+bbcode_enabled = true
+text = "[center][wave amp=50 freq=2]HEADING"
+fit_content = true
+scroll_active = false
+meta_underlined = false
+hint_underlined = false
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Left" type="MarginContainer" parent="Margin/VBox/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox/HBox/Left"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="VP" parent="Margin/VBox/HBox/Left/HBox" instance=ExtResource("4_gamai")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VP" parent="Margin/VBox/HBox/Left/HBox/VP" index="0"]
+audio_listener_enable_2d = true
+size = Vector2i(468, 441)
+_e_sub_world = false
+_e_game_world = false
+
+[node name="Scroll" type="VScrollBar" parent="Margin/VBox/HBox/Left/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Right" type="MarginContainer" parent="Margin/VBox/HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBox/HBox/Right"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Desc" type="Label" parent="Margin/VBox/HBox/Right/VBox"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "DESC"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Controls" type="VBoxContainer" parent="Margin/VBox/HBox/Right/VBox"]
+light_mask = 8
+visibility_layer = 8
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Heading" type="Label" parent="Margin/VBox/HBox/Right/VBox/Controls"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+text = "MINIGAMES_CONTROLS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Proceed" type="TextureButton" parent="Margin/VBox/HBox/Right"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource("6_hbbo5")
+
+[node name="Anims" type="AnimationPlayer" parent="Margin/VBox/HBox/Right/Proceed"]
+libraries = {
+&"": SubResource("AnimationLibrary_iyai0")
+}
+
+[node name="Anims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h6ctl")
+}
+
+[editable path="Margin/VBox/HBox/Left/HBox/VP"]

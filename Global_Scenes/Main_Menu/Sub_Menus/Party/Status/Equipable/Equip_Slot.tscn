@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://ru8kg55ap6cp"]
+
+[ext_resource type="Script" uid="uid://cn47gai4furdf" path="res://Global_Scenes/Main_Menu/Sub_Menus/Party/Status/Equipable/Scripts/Equip_Slot.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b0fds4pdvi1xl" path="res://Scenes/Item_Drag_Menu_Base/Slot.tscn" id="1_s1uq7"]
+[ext_resource type="Texture2D" uid="uid://da627ihys8ww0" path="res://Global_Resources/Sprites/Icons/Item_Types/Equipment/Head.png" id="2"]
+
+[node name="Equip_Slot" instance=ExtResource("1_s1uq7")]
+custom_minimum_size = Vector2(64, 64)
+script = ExtResource("1")
+_e_group = ""
+
+[node name="BG_Icon" parent="." index="0"]
+texture = ExtResource("2")

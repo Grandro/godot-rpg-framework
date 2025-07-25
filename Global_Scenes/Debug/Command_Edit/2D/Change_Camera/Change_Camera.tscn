@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7lin81026g8e"]
+
+[ext_resource type="PackedScene" uid="uid://clcnrrgit18fj" path="res://Global_Scenes/Debug/Command_Edit/2D/Command_Preview_Object.tscn" id="1_yf1u6"]
+[ext_resource type="Script" uid="uid://26xrmwaeikuo" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Change_Camera.gd" id="2_2ap68"]
+
+[node name="Change_Camera" instance=ExtResource("1_yf1u6")]
+script = ExtResource("2_2ap68")
+_e_draw_grid_scene = null
+
+[node name="VP" parent="Window/Contents/Margin/HBox/Left/Preview" index="0"]
+size = Vector2i(544, 556)
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
+_e_needed_comps = Array[String](["Reference", "Camera"])
+_e_allowed_classes = Array[String](["Node2D"])
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]

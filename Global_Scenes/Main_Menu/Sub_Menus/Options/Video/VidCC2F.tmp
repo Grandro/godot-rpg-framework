@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://du8ubfp3v764j"]
+
+[ext_resource type="Theme" uid="uid://budcfl16xj2tt" path="res://Global_Resources/Themes/Default/Default.tres" id="1_qnhc7"]
+[ext_resource type="Script" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Video/Scripts/Video.gd" id="2_doge1"]
+[ext_resource type="Script" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Video/Scripts/VSync_Mode.gd" id="3_hs4i4"]
+[ext_resource type="Script" path="res://Global_Scenes/Main_Menu/Sub_Menus/Options/Video/Scripts/Window_Size.gd" id="4_h4maf"]
+
+[node name="Video" type="MarginContainer"]
+offset_right = 194.0
+offset_bottom = 72.0
+theme = ExtResource("1_qnhc7")
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+script = ExtResource("2_doge1")
+metadata/_tab_index = 1
+
+[node name="HSplit" type="HSplitContainer" parent="."]
+layout_mode = 2
+split_offset = 16
+dragger_visibility = 2
+
+[node name="Left" type="VBoxContainer" parent="HSplit"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VSync_Mode" type="VBoxContainer" parent="HSplit/Left" groups=["Translated"]]
+layout_mode = 2
+theme_override_constants/separation = 8
+script = ExtResource("3_hs4i4")
+
+[node name="Heading" type="Label" parent="HSplit/Left/VSync_Mode"]
+layout_mode = 2
+text = "OPTIONS_VIDEO_VSYNC_MODE"
+
+[node name="Options" type="OptionButton" parent="HSplit/Left/VSync_Mode"]
+layout_mode = 2
+
+[node name="Window_Size" type="VBoxContainer" parent="HSplit/Left" groups=["Translated"]]
+layout_mode = 2
+script = ExtResource("4_h4maf")
+
+[node name="Heading" type="Label" parent="HSplit/Left/Window_Size"]
+layout_mode = 2
+text = "OPTIONS_VIDEO_WINDOW_SIZE"
+
+[node name="Options" type="OptionButton" parent="HSplit/Left/Window_Size"]
+layout_mode = 2
+
+[node name="Right" type="VBoxContainer" parent="HSplit"]
+layout_mode = 2

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://db4witrjsi6og"]
+
+[ext_resource type="PackedScene" uid="uid://0ikhj60sgva2" path="res://Global_Resources/Mapping/3D/Mesh_Base.tscn" id="1_6vl2k"]
+[ext_resource type="Script" uid="uid://2oryggejkg41" path="res://Global_Resources/Mapping/3D/Scripts/Mesh_Tile_Base.gd" id="2_vmyc4"]
+
+[node name="Mesh_Tile_Base" instance=ExtResource("1_6vl2k")]
+script = ExtResource("2_vmyc4")

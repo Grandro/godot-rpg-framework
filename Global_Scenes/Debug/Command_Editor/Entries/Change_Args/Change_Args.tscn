@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0q72mf8j1h42"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_gxxg3"]
+[ext_resource type="Script" uid="uid://cb82mh5l4ur11" path="res://Global_Scenes/Debug/Command_Editor/Entries/Change_Args/Scripts/Change_Args.gd" id="2_5eeae"]
+
+[node name="Change_Args" instance=ExtResource("1_gxxg3")]
+script = ExtResource("2_5eeae")
+_e_loc_id = ""
+_e_color = Color(0.0705882, 0.701961, 0.552941, 1)

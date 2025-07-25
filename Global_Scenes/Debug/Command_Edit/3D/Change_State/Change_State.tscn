@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt0owa78o5xsu"]
+
+[ext_resource type="PackedScene" uid="uid://5213guffkn3m" path="res://Global_Scenes/Debug/Command_Edit/3D/Command_Preview_Object.tscn" id="1_mvxe6"]
+[ext_resource type="Script" uid="uid://cfh5yg24lc5lu" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Change_State.gd" id="2_1hrrd"]
+[ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="3_365b6"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_pudgf"]
+
+[node name="Change_State" instance=ExtResource("1_mvxe6")]
+script = ExtResource("2_1hrrd")
+_e_draw_grid_scene = null
+
+[node name="Object" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="0"]
+_e_needed_comps = Array[String](["Reference", "States"])
+
+[node name="State" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="1" instance=ExtResource("3_365b6")]
+layout_mode = 2
+_e_options_loc_id = "DEBUG_CUTSCENES_STATE_%s"
+_e_heading_loc_id = "DEBUG_CUTSCENES_STATE"
+_e_var_select_scene = ExtResource("4_pudgf")
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Left/Grid/Offset"]

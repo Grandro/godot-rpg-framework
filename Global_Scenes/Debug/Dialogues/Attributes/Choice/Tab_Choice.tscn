@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://btqlynu5wwypo"]
+
+[ext_resource type="PackedScene" uid="uid://p8udo2171tc7" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/Base/Tab_Base.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://b0aycjvmp27ew" path="res://Global_Scenes/Debug/Scenes/Entry_List/Choice_Entry_List.tscn" id="2"]
+[ext_resource type="Script" uid="uid://cdqwb5ods7k5f" path="res://Global_Scenes/Debug/Dialogues/Attributes/Choice/Scripts/Tab_Choice.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://bf8m2llgekjpu" path="res://Global_Scenes/Debug/Scenes/Loc_ID_Select/Loc_ID_Select.tscn" id="4_xvng3"]
+
+[node name="Tab_Choice" instance=ExtResource("1")]
+script = ExtResource("3")
+_e_key = "Choice"
+
+[node name="Entries" parent="Margin/HSplit/Left" index="0" instance=ExtResource("2")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Name" parent="Margin/HSplit/Left" index="1" instance=ExtResource("4_xvng3")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_DIALOGUES_ATTRIBUTES_NAME"
+_e_group = "Name"

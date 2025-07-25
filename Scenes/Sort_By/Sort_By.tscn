@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2hso273s8kxl"]
+
+[ext_resource type="Script" uid="uid://dke5ddfs56gvj" path="res://Scenes/Sort_By/Scripts/Sort_By.gd" id="1_fb2dx"]
+
+[node name="Sort_By" type="VBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+theme_override_constants/separation = 0
+script = ExtResource("1_fb2dx")
+
+[node name="Desc" type="Label" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+text = "SORT_BY"
+vertical_alignment = 1
+
+[node name="Options" type="OptionButton" parent="."]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(100, 35)
+layout_mode = 2

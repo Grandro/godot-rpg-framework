@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc1is11mtritg"]
+
+[ext_resource type="Script" uid="uid://mkjw7e8evuvl" path="res://Scenes/Object/Comps/3D/Scripts/Collision_Polygon.gd" id="1_8r07s"]
+
+[node name="Collision" type="CollisionPolygon3D" groups=["Comp"]]
+script = ExtResource("1_8r07s")

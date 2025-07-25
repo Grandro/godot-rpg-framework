@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bru1dayxsqwxm"]
+
+[ext_resource type="Script" uid="uid://b4vwoolqnpr77" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Types/Scripts/Float.gd" id="2_4peic"]
+[ext_resource type="PackedScene" uid="uid://caj33yuoli0g" path="res://Global_Scenes/Debug/Scenes/Float_Edit/Float_Edit.tscn" id="3_3xq8g"]
+
+[node name="Float" type="PanelContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(300, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_4peic")
+
+[node name="Value" parent="." instance=ExtResource("3_3xq8g")]
+layout_mode = 2
+size_flags_vertical = 4
+caret_blink = true
+_e_allow_lesser = true
+_e_allow_greater = true

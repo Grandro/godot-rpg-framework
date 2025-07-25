@@ -1,0 +1,175 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjgxkux1hih3y"]
+
+[ext_resource type="PackedScene" uid="uid://cjrw5luh13vlq" path="res://Scenes/Stats_Display/Entries/Stat_Entry.tscn" id="3"]
+[ext_resource type="Script" uid="uid://dht77d2mx0ttg" path="res://Scenes/Stats_Display/Entries/Scripts/Base.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://bjb6lkfswi58p" path="res://Scenes/Stats_Display/Sprites/Frame.png" id="6"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="7"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "Fold"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBox/Padding:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 148), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "Folded"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBox/Padding:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_name = "Unfold"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBox/Padding:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 148)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nihol"]
+_data = {
+&"Fold": SubResource("1"),
+&"Folded": SubResource("2"),
+&"Unfold": SubResource("3")
+}
+
+[node name="Base" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(128, 0)
+offset_right = 140.0
+offset_bottom = 290.0
+mouse_filter = 2
+script = ExtResource("5")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="Bust" type="TextureRect" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+stretch_mode = 3
+
+[node name="Margin" type="MarginContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("7")
+
+[node name="Panel" type="MarginContainer" parent="VBox/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Color" type="ColorRect" parent="VBox/Margin/Panel"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Frame" type="NinePatchRect" parent="VBox/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+texture = ExtResource("6")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+
+[node name="Stats" type="MarginContainer" parent="VBox/Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="VBox/Margin/Stats"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="HP" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
+layout_mode = 2
+_e_key = "HP"
+
+[node name="SP" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
+layout_mode = 2
+_e_key = "SP"
+
+[node name="ATK" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
+layout_mode = 2
+_e_key = "ATK"
+
+[node name="MAG" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
+layout_mode = 2
+_e_key = "MAG"
+
+[node name="DEF" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
+layout_mode = 2
+_e_key = "DEF"
+
+[node name="SPEED" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
+layout_mode = 2
+_e_key = "SPEED"
+
+[node name="LUCK" parent="VBox/Margin/Stats/VBox" instance=ExtResource("3")]
+layout_mode = 2
+_e_key = "LUCK"
+
+[node name="Padding" type="Control" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Anims" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nihol")
+}
+autoplay = "Folded"

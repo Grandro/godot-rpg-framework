@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://blot4hpw1al18"]
+
+[ext_resource type="Script" uid="uid://c4tfbqhapqyga" path="res://Scenes/Object/Comps/3D/Scripts/Camera.gd" id="1_1a7w8"]
+
+[node name="Camera" type="Camera3D" groups=["Comp"]]
+transform = Transform3D(1, 0, 0, 0, 0.707106, 0.707106, 0, -0.707106, 0.707106, 0, 22, 21)
+keep_aspect = 0
+projection = 1
+size = 12.8
+far = 70.0
+script = ExtResource("1_1a7w8")

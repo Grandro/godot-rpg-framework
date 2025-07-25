@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj2leqprdj336"]
+
+[ext_resource type="PackedScene" uid="uid://cvvtbog5w6a0b" path="res://Global_Scenes/Main_Menu/Menus/Icons/Menu_Icon.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://ccx517d44l6ji" path="res://Global_Scenes/Main_Menu/Sprites/Icons/Journal_Write/Spritesheet.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://c10fivgn3ropo" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/Journal_Write.tscn" id="2_s7ys1"]
+
+[node name="Journal_Write" instance=ExtResource("1")]
+_e_key = "Journal_Write"
+_e_menu_scene = ExtResource("2_s7ys1")
+_e_type = "Sub_Menu"
+
+[node name="Image" parent="." index="0"]
+texture_normal = ExtResource("2")
+
+[node name="Desc" parent="." index="1"]
+text = "WRITE"

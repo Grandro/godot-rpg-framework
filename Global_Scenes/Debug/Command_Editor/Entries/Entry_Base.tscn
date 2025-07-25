@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc28ss3fdbnss"]
+
+[ext_resource type="PackedScene" uid="uid://lq5yp1lm6rri" path="res://Global_Scenes/Debug/Command_Editor/Entries/Branches/Main.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bv4cghoobvffg" path="res://Global_Scenes/Debug/Command_Editor/Entries/Scripts/Entry_Base.gd" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r186l"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.113725, 0.486275, 0.65098, 0.54902)
+anti_aliasing = false
+
+[node name="Entry_Base" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 228.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
+script = ExtResource("2")
+
+[node name="Highlight" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r186l")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="VBox" type="VBoxContainer" parent="HBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Branches" type="VBoxContainer" parent="HBox/VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Main" parent="HBox/VBox/Branches" instance=ExtResource("1")]
+layout_mode = 2

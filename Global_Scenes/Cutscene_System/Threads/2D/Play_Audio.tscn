@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bikxu04c77xqy"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1_4wt1m"]
+[ext_resource type="Script" uid="uid://cgtq5lvkukrdk" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Play_Audio.gd" id="2_fmkpf"]
+
+[node name="Play_Audio" instance=ExtResource("1_4wt1m")]
+script = ExtResource("2_fmkpf")

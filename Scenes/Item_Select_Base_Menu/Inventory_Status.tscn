@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://hkmfdt8ynpce"]
+
+[ext_resource type="PackedScene" uid="uid://dabeoloqhc72h" path="res://Scenes/Item_Select_Base_Menu/Item_Select_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://bg2q3715uhqe5" path="res://Scenes/Item_Select_Base_Menu/Scripts/Inventory_Status.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://bjaemay65pyhl" path="res://Scenes/Item_Select_Base_Menu/Info.tscn" id="3"]
+
+[node name="Inventory_Status" instance=ExtResource("1")]
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+_e_tabs = Array[String](["Equipment"])
+_e_tabs_visible = false
+
+[node name="Grid" parent="." index="0"]
+size_flags_vertical = 3
+mouse_filter = 2
+columns = 1
+
+[node name="List" parent="Grid" index="0"]
+mouse_filter = 2
+
+[node name="Items" parent="Grid/List" index="1"]
+drag_to_rearrange_enabled = true
+
+[node name="Info_Equipped" parent="Grid/HBox" index="1" instance=ExtResource("3")]
+layout_mode = 2
+
+[editable path="Grid/List/Options/Search"]

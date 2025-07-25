@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://fc7em6ymowb4"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_2oxbd"]
+[ext_resource type="Script" uid="uid://ch5bpq7syo8ig" path="res://Global_Scenes/Debug/Command_Editor/Entries/Move_Free_Camera/Scripts/Move_Free_Camera.gd" id="2"]
+
+[node name="Move_Free_Camera" instance=ExtResource("1_2oxbd")]
+script = ExtResource("2")
+_e_color = Color(0.34902, 0.756863, 0.207843, 1)

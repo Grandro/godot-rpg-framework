@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dflngil7kju2u"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1_perrr"]
+[ext_resource type="Script" uid="uid://drrck3h3q1nuh" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Set_Move_Route.gd" id="2_aq6kb"]
+
+[node name="Set_Move_Route" instance=ExtResource("1_perrr")]
+script = ExtResource("2_aq6kb")
+_e_dim = "3D"

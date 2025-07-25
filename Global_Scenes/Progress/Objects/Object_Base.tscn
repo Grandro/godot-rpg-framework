@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://y0ims6itmqkn"]
+
+[ext_resource type="Script" uid="uid://boxcdkikjo4vv" path="res://Global_Scenes/Progress/Objects/Scripts/Object_Base.gd" id="1_6nhif"]
+
+[node name="Object_Base" type="Node"]
+script = ExtResource("1_6nhif")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://g2t50t4punf3"]
+
+[ext_resource type="PackedScene" uid="uid://dabeoloqhc72h" path="res://Scenes/Item_Select_Base_Menu/Item_Select_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://djnu85n2y07n6" path="res://Scenes/Item_Select_Base_Menu/Scripts/Item_Select.gd" id="2"]
+
+[node name="Item_Select" instance=ExtResource("1")]
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+script = ExtResource("2")
+
+[node name="Info" parent="Grid/HBox" index="0"]
+_e_can_use = false
+_e_select_mode = true

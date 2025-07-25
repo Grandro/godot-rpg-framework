@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://birjyb23mdl01"]
+
+[ext_resource type="Script" uid="uid://c1cjobc1b8q2e" path="res://Scenes/Object/Comps/3D/Movement/Comps/Terrain/Scripts/Terrain_Base.gd" id="1_fq5i7"]
+
+[node name="Terrain" type="Node3D" groups=["Comp"]]
+script = ExtResource("1_fq5i7")
+_e_audio_base_path = "res://Global_Resources/Audio/SFX/Terrain"
+_e_veil_base_path = "res://Global_Resources/Sprites/Terrain_Veils"
+
+[node name="Areas" type="Node3D" parent="."]
+
+[node name="Anims" type="AnimationPlayer" parent="."]

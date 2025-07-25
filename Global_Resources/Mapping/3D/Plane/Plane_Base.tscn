@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7l6gl3pndhn7"]
+
+[ext_resource type="PackedScene" uid="uid://0ikhj60sgva2" path="res://Global_Resources/Mapping/3D/Mesh_Base.tscn" id="1_3r3s5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5rr8"]
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vgybw"]
+material = SubResource("StandardMaterial3D_x5rr8")
+size = Vector2(1, 1)
+
+[node name="Plane_Base" instance=ExtResource("1_3r3s5")]
+mesh = SubResource("PlaneMesh_vgybw")

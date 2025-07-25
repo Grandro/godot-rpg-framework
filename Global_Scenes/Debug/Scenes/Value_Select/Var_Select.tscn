@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceaqnana6y842"]
+
+[ext_resource type="Script" uid="uid://bqxn22g686p8l" path="res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Var_Select.gd" id="1_xqntv"]
+[ext_resource type="Texture2D" uid="uid://datbhq5dv2h2y" path="res://Global_Resources/Sprites/UI/Method.png" id="2_nnhqk"]
+[ext_resource type="Theme" uid="uid://pr4yljlh62sp" path="res://Global_Resources/Themes/Debug/Debug.tres" id="3_tdhn0"]
+[ext_resource type="PackedScene" uid="uid://dmqr87nigr16x" path="res://Global_Scenes/Debug/Scenes/Expression_Base/Expression_Base.tscn" id="4_2t5rt"]
+
+[node name="Var_Select" type="HBoxContainer"]
+light_mask = 8
+visibility_layer = 8
+theme_override_constants/separation = 0
+script = ExtResource("1_xqntv")
+
+[node name="Active" type="CheckBox" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+
+[node name="Select" type="Button" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+icon = ExtResource("2_nnhqk")
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+layer = 128
+visible = false
+
+[node name="Panel" type="PanelContainer" parent="Canvas"]
+light_mask = 8
+visibility_layer = 8
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1280.0
+offset_right = -711.0
+offset_bottom = 188.0
+grow_horizontal = 0
+theme = ExtResource("3_tdhn0")
+metadata/_edit_group_ = true
+
+[node name="Margin" type="MarginContainer" parent="Canvas/Panel"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Expression" parent="Canvas/Panel/Margin" instance=ExtResource("4_2t5rt")]
+layout_mode = 2
+_e_create_curr_scene = true
+_e_create_objects = true
+_e_create_singletons = true

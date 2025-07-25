@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnsgyjoqllicq"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_yq4su"]
+[ext_resource type="Script" uid="uid://cfnoca45kdn7w" path="res://Global_Scenes/Debug/Command_Editor/Entries/Default_Object_Key/Scripts/Default_Object_Key.gd" id="2"]
+
+[node name="Default_Object_Key" instance=ExtResource("1_yq4su")]
+script = ExtResource("2")
+_e_color = Color(0.0705882, 0.701961, 0.552941, 1)

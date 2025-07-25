@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5nbgo1iv5xug"]
+
+[ext_resource type="PackedScene" uid="uid://b4fnx40pilc8i" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/Journal.tscn" id="1"]
+
+[node name="Journal_Read" instance=ExtResource("1")]
+
+[node name="VBox" parent="." index="2"]
+offset_top = 47.0
+offset_right = 1120.0
+offset_bottom = 594.0
+
+[node name="Arrow" parent="." index="3"]
+offset_top = -13.4818
+offset_bottom = -13.7217
+stretch_mode = 4

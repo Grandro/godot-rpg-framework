@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdrem82kdb2mn"]
+
+[ext_resource type="PackedScene" uid="uid://clcnrrgit18fj" path="res://Global_Scenes/Debug/Command_Edit/2D/Command_Preview_Object.tscn" id="1_qp1wh"]
+[ext_resource type="PackedScene" uid="uid://cmu43g3hxt5wj" path="res://Global_Scenes/Debug/Command_Edit/2D/Gen_Path.tscn" id="2_7egaj"]
+[ext_resource type="Script" uid="uid://cntmhfymtonsv" path="res://Global_Scenes/Debug/Command_Edit/Scripts/Command_Preview_Object_Path.gd" id="2_s4btc"]
+[ext_resource type="PackedScene" uid="uid://bxofnnybm8oja" path="res://Global_Scenes/Debug/Scenes/Entry_List/Point_Entry_List.tscn" id="3_s4btc"]
+
+[node name="Command_Preview_Object_Path" instance=ExtResource("1_qp1wh")]
+script = ExtResource("2_s4btc")
+_e_selected_color = Color(1, 0.84, 0, 1)
+_e_normal_color = Color(1, 1, 1, 1)
+_e_gen_path_scene = ExtResource("2_7egaj")
+
+[node name="Path_Points" parent="Window/Contents/Margin/HBox" index="1" instance=ExtResource("3_s4btc")]
+layout_mode = 2
+size_flags_horizontal = 3
+_e_delete_loc_id = "CONFIRM_DELETE_POINT"
+_e_show_duplicate = false
+_e_confirm_delete = false
+_e_show_search = false
+_e_show_add = false
+_e_can_change_name = false
+_e_ensure_unique_names = false
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]

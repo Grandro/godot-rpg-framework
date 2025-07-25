@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=3 uid="uid://donnmwjelyu5h"]
+
+[ext_resource type="Script" uid="uid://b4ab6f4py6ya1" path="res://Global_Scenes/Debug/Command_Edit/Loop/Scripts/Loop.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://gi3fh4x5672i" path="res://Global_Scenes/Debug/Command_Edit/Command_Base.tscn" id="1_ht56j"]
+[ext_resource type="PackedScene" uid="uid://dnw88jp58kcao" path="res://Global_Scenes/Debug/Command_Edit/Menu_Base.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://crvbia8mojvsp" path="res://Global_Scenes/Debug/Command_Edit/Scenes/Char_Select/Char_Select.tscn" id="6_d1a1m"]
+[ext_resource type="Script" uid="uid://dlip87jiatubj" path="res://Global_Scenes/Debug/Command_Edit/Loop/Scripts/For.gd" id="7"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="7_wg0lv"]
+[ext_resource type="PackedScene" uid="uid://cxnqe4iwkkj12" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Num.tscn" id="8_tsm2q"]
+
+[node name="Loop" instance=ExtResource("1_ht56j")]
+script = ExtResource("1")
+
+[node name="Window" parent="." index="1"]
+offset_left = -341.0
+offset_top = -189.0
+offset_right = 341.0
+offset_bottom = 189.0
+
+[node name="Margin" type="MarginContainer" parent="Window/Contents" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/VBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Type" type="OptionButton" parent="Window/Contents/Margin/VBox/VBox" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Menus" type="MarginContainer" parent="Window/Contents/Margin/VBox/VBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="For" parent="Window/Contents/Margin/VBox/VBox/Menus" index="0" groups=["Translated"] instance=ExtResource("5")]
+layout_mode = 2
+script = ExtResource("7")
+_e_key = "For"
+
+[node name="VBox" type="VBoxContainer" parent="Window/Contents/Margin/VBox/VBox/Menus/For" index="0"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Idx" parent="Window/Contents/Margin/VBox/VBox/Menus/For/VBox" index="0" instance=ExtResource("6_d1a1m")]
+layout_mode = 2
+_e_ord = 105
+_e_heading_loc_id = "DEBUG_CUTSCENES_IDX"
+_e_var_select_scene = ExtResource("7_wg0lv")
+
+[node name="Value" parent="Window/Contents/Margin/VBox/VBox/Menus/For/VBox/Idx" index="1"]
+text = "i"
+
+[node name="Start" parent="Window/Contents/Margin/VBox/VBox/Menus/For/VBox" index="1" instance=ExtResource("8_tsm2q")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_START"
+_e_var_select_scene = ExtResource("7_wg0lv")
+
+[node name="Value" parent="Window/Contents/Margin/VBox/VBox/Menus/For/VBox/Start" index="1"]
+value = 1.0
+allow_greater = true
+allow_lesser = true
+
+[node name="End" parent="Window/Contents/Margin/VBox/VBox/Menus/For/VBox" index="2" instance=ExtResource("8_tsm2q")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_END"
+_e_var_select_scene = ExtResource("7_wg0lv")
+
+[node name="Value" parent="Window/Contents/Margin/VBox/VBox/Menus/For/VBox/End" index="1"]
+value = 1.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Step" parent="Window/Contents/Margin/VBox/VBox/Menus/For/VBox" index="3" instance=ExtResource("8_tsm2q")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_STEP"
+_e_var_select_scene = ExtResource("7_wg0lv")
+
+[node name="Value" parent="Window/Contents/Margin/VBox/VBox/Menus/For/VBox/Step" index="1"]
+value = 1.0
+allow_greater = true
+allow_lesser = true
+
+[node name="Options" type="HBoxContainer" parent="Window/Contents/Margin/VBox" index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 8
+
+[node name="OK" type="Button" parent="Window/Contents/Margin/VBox/Options" index="0"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "OK"
+
+[node name="Cancel" type="Button" parent="Window/Contents/Margin/VBox/Options" index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "CANCEL"
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/VBox/VBox/Menus/For/VBox/Idx"]
+[editable path="Window/Contents/Margin/VBox/VBox/Menus/For/VBox/Start"]
+[editable path="Window/Contents/Margin/VBox/VBox/Menus/For/VBox/End"]
+[editable path="Window/Contents/Margin/VBox/VBox/Menus/For/VBox/Step"]

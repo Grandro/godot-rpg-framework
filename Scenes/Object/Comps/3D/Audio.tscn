@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfdwl620axohy"]
+
+[ext_resource type="Script" uid="uid://brije4ubf0g1d" path="res://Scenes/Object/Comps/3D/Scripts/Audio.gd" id="1_n2ve0"]
+[ext_resource type="PackedScene" uid="uid://dllj5lbxwqy17" path="res://Scenes/Pausable_Audio/3D/Pausable_Audio.tscn" id="2_1wy66"]
+
+[node name="Audio" type="Node3D" groups=["Comp"]]
+script = ExtResource("1_n2ve0")
+
+[node name="$Free" parent="." instance=ExtResource("2_1wy66")]

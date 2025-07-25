@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cttubfh75d6oq"]
+
+[ext_resource type="Script" uid="uid://crkcpkc1b0ekx" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/General/Scripts/Tab_General.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://p8udo2171tc7" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/Base/Tab_Base.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bf8m2llgekjpu" path="res://Global_Scenes/Debug/Scenes/Loc_ID_Select/Loc_ID_Select.tscn" id="3_3e07x"]
+
+[node name="Tab_General" instance=ExtResource("2")]
+script = ExtResource("1")
+_e_key = "General"
+
+[node name="Text" parent="Margin/HSplit/Left" index="0" instance=ExtResource("3_3e07x")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_DIALOGUES_ATTRIBUTES_LOC_ID"
+_e_group = "Dialogue"

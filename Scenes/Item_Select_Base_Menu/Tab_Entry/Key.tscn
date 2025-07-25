@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://0x2xqwl64b0m"]
+
+[ext_resource type="PackedScene" uid="uid://cihklq15ngh8h" path="res://Scenes/Item_Select_Base_Menu/Tab_Entry/Tab_Entry.tscn" id="1"]
+
+[node name="Key" instance=ExtResource("1")]
+_e_type = "Key"
+_e_groups = Array[String](["Main"])

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://vcp8woxan6b1"]
+
+[ext_resource type="PackedScene" uid="uid://cihklq15ngh8h" path="res://Scenes/Item_Select_Base_Menu/Tab_Entry/Tab_Entry.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cnifiatwena8x" path="res://Scenes/Item_Select_Base_Menu/Tab_Entry/Icon_Entry.tscn" id="2_2n8l1"]
+
+[node name="Equipment" instance=ExtResource("1")]
+_e_type = "Equipment"
+_e_groups = Array[String](["Head", "Torso", "Legs", "Feet", "Weapon", "Shield"])
+_e_has_icons = true
+
+[node name="Toggler" parent="VBox/Icons" index="0"]
+_e_entry_scene = ExtResource("2_2n8l1")

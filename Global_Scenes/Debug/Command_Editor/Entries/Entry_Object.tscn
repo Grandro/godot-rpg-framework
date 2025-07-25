@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dot8riojafbwx"]
+
+[ext_resource type="PackedScene" uid="uid://cb1ikaj310yps" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Command.tscn" id="1_8frma"]
+[ext_resource type="Script" uid="uid://b431hsn7of17o" path="res://Global_Scenes/Debug/Command_Editor/Entries/Scripts/Entry_Object.gd" id="2"]
+
+[node name="Entry_Object" instance=ExtResource("1_8frma")]
+script = ExtResource("2")

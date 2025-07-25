@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4fnx40pilc8i"]
+
+[ext_resource type="Script" uid="uid://bgu42bkj6w3un" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/Scripts/Journal.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://c8e0l4fiwh36t" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/File_Entry/File_Entry.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://c754kwabi0qe5" path="res://Global_Scenes/Main_Menu/Sub_Menus/Journal/Sprites/Arrow.png" id="4"]
+[ext_resource type="PackedScene" uid="uid://beoei6o2vrvx" path="res://Scenes/Indicator/Back_Button.tscn" id="12"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hvued"]
+font_size = 48
+
+[sub_resource type="Animation" id="2"]
+length = 0.6
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [600.0, 584.0, 600.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rywls"]
+_data = {
+&"indicate": SubResource("2")
+}
+
+[node name="Journal" type="Control"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+
+[node name="Background" type="TextureRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+stretch_mode = 1
+
+[node name="Back" parent="." instance=ExtResource("12")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 112.0
+offset_bottom = 64.0
+
+[node name="VBox" type="VBoxContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+offset_left = 32.0
+offset_top = 64.0
+offset_right = 1248.0
+offset_bottom = 595.0
+mouse_filter = 2
+theme_override_constants/separation = 96
+
+[node name="Heading" type="Label" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 4
+text = "READ"
+label_settings = SubResource("LabelSettings_hvued")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Entries" type="HBoxContainer" parent="VBox"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="1" parent="VBox/Entries" instance=ExtResource("3")]
+layout_mode = 2
+
+[node name="2" parent="VBox/Entries" instance=ExtResource("3")]
+layout_mode = 2
+
+[node name="3" parent="VBox/Entries" instance=ExtResource("3")]
+layout_mode = 2
+
+[node name="Arrow" type="TextureRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 0
+anchor_left = 0.16
+anchor_top = 0.833
+anchor_right = 0.2
+anchor_bottom = 0.9
+offset_left = 0.199982
+offset_top = 0.23999
+offset_right = 3.0
+offset_bottom = 6.10352e-05
+texture = ExtResource("4")
+
+[node name="Anims" type="AnimationPlayer" parent="Arrow"]
+libraries = {
+&"": SubResource("AnimationLibrary_rywls")
+}
+autoplay = "indicate"

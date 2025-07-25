@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjoc6af1a0acn"]
+
+[ext_resource type="PackedScene" uid="uid://lsv022k5m6ud" path="res://Global_Scenes/Cutscene_System/Threads/Thread_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://cmrf5smh80ah" path="res://Global_Scenes/Cutscene_System/Threads/Scripts/Wait_For_Sub_Process.gd" id="2"]
+
+[node name="Wait_For_Sub_Process" instance=ExtResource("1")]
+script = ExtResource("2")

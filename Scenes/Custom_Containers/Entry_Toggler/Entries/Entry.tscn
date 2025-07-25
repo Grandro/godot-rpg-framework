@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://ewbj4oadfsts"]
+
+[ext_resource type="Script" uid="uid://c0lk71b6fm6ao" path="res://Scenes/Custom_Containers/Entry_Toggler/Entries/Scripts/Entry.gd" id="1_n8i5r"]
+[ext_resource type="Texture2D" uid="uid://da627ihys8ww0" path="res://Global_Resources/Sprites/Icons/Item_Types/Equipment/Head.png" id="2_jpye3"]
+
+[node name="Entry" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+offset_right = 56.0
+offset_bottom = 56.0
+script = ExtResource("1_n8i5r")
+
+[node name="Select" type="Button" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+toggle_mode = true
+
+[node name="Margin" type="MarginContainer" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Texture" type="TextureRect" parent="Margin"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_jpye3")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://7wlwpvgffkgn"]
+
+[ext_resource type="Script" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/General/Scripts/Tab_General.gd" id="1"]
+[ext_resource type="PackedScene" path="res://Global_Scenes/Debug/Dialogues/Attributes/Tabs/Base/Tab_Base.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bf8m2llgekjpu" path="res://Global_Scenes/Debug/Scenes/Loc_ID_Select/Loc_ID_Select.tscn" id="3_3e07x"]
+
+[node name="Tab_General" groups=["Translated"] instance=ExtResource("2")]
+script = ExtResource("1")
+_e_key = "General"
+
+[node name="Loc_ID_Select" parent="Margin/HSplit/Left" index="0" instance=ExtResource("3_3e07x")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_DIALOGUES_ATTRIBUTES_LOC_ID"
+_e_group = "Dialogue"
+
+[node name="Text" type="VBoxContainer" parent="Margin/HSplit/Left" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Heading" type="Label" parent="Margin/HSplit/Left/Text" index="0"]
+layout_mode = 2
+text = "DEBUG_DIALOGUES_ATTRIBUTES_LOC_ID"
+vertical_alignment = 1
+
+[node name="Select" type="Button" parent="Margin/HSplit/Left/Text" index="1"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2

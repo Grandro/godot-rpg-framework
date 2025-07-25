@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnpcrhnjo25h1"]
+
+[ext_resource type="PackedScene" uid="uid://be6yntrlk06ra" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Select.tscn" id="1_ydw81"]
+[ext_resource type="Script" uid="uid://d1vp0h4kggx8s" path="res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Options.gd" id="2_lreql"]
+
+[node name="Value_Options" instance=ExtResource("1_ydw81")]
+script = ExtResource("2_lreql")
+_e_init_key = ""
+_e_options_loc_id = ""
+_e_options = []
+
+[node name="Value" type="OptionButton" parent="." index="1"]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds6cemlf8s1r4"]
+
+[ext_resource type="PackedScene" uid="uid://bencex1ddgld3" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Branch.tscn" id="1_6faw3"]
+[ext_resource type="Script" uid="uid://g1n541bo3aqg" path="res://Global_Scenes/Debug/Command_Editor/Entries/Loop/Scripts/Loop.gd" id="3"]
+
+[node name="Loop" instance=ExtResource("1_6faw3")]
+script = ExtResource("3")
+_e_color = Color(0.141176, 0.623529, 0.870588, 1)

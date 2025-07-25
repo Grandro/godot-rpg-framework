@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://co1eh5icnbquu"]
+
+[ext_resource type="PackedScene" uid="uid://duj1q7mhu6mlg" path="res://Global_Scenes/Dialogue_System/Thread/Process/Process_Base.tscn" id="1"]
+[ext_resource type="Script" uid="uid://qmni4awj81kv" path="res://Global_Scenes/Dialogue_System/Thread/Process/Scripts/Process_Text_Object.gd" id="2"]
+
+[node name="Process_Text_Object" instance=ExtResource("1")]
+script = ExtResource("2")
+
+[node name="Mouse_Input" type="Control" parent="." index="0"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd4spbjjxip61"]
+
+[ext_resource type="PackedScene" uid="uid://qeicd1w7hese" path="res://Scenes/GUI_3D_Panel/GUI_3D_Panel.tscn" id="1_st5kl"]
+[ext_resource type="Script" uid="uid://6r6iqeim8pv6" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Shield_Bar/Shield_Bars/Scripts/Shield_Bar_Base.gd" id="2_etxx3"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0i5qj"]
+viewport_path = NodePath("VP")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s884g"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_0i5qj")
+texture_filter = 0
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_heldk"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_s884g")
+size = Vector2(3, 2)
+orientation = 2
+
+[node name="Shield_Bar_Base" instance=ExtResource("1_st5kl")]
+script = ExtResource("2_etxx3")
+
+[node name="Plane" parent="." index="0"]
+mesh = SubResource("PlaneMesh_heldk")
+
+[node name="VP" parent="." index="1"]
+size = Vector2i(150, 100)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://kwe0wi2c8er5"]
+
+[ext_resource type="Script" uid="uid://di4dsfuecuk8" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Scripts/Stats.gd" id="1_pbpbb"]
+
+[node name="Stats" type="Node" groups=["Comp"]]
+script = ExtResource("1_pbpbb")

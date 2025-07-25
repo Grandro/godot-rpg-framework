@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu4wmd3ejnsdf"]
+
+[ext_resource type="Texture2D" uid="uid://hdqirk3nj743" path="res://Global_Resources/Sprites/Icons/Item_Types/Equipment/Shield.png" id="1_lbn23"]
+[ext_resource type="Script" uid="uid://pvb6tapdmfdb" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Status/Entries/Scripts/Entry_Base.gd" id="1_ph363"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_csft3"]
+font_size = 22
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(1, 1, 1, 0.819608)
+
+[node name="Entry_Base" type="MarginContainer"]
+light_mask = 8
+visibility_layer = 8
+script = ExtResource("1_ph363")
+
+[node name="Texture" type="TextureRect" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+texture = ExtResource("1_lbn23")
+
+[node name="Amount" type="Label" parent="."]
+light_mask = 8
+visibility_layer = 8
+layout_mode = 2
+size_flags_vertical = 8
+text = "12"
+label_settings = SubResource("LabelSettings_csft3")
+horizontal_alignment = 2

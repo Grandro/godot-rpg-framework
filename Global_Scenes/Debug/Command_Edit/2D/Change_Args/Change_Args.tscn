@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvmda63l4ghpj"]
+
+[ext_resource type="PackedScene" uid="uid://c8a7ejxy8p7up" path="res://Global_Scenes/Debug/Command_Edit/2D/Change_Args/Change_Args_Base.tscn" id="1_vbfn1"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_e2ar6"]
+[ext_resource type="PackedScene" uid="uid://qs71x71lxlxi" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Edit.tscn" id="6_vv03g"]
+
+[node name="Change_Args" instance=ExtResource("1_vbfn1")]
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox" index="3" instance=ExtResource("6_vv03g")]
+layout_mode = 2
+_e_var_select_scene = ExtResource("4_e2ar6")
+
+[node name="Value" parent="Window/Contents/Margin/HBox/Right/Options/VBox/Value" index="1"]
+_e_type = "Array"
+_e_children_type = "Array"
+
+[editable path="Window"]
+[editable path="Window/Contents/Margin/HBox/Left/Preview"]
+[editable path="Window/Contents/Margin/HBox/Right/Options/VBox/Value"]

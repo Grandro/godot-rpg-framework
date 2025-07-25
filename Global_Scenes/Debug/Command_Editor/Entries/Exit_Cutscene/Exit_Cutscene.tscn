@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3ql6n4s7ujh8"]
+
+[ext_resource type="PackedScene" uid="uid://cb1ikaj310yps" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Command.tscn" id="1_y6q84"]
+
+[node name="Exit_Cutscene" instance=ExtResource("1_y6q84")]
+_e_color = Color(0.141176, 0.623529, 0.870588, 1)

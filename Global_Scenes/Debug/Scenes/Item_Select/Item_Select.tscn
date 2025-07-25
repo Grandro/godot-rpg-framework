@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxn66p8i5vfx5"]
+
+[ext_resource type="PackedScene" uid="uid://be6yntrlk06ra" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Select.tscn" id="1_3ief6"]
+[ext_resource type="Script" uid="uid://cq734eooclg0k" path="res://Global_Scenes/Debug/Scenes/Item_Select/Scripts/Item_Select.gd" id="2_j3uhb"]
+[ext_resource type="Texture2D" uid="uid://bo6muvroxs2n5" path="res://Global_Resources/Sprites/Items/None.png" id="2_x7k7w"]
+[ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="3_40sxc"]
+[ext_resource type="PackedScene" uid="uid://bqey1oytewlc7" path="res://Global_Scenes/Debug/Scenes/Item_Select_Menu/Item_Select_Menu.tscn" id="4_j3313"]
+
+[node name="Item_Select" instance=ExtResource("1_3ief6")]
+script = ExtResource("2_j3uhb")
+_e_heading_loc_id = "DEBUG_CUTSCENES_ITEM_KEY"
+_e_var_select_scene = ExtResource("3_40sxc")
+
+[node name="Heading" parent="HBox" index="0"]
+text = "DEBUG_CUTSCENES_ITEM_KEY"
+
+[node name="Select" type="TextureButton" parent="." index="1"]
+light_mask = 8
+visibility_layer = 8
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture_normal = ExtResource("2_x7k7w")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Canvas" type="CanvasLayer" parent="." index="2"]
+layer = 3
+
+[node name="Item_Select" parent="Canvas" index="0" instance=ExtResource("4_j3313")]
+visible = false

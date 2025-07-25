@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2jc26b77js8u"]
+
+[ext_resource type="PackedScene" uid="uid://dot8riojafbwx" path="res://Global_Scenes/Debug/Command_Editor/Entries/Entry_Object.tscn" id="1_i378g"]
+[ext_resource type="Script" uid="uid://ceh022dyfsvxl" path="res://Global_Scenes/Debug/Command_Editor/Entries/Change_State/Scripts/Change_State.gd" id="2_8rjsd"]
+
+[node name="Change_State" instance=ExtResource("1_i378g")]
+script = ExtResource("2_8rjsd")
+_e_color = Color(0.07, 0.7, 0.553, 1)

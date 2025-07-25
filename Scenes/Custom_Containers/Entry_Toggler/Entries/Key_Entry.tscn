@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://cmpoefofcrhwt"]
+
+[ext_resource type="PackedScene" uid="uid://ewbj4oadfsts" path="res://Scenes/Custom_Containers/Entry_Toggler/Entries/Entry.tscn" id="1_n6g1a"]
+[ext_resource type="Script" uid="uid://dx11cardlap3" path="res://Scenes/Custom_Containers/Entry_Toggler/Entries/Scripts/Key_Entry.gd" id="2_7qrgp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6g1a"]
+bg_color = Color(0.2709, 0.321282, 0.43, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hc6h4"]
+bg_color = Color(0.2709, 0.321282, 0.43, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npg6a"]
+bg_color = Color(0.2709, 0.321282, 0.43, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qrgp"]
+bg_color = Color(0.145098, 0.172549, 0.231373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_suv75"]
+bg_color = Color(0.063, 0.0747167, 0.1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5tad"]
+bg_color = Color(0.063, 0.0747167, 0.1, 1)
+
+[node name="Key_Entry" instance=ExtResource("1_n6g1a")]
+size_flags_horizontal = 3
+script = ExtResource("2_7qrgp")
+
+[node name="Select" parent="." index="0"]
+theme_override_styles/focus = SubResource("StyleBoxFlat_n6g1a")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_hc6h4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_npg6a")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_7qrgp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_7qrgp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_7qrgp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7qrgp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_7qrgp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7qrgp")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_suv75")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5tad")
+
+[node name="Texture" parent="Margin" index="0"]
+texture = null

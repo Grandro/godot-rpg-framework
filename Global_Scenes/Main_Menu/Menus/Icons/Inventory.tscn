@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b12csnw8oibc6"]
+
+[ext_resource type="PackedScene" uid="uid://cvvtbog5w6a0b" path="res://Global_Scenes/Main_Menu/Menus/Icons/Menu_Icon.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cbwvbrff3tof0" path="res://Global_Scenes/Main_Menu/Sub_Menus/Inventory/Inventory_Menu.tscn" id="2_6onik"]
+[ext_resource type="Shader" uid="uid://djm8c0tdl2p1f" path="res://Global_Resources/Materials/2D/Shaders/Outline.gdshader" id="4"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("4")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 2.0
+
+[node name="Inventory" instance=ExtResource("1")]
+_e_key = "Inventory"
+_e_menu_scene = ExtResource("2_6onik")
+_e_type = "Sub_Menu"
+
+[node name="Image" parent="." index="0"]
+material = SubResource("1")
+
+[node name="Desc" parent="." index="1"]
+text = "ITEMS"

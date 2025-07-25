@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxnqe4iwkkj12"]
+
+[ext_resource type="PackedScene" uid="uid://be6yntrlk06ra" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Select.tscn" id="1_owt17"]
+[ext_resource type="Script" uid="uid://jmgvjihonaas" path="res://Global_Scenes/Debug/Scenes/Value_Select/Scripts/Value_Num.gd" id="2_dh6ab"]
+[ext_resource type="PackedScene" uid="uid://ooodqj0cscur" path="res://Global_Scenes/Debug/Scenes/Num_Edit/Num_Edit.tscn" id="3_3rif6"]
+
+[node name="Value_Num" instance=ExtResource("1_owt17")]
+script = ExtResource("2_dh6ab")
+
+[node name="Value" parent="." index="1" instance=ExtResource("3_3rif6")]
+layout_mode = 2
