@@ -5,7 +5,6 @@
 [node name="Area" type="Area3D"]
 collision_layer = 16
 collision_mask = 2
-monitorable = false
 script = ExtResource("1_wotx5")
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]

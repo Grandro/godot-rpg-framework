@@ -4,7 +4,5 @@
 
 [node name="States" instance=ExtResource("1_b3v3e")]
 _e_speeds = Dictionary[String, float]({
-"Run": 3.0,
-"Stop": 0.0,
-"Walk": 1.5
+"Stop": 0.0
 })

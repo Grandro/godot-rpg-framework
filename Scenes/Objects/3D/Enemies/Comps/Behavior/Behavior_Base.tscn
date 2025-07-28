@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://c205mm8y7ppc6"]
+
+[ext_resource type="Script" uid="uid://b2nlmpmy8cij3" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/Scripts/Behavior_Base.gd" id="1_4wjul"]
+[ext_resource type="PackedScene" uid="uid://dvcr3pbdmde27" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Base.tscn" id="2_4rndf"]
+[ext_resource type="PackedScene" uid="uid://g6l7on4mxs44" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Respawn.tscn" id="3_f27e7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hwgs3"]
+size = Vector3(7, 2.5, 7)
+
+[node name="Behavior_Base" type="Node3D" groups=["Comp"]]
+script = ExtResource("1_4wjul")
+
+[node name="Debug_State" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+layers = 4
+texture_filter = 0
+font_size = 72
+
+[node name="Debug_Keep_State" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
+visible = false
+layers = 4
+texture_filter = 0
+font_size = 72
+
+[node name="Target_Range" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+metadata/_edit_group_ = true
+
+[node name="Collision" type="CollisionShape3D" parent="Target_Range"]
+shape = SubResource("BoxShape3D_hwgs3")
+
+[node name="States" type="Node" parent="."]
+
+[node name="In_Battle" parent="States" instance=ExtResource("2_4rndf")]
+_e_keep_state = true
+_e_use_CD = false
+
+[node name="Respawn" parent="States" instance=ExtResource("3_f27e7")]
+
+[node name="State_CD" type="Timer" parent="."]
+one_shot = true
+
+[node name="Idle_CD" type="Timer" parent="."]
+one_shot = true

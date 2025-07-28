@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqd5wag3i55mk"]
+
+[ext_resource type="Script" uid="uid://bq667aaojnbaq" path="res://Scenes/Objects/3D/Enemies/Comps/Battle_Starter/Scripts/Area.gd" id="1_oi06n"]
+
+[node name="Area" type="Area3D" groups=["Comp"]]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+script = ExtResource("1_oi06n")
+metadata/_edit_group_ = true
+
+[node name="Collision" type="CollisionShape3D" parent="."]

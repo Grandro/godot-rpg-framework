@@ -52,6 +52,11 @@ _e_look_at_player = true
 [node name="Nav_Agent" parent="Movement" instance=ExtResource("11_oqmr0")]
 
 [node name="States" parent="Movement" instance=ExtResource("9_o6gmo")]
+_e_speeds = Dictionary[String, float]({
+"Run": 3.0,
+"Stop": 0.0,
+"Walk": 1.5
+})
 
 [node name="Jump" parent="Movement" instance=ExtResource("9_g50bc")]
 _e_speed = 10

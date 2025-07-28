@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://g6l7on4mxs44"]
+
+[ext_resource type="PackedScene" uid="uid://dvcr3pbdmde27" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Base.tscn" id="1_shl1b"]
+[ext_resource type="Script" uid="uid://c3x12hqt82fk5" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/Scripts/State_Respawn.gd" id="2_shnpj"]
+
+[node name="Respawn" instance=ExtResource("1_shl1b")]
+script = ExtResource("2_shnpj")
+_e_keep_state = true
+_e_use_CD = false

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://lsel7eqbohc5"]
+
+[ext_resource type="PackedScene" uid="uid://dvcr3pbdmde27" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Base.tscn" id="1_lxslm"]
+[ext_resource type="Script" uid="uid://sif8l28s2e2n" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/Scripts/State_Change_Dir.gd" id="2_rc3v7"]
+
+[node name="Change_Dir" instance=ExtResource("1_lxslm")]
+script = ExtResource("2_rc3v7")
+_e_type = "Rndm"

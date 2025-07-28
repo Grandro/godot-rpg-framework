@@ -1,0 +1,9 @@
+[gd_scene load_steps=0 format=3 uid="uid://botx10vy7odur"]
+
+[node name="Enemy_Stay_Area" type="Area3D"]
+collision_layer = 128
+collision_mask = 64
+monitorable = false
+
+[node name="Collision_1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)

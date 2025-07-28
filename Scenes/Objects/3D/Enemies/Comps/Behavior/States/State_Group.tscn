@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd83qgdedhpoy"]
+
+[ext_resource type="Script" uid="uid://digkgd7l4gr84" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/Scripts/State_Group.gd" id="1_ds4v4"]
+
+[node name="State_Group" type="Node"]
+script = ExtResource("1_ds4v4")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3mngk4bgn2ks"]
+
+[ext_resource type="Script" uid="uid://digkgd7l4gr84" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/Scripts/State_Group.gd" id="2_sq1k3"]
+
+[node name="Branch" type="Node"]
+script = ExtResource("2_sq1k3")

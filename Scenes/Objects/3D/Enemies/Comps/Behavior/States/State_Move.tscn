@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjanmnf2alc80"]
+
+[ext_resource type="PackedScene" uid="uid://dvcr3pbdmde27" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/State_Base.tscn" id="1_5biwo"]
+[ext_resource type="Script" uid="uid://cjx0n6qi6sg4w" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/Scripts/State_Move.gd" id="2_6r4g5"]
+
+[node name="Move" instance=ExtResource("1_5biwo")]
+script = ExtResource("2_6r4g5")
+_e_type = "Rndm"
+_e_min_radius = 2.0
+_e_max_radius = 5.0
