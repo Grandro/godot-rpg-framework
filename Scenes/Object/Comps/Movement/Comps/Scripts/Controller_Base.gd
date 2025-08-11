@@ -15,7 +15,7 @@ func _ready():
 	
 	set_process_unhandled_input(_a_can_jump)
 
-func _process(_p_delta):
+func _process(_p_delta): 
 	_check_idle()
 
 func _physics_process(_p_delta):

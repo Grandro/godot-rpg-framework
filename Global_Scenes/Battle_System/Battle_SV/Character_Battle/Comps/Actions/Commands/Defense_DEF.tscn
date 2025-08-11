@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs7ghw4eswihf"]
+
+[ext_resource type="PackedScene" uid="uid://d1b030mi5wn3i" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Actions/Action_Base.tscn" id="1_2twu1"]
+[ext_resource type="Script" uid="uid://ddqjsvtrqkxpv" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Actions/Commands/Scripts/Defense_DEF.gd" id="2_kxkxt"]
+
+[node name="Defense_DEF" instance=ExtResource("1_2twu1")]
+script = ExtResource("2_kxkxt")

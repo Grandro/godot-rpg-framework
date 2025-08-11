@@ -39,13 +39,13 @@ func _on_Locale_item_selected(p_idx):
 
 func _on_Start_pressed():
 	var global_si = Global.get_singleton(self, "Global")
+	global_si.start_game()
 	
-	#var dest = ["Debug_3D", "Start"]
+	var dest = ["Debug_3D", "Start"]
 	#var dest = ["Debug_2D", "Start"]
-	var dest = ["Game_Over", "Start"]
+	#var dest = ["Game_Over", "Start"]
 	
 	var scene_manager_si = Global.get_singleton(self, "Scene_Manager")
-	global_si.start_game()
 	scene_manager_si.change_scene_dest(dest)
 	
 	#var enc_key = ""

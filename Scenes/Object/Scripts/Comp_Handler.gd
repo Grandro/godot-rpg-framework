@@ -42,6 +42,11 @@ func call_subcomp(p_key, p_sub_key, p_method_name, p_args = []):
 	
 	return method.callv(p_args)
 
+func add_comp(p_instance):
+	var key = p_instance.get_name()
+	_a_comps[key] = p_instance
+	_a_entity.add_child(p_instance)
+
 func remove_comp(p_key):
 	var comp = _a_comps[p_key]
 	_a_comps.erase(p_key)

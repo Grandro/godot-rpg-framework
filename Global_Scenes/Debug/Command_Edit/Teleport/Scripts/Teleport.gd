@@ -3,6 +3,7 @@ extends "res://Global_Scenes/Debug/Command_Edit/Scripts/Command_Base.gd"
 @onready var _a_Type = get_node("Window/Contents/Margin/VBox/Type")
 @onready var _a_Teleportation = get_node("Window/Contents/Margin/VBox/Teleportation")
 @onready var _a_Destination = get_node("Window/Contents/Margin/VBox/Destination")
+@onready var _a_Troop = get_node("Window/Contents/Margin/VBox/Troop")
 @onready var _a_Handle_Lost_Battle = get_node("Window/Contents/Margin/VBox/Handle_Lost_Battle")
 
 func _ready():
@@ -23,18 +24,20 @@ func open(p_instance, p_data, p_res_data):
 
 func _open_init(_p_res_data):
 	_a_Type.load_data_init()
-	_selected_type_changed()
+	_selected_type_changed(false)
 	_a_Teleportation.load_data_init()
 	_selected_teleportation_changed()
 	_a_Destination.load_data_init()
+	_a_Troop.load_data_init()
 	_a_Handle_Lost_Battle.load_data_init()
 
 func _open_load(p_data, _p_res_data):
 	_a_Type.load_data(p_data["Type"])
-	_selected_type_changed()
+	_selected_type_changed(false)
 	_a_Teleportation.load_data(p_data["Teleportation"])
 	_selected_teleportation_changed()
 	_a_Destination.load_data(p_data["Destination"])
+	_a_Troop.load_data(p_data["Troop"])
 	_a_Handle_Lost_Battle.load_data(p_data["Handle_Lost_Battle"])
 
 func _update_teleportations():
@@ -47,16 +50,30 @@ func _update_destinations():
 	_a_Destination.set_options(destination_keys)
 	_a_Destination.update_options()
 
-func _selected_type_changed():
+func _selected_type_changed(p_update_troop_visible = true):
 	var type = _a_Type.get_selected_key()
 	_a_Destination.set_visible(type == "Map")
 	_a_Handle_Lost_Battle.set_visible(type == "Battle")
+	if p_update_troop_visible:
+		_update_troop_visible()
 	
 	_update_teleportations()
 	_update_destinations()
 
 func _selected_teleportation_changed():
+	_update_troop_visible()
 	_update_destinations()
+
+func _update_troop_visible():
+	var type = _a_Type.get_selected_key()
+	match type:
+		"Map": 
+			_a_Troop.set_visible(false)
+		"Battle":
+			var tp = _a_Teleportation.get_selected_key()
+			var data = Databases.get_data_entry("SV_Encounters", tp)
+			var special = data.get_special()
+			_a_Troop.set_visible(!special)
 
 func _get_teleportation_location_keys():
 	var type = _a_Type.get_selected_key()
@@ -68,10 +85,10 @@ func _get_teleportation_location_keys():
 
 func _get_destination_keys():
 	var type = _a_Type.get_selected_key()
-	var tp = _a_Teleportation.get_selected_key()
 	var args = {}
 	match type:
 		"Map":
+			var tp = _a_Teleportation.get_selected_key()
 			var data = Databases.get_data_entry("Maps", tp)
 			args = data.get_destinations()
 	return args.keys()
@@ -81,6 +98,7 @@ func _get_save_data():
 	data["Type"] = _a_Type.get_save_data()
 	data["Teleportation"] = _a_Teleportation.get_save_data()
 	data["Destination"] = _a_Destination.get_save_data()
+	data["Troop"] = _a_Troop.get_save_data()
 	data["Handle_Lost_Battle"] = _a_Handle_Lost_Battle.get_save_data()
 	
 	return data

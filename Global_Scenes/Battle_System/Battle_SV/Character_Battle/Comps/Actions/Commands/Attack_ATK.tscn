@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgfctcj5fhpoc"]
+
+[ext_resource type="PackedScene" uid="uid://d1b030mi5wn3i" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Actions/Action_Base.tscn" id="1_8qvd8"]
+[ext_resource type="Script" uid="uid://dwab3v4dfcdj3" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Actions/Commands/Scripts/Attack_ATK.gd" id="2_ahlor"]
+
+[node name="Attack_ATK" instance=ExtResource("1_8qvd8")]
+script = ExtResource("2_ahlor")
+_e_move_state = "Walk"
+_e_offset = Vector3(0, 0, 0)

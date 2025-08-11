@@ -1,9 +1,9 @@
-extends "res://Global_Scenes/Battle_System/Battle_SV/Scripts/Character_Battle.gd"
+extends "res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Scripts/Character_Battle.gd"
 
-signal hit(p_instance, p_target)
-signal attack_pm_started(p_target)
-signal attack_pm_finished(p_target)
+signal action_reaction_started(p_target)
+signal action_reaction_finished(p_target)
 
+@export var _e_key : String = ""
 @export var _e_select_offset: Vector3 = Vector3.ZERO
 
 var _a_EXP = -1
@@ -11,7 +11,8 @@ var _a_loot = {} # [item_key][amount] = amount_in_pool
 
 func _ready():
 	super()
-	_a_Hitbox.body_entered.connect(_on_Hitbox_body_entered)
+	_a_Actions.reaction_started.connect(_on_Actions_reaction_started)
+	_a_Actions.reaction_finished.connect(_on_Actions_reaction_finished)
 
 func _party_members_filtered(p_party_members):
 	# Filter out dead party members
@@ -30,6 +31,9 @@ func _pick_target():
 	var target_key = filtered.pick_random()
 	_a_target = party_members[target_key]
 
+func get_key():
+	return _e_key
+
 func get_select_offset():
 	return _e_select_offset
 
@@ -45,5 +49,8 @@ func set_loot(p_loot):
 func get_loot():
 	return _a_loot
 
-func _on_Hitbox_body_entered(p_body):
-	hit.emit(self, p_body)
+func _on_Actions_reaction_started():
+	action_reaction_started.emit(_a_target)
+
+func _on_Actions_reaction_finished():
+	action_reaction_finished.emit(_a_target)

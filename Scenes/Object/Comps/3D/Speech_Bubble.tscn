@@ -48,8 +48,5 @@ _e_activate_physics = false
 
 [node name="Speech_Bubble_UI" parent="Panel/VP" index="0" instance=ExtResource("3_xibv1")]
 
-[node name="Choices_Box" parent="Panel/VP/Speech_Bubble_UI/VBox" index="1"]
-theme = null
-
 [editable path="Panel"]
 [editable path="Panel/VP/Speech_Bubble_UI"]

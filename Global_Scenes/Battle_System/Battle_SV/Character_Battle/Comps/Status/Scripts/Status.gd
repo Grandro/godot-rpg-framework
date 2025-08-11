@@ -72,14 +72,5 @@ func _instantiate_status_entry(p_key, p_amount, p_data):
 	
 	return instance
 
-func get_save_data():
-	return {}
-
-func load_data(_p_data):
-	pass
-
-func load_data_init():
-	pass
-
 func _on_Status_Entry_tree_exited(p_key):
 	_a_instances.erase(p_key)

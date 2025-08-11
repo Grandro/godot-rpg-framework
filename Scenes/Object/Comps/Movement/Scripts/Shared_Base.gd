@@ -1,5 +1,7 @@
 extends "res://Scripts/Extension_Base.gd"
 
+signal dir_changed(p_dir)
+
 var _a_reset_dir = ""
 
 var _a_entity_entity = null
@@ -16,7 +18,7 @@ func _init(p_entity):
 	_a_comph = CompHandler.new(p_entity)
 
 func ready():
-	set_dir(_a_reset_dir)
+	reset_dir()
 	_a_velocity = _a_entity.get_init_velocity()
 	_update_speed()
 
@@ -45,13 +47,14 @@ func _reset_velocity():
 		child.reset_velocity()
 
 func reset_dir():
-	_a_dir = _a_reset_dir
+	set_dir(_a_reset_dir)
 
 func get_velocity():
 	return _a_velocity
 
 func set_dir(p_dir):
 	_a_dir = p_dir
+	dir_changed.emit(p_dir)
 
 func get_dir():
 	return _a_dir

@@ -14,23 +14,27 @@ var _a_res = "" # Win/Loss
 func _ready():
 	_a_Result.closed.connect(_on_Result_closed)
 
-func battle(p_enc_key, p_map_res):
+func battle(p_enc_key, p_map_res, p_troop = []):
 	var scene_manager_si = Global.get_singleton(self, "Scene_Manager")
 	_a_return_map = scene_manager_si.get_curr_scene()
 	_a_return_location = scene_manager_si.get_location()
 	
 	var data = Databases.get_data_entry("SV_Encounters", p_enc_key)
 	var path = data.get_path_()
-	scene_manager_si.change_scene_path(path, _CB_Scene_Manager_Encounter_Set.bind(p_map_res))
+	var special = data.get_special()
+	var cb = _CB_Scene_Manager_Encounter_Set.bind(p_map_res, p_troop, special)
+	scene_manager_si.change_scene_path(path, cb)
 
 func _tp_to_return_location():
 	var scene_manager_si = Global.get_singleton(self, "Scene_Manager")
 	var cb_method = _CB_Scene_Manager_Return_Scene_Set.bind(_a_return_location, _a_res)
-	scene_manager_si.change_scene_tele(_a_return_location, cb_method)
+	scene_manager_si.change_scene_tp(_a_return_location, cb_method)
 
-func _CB_Scene_Manager_Encounter_Set(p_instance, p_map_res):
+func _CB_Scene_Manager_Encounter_Set(p_instance, p_map_res, p_troop, p_special):
 	p_instance.battle_ended.connect(_on_Encounter_battle_ended)
 	p_instance.set_map_res(p_map_res)
+	p_instance.set_troop(p_troop)
+	p_instance.set_special(p_special)
 	p_instance.battle()
 
 func _CB_Scene_Manager_Return_Scene_Set(_p_instance, p_location, p_res):
@@ -44,7 +48,5 @@ func _on_Encounter_battle_ended(_p_location, p_res, p_EXP, p_loot):
 	_a_res = p_res
 	
 	match p_res:
-		"Flee":
-			_tp_to_return_location()
-		_:
-			_a_Result.open(p_EXP, p_loot)
+		"Flee": _tp_to_return_location()
+		_: _a_Result.open(p_EXP, p_loot)

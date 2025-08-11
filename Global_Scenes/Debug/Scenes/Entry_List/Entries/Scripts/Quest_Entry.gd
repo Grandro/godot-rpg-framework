@@ -73,8 +73,10 @@ func load_data(p_data):
 	super(p_data)
 	
 	var sub_quests = p_data["Sub_Quests"]
-	for i in sub_quests.size():
-		var entry_args = sub_quests[i]
+	var sub_quests_keys = sub_quests.keys()
+	for i in sub_quests_keys.size():
+		var key = sub_quests_keys[i]
+		var entry_args = sub_quests[key]
 		var instance = _a_Sub_Quests.get_entry(i)
 		instance.load_data(entry_args)
 

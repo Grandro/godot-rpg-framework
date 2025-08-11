@@ -9,7 +9,7 @@ var _a_Scene_Loader_Scene = preload("res://Global_Scenes/Scene_Manager/Scene_Loa
 @onready var _a_Loading_Screen = get_node("Loading_Screen")
 
 var _a_dest = [] # [location, destination]
-var _a_tele = ""
+var _a_tp = ""
 var _a_path = ""
 var _a_scene_ready_cb = Callable()
 var _a_load_file_data = false
@@ -28,7 +28,7 @@ func _ready():
 
 func change_scene_dest(p_dest, p_scene_ready_cb = Callable()):
 	_a_dest = p_dest
-	_a_tele = ""
+	_a_tp = ""
 	_a_path = ""
 	_a_scene_ready_cb = p_scene_ready_cb
 	_a_load_file_data = false
@@ -39,17 +39,17 @@ func change_scene_dest(p_dest, p_scene_ready_cb = Callable()):
 	else:
 		_change_scene("Dest")
 
-func change_scene_tele(p_tele, p_scene_ready_cb = Callable(), p_load_file_data = false):
+func change_scene_tp(p_tp, p_scene_ready_cb = Callable(), p_load_file_data = false):
 	_a_dest.clear()
-	_a_tele = p_tele
+	_a_tp = p_tp
 	_a_path = ""
 	_a_scene_ready_cb = p_scene_ready_cb
 	_a_load_file_data = p_load_file_data
-	_change_scene("Tele")
+	_change_scene("Tp")
 
 func change_scene_path(p_path, p_scene_ready_cb = Callable()):
 	_a_dest.clear()
-	_a_tele = ""
+	_a_tp = ""
 	_a_path = p_path
 	_a_scene_ready_cb = p_scene_ready_cb
 	_a_load_file_data = false
@@ -74,7 +74,7 @@ func _change_scene(p_type):
 		var global_si = Global.get_singleton(self, "Global")
 		global_si.cleanup_map()
 	else:
-		if is_curr_scene_map_encounter():
+		if is_curr_scene_map():
 			var global_si = Global.get_singleton(self, "Global")
 			global_si.save_data(false)
 	
@@ -84,7 +84,7 @@ func _change_scene(p_type):
 	scene_changing.emit()
 
 func _scene_changed():
-	if is_curr_scene_map_encounter():
+	if is_curr_scene_map():
 		var global_si = Global.get_singleton(self, "Global")
 		global_si.load_data(_a_load_file_data)
 		
@@ -189,7 +189,7 @@ func get_save_data():
 
 func load_file_data(p_data):
 	var location = p_data["Location"]
-	change_scene_tele(location, Callable(), true)
+	change_scene_tp(location, Callable(), true)
 
 func _on_Scene_ready():
 	_scene_changed()
@@ -201,8 +201,8 @@ func _on_Scene_tree_exited(p_type):
 			var data = Databases.get_data_entry("Maps", location)
 			var path = data.get_path_()
 			load_scene(path, _CB_Scene_Manager_scene_loaded, true)
-		"Tele":
-			var data = Databases.get_data_entry("Maps", _a_tele)
+		"Tp":
+			var data = Databases.get_data_entry("Maps", _a_tp)
 			var path = data.get_path_()
 			load_scene(path, _CB_Scene_Manager_scene_loaded, true)
 		"Path":

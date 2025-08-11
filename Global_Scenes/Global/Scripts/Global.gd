@@ -675,33 +675,34 @@ func get_dir_to_pos(p_from, p_to):
 	return dir
 
 func get_vec_dir(p_vec):
-	var dir = ""
 	var ordinate = null
 	if p_vec is Vector2: ordinate = p_vec.y
 	elif p_vec is Vector3: ordinate = p_vec.z
 	
 	if abs(p_vec.x) > abs(ordinate):
 		if p_vec.x < 0.0:
-			dir = "Left"
+			return "Left"
 		else:
-			dir = "Right"
+			return "Right"
 	else:
 		if ordinate < 0.0:
-			dir = "Up"
+			return "Up"
 		else:
-			dir = "Down"
-	
-	return dir
+			return "Down"
+
+func get_dir_rotation_deg(p_dir):
+	match p_dir:
+		"Down": return Vector3(0.0, 0.0, 0.0)
+		"Left": return Vector3(0.0, -90.0, 0.0)
+		"Right": return Vector3(0.0, 90.0, 0.0)
+		"Up": return Vector3(0.0, 180.0, 0.0)
 
 func get_opposite_dir(p_dir):
-	var dir = ""
 	match p_dir:
-		"Down": dir = "Up"
-		"Left": dir = "Right"
-		"Right": dir = "Left"
-		"Up": dir = "Down"
-	
-	return dir
+		"Down": return "Up"
+		"Left": return "Right"
+		"Right": return "Left"
+		"Up": return "Down"
 
 func get_dir_rotated(p_dir, p_degrees):
 	var dirs = ["Up", "Right", "Down", "Left"]

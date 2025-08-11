@@ -6,7 +6,14 @@
 [node name="Enemy_Battle" groups=["Enemy"] instance=ExtResource("1_v6p3j")]
 collision_layer = 72
 script = ExtResource("2_vdut4")
+_e_key = ""
 _e_select_offset = Vector3(0, 0, 0)
+_e_type = "Enemy"
 
-[node name="Hitbox" parent="." index="6"]
+[node name="Hitbox" parent="." index="3"]
 collision_mask = 256
+
+[node name="Movement" parent="." index="4"]
+_e_reset_dir = "Left"
+
+[editable path="Movement/Terrain"]

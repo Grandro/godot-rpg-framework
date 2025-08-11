@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://fb8f6x0c3kdl"]
+[gd_scene load_steps=7 format=3 uid="uid://fb8f6x0c3kdl"]
 
 [ext_resource type="Script" uid="uid://cp311b6hle3lr" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Scripts/Command_Entry.gd" id="1_82apt"]
+[ext_resource type="AudioStream" uid="uid://mboxkqxpndfs" path="res://Global_Resources/Audio/SFX/Hit_1.wav" id="1_vh3da"]
 [ext_resource type="Texture2D" uid="uid://5aoswujhwbye" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Command_Circle/Sprites/Commands/Special.png" id="2_u04lt"]
 
 [sub_resource type="Animation" id="1"]
@@ -69,9 +70,10 @@ texture_filter = 0
 texture = ExtResource("2_u04lt")
 
 [node name="Audio_Bounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_vh3da")
 bus = &"SFX"
 
 [node name="Anims" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_nkdgk")
+"": SubResource("AnimationLibrary_nkdgk")
 }

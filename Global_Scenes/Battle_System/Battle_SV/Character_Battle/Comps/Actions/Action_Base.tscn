@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1b030mi5wn3i"]
+
+[ext_resource type="Script" uid="uid://c35fiolurf6jj" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Actions/Scripts/Action_Base.gd" id="1_6ejpt"]
+
+[node name="Action_Base" type="Node3D"]
+script = ExtResource("1_6ejpt")

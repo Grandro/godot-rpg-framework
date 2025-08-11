@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1m8wwsegslr7"]
+
+[ext_resource type="PackedScene" uid="uid://d1b030mi5wn3i" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Actions/Action_Base.tscn" id="1_8083b"]
+[ext_resource type="Script" uid="uid://bffkwwhd1nnbo" path="res://Global_Scenes/Battle_System/Battle_SV/Party_Members/Comps/Actions/Commands/Scripts/Flee.gd" id="2_ncitk"]
+
+[node name="Flee" instance=ExtResource("1_8083b")]
+script = ExtResource("2_ncitk")

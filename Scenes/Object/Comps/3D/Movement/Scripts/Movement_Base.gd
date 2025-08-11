@@ -1,5 +1,7 @@
 extends Node3D
 
+signal dir_changed(p_dir)
+
 @export var _e_shared : GDScript = preload("res://Scenes/Object/Comps/Movement/Scripts/Shared_Base.gd")
 @export_enum("Down", "Left", "Right", "Up") var _e_reset_dir: String = "Down"
 
@@ -7,6 +9,7 @@ var _a_shared = null
 
 func _ready():
 	_a_shared = _e_shared.new(self)
+	_a_shared.dir_changed.connect(_on_Shared_dir_changed)
 	_a_shared.set_reset_dir(_e_reset_dir)
 	
 	_a_shared.ready()
@@ -49,3 +52,6 @@ func load_data(p_data):
 
 func load_data_init():
 	pass
+
+func _on_Shared_dir_changed(p_dir):
+	dir_changed.emit(p_dir)

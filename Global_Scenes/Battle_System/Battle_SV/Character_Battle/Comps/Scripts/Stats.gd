@@ -59,12 +59,3 @@ func get_curr_stat(p_stat):
 		value = instance.get_modified_value(value)
 	
 	return value
-
-func get_save_data():
-	return {}
-
-func load_data(_p_data):
-	pass
-
-func load_data_init():
-	pass

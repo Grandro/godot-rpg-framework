@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjgvk3gr7b601"]
+
+[ext_resource type="PackedScene" uid="uid://dfcne2xq1hclh" path="res://Global_Scenes/Debug/Fix_Warnings/Entries/Fix_Warning_Base.tscn" id="1_rdobi"]
+[ext_resource type="PackedScene" uid="uid://bc12fh7xhsyy6" path="res://Global_Scenes/Debug/Scenes/Value_Edit/Value_Edit.tscn" id="2_gk0ig"]
+[ext_resource type="Script" uid="uid://bi7tghisgyv5u" path="res://Global_Scenes/Debug/Fix_Warnings/Entries/Scripts/Fix_Warning_Array.gd" id="2_oiyt0"]
+
+[node name="Fix_Warning_Array" instance=ExtResource("1_rdobi")]
+script = ExtResource("2_oiyt0")
+
+[node name="Value" parent="VBox/New" index="1" instance=ExtResource("2_gk0ig")]
+layout_mode = 2
+_e_type = "Array"

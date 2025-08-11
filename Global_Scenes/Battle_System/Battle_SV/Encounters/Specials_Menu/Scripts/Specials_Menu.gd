@@ -23,8 +23,8 @@ func _unhandled_input(p_event):
 func open(p_instance):
 	_a_Desc.set_text("[center]%s" % tr("SV_ACTIONS_NONE_DESC"))
 	
-	var specials = p_instance.get_active_actions("Specials")
-	var specials_args = p_instance.get_specials_args()
+	var specials = p_instance.get_enabled_actions("Specials")
+	var specials_args = p_instance.comph().call_comp("Actions", "get_specials_args")
 	for key in specials:
 		var args = specials_args[key]
 		var name_ = args.get_name_()

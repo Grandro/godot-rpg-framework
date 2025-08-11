@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://xts4jxlx4dgp"]
 
-[ext_resource type="Script" uid="uid://cdm8b33dw05ww" path="res://Global_Scenes/Battle_System/Battle_SV/Scripts/Result.gd" id="1_gto08"]
+[ext_resource type="Script" uid="uid://cdm8b33dw05ww" path="res://Global_Scenes/Battle_System/Battle_SV/Result/Scripts/Result.gd" id="1_gto08"]
 [ext_resource type="PackedScene" uid="uid://xmfga7dl3slw" path="res://Scenes/Loot/Rewards/Rewards_Result.tscn" id="4_bd05d"]
 [ext_resource type="PackedScene" uid="uid://ctmdtgtdjkp8y" path="res://Global_Scenes/Battle_System/Battle_SV/Result/Party_Members/Party_Members.tscn" id="5_7g636"]
 [ext_resource type="PackedScene" uid="uid://c6ug0m0m4daq4" path="res://Scenes/Loot/Coins/Coins.tscn" id="6_rc286"]

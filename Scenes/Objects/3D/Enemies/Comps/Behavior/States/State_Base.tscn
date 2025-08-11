@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://4lx3seuhwrm4" path="res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/Scripts/State_Base.gd" id="1_gwrm0"]
 
-[node name="Action_Base" type="Node"]
+[node name="State_Base" type="Node"]
 script = ExtResource("1_gwrm0")

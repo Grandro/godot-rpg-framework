@@ -171,11 +171,12 @@ func _process_teleport(p_data, p_args):
 			_a_tp_teleportation = cutscene_system_si.get_option_value(p_data["Teleportation"])
 			_a_tp_handle_lost_battle = cutscene_system_si.get_option_value(p_data["Handle_Lost_Battle"])
 			_a_tp_branches = p_args["Branches"]
+			var troop = cutscene_system_si.get_option_value(p_data["Troop"])
 			
 			var battle_system_si = Global.get_singleton(self, "Battle_System")
 			var battle_sv = battle_system_si.get_battle_sv()
 			battle_sv.battle_ended.connect(_on_Battle_SV_battle_ended)
-			battle_sv.battle(_a_tp_teleportation, BattleSV.MAP_RES.NEUTRAL)
+			battle_sv.battle(_a_tp_teleportation, BattleSV.MAP_RES.NEUTRAL, troop)
 
 func _process_match(p_data, p_args):
 	# Execute condition and instance new branch

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx7pbssh3wl3f"]
+
+[ext_resource type="PackedScene" uid="uid://20ux6apavccw" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Actions/Actions_Base.tscn" id="1_eask8"]
+
+[node name="Specials" instance=ExtResource("1_eask8")]

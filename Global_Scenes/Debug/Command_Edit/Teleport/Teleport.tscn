@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://b31wlri5vunar"]
+[gd_scene load_steps=7 format=3 uid="uid://b31wlri5vunar"]
 
 [ext_resource type="PackedScene" uid="uid://gi3fh4x5672i" path="res://Global_Scenes/Debug/Command_Edit/Command_Base.tscn" id="1"]
 [ext_resource type="Script" uid="uid://bcdgep250uagx" path="res://Global_Scenes/Debug/Command_Edit/Teleport/Scripts/Teleport.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://cnpcrhnjo25h1" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Options.tscn" id="3_gegy4"]
 [ext_resource type="PackedScene" uid="uid://ceaqnana6y842" path="res://Global_Scenes/Debug/Scenes/Value_Select/Var_Select.tscn" id="4_24dgs"]
 [ext_resource type="PackedScene" uid="uid://dmysqox083lhl" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Bool.tscn" id="5_e43bm"]
+[ext_resource type="PackedScene" uid="uid://qs71x71lxlxi" path="res://Global_Scenes/Debug/Scenes/Value_Select/Value_Edit.tscn" id="5_l3xe4"]
 
 [node name="Teleport" instance=ExtResource("1")]
 script = ExtResource("2")
-_e_command = "Teleport"
 
 [node name="Background" parent="." index="0"]
 layout_mode = 1
@@ -40,7 +40,7 @@ theme_override_constants/separation = 16
 [node name="Type" parent="Window/Contents/Margin/VBox" index="0" instance=ExtResource("3_gegy4")]
 layout_mode = 2
 _e_options_loc_id = "DEBUG_CUTSCENES_TYPE_%s"
-_e_options = Array[String](["Map", "Battle"])
+_e_options = ["Map", "Battle"]
 _e_heading_loc_id = "DEBUG_CUTSCENES_TYPE"
 _e_var_select_scene = ExtResource("4_24dgs")
 
@@ -54,12 +54,21 @@ layout_mode = 2
 _e_heading_loc_id = "DEBUG_CUTSCENES_DESTINATIONS"
 _e_var_select_scene = ExtResource("4_24dgs")
 
-[node name="Handle_Lost_Battle" parent="Window/Contents/Margin/VBox" index="3" instance=ExtResource("5_e43bm")]
+[node name="Troop" parent="Window/Contents/Margin/VBox" index="3" instance=ExtResource("5_l3xe4")]
+layout_mode = 2
+_e_heading_loc_id = "DEBUG_CUTSCENES_TROOP"
+_e_var_select_scene = ExtResource("4_24dgs")
+
+[node name="Value" parent="Window/Contents/Margin/VBox/Troop" index="1"]
+_e_type = "Array"
+_e_children_type = "String"
+
+[node name="Handle_Lost_Battle" parent="Window/Contents/Margin/VBox" index="4" instance=ExtResource("5_e43bm")]
 layout_mode = 2
 _e_heading_loc_id = "DEBUG_CUTSCENES_HANDLE_LOST_BATTLE"
 _e_var_select_scene = ExtResource("4_24dgs")
 
-[node name="HBox" type="HBoxContainer" parent="Window/Contents/Margin/VBox" index="4"]
+[node name="HBox" type="HBoxContainer" parent="Window/Contents/Margin/VBox" index="5"]
 light_mask = 8
 visibility_layer = 8
 layout_mode = 2
@@ -83,3 +92,4 @@ layout_mode = 2
 text = "CANCEL"
 
 [editable path="Window"]
+[editable path="Window/Contents/Margin/VBox/Troop"]

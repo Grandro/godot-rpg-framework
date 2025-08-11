@@ -30,6 +30,7 @@ func update_display():
 	_a_Battle_Lost.set_base_desc_modulate(_e_color)
 
 # Breakable: ["Teleportation"]["Value"], ["Destination"]["Value"]
+#			 ["Troop"]["Value"]
 func _update_warnings_add():
 	var type = _a_data["Type"]["Value"]
 	var teleportation = _a_data["Teleportation"]["Value"]
@@ -54,6 +55,15 @@ func _update_warnings_add():
 				var value_keys = ["Teleportation", "Value"]
 				var args = _Warning_Args_String.new(teleportation, value_keys)
 				_a_warnings.push_back(args)
+			
+			var enemies_data = Databases.get_data("Enemies")
+			var troop = _a_data["Troop"]["Value"]
+			for enemy_key in troop:
+				if !enemies_data.has(enemy_key):
+					var value_keys = ["Troop", "Value"]
+					var args = _Warning_Args_Array.new(troop, value_keys)
+					_a_warnings.push_back(args)
+					break
 
 func _update_display_main_base_args():
 	var type = _a_data["Type"]["Value"]
@@ -62,9 +72,13 @@ func _update_display_main_base_args():
 	
 	var text = type_text
 	text += ", %s" % teleportation_text
-	if type == "Map":
-		var destination_text = _get_display_text(_a_data["Destination"])
-		text += ", %s" % destination_text
+	match type:
+		"Map":
+			var destination_text = _get_display_text(_a_data["Destination"])
+			text += ", %s" % destination_text
+		"Battle":
+			var troop_text = _get_display_text(_a_data["Troop"])
+			text += ", %s" % troop_text
 	_a_Main.set_base_args(text)
 
 func _update_branches():

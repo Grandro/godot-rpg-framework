@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt6c4euae5p4h"]
+
+[ext_resource type="Script" uid="uid://b844plc8dlt2o" path="res://Scenes/Object/Comps/3D/Scripts/Area.gd" id="1_ypnuf"]
+
+[node name="Area" type="Area3D" groups=["Comp"]]
+script = ExtResource("1_ypnuf")

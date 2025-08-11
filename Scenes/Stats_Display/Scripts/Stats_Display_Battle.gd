@@ -1,8 +1,8 @@
 extends "res://Scenes/Stats_Display/Scripts/Stats_Display_Base.gd"
 
-func open(p_instances):
-	for instance in p_instances:
-		var key = instance.comph().call_comp("Reference", "get_key")
+func open(p_party_members):
+	for key in p_party_members:
+		var instance = p_party_members[key]
 		var stats_comp = instance.comph().get_comp("Stats")
 		stats_comp.stat_changed.connect(_on_pm_stat_changed.bind(key))
 		var entry_scene = load(_a_ENTRY_SCENE_PATH % key)

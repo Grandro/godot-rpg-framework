@@ -36,8 +36,8 @@ visibility_layer = 8
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
-text = "[center]"
 fit_content = true
+horizontal_alignment = 1
 
 [node name="HSep" type="HSeparator" parent="Panel/VBox"]
 light_mask = 8

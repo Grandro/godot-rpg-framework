@@ -4,6 +4,7 @@
 
 [node name="Equipment" type="Node3D" groups=["Comp"]]
 script = ExtResource("1_6cxnx")
+_e_scenes = null
 _e_shaded = null
 
 [node name="Head" type="Node3D" parent="."]

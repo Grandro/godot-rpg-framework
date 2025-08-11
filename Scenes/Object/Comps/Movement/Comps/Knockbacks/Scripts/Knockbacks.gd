@@ -1,11 +1,11 @@
 extends Node
 
+signal started()
+signal finished()
+
 var _a_Knockback_Scene = preload("res://Scenes/Object/Comps/Movement/Comps/Knockbacks/Knockback.tscn")
 
-var _a_entity = null
-var _a_entity_comph : CompHandler = null
 var _a_movement = null
-var _a_movement_comph : CompHandler = null
 
 var _a_velocity = null # Vector
 
@@ -14,17 +14,13 @@ func _physics_process(_p_delta):
 	_process_knockbacks()
 
 func init(p_entity):
-	_a_entity = p_entity
-	_a_entity_comph = p_entity.comph()
-	_a_movement = _a_entity_comph.get_comp("Movement")
-	_a_movement_comph = _a_movement.comph()
+	_a_movement = p_entity.comph().get_comp("Movement")
 	
 	_a_velocity = _a_movement.get_init_velocity()
 
 func knockback(p_velocity):
 	if get_child_count() == 0:
-		_a_entity_comph.call_comp("States", "set_state_tmp", ["Knockback"])
-		_a_entity_comph.call_comp("Anims", "update_anim")
+		started.emit()
 	
 	_instantiate_knockback(p_velocity)
 
@@ -62,8 +58,4 @@ func get_speed():
 
 func _on_Knockback_tree_exited():
 	if get_child_count() == 0:
-		await get_tree().create_timer(0.3).timeout
-		_a_entity_comph.call_comp("States", "set_state_tmp", ["Walk"])
-		_a_movement.set_state("Recover_Knockback")
-		_a_movement.move_to_org_pos()
-		_a_entity_comph.call_comp("Anims", "update_anim")
+		finished.emit()

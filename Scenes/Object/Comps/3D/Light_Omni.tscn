@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu8f28s6wv6u1"]
+
+[ext_resource type="Script" uid="uid://cxlb7mnvyio7u" path="res://Scenes/Object/Comps/3D/Scripts/Light_Omni.gd" id="1_3f0p8"]
+
+[node name="Light_Omni" type="OmniLight3D" groups=["Comp"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+layers = 4
+light_color = Color(1, 0.805114, 0.453964, 1)
+light_energy = 2.0
+light_size = 0.1
+light_specular = 0.0
+light_cull_mask = 4293918725
+shadow_enabled = true
+shadow_caster_mask = 4293918725
+omni_range = 3.0
+omni_attenuation = 0.0
+script = ExtResource("1_3f0p8")

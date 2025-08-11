@@ -194,16 +194,6 @@ class _Warning_Args_Base:
 	func get_value_keys():
 		return _a_value_keys
 
-class _Warning_Args_File extends _Warning_Args_Base:
-	var _a_dir_path = "" # File: Directory path which should be opened
-	var _a_filters = PackedStringArray() # File type filters
-	
-	func _init(p_value, p_value_keys, p_dir_path, p_filters):
-		super(p_value, p_value_keys)
-		_a_type = "File"
-		_a_dir_path = p_dir_path
-		_a_filters = p_filters
-
 class _Warning_Args_Int extends _Warning_Args_Base:
 	var _a_min = -1 # Minimum value
 	var _a_max = -1 # Maximum value
@@ -225,7 +215,22 @@ class _Warning_Args_String extends _Warning_Args_Base:
 		super(p_value, p_value_keys)
 		_a_type = "String"
 
+class _Warning_Args_Array extends _Warning_Args_Base:
+	func _init(p_value, p_value_keys):
+		super(p_value, p_value_keys)
+		_a_type = "Array"
+
 class _Warning_Args_Range extends _Warning_Args_Int:
 	func _init(p_value, p_value_keys, p_min, p_max):
 		super(p_value, p_value_keys, p_min, p_max)
 		_a_type = "Range"
+
+class _Warning_Args_File extends _Warning_Args_Base:
+	var _a_dir_path = "" # File: Directory path which should be opened
+	var _a_filters = PackedStringArray() # File type filters
+	
+	func _init(p_value, p_value_keys, p_dir_path, p_filters):
+		super(p_value, p_value_keys)
+		_a_type = "File"
+		_a_dir_path = p_dir_path
+		_a_filters = p_filters

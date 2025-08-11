@@ -21,7 +21,7 @@ var _a_queued_state = ""
 var _a_keep_state = false
 
 func _process(_p_delta):
-	if !_a_queued_state.is_empty():
+	if !_a_keep_state && !_a_queued_state.is_empty():
 		_set_state(_a_queued_state)
 		_set_queued_state("")
 
@@ -29,6 +29,8 @@ func init(p_entity):
 	_a_entity = p_entity
 	_a_entity_comph = p_entity.comph()
 	_a_entity_comph.comps_registered.connect(_on_Comp_Handler_comps_registered)
+	
+	_a_stay_area = p_entity.get_stay_area()
 
 func _process_state():
 	var instance = _a_states[_a_state]
@@ -36,9 +38,6 @@ func _process_state():
 	
 	var keep_state = instance.get_keep_state()
 	_set_keep_state(keep_state)
-
-func set_stay_area(p_stay_area):
-	_a_stay_area = p_stay_area
 
 func get_stay_area():
 	return _a_stay_area
@@ -72,8 +71,6 @@ func _set_queued_state(p_queued_state):
 func _set_keep_state(p_keep_state):
 	_a_keep_state = p_keep_state
 	_a_Debug_Keep_State.set_text(str(p_keep_state))
-	
-	set_process(!p_keep_state)
 
 func get_save_data():
 	var data = {}
@@ -125,6 +122,9 @@ func _on_State_processed(p_state):
 	var use_CD = instance.get_use_CD()
 	if use_CD:
 		var CD = instance.get_CD()
+		if CD == 0.0:
+			_set_state(p_state)
+			return
 		_a_State_CD.start(CD)
 	
 	if !_a_keep_state:

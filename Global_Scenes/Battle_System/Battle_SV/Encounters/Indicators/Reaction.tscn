@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d4g3oydk762s7"]
 
-[ext_resource type="Script" uid="uid://dow77flvmqja5" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Indicators/Scripts/Enemy_Attack.gd" id="1_diymt"]
+[ext_resource type="Script" uid="uid://dow77flvmqja5" path="res://Global_Scenes/Battle_System/Battle_SV/Encounters/Indicators/Scripts/Reaction.gd" id="1_el2it"]
 
 [sub_resource type="Animation" id="Animation_k3cwt"]
 resource_name = "Fade_In"
@@ -40,9 +40,9 @@ _data = {
 &"Fade_Out": SubResource("Animation_m7d83")
 }
 
-[node name="Enemy_Attack" type="CanvasLayer"]
+[node name="Reaction" type="CanvasLayer"]
 layer = 2
-script = ExtResource("1_diymt")
+script = ExtResource("1_el2it")
 
 [node name="Reactions" type="MarginContainer" parent="."]
 light_mask = 8

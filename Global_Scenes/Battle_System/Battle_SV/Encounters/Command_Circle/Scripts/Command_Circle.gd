@@ -77,7 +77,7 @@ func open(p_instance):
 	pos += p_instance.get_command_circle_offset()
 	set_global_position(pos)
 	
-	var commands = p_instance.get_active_actions("Commands")
+	var commands = p_instance.get_enabled_actions("Commands")
 	for i in commands.size():
 		var command = commands[i]
 		var instance = _a_Command_Entry_Scene.instantiate()

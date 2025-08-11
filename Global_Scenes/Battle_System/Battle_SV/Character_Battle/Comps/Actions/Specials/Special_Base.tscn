@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7dldpydx4yw2"]
+
+[ext_resource type="Script" uid="uid://cy8fwjisqoq3d" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Actions/Specials/Scripts/Special_Base.gd" id="1_g3d28"]
+[ext_resource type="PackedScene" uid="uid://d1b030mi5wn3i" path="res://Global_Scenes/Battle_System/Battle_SV/Character_Battle/Comps/Actions/Action_Base.tscn" id="1_t56kh"]
+
+[node name="Special_Base" instance=ExtResource("1_t56kh")]
+script = ExtResource("1_g3d28")

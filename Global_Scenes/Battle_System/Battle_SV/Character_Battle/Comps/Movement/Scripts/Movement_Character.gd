@@ -18,6 +18,9 @@ func move_to_pos(p_pos):
 func move_to_org_pos():
 	move_to_pos(_a_org_pos)
 
+func get_org_pos():
+	return _a_org_pos
+
 func set_state(p_state):
 	_a_state = p_state
 

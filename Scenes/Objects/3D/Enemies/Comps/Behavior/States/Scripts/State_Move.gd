@@ -1,6 +1,7 @@
 extends "res://Scenes/Objects/3D/Enemies/Comps/Behavior/States/Scripts/State_Base.gd"
 
 @export_enum("Rndm", "Chase", "Avoid") var _e_type : String = "Rndm"
+@export var _e_move_state: String = "Walk"
 @export var _e_min_radius: float = 2.0
 @export var _e_max_radius: float = 5.0
 
@@ -70,7 +71,7 @@ func _move_to(p_point_func, p_point_args):
 		
 		try += 1
 	
-	_a_entity_comph.call_comp("States", "set_state", ["Walk"])
+	_a_entity_comph.call_comp("States", "set_state", [_e_move_state])
 	_a_entity_comph.call_comp("Anims", "update_anim")
 	
 	_a_nav_agent_comp.path_finished.connect(_on_Nav_Agent_path_finished, CONNECT_ONE_SHOT)
@@ -101,7 +102,7 @@ func _is_point_in_stay_area(p_point, p_intersect_params, p_space_state):
 func _get_point_rotated(p_from, p_to_vec, p_min_radius, p_max_radius, p_try):
 	# Rotate to_vec by -x° - x°
 	# Increase angle range in every try
-	var angle_range = 90 + 12 * p_try
+	var angle_range = 18 * p_try
 	var rndm_angle_deg = randi() % (angle_range + 1) - (angle_range / 2)
 	var rndm_angle_rad = deg_to_rad(rndm_angle_deg)
 	var length = randf_range(p_min_radius, p_max_radius)

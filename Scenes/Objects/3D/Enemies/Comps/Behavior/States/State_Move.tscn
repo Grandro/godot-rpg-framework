@@ -6,5 +6,6 @@
 [node name="Move" instance=ExtResource("1_5biwo")]
 script = ExtResource("2_6r4g5")
 _e_type = "Rndm"
+_e_move_state = "Walk"
 _e_min_radius = 2.0
 _e_max_radius = 5.0
